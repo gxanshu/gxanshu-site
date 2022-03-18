@@ -1,0 +1,45 @@
+backend:
+  name: github
+  repo: aianshume/codenanshu
+  branch: dev
+
+media_folder: content/assets
+public_folder: /assets
+
+collections:
+  - name: blog
+    label: Blog
+    folder: content/blog
+    create: true
+    fields:
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: date, label: Date, widget: date }
+      - { name: slug, label: slug }
+      - { label: "Category", name: "category", widget: "select", options: ["blog", "tutorials", "notes"], default: "blog" }
+      - { label: "Image", name: "image", widget: "image", choose_url: true, media_library: { config: { multiple: false }}}
+      - { name: body, label: Body, widget: markdown }
+  - name: notes
+    label: Notes
+    folder: content/notes
+    create: true
+    fields:
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: date, label: Date, widget: date }
+      - { name: slug, label: slug }
+      - { label: "Category", name: "category", widget: "select", options: ["blog", "tutorials", "notes"], default: "tutorials"}
+      - { label: "Image", name: "image", widget: "image", choose_url: true, media_library: { config: { multiple: false }}}
+      - { name: body, label: Body, widget: markdown }
+  - name: tutorials
+    label: Tutorials
+    folder: content/tutorials
+    create: true
+    fields:
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: date, label: Date, widget: date }
+      - { name: slug, label: slug }
+      - { label: "Category", name: "category", widget: "select", options: ["blog", "tutorials", "notes"], default: "notes" }
+      - { label: "Image", name: "image", widget: "image", choose_url: true, media_library: { config: { multiple: false }}}
+      - { name: body, label: Body, widget: markdown }
