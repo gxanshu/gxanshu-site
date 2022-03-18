@@ -3,7 +3,7 @@ backend:
   repo: aianshume/codenanshu
   branch: dev
 
-media_folder: content/assets
+media_folder: public/assets
 public_folder: /assets
 
 collections:
