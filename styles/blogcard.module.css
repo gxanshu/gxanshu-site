@@ -1,0 +1,41 @@
+.pointer {
+	cursor: pointer;
+	border-radius: 10px !important;
+}
+
+.radius {
+	border-radius: 10px !important;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.pointerT {
+	cursor: pointer;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scroll {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.video_responsive {
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	position: relative;
+	height: 0;
+  }
+  
+  .video_responsive iframe {
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+  }
+  

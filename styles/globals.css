@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "GT Walsheim";
+  src: local("GT Walsheim"), local("GT Walsheim"),
+    url("/fonts/GTWalsheimPro-Regular.woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "GT Walsheim";
+  src: local("GT Walsheim"), local("GT Walsheim"),
+    url("/fonts/GTWalsheimPro-Medium.woff2");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "GT Walsheim";
+  src: local("GT Walsheim"), local("GT Walsheim"),
+    url("/fonts/GTWalsheimPro-Bold.woff2");
+  font-weight: 600;
+}
+
+::selection {
+  color: white;
+  background: rgb(41, 41, 216);
+}
