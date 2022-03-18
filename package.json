@@ -8,8 +8,9 @@
     "build": "node scripts/generateMeta.js && next build && next-sitemap",
     "start": "next start",
     "lint": "next lint",
+    "export": "next export",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md, mdx}\""
-  },
+    },
   "dependencies": {
     "@chakra-ui/react": "^1.8.6",
     "@emotion/react": "^11",
@@ -37,6 +38,7 @@
     "@chakra-ui/icons": "^1.1.7",
     "@docusaurus/utils": "2.0.0-alpha.69",
     "babel-plugin-superjson-next": "^0.4.3",
+    "cloudinary": "^1.28.1",
     "dotenv": "^16.0.0",
     "eslint": "8.10.0",
     "eslint-config-next": "12.1.0",

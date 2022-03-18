@@ -6,8 +6,11 @@ module.exports = {
     dirs: ["src"],
   },
   images: {
+    loader: "cloudinary",
+    path: "https://res.cloudinary.com/aianshu/image/upload/",
     domains: [
       "cdn.hashnode.com",
+      "res.cloudinary.com",
       // Spotify Album
       "i.scdn.co",
       "www.mozilla.com",

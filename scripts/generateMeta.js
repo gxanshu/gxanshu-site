@@ -8,6 +8,7 @@ const prettier = require("prettier");
 const shell = require("shelljs");
 const uuid = require("uuid");
 const algoliasearch = require("algoliasearch");
+const cloudinary = require("cloudinary").v2;
 require("dotenv").config();
 
 const websiteRoot = "content";
@@ -78,7 +79,6 @@ async function getSearchMeta() {
     "configs",
     "search-meta.json"
   );
-  fs.writeFileSync(outPath, json);
   const client = algoliasearch(process.env.APPLICATION_ID, process.env.ADMIN_KEY);
   const index = client.initIndex(process.env.APPLICATION_INDEX_NAME);
 
@@ -87,4 +87,20 @@ async function getSearchMeta() {
   console.log("Search meta is ready ✅");
 }
 
+// getSearchMeta();
+
+async function uploadAssets(){
+  cloudinary.config({ 
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME, 
+    api_key: process.env.CLOUDINARY_API_KEY, 
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+    secure: true
+  });
+  const files = fs.readdirSync(path.join(process.cwd(), "public/assets"));
+  files.forEach(async(img) => {
+    await cloudinary.uploader.upload(`./public/assets/${img}`, {use_filename: true, unique_filename: false}, function(error, result) {console.log(error)})
+  })
+}
+
 getSearchMeta();
+uploadAssets();
