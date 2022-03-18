@@ -7,13 +7,13 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Update NPM
+          name: Update YARN
           command: "sudo npm install -g yarn"
       - restore_cache:
           key: dependency-cache-{{ checksum "yarn-lock.json" }}
       - run:
           name: Install Dependencies
-          command: npm install
+          command: yarn
       - save_cache:
           key: dependency-cache-{{ checksum "yarn-lock.json" }}
           paths:
