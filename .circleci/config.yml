@@ -1,0 +1,30 @@
+version: 2.1
+jobs:
+  build:
+    working_directory: ~/repo
+    docker:
+      - image: cimg/node:16.14
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: yarn
+      - save_cache:
+          key: dependency-cache-{{ checksum "yarn-lock.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Next Build
+          command: yarn build
+      - run:
+          name: Deploy to Netlify
+          command: ./node_modules/.bin/netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --prod --dir=out
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - main
