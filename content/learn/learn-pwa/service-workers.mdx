@@ -10,8 +10,7 @@ position: 5
 
 Users expect apps to start on slow or flaky network connections, or even when offline. They expect the content they've most recently interacted with, such as media tracks or tickets and itineraries, to be available and usable. When a request isn't possible, they expect the app to tell them instead of silently failing or crashing. And users wish to do it all quickly. As we can see in this study Milliseconds make millions, even a 0.1 second improvement in load times can improve conversion by up to 10%. In summary: users expect PWAs to be reliable and that's why we have service workers.
 
-Hello service workers 
--------------------------------------------------
+## Hello service workers
 
 ![A service worker as a middleware proxy, running device-side, between your PWA and servers, which includes both your own servers and cross-domain servers.](/assets/service-worker-2.png)
 
@@ -21,8 +20,7 @@ When an app requests a resource covered by the service worker's scope, including
 
 Not all browsers support service workers. Even when present your service worker won't be available on first load or while it's waiting to activate. Therefore, treat it as optional and do not require it for core functionality.
 
-Registering a service worker 
----------------------------------------------------------------
+## Registering a service worker
 
 Before a service worker takes control of your page, it must be registered for your PWA. That means the first time a user comes to your PWA, network requests will go directly to your server because the service worker is not yet in control of your pages.
 
@@ -32,9 +30,9 @@ After checking if the browser supports the Service Worker API, your PWA can regi
     if ('serviceWorker' in navigator) {   navigator.serviceWorker.register("/serviceworker.js");}
 ```
 
-There is only one service worker per PWA, but that doesn't mean you need to place the code only in one file. A service worker can include other files using [`importScripts`](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/importScripts) in every browser or using [ECMAScript module imports](/es-modules-in-sw/) in some modern browsers.
+There is only one service worker per PWA, but that doesn't mean you need to place the code only in one file. A service worker can include other files using [`importScripts`](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/importScripts) in every browser or using [ECMAScript module imports](https://web.dev/es-modules-in-sw/) in some modern browsers.
 
-### Verify if a service worker is registered 
+### Verify if a service worker is registered
 
 To verify if a service worker is registered, use developer tools in your favorite browser.
 
@@ -53,7 +51,7 @@ In Safari:
 
 Service worker developer tools on Chrome, Firefox and Safari.
 
-You can remotely inspect a phone or tablet from your desktop browser when you want to check service worker registration status over a mobile device. You will see details on how to do that in the [Tools and Debug chapter](/learn/pwa/tools-and-debug)
+You can remotely inspect a phone or tablet from your desktop browser when you want to check service worker registration status over a mobile device. You will see details on how to do that in the [Tools and Debug chapter](https://web.dev/learn/pwa/tools-and-debug)
 
 ### Scope [#](#scope)
 
@@ -67,8 +65,7 @@ You should set the scope of your service worker as close to the root of your app
 
 Safari has more complex scope management, known as partitions, affecting how scopes work if you have cross-domain iframes. To read more about WebKit's implementation, read [their blog post](https://webkit.org/blog/8090/workers-at-your-service/).
 
-Lifecycle 
--------------------------
+## Lifecycle
 
 Service workers have a lifecycle that dictates how they are installed, this is separate from your PWA installation. The service worker lifecycle starts with registering the service worker. The browser then attempts to download and parse the service worker file. If parsing succeeds, it's `install` event is fired. The `install` event only fires once.
 
@@ -97,8 +94,7 @@ When updating your service worker, do so without renaming it. Do not even add fi
 
 After a successful installation, the new service worker will wait to activate until the existing (old) service worker no longer controls any clients. This state is called "waiting", and it's how the browser ensures that only one version of your service worker is running at a time. Refreshing a page or reopening the PWA won't make the new service worker take control. The user needs to close or navigate away from all tabs and windows using the current service worker and then navigate back. Only then will the new service worker to take control. Visit this [service worker lifecycle article](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle) for more information.
 
-Service worker lifespan 
------------------------------------------------------
+## Service worker lifespan
 
 Once installed and registered, a service worker can manage all network requests within its scope. It runs on its own thread, with activation and termination controlled by the browser. This lets it work even before or after your PWA is open. While service workers run on their own thread, there is no guarantee that in-memory state will persist between runs of a service worker, so make sure anything you want to reuse on each run is available either in IndexedDB or some other persistent storage.
 
@@ -106,9 +102,8 @@ If not already running, a service worker will start whenever a network request i
 
 Service workers don't live indefinitely. While exact timings differ between browsers, service workers will be terminated if they've been idle for a few seconds, or if they've been busy for too long. If a service worker has been terminated and an event occurs that would start it up, it will restart.
 
-Capabilities 
--------------------------------
+## Capabilities
 
 With a registered and active service worker, you have a thread with a completely different execution lifecycle than the main one on your PWA. However, by default, the service worker file itself has no behavior. It won't cache or serve any resources, as this has to be done by your code. You'll find out how in the following chapters.
 
-Service worker's capabilities are not just for proxy or serving HTTP requests; other features are available on top of it for other purposes, such as background code execution, web push notifications, and process payments. We'll discuss these additions in the [capabilities chapter](/learn/pwa/capabilities) chapters
+Service worker's capabilities are not just for proxy or serving HTTP requests; other features are available on top of it for other purposes, such as background code execution, web push notifications, and process payments. We'll discuss these additions in the [capabilities chapter](https://web.dev/learn/pwa/capabilities) chapters

@@ -7,7 +7,7 @@ export default function GustBook() {
     <Layout styles={{ p: [6, 28], minH: "100vh" }}>
       <Seo
         templateTitle="Guestbook"
-        description="leave your comments and thoughts about this site in this page which help us to improve"
+        description="leave your comments and thoughts about this site in this page which help us to improve and help us to grow our community online with the help of GustBook function"
       />
       <Comment />
     </Layout>

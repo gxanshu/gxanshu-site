@@ -1,6 +1,6 @@
 ---
 title: Foundation
-description: All Progressive Web Apps are, at their core, modern websites, so it's important that your website has a solid foundation in responsive design, mobile and everything first, intrinsic design, and web performance. 
+description: All Progressive Web Apps are, at their core, modern websites, so it's important that your website has a solid foundation in responsive design, mobile and everything first, intrinsic design, and web performance.
 date: 2021-08-19
 slug: foundation
 category: learn
@@ -8,22 +8,20 @@ list: 9
 position: 3
 ---
 
-A solid foundation [#](#a-solid-foundation)
--------------------------------------------
+## A solid foundation [#](#a-solid-foundation)
 
 A solid foundation is the base requirement for building great PWAs. To implement this foundation you need to design and code for the constraints of the web using a couple of principles:
 
-*   Use mobile as a focusing constraint. Make sure each view of your design focuses only on the essential content and interactions.
-*   Emphasize content and core functionality in the design process.
-*   Progressively enhance when needed. Start by building a component's core content and functionality with the most straightforward, most widely available tools. Make it accessible. Then, test for advanced features you'd like to use and enhance your component with them.
-*   Offer a fast and good user experience focused on user-centric web performance metrics, get real user metrics, and push performance for all your users, no matter their network connection, input type, CPU, or GPU power.
+-   Use mobile as a focusing constraint. Make sure each view of your design focuses only on the essential content and interactions.
+-   Emphasize content and core functionality in the design process.
+-   Progressively enhance when needed. Start by building a component's core content and functionality with the most straightforward, most widely available tools. Make it accessible. Then, test for advanced features you'd like to use and enhance your component with them.
+-   Offer a fast and good user experience focused on user-centric web performance metrics, get real user metrics, and push performance for all your users, no matter their network connection, input type, CPU, or GPU power.
 
 Accessibility is key for a successful PWA. Please follow these guidelines to make sure your app is accessible to anyone, anywhere.
 
 By following these principles and enhancing with modern patterns and web features, you can create great and fast experiences with truly intrinsic designs. Designs that are powered by constraints instead of pixels, allowing every user access to your content and core functionality in a way that's best suited for their particular browsing context.
 
-Responsive web design
--------------------------------------------------
+## Responsive web design
 
 Since Ethan Marcotte's 2010 A List Apart article, [Responsive Web Design](https://alistapart.com/article/responsive-web-design/), designers and developers have been encouraged to create experiences that flex, making user interfaces that work across a spectrum of screen sizes and devices.
 
@@ -31,9 +29,9 @@ Somewhere along the way, though, that became shortened to mobile, tablet, and de
 
 Responsive web design introduces three technical ingredients:
 
-*   Fluid grids
-*   Flexible media
-*   Media queries
+-   Fluid grids
+-   Flexible media
+-   Media queries
 
 Ethan concludes that these technical requirements aren't enough; the way forward also requires a different way of thinking.
 
@@ -59,23 +57,22 @@ On desktop, a PWA can be rendered in a smaller window than the smallest window y
 
 Foldable and hybrid devices are also common these days:
 
-*   Small clamshell phones.
-*   Foldable devices that can be used as phones or tablets.
-*   Laptops that can be transformed into tablets.
-*   Tablets that can act as laptops with keyboard and trackpad.
-*   Phones then can be converted to desktop with a hub.
+-   Small clamshell phones.
+-   Foldable devices that can be used as phones or tablets.
+-   Laptops that can be transformed into tablets.
+-   Tablets that can act as laptops with keyboard and trackpad.
+-   Phones then can be converted to desktop with a hub.
 
 While the challenge exists for every website, with a Progressive Web App you are in control and responsible for the window when the app is installed. Therefore, your design should react and offer the best experience in every context.
 
 It's becoming common to transfer an app's navigation between devices, so your PWA can be rendered in a smartwatch after receiving notification; the navigation can be transferred to a phone, and then to a laptop. Supporting all modes and devices is key to avoiding user frustration.
 
-Everything first 
----------------------------------------
+## Everything first
 
 But where should you get started? Mobile first, content first, offline first? When designing for the flexibility of the web, which is it? Well, the answer is yes, _everything first_. The term _mobile first_ has been interpreted in many ways since Luke Wroblewski first coined it in 2009: from emulating platform-specific UI and UX patterns on the web to building mobile apps before building web apps to just using min-width media queries and calling it a day. Its original intent, though, is this: _mobile forces you to focus_. As Luke said:
 
 > Mobile devices require software development teams to focus on only the most important data and actions in an application. There simply isn't room in a 320 by 480-pixel screen for extraneous, unnecessary elements. You have to prioritize. So when a team designs Mobile First, the result is an experience focused on the key tasks users want to accomplish without the detours and interface debris that litter today's desktop-accessed websites. That's a good user experience and good for business.
-> 
+>
 > Luke Wroblewski
 
 Focus each view of your website on only the essential tasks a user wants to accomplish there, and don't add more stuff to the idea just because they have more screen real estate.
@@ -114,42 +111,40 @@ Moreover, browsers are working on freezing their User-Agent strings, with user-a
 
 After saying that device detection is a bad practice, it's also important to clarify that there are still situations where we don't have any other solution, such as detecting iOS devices to offer specific platform instructions. Treat these practices as hacks and be careful to re-test and update these hacks on every new version of the browser on these platforms.
 
-### Content first 
+### Content first
 
 Another principle of designing for the web is: start with _your content first_. For example, a real-time stock ticker with a graph of a stock's prices is, at its core, a table of stocks with their price over some time, maybe with a link to refresh the site.
 
 That can then be enhanced with JavaScript and fetch requests to update the table's values on a timer or enhanced with sockets to provide real-time push-based updates. It can be enhanced again to graph the results, maybe with CSS, maybe with SVG, maybe with Canvas. But the core starts with content.
 
-Intrinsic design 
----------------------------------------
+## Intrinsic design
 
-*   Mobile as a focusing constraint for user experience.
-*   Emphasizing content and core functionality in the design process.
-*   Progressively enhancing with advanced functionality where available.
+-   Mobile as a focusing constraint for user experience.
+-   Emphasizing content and core functionality in the design process.
+-   Progressively enhancing with advanced functionality where available.
 
 These principles combine to give us something new: _intrinsic design_. In her talk [Designing Intrinsic Layouts](https://www.youtube.com/watch?v=AMPKmh98XLY), Jen Simmons talks about using modern CSS tools, like Grid, Flexbox, flow layout, and writing modes, to design and build user interfaces. With these tools, she says:
 
 > You can really make the layout be intrinsic to the content that we have and the design that we want to do.
-> 
+>
 > Jen Simmons
 
 This new CSS allows designers to regain some control over layout but do so in a way that aligns with the latest web design principles. Instead of creating fixed forms based on fixed screen sizes, you define content-based rules by which layout happens by tapping into intrinsic properties of that content, like how small or large it can be, the size of the text, and the available space, all at once. They allow you to realize your design as it interacts with your content without needing to control every pixel's placement.
 
 Intrinsic layouts bring the conversation about control on the web full-circle, giving it definition. Control on the web isn't about dictating devices or screen sizes or colors or fonts or layouts or capabilities for each visitor to your site. Control on the web is about writing the rules a browser will use to assemble your experience, building it uniquely for each user in your Progressive Web App.
 
-Web performance 
--------------------------------------
+## Web performance
 
 The last but not least important foundation for our PWA is Web Performance. Having a great experience for users is mandatory; it will lead to more conversions in every possible way.
 
 Web performance involves several steps:
 
-*   Understand the key user-centric metrics available.
-*   Set goals for every metric.
-*   Measure our PWA.
-*   Improve our metrics by applying techniques and best practices statically in our code or server.
-*   Measure again.
-*   Improve the experience to each user, live, based on the user's context.
+-   Understand the key user-centric metrics available.
+-   Set goals for every metric.
+-   Measure our PWA.
+-   Improve our metrics by applying techniques and best practices statically in our code or server.
+-   Measure again.
+-   Improve the experience to each user, live, based on the user's context.
 
 Web performance metrics today measure how fast your content appears on the screen, but also how interactive your website is and how users perceive the experience.
 
@@ -157,23 +152,21 @@ Web performance metrics today measure how fast your content appears on the scree
 
 During the past decade, we've been dealing with different metrics to measure success in web performance. Today, a set of recommended metrics are grouped under the project [Web Vitals](/vitals/). Web Vitals focus metrics in three key areas affecting web performance and perception:
 
-*   Loading
-*   Interactive
-*   Visual Stability
+-   Loading
+-   Interactive
+-   Visual Stability
 
 [A set of metrics from Core Web Vitals showing a website's performance results.](https://web-dev.imgix.net/image/RK2djpBgopg9kzCyJbUSjhEGmnw1/gu948vCUtGMKb6dKcSpZ.png?auto=format)
 
 With Core Web Vitals, you can see at a glance, how good or bad is your PWA in web performance and user experience.
 
-PWA foundations
--------------------------------------
+## PWA foundations
 
 It's important that your PWA has a solid foundation in responsive design, mobile and everything first, intrinsic design, and web performance as a foundation for a great experience for all your users.
 
-Resources 
--------------------------
+## Resources
 
-*   [Progressive Enhancement](https://developer.mozilla.org/docs/Glossary/Progressive_Enhancement)
-*   [Ten modern layouts in one line of CSS](/one-line-layouts/)
-*   [Web Vitals](/vitals/)
-*   [Designing Intrinsic Layouts talk](https://www.youtube.com/watch?v=AMPKmh98XLY)
+-   [Progressive Enhancement](https://developer.mozilla.org/docs/Glossary/Progressive_Enhancement)
+-   [Ten modern layouts in one line of CSS](https://web.dev/one-line-layouts/)
+-   [Web Vitals](https://web.dev/vitals/)
+-   [Designing Intrinsic Layouts talk](https://www.youtube.com/watch?v=AMPKmh98XLY)
