@@ -81,13 +81,6 @@ decision maker: ${valueObj.decisionMaker}
         templateTitle="Register with me"
         description="register to one of the fastest growing team champions to earn more from your expactation and achive your dreams"
       />
-      <Box ref={finalRef} tabIndex={-1} aria-label='Focus moved to this box'>
-        Some other content that'll receive focus on close.
-      </Box>
-
-      <Button mt={4} onClick={onOpen}>
-        Open Modal
-      </Button>
       <Modal finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
