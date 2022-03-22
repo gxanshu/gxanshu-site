@@ -13,6 +13,15 @@ import {
   VStack,
   GridItem,
   Select,
+  useDisclosure,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  ModalContent,
+  Text
 } from "@chakra-ui/react";
 import React from "react";
 import { BsPerson, BsClock, BsPhone } from "react-icons/bs";
@@ -37,6 +46,8 @@ const CONFETTI_DARK = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2
 
 export default function ContactFormWithSocialButtons() {
   const { register, handleSubmit } = useForm();
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const finalRef = React.useRef()
 
   const send = (valueObj) => {
 
@@ -47,7 +58,7 @@ export default function ContactFormWithSocialButtons() {
 name: ${valueObj.name}
 email: ${valueObj.email}
 age: ${valueObj.age}
-country: ${valueObj.age}
+country: ${valueObj.country}
 address: ${valueObj.address}
 city: ${valueObj.city}
 mobile number: ${valueObj.number}
@@ -59,6 +70,8 @@ decision maker: ${valueObj.decisionMaker}
     `
 
     fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${id}&text=${encodeURIComponent(message)}`).then(res=> console.log(res))
+
+    onOpen();
     
   };
 
@@ -68,6 +81,29 @@ decision maker: ${valueObj.decisionMaker}
         templateTitle="Register with me"
         description="register to one of the fastest growing team champions to earn more from your expactation and achive your dreams"
       />
+      <Box ref={finalRef} tabIndex={-1} aria-label='Focus moved to this box'>
+        Some other content that'll receive focus on close.
+      </Box>
+
+      <Button mt={4} onClick={onOpen}>
+        Open Modal
+      </Button>
+      <Modal finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Thanks </ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Text>thanks to apply for the opportunity we well contact you as soon as posible</Text>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme='blue' mr={3} onClick={onClose}>
+              Close
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
       <Flex
       bg={useColorModeValue("gray.100", "gray.900")}
       align="center"
