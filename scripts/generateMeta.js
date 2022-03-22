@@ -75,6 +75,8 @@ async function getSearchMeta() {
   json = prettier.format(JSON.stringify(json), { parser: "json" });
   const client = algoliasearch(process.env.APPLICATION_ID, process.env.ADMIN_KEY);
   const index = client.initIndex(process.env.APPLICATION_INDEX_NAME);
+  
+  console.log(process.env.APPLICATION_INDEX_NAME);
 
   index.clearObjects().then(() => {
     console.log('cleard database')
