@@ -114,7 +114,7 @@ decision maker: ${valueObj.decisionMaker}
                       <FormLabel>Name</FormLabel>
 
                       <InputGroup>
-                        <InputLeftElement children={<BsPerson />} />
+                        <InputLeftElement><BsPerson /></InputLeftElement>
                         <Input
                           type="text"
                           name="name"
@@ -130,7 +130,7 @@ decision maker: ${valueObj.decisionMaker}
                       <FormLabel>Email</FormLabel>
 
                       <InputGroup>
-                        <InputLeftElement children={<MdOutlineEmail />} />
+                        <InputLeftElement><MdOutlineEmail /></InputLeftElement>
                         <Input
                           type="email"
                           name="email"
@@ -146,7 +146,7 @@ decision maker: ${valueObj.decisionMaker}
                       <FormLabel>Your Age</FormLabel>
 
                       <InputGroup>
-                        <InputLeftElement children={<BsClock />} />
+                        <InputLeftElement><BsClock /></InputLeftElement>
                         <Input
                           type="number"
                           name="age"
@@ -246,7 +246,7 @@ decision maker: ${valueObj.decisionMaker}
                       <FormLabel>Your Number</FormLabel>
 
                       <InputGroup>
-                        <InputLeftElement children={<BsPhone />} />
+                        <InputLeftElement><BsPhone /></InputLeftElement>
                         <Input
                           type="number"
                           name="number"

@@ -73,16 +73,13 @@ async function getSearchMeta() {
   }
 
   json = prettier.format(JSON.stringify(json), { parser: "json" });
-  const outPath = path.join(
-    process.cwd(),
-    "src",
-    "configs",
-    "search-meta.json"
-  );
   const client = algoliasearch(process.env.APPLICATION_ID, process.env.ADMIN_KEY);
   const index = client.initIndex(process.env.APPLICATION_INDEX_NAME);
 
-  await index.saveObjects(JSON.parse(json), { autoGenerateObjectIDIfNotExist: true })
+  index.clearObjects().then(() => {
+    console.log('cleard database')
+  });
+  await index.saveObjects(JSON.parse(json), { autoGenerateObjectIDIfNotExist: true }).then(res => console.log(res)).catch(e => console.log(e))
 
   console.log("Search meta is ready ✅");
 }
