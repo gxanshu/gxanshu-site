@@ -81,8 +81,10 @@ async function getSearchMeta() {
   );
   const client = algoliasearch(process.env.APPLICATION_ID, process.env.ADMIN_KEY);
   const index = client.initIndex(process.env.APPLICATION_INDEX_NAME);
+  
+  console.log(process.env.APPLICATION_INDEX_NAME);
 
-  await index.saveObjects(JSON.parse(json), { autoGenerateObjectIDIfNotExist: true })
+//   await index.saveObjects(JSON.parse(json), { autoGenerateObjectIDIfNotExist: true })
 
   console.log("Search meta is ready ✅");
 }
