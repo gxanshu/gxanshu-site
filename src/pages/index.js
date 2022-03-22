@@ -16,7 +16,7 @@ import BlogCard from "components/PostCard/BlogCard";
 import DiscordStrip from "container/DiscordStrip";
 import Container from "container/container";
 import Author from "container/Author";
-import { FaGithub, FaArrowRight } from "react-icons/fa";
+import { FaMoneyCheck, FaArrowRight } from "react-icons/fa";
 import LearnCard from "components/PostCard/LearnCard";
 import Seo from "components/Seo";
 
@@ -145,7 +145,7 @@ export default function Home({ blogPosts, tutorialsPost, lessionsPost }) {
         >
           <Flex direction="column" align="center" maxW="600px" mx="auto">
             <Circle size="80px" bg="blackAlpha.200" color="blue.400">
-              <FaGithub size="40px" />
+              <FaMoneyCheck size="40px" />
             </Circle>
             <chakra.h2
               fontSize={42}
@@ -154,26 +154,27 @@ export default function Home({ blogPosts, tutorialsPost, lessionsPost }) {
               mt="6"
               mb="6"
             >
-              {"Want to contribute to this project"}
+              {"Want to start online business with us"}
             </chakra.h2>
             <Text mb="40px" fontSize="lg" opacity={0.7}>
               {
-                "Want to contribute to this project ? then just clone the poject and feal free to make a pull request."
+                "Want to start business with us? we will give you a opportunity to start online business with us."
               }
             </Text>
           </Flex>
+          <Link passHref href="/register">
           <Button
             h="4rem"
             px="40px"
             fontSize="1.2rem"
             as="a"
-            href="https://github.com/aianshume/codenanshu"
             size="lg"
             colorScheme="blue"
             rightIcon={<FaArrowRight fontSize="0.8em" />}
           >
-            {"Contribute now"}
+            {"Register Now"}
           </Button>
+          </Link>
         </Container>
       </Box>
       <DiscordStrip />
