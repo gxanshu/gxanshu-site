@@ -4,6 +4,7 @@ import {
   Heading,
   Text,
   useColorModeValue,
+  Link as RLink
 } from "@chakra-ui/react";
 import Img from "next/image";
 import Link from "next/link";
@@ -35,9 +36,11 @@ export default function NotesCard({
     >
       <Box p={3} pt={2}>
         <Link href={`/${category}/${link}`} passHref>
+          <RLink>
           <Heading className={styles.pointer} as="h5" fontSize={20}>
             {title}
           </Heading>
+          </RLink>
         </Link>
         <Text color={useColorModeValue("gray.600", "gray.300")} mt={3}>
           {description}

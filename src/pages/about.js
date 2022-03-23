@@ -17,7 +17,7 @@ export default function About() {
         templateTitle="About"
         description="Hello! I'm Anshu. I am a 17-year-old boy who is very intrested in
         computer science and entrepreneurship. I started learning web
-        development in December 2019, which is the start of the pandemic"
+        development"
       />
       <Flex p={[6, 16]} justifyContent="space-between" flexWrap={"wrap"}>
         <Box maxW={"3xl"}>

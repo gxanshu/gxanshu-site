@@ -4,6 +4,7 @@ import {
   Heading,
   Text,
   useColorModeValue,
+  Link as RLink,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -46,12 +47,16 @@ export default function Blogcard({
       </Box>
       <Box p={3} pt={2}>
         <Link href={`/${category}/${link}`} passHref>
+          <RLink>
           <Heading className={styles.pointer} as="h5" fontSize={20}>
             {title}
           </Heading>
+          </RLink>
         </Link>
         <Text color={useColorModeValue("gray.600", "gray.300")} mt={3}>
+          <RLink>
           {description}
+          </RLink>
         </Text>
       </Box>
     </VStack>

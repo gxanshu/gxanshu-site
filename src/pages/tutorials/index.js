@@ -15,7 +15,7 @@ export default function Tutorials({ posts, total, page = 1 }) {
     <Layout>
       <Seo
         templateTitle="Tutorials"
-        description="Biggest Online Tutorials Library - The Best Content on latest technologies including C, C++, Java, Python, PHP, Machine Learning, Data Science, AppML, AI with Python, Behave, Java16, Spacy."
+        description="Biggest Online Tutorials Library - The Best Content on latest technologies including C, C++, Java, Python, PHP, Machine Learning"
       />
       <ListHead
         title={"Tutorials"}

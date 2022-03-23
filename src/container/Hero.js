@@ -25,6 +25,7 @@ export default function CallToActionWithAnnotation() {
             fontWeight={600}
             fontSize={{ base: "2xl", sm: "4xl", md: "5xl" }}
             lineHeight={"110%"}
+            as="h1"
           >
             I Am Anshu Meena try <br />
             to build{" "}
