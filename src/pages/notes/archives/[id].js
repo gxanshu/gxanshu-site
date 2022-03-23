@@ -73,7 +73,7 @@ export const getStaticPaths = async () => {
 export async function getStaticProps({ params }) {
   const { id } = params;
 
-  const { posts, total } = await getAllFilesFrontMatter("blog");
+  const { posts, total } = await getAllFilesFrontMatter("notes");
 
   let firstCut = (id - 1) * siteConfig.postPerPage;
   let lastCut = id * siteConfig.postPerPage;

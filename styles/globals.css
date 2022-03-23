@@ -23,3 +23,7 @@
   color: white;
   background: rgb(41, 41, 216);
 }
+
+a {
+  text-decoration: none;
+}
