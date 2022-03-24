@@ -67,11 +67,6 @@ export default function Seo(props) {
         content="/favicon/ms-icon-144x144.png"
       />
       <meta name="theme-color" content="#111920" />
-      <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6691816550079346"
-        crossOrigin="anonymous"
-      ></script>
     </Head>
   );
 }
