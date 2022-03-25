@@ -71,6 +71,10 @@ export default function Seo(props) {
       <meta name="theme-color" content="#111920" />
     </Head>
     <Script
+      id="Adsence-id"
+      async
+      onError={(e) => { console.log("failed to load adsence", e)}}
+      strategy="afterInteractive"
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6691816550079346"
       crossOrigin="anonymous"
     />
