@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Script from 'next/script'
 import { useRouter } from "next/router";
 
 export default function Seo(props) {
@@ -27,6 +28,7 @@ export default function Seo(props) {
   // but show full title if there is none
 
   return (
+    <>
     <Head>
       <title>{meta.title}</title>
       <meta name="robots" content={meta.robots} />
@@ -67,12 +69,12 @@ export default function Seo(props) {
         content="/favicon/ms-icon-144x144.png"
       />
       <meta name="theme-color" content="#111920" />
-      <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6691816550079346"
-        crossOrigin="anonymous"
-      ></script>
     </Head>
+    <Script
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6691816550079346"
+      crossOrigin="anonymous"
+    />
+    </>
   );
 }
 

@@ -13,7 +13,8 @@ import {
 import NextLink from "next/link";
 import Img from "next/image";
 import styles from "../../styles/blogcard.module.css";
-import { BlogAd, TextAd } from "components/ads";
+import BlogAd from 'components/ads/BlogAd'
+import TextAd from 'components/ads/TextAd'
 
 const DocsHeading = (props) => (
   <Heading
