@@ -9,7 +9,7 @@ jobs:
       - restore_cache:
           key: dependency-cache-{{ checksum "yarn.lock" }}
       - restore_cache:
-          key: dependency-cache-{{ checksum ".next" }}
+          key: dependency-cache-{{ checksum "./.next" }}
       - run:
           name: Install Dependencies
           command: yarn
@@ -25,7 +25,7 @@ jobs:
           paths:
             - ./out
       - save_cache:
-          key: dependency-cache-{{ checksum ".next" }}
+          key: dependency-cache-{{ checksum "./.next" }}
           paths:
             - ./.next
       - run:
