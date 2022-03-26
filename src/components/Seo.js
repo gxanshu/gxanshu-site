@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Script from 'next/script'
 import { useRouter } from "next/router";
 
 export default function Seo(props) {
@@ -28,7 +27,6 @@ export default function Seo(props) {
   // but show full title if there is none
 
   return (
-    <>
     <Head>
       <title>{meta.title}</title>
       <meta name="robots" content={meta.robots} />
@@ -70,15 +68,6 @@ export default function Seo(props) {
       />
       <meta name="theme-color" content="#111920" />
     </Head>
-    <Script
-      id="Adsence-id"
-      async
-      onError={(e) => { console.log("failed to load adsence", e)}}
-      strategy="afterInteractive"
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6691816550079346"
-      crossOrigin="anonymous"
-    />
-    </>
   );
 }
 

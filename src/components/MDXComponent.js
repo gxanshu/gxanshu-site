@@ -13,8 +13,6 @@ import {
 import NextLink from "next/link";
 import Img from "next/image";
 import styles from "../../styles/blogcard.module.css";
-import BlogAd from 'components/ads/BlogAd'
-import TextAd from 'components/ads/TextAd'
 
 const DocsHeading = (props) => (
   <Heading
@@ -253,9 +251,7 @@ const MDXComponents = {
   li: (props) => <Box as="li" pb={1} pt={1} {...props} />,
   blockquote: Quote,
   img: (props) => <Image src={props.src} alt={props.alt} />,
-  Yt: (props) => <Yt id={props.id} title={props.title} />,
-  BlogAd: (props) => <BlogAd />,
-  TextAd: (props) => <TextAd />,
+  Yt: (props) => <Yt id={props.id} title={props.title} />
 };
 
 export { CustomLink };
