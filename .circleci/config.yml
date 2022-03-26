@@ -8,6 +8,8 @@ jobs:
       - checkout
       - restore_cache:
           key: dependency-cache-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          key: dependency-cache-{{ checksum ".next" }}
       - run:
           name: Install Dependencies
           command: yarn
@@ -22,6 +24,10 @@ jobs:
           key: next-out-cache-{{ .Branch }}
           paths:
             - ./out
+      - save_cache:
+          key: dependency-cache-{{ checksum ".next" }}
+          paths:
+            - ./.next
       - run:
           name: Deploy to Netlify
           command: ./node_modules/.bin/netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --prod --dir=out
