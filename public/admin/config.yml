@@ -2,15 +2,22 @@ backend:
   name: github
   repo: aianshume/codenanshu
   branch: dev
+  squash_merges: true
+  open_authoring: true
 
+publish_mode: editorial_workflow
 media_folder: public/assets
 public_folder: /assets
+site_url: "https://codenanshu.in"
 
 collections:
   - name: blog
     label: Blog
     folder: content/blog
     create: true
+    extension: mdx
+    format: frontmatter
+    preview_path: blog/{{slug}}
     fields:
       - { name: title, label: Title }
       - { name: description, label: Description }
@@ -23,6 +30,9 @@ collections:
     label: Notes
     folder: content/notes
     create: true
+    extension: mdx
+    format: frontmatter
+    preview_path: notes/{{slug}}
     fields:
       - { name: title, label: Title }
       - { name: description, label: Description }
@@ -35,6 +45,9 @@ collections:
     label: Tutorials
     folder: content/tutorials
     create: true
+    extension: mdx
+    format: frontmatter
+    preview_path: tutorials/{{slug}}
     fields:
       - { name: title, label: Title }
       - { name: description, label: Description }
