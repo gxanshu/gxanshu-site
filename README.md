@@ -27,6 +27,8 @@ _Want To Read Blog? You may want to check out our blog post [official on codeNan
     # use [blog, tutorial, notes] after new to generate template
     npx hygen new blog
     ```
+    
+    otherwise just open [admin pannel](https://codenanshu.in/admin) and login with GitHub, start writing your post
 
 1.  **Start developing.**
 
@@ -111,5 +113,6 @@ Looking for more guidance? Full documentation for Nextjs lives [on the website](
     NodeJS
     Algolia Search
     Cloudinary
+    NetlifyCMS
 
 This project is build with ❤️ and ✨
