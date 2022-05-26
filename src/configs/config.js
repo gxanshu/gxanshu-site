@@ -12,7 +12,7 @@ const siteConfig = {
     name: "Ai Anshu",
     github: "https://github.com/aianshume",
     twitter: "https://twitter.com/aianshume",
-    instagram: "https://instagram.com/aianshume",
+    instagram: "https://instagram.com/aianshu",
     email: "aianshume@yahoo.com",
   },
   repo: {
@@ -33,8 +33,8 @@ const siteConfig = {
     description: "Content based platefrom for developer to learn how to code.",
     siteUrl: "https://codenanshu.in",
     twitter: {
-      handle: "@aiansume",
-      site: "@aiansume",
+      handle: "@aianshume",
+      site: "@aianshume",
       cardType: "summary_large_image",
     },
     openGraph: {
