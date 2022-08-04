@@ -1,11 +1,9 @@
 import { getAllFilesFrontMatter } from "lib/mdx";
 import Seo from "components/Seo";
 import siteConfig from "configs/config";
-import Layout from "components/layout/Layout";
-import ListHead from "components/ListHead";
 import { Box, Flex, Button, SimpleGrid } from "@chakra-ui/react";
-import BlogCard from "components/PostCard/BlogCard";
 import Link from "next/link";
+import {BlogCard, ListHead, Layout} from 'components'
 
 export default function Tutorials({ posts, total, page = 1 }) {
   const hasNextPage = Math.ceil(total / siteConfig.postPerPage) > page;

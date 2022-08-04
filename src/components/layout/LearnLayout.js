@@ -8,7 +8,7 @@ import {
   Box,
   useColorModeValue,
 } from "@chakra-ui/react";
-import MDXComponents from "components/MDXComponent";
+import {MDXComponents} from "components";
 import { MDXRemote } from "next-mdx-remote";
 import Seo from "components/Seo";
 import Image from "next/image";
@@ -16,7 +16,7 @@ import Link from "next/link";
 import Styles from "../../../styles/blogcard.module.css";
 import { useRouter } from "next/router";
 
-export default function LearnLayout({ child, frontMatter, chapters }) {
+export function LearnLayout({ child, frontMatter, chapters }) {
   const { query } = useRouter();
   const bgcolor = useColorModeValue("gray.100", "gray.900");
   return (

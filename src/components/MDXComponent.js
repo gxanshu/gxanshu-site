@@ -254,5 +254,4 @@ const MDXComponents = {
   Yt: (props) => <Yt id={props.id} title={props.title} />
 };
 
-export { CustomLink };
-export default MDXComponents;
+export { CustomLink, MDXComponents };

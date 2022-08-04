@@ -8,12 +8,12 @@ import {
   useColorModeValue,
   Button,
 } from "@chakra-ui/react";
-import MDXComponents from "components/MDXComponent";
+import {MDXComponents} from "components";
 import { MDXRemote } from "next-mdx-remote";
 import Seo from "components/Seo";
 import Comment from "components/Comment";
 
-export default function BlogLayout({ child, frontMatter }) {
+export function NotesLayout({ child, frontMatter }) {
   return (
     <>
       <Seo

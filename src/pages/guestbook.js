@@ -1,6 +1,5 @@
-import Layout from "components/layout/Layout";
-import Comment from "components/Comment";
 import Seo from "components/Seo";
+import {Layout, Comment} from 'components'
 
 export default function GustBook() {
   return (

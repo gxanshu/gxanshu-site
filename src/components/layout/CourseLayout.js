@@ -12,14 +12,14 @@ import {
   Center,
 } from "@chakra-ui/react";
 import { FiX, FiMenu } from "react-icons/fi";
-import MDXComponents from "components/MDXComponent";
+import {MDXComponents} from "components";
 import { MDXRemote } from "next-mdx-remote";
 import Seo from "components/Seo";
 import styles from "../../../styles/blogcard.module.css";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 
-export default function SimpleSidebar({ child, frontMatter, chapters }) {
+export function CourseLayout({ child, frontMatter, chapters }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { query } = useRouter();
 

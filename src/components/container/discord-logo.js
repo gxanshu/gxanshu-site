@@ -1,6 +1,6 @@
 import { Icon } from "@chakra-ui/react";
 
-const DiscordIcon = (props) => (
+export const DiscordIcon = (props) => (
   <Icon viewBox="0 0 48 48" {...props}>
     <g id="surface1615260">
       <path
@@ -15,5 +15,3 @@ const DiscordIcon = (props) => (
     </g>
   </Icon>
 );
-
-export default DiscordIcon;

@@ -12,7 +12,7 @@ import Img from "next/image";
 import Link from "next/link";
 import styles from "../../../styles/blogcard.module.css";
 
-export default function TutorialCard({
+export function TutorialCard({
   image,
   title,
   description,

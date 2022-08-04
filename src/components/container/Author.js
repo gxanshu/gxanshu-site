@@ -30,7 +30,7 @@ const Feature = ({ text, icon, iconBg }) => {
   );
 };
 
-export default function SplitWithImage() {
+export function Author() {
   return (
     <Container maxW={"5xl"} py={12}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>

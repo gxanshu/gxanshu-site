@@ -1,6 +1,5 @@
 import { getFiles, getFilesFromSlug } from "lib/mdx";
-import BlogLayout from "components/layout/NotesLayout";
-
+import { BlogLayout } from "components";
 export default function Blog({ frontMatter, mdxSource }) {
   return <BlogLayout frontMatter={frontMatter} child={mdxSource}></BlogLayout>;
 }

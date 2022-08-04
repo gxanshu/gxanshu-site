@@ -9,13 +9,13 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import Img from "next/image";
-import MDXComponents from "components/MDXComponent";
+import {MDXComponents} from "components";
 import { MDXRemote } from "next-mdx-remote";
 import styles from "../../../styles/blogcard.module.css";
 import Seo from "components/Seo";
 import Comment from "components/Comment";
 
-export default function BlogLayout({ child, frontMatter }) {
+export function BlogLayout({ child, frontMatter }) {
   return (
     <>
       <Seo

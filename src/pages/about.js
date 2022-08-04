@@ -6,7 +6,7 @@ import {
   UnorderedList,
   ListItem,
 } from "@chakra-ui/react";
-import Layout from "components/layout/Layout";
+import {Layout} from "components";
 import Image from "next/image";
 import Seo from "components/Seo";
 

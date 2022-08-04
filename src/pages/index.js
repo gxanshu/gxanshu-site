@@ -1,4 +1,3 @@
-import HeroSection from "container/Hero";
 import {
   Box,
   Flex,
@@ -12,13 +11,9 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { getAllFilesFrontMatter, getAllFilesOfLearn } from "lib/mdx";
-import BlogCard from "components/PostCard/BlogCard";
-import DiscordStrip from "container/DiscordStrip";
-import Container from "container/container";
-import Author from "container/Author";
 import { FaMoneyCheck, FaArrowRight } from "react-icons/fa";
-import LearnCard from "components/PostCard/LearnCard";
 import Seo from "components/Seo";
+import {BlogCard, DiscordStripbd268, Container, Author, LearnCard, Hero as HeroSection} from 'components'
 
 export default function Home({ blogPosts, tutorialsPost, lessionsPost }) {
   const blogPostBg = useColorModeValue("gray.100", "gray.900");

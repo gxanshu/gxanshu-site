@@ -12,5 +12,3 @@ export const Container = (props) => (
     {...props}
   />
 );
-
-export default Container;

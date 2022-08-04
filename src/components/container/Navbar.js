@@ -11,11 +11,11 @@ import {
   MenuItem,
   MenuButton,
 } from "@chakra-ui/react";
-import { HiMoon, HiSun, HiSearch, HiMenuAlt3 } from "react-icons/hi";
+import { HiMoon, HiSun, HiMenuAlt3 } from "react-icons/hi";
 import Link from "next/link";
-import Search from "./search";
+import Search from "components/search";
 
-export default function Navbar() {
+export function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <>

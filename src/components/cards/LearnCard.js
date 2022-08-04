@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 
-const Ma = ({ image, title, description, link }) => {
+export const LearnCard = ({ image, title, description, link }) => {
   return (
     <Flex w="full" alignItems="center" justifyContent="center">
       <Box
@@ -70,5 +70,3 @@ const Ma = ({ image, title, description, link }) => {
     </Flex>
   );
 };
-
-export default Ma;

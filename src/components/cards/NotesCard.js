@@ -10,7 +10,7 @@ import Img from "next/image";
 import Link from "next/link";
 import styles from "../../../styles/blogcard.module.css";
 
-export default function NotesCard({
+export function NotesCard({
   image,
   title,
   description,

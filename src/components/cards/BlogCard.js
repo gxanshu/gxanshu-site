@@ -10,7 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../../../styles/blogcard.module.css";
 
-export default function Blogcard({
+export function BlogCard({
   image,
   title,
   description,

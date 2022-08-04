@@ -1,6 +1,6 @@
 import { VStack, Heading, Text } from "@chakra-ui/react";
 
-export default function ListHead({ title, description }) {
+export function ListHead({ title, description }) {
   return (
     <VStack spacing={5}>
       <Heading as="h1">{title}</Heading>
