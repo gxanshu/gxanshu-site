@@ -13,7 +13,8 @@ import {
 } from "@chakra-ui/react";
 import { HiMoon, HiSun, HiMenuAlt3 } from "react-icons/hi";
 import Link from "next/link";
-import Search from "components/search";
+import dynamic from 'next/dynamic'
+const Search = dynamic(()=> import('components/search'))
 
 export function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();

@@ -1,7 +1,7 @@
 import { useColorModeValue } from "@chakra-ui/react";
 import { Giscus } from "@giscus/react";
 
-export function Comment() {
+export default function Comment() {
   return (
     <Giscus
       key={"Comments"}

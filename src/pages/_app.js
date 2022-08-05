@@ -4,7 +4,7 @@ import theme from "lib/theme";
 import { prismLightTheme, prismDarkTheme } from "utils/prism";
 import { Global, css } from "@emotion/react";
 import React from "react";
-import {Navbar, Footer, Loader} from 'components'
+import { Navbar, Footer, Loader } from "components";
 
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode();

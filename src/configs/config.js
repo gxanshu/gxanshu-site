@@ -56,7 +56,7 @@ const siteConfig = {
         },
       ],
     },
-  }
+  },
 };
 
 export { baseUrl };

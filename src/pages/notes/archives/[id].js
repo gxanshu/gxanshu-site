@@ -3,7 +3,7 @@ import { getAllFilesFrontMatter, getPostSlugs } from "lib/mdx";
 import { Box, Flex, Button, VStack } from "@chakra-ui/react";
 import Link from "next/link";
 import Seo from "components/Seo";
-import {Layout, ListHead, NotesCard} from 'components'
+import { Layout, ListHead, NotesCard } from "components";
 
 export default function NotesPagination({ posts, page, total }) {
   const hasNextPage = Math.ceil(total / siteConfig.postPerPage) > page;

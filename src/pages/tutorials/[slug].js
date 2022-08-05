@@ -3,10 +3,10 @@ import { TutorialsPostLayout } from "components";
 
 export default function TutorialPage({ frontMatter, mdxSource }) {
   return (
-    <TutorialPostLayout
+    <TutorialsPostLayout
       frontMatter={frontMatter}
       child={mdxSource}
-    ></TutorialPostLayout>
+    ></TutorialsPostLayout>
   );
 }
 

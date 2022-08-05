@@ -5,10 +5,12 @@
   "homepage": "https://codenanshu.in",
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/generateMeta.js && next build && next-sitemap && next export",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md, mdx}\""
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md, mdx}\"",
+    "export": "node ./scripts/task.js && next build && next export",
+    "export:dev": "next build && next export"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.8.6",

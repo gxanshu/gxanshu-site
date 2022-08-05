@@ -120,8 +120,8 @@ function OmniSearch() {
   const menuRef = React.useRef(null);
   const eventRef = React.useRef(null);
   const client = algoliasearch(
-    "KBJO3GFGBN",
-    "7fbd454a16c06edb277a0842b6b48096"
+    process.env.NEXT_PUBLIC_APPLICATION_ID,
+    process.env.NEXT_PUBLIC_APPLICATION_SEARCH_KEY
   );
   const [results, setResults] = React.useState([]);
 

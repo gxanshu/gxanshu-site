@@ -3,7 +3,7 @@ import Seo from "components/Seo";
 import siteConfig from "configs/config";
 import { Box, SimpleGrid, Flex, Button } from "@chakra-ui/react";
 import Link from "next/link";
-import {BlogCard, ListHead, Layout} from 'components'
+import { BlogCard, ListHead, Layout } from "components";
 
 export default function BlogPage({ posts, total, page = 1 }) {
   const hasNextPage = Math.ceil(total / siteConfig.postPerPage) > page;

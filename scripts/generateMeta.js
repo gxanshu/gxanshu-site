@@ -54,7 +54,7 @@ async function getMDXMeta(file) {
   return result;
 }
 
-async function getSearchMeta() {
+export async function getSearchMeta() {
   let json = [];
 
   const files = shell
@@ -73,33 +73,23 @@ async function getSearchMeta() {
   }
 
   json = prettier.format(JSON.stringify(json), { parser: "json" });
-  const client = algoliasearch(process.env.APPLICATION_ID, process.env.ADMIN_KEY);
+  const client = algoliasearch(
+    process.env.APPLICATION_ID,
+    process.env.ADMIN_KEY
+  );
   const index = client.initIndex(process.env.APPLICATION_INDEX_NAME);
-  
+
   console.log(process.env.APPLICATION_INDEX_NAME);
 
   index.clearObjects().then(() => {
-    console.log('cleard database')
+    console.log("cleard database");
   });
-  await index.saveObjects(JSON.parse(json), { autoGenerateObjectIDIfNotExist: true }).then(res => console.log(res)).catch(e => console.log(e))
+  await index
+    .saveObjects(JSON.parse(json), { autoGenerateObjectIDIfNotExist: true })
+    .then((res) => console.log(res))
+    .catch((e) => console.log(e));
 
   console.log("Search meta is ready ✅");
 }
 
-// getSearchMeta();
-
-async function uploadAssets(){
-  cloudinary.config({ 
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME, 
-    api_key: process.env.CLOUDINARY_API_KEY, 
-    api_secret: process.env.CLOUDINARY_API_SECRET,
-    secure: true
-  });
-  const files = fs.readdirSync(path.join(process.cwd(), "public/assets"));
-  files.forEach(async(img) => {
-    await cloudinary.uploader.upload(`./public/assets/${img}`, {use_filename: true, unique_filename: false}, function(error, result) {console.log(error)})
-  })
-}
-
 getSearchMeta();
-uploadAssets();

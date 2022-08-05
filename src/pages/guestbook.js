@@ -1,5 +1,7 @@
 import Seo from "components/Seo";
-import {Layout, Comment} from 'components'
+import { Layout } from "components";
+import dynamic from 'next/dynamic'
+const Comment = dynamic(() => import('components/Comment'));
 
 export default function GustBook() {
   return (

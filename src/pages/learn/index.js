@@ -3,7 +3,7 @@ import Seo from "components/Seo";
 import siteConfig from "configs/config";
 import { Box, Flex, Button, SimpleGrid } from "@chakra-ui/react";
 import Link from "next/link";
-import {LearnCard, ListHead, Layout} from 'components'
+import { LearnCard, ListHead, Layout } from "components";
 
 export default function Tutorials({ posts, total, page = 1 }) {
   const hasNextPage = Math.ceil(total / siteConfig.postPerPage) > page;

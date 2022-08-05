@@ -1,5 +1,5 @@
 import { getChapters, getFiles, getFilesFromSlug } from "lib/mdx";
-import {LearnLayout} from "components";
+import { LearnLayout } from "components";
 
 export default function TopicPage({ frontMatter, mdxSource, chapters }) {
   return (

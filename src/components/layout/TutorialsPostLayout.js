@@ -7,11 +7,12 @@ import {
   Divider,
   Box,
 } from "@chakra-ui/react";
-import {MDXComponents} from "components";
+import { MDXComponents } from "components";
 import { MDXRemote } from "next-mdx-remote";
 import Seo from "components/Seo";
 import Image from "next/image";
-import Comment from "components/Comment";
+import dynamic from 'next/dynamic'
+const Comment = dynamic(() => import('components/Comment'));
 
 export function TutorialsPostLayout({ child, frontMatter }) {
   return (

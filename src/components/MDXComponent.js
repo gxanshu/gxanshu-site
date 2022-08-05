@@ -251,7 +251,7 @@ const MDXComponents = {
   li: (props) => <Box as="li" pb={1} pt={1} {...props} />,
   blockquote: Quote,
   img: (props) => <Image src={props.src} alt={props.alt} />,
-  Yt: (props) => <Yt id={props.id} title={props.title} />
+  Yt: (props) => <Yt id={props.id} title={props.title} />,
 };
 
 export { CustomLink, MDXComponents };

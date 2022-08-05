@@ -8,7 +8,7 @@ import {
   Box,
   useColorModeValue,
 } from "@chakra-ui/react";
-import {MDXComponents} from "components";
+import { MDXComponents } from "components";
 import { MDXRemote } from "next-mdx-remote";
 import Seo from "components/Seo";
 import Image from "next/image";

@@ -12,7 +12,7 @@ import {
   Center,
 } from "@chakra-ui/react";
 import { FiX, FiMenu } from "react-icons/fi";
-import {MDXComponents} from "components";
+import { MDXComponents } from "components";
 import { MDXRemote } from "next-mdx-remote";
 import Seo from "components/Seo";
 import styles from "../../../styles/blogcard.module.css";
