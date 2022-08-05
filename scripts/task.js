@@ -1,5 +1,5 @@
-const uploadAssets = require("./imageUpload.cjs");
-const getSearchMeta = require("./generateMeta.cjs");
+const uploadAssets = require("./imageUpload.js");
+const getSearchMeta = require("./generateMeta.js");
 
 uploadAssets();
 getSearchMeta();
