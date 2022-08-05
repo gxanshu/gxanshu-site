@@ -1,4 +1,4 @@
-const uploadAssets = require("./imageUpload.js");
+const uploadAssets = require("./uploadPhotos.js");
 const getSearchMeta = require("./generateMeta.js");
 
 uploadAssets();
