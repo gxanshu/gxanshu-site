@@ -56,7 +56,7 @@ export function BlogLayout({ child, frontMatter }) {
               className={styles.radius}
             />
           </Box>
-          <MDXRemote {...child} components={MDXComponents} />
+          <MDXRemote {...child} components={MDXComponents} lazy/>
           <Comment />
         </VStack>
       </Center>

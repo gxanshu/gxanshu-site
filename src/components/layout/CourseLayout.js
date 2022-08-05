@@ -61,7 +61,7 @@ export function CourseLayout({ child, frontMatter, chapters }) {
         {/* mobilenav */}
         <MobileNav display={{ base: "flex", md: "none" }} onOpen={onOpen} />
         <Box ml={{ base: 0, md: 60 }} py={20} px={[6, 20]}>
-          <MDXRemote {...child} components={MDXComponents} />
+          <MDXRemote {...child} components={MDXComponents} lazy/>
           <Flex justifyContent={"space-between"} py={10}>
             <NextLink
               href={
