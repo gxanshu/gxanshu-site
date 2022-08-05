@@ -13,8 +13,8 @@ import { MDXComponents } from "components";
 import { MDXRemote } from "next-mdx-remote";
 import styles from "../../../styles/blogcard.module.css";
 import Seo from "components/Seo";
-import dynamic from 'next/dynamic'
-const Comment = dynamic(() => import('components/Comment'));
+import dynamic from "next/dynamic";
+const Comment = dynamic(() => import("components/Comment"));
 
 export function BlogLayout({ child, frontMatter }) {
   return (

@@ -1,8 +1,9 @@
-const cloudinary = require("cloudinary").v2;
-require("dotenv").config();
 const fs = require("fs");
+const cloudinary = require("cloudinary").v2;
+const path = require("path");
+require("dotenv").config();
 
-export async function uploadAssets() {
+async function uploadAssets() {
   cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
     api_key: process.env.CLOUDINARY_API_KEY,
@@ -13,10 +14,14 @@ export async function uploadAssets() {
   files.forEach(async (img) => {
     await cloudinary.uploader.upload(
       `./public/assets/${img}`,
-      { use_filename: true, unique_filename: false },
+      { use_filename: true, unique_filename: false, folder: "assets" },
       function (error, result) {
         console.log(error);
       }
     );
   });
 }
+
+uploadAssets();
+
+module.exports = uploadAssets;

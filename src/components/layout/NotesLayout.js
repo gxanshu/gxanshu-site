@@ -11,8 +11,8 @@ import {
 import { MDXComponents } from "components";
 import { MDXRemote } from "next-mdx-remote";
 import Seo from "components/Seo";
-import dynamic from 'next/dynamic'
-const Comment = dynamic(() => import('components/Comment'));
+import dynamic from "next/dynamic";
+const Comment = dynamic(() => import("components/Comment"));
 
 export function NotesLayout({ child, frontMatter }) {
   return (

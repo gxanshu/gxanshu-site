@@ -1,5 +1,5 @@
-import {getSearchMeta} from './generateMeta'
-import {uploadAssets} from './uploadPhotos'
+const uploadAssets = require("./imageUpload.cjs");
+const getSearchMeta = require("./generateMeta.cjs");
 
-getSearchMeta();
 uploadAssets();
+getSearchMeta();

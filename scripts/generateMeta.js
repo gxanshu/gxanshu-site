@@ -1,14 +1,12 @@
-// this file helps to create search index for algolia search
+// function to create search index for algolia and to publish it also
 
 const doc = require("@docusaurus/utils");
-const fs = require("fs");
 const toc = require("markdown-toc");
 const path = require("path");
 const prettier = require("prettier");
 const shell = require("shelljs");
 const uuid = require("uuid");
 const algoliasearch = require("algoliasearch");
-const cloudinary = require("cloudinary").v2;
 require("dotenv").config();
 
 const websiteRoot = "content";
@@ -54,7 +52,7 @@ async function getMDXMeta(file) {
   return result;
 }
 
-export async function getSearchMeta() {
+async function getSearchMeta() {
   let json = [];
 
   const files = shell
@@ -74,7 +72,7 @@ export async function getSearchMeta() {
 
   json = prettier.format(JSON.stringify(json), { parser: "json" });
   const client = algoliasearch(
-    process.env.APPLICATION_ID,
+    process.env.NEXT_PUBLIC_APPLICATION_ID,
     process.env.ADMIN_KEY
   );
   const index = client.initIndex(process.env.APPLICATION_INDEX_NAME);
@@ -93,3 +91,4 @@ export async function getSearchMeta() {
 }
 
 getSearchMeta();
+module.exports = getSearchMeta;
