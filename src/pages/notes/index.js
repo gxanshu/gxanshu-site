@@ -1,11 +1,9 @@
 import { getAllFilesFrontMatter } from "lib/mdx";
 import Seo from "components/Seo";
 import siteConfig from "configs/config";
-import Layout from "components/layout/Layout";
-import ListHead from "components/ListHead";
 import { Box, Flex, Button, VStack } from "@chakra-ui/react";
-import NotesCard from "components/PostCard/NotesCard";
 import Link from "next/link";
+import { NotesCard, ListHead, Layout } from "components";
 
 export default function BlogPage({ posts, total, page = 1 }) {
   const hasNextPage = Math.ceil(total / siteConfig.postPerPage) > page;

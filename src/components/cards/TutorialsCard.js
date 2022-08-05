@@ -6,13 +6,13 @@ import {
   useColorModeValue,
   HStack,
   Center,
-  Link as RLink
+  Link as RLink,
 } from "@chakra-ui/react";
 import Img from "next/image";
 import Link from "next/link";
 import styles from "../../../styles/blogcard.module.css";
 
-export default function TutorialCard({
+export function TutorialCard({
   image,
   title,
   description,
@@ -43,20 +43,20 @@ export default function TutorialCard({
       </HStack>
       <Link href={`/${category}/${link}`} passHref>
         <RLink>
-        <Img
-          className={styles.pointerT}
-          width={420}
-          height={240}
-          src={image}
-          alt={title}
-        />
+          <Img
+            className={styles.pointerT}
+            width={420}
+            height={240}
+            src={image}
+            alt={title}
+          />
         </RLink>
       </Link>
       <Link href={`/${category}/${link}`} passHref>
         <RLink>
-        <Heading as="h5" fontSize={20} className={styles.pointerT}>
-          {title}
-        </Heading>
+          <Heading as="h5" fontSize={20} className={styles.pointerT}>
+            {title}
+          </Heading>
         </RLink>
       </Link>
       <Text color={useColorModeValue("gray.600", "gray.300")} mt={3}>

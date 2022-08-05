@@ -27,7 +27,7 @@ _Want To Read Blog? You may want to check out our blog post [official on codeNan
     # use [blog, tutorial, notes] after new to generate template
     npx hygen new blog
     ```
-    
+
     otherwise just open [admin pannel](https://codenanshu.in/admin) and login with GitHub, start writing your post
 
 1.  **Start developing.**
@@ -78,17 +78,17 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 3.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
 
-4. **/public** This directory will contain all the static files and folders that are going to use in this project
+4.  **/public** This directory will contain all the static files and folders that are going to use in this project
 
-5. **scripts** This directory will contain all the script files that are resonsible for some spacific tasks
+5.  **scripts** This directory will contain all the script files that are resonsible for some spacific tasks
 
-6. **styles** This directory will contain some css files to provide some extra styling but major styles are writen with the help of chakra UI
+6.  **styles** This directory will contain some css files to provide some extra styling but major styles are writen with the help of chakra UI
 
-7. **.gitignore** a file which is responsibe to ignore some files from git
+7.  **.gitignore** a file which is responsibe to ignore some files from git
 
-8. **jsconfig.json** This file describe how import and other things going to behave in development
+8.  **jsconfig.json** This file describe how import and other things going to behave in development
 
-9. **next-sitemap.js** This is the configuration file for next-sitemap package which help to generate sitemaps for site.
+9.  **next-sitemap.js** This is the configuration file for next-sitemap package which help to generate sitemaps for site.
 
 10. **next-config.js** This is the configuration file for NextJS
 

@@ -1,12 +1,10 @@
 import { ChakraProvider, useColorMode } from "@chakra-ui/react";
-import Navbar from "container/Navbar";
-import Footer from "container/Footer";
 import "../../styles/globals.css";
 import theme from "lib/theme";
 import { prismLightTheme, prismDarkTheme } from "utils/prism";
 import { Global, css } from "@emotion/react";
-import Progress from "components/loader";
 import React from "react";
+import { Navbar, Footer, Loader } from "components";
 
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode();
@@ -30,7 +28,7 @@ function MyApp({ Component, pageProps }) {
         <Navbar />
         <Component {...pageProps} />
         <Footer />
-        <Progress />
+        <Loader />
       </GlobalStyle>
     </ChakraProvider>
   );

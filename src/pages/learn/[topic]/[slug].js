@@ -1,4 +1,4 @@
-import CourseLayout from "components/layout/CourseLayout";
+import { CourseLayout } from "components";
 import { getFiles, getFilesFromSlug, getChapters } from "lib/mdx";
 
 export default function TopicsPage({ frontMatter, mdxSource, chapters }) {

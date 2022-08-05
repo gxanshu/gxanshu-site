@@ -3,11 +3,6 @@ const baseUrl = "https://github.com/aianshume/codenanshu";
 const siteConfig = {
   copyright: `Copyright © ${new Date().getFullYear()} Ai Anshu. All Rights Reserved.`,
   postPerPage: 9,
-  algolia: {
-    apiKey: "df1dcc41f7b8e5d68e73dd56d1e19701",
-    indexName: "chakra-ui",
-    inputSelector: "#algolia-search",
-  },
   author: {
     name: "Ai Anshu",
     github: "https://github.com/aianshume",
@@ -21,10 +16,10 @@ const siteConfig = {
     blobUrl: `${baseUrl}/blob/main`,
   },
   openCollective: {
-    url: "https://opencollective.com/chakra-ui",
+    url: "https://opencollective.com/codenanshu",
   },
   discord: {
-    url: "https://discord.gg/chakra-ui",
+    url: "https://discord.gg/codenanshu",
   },
   youtube: "https://youtube.com/c/CodeNanshu",
   seo: {

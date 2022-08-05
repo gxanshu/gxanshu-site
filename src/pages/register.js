@@ -21,13 +21,13 @@ import {
   ModalHeader,
   ModalOverlay,
   ModalContent,
-  Text
+  Text,
 } from "@chakra-ui/react";
 import React from "react";
 import { BsPerson, BsClock, BsPhone } from "react-icons/bs";
 import { MdOutlineEmail } from "react-icons/md";
 import { useForm } from "react-hook-form";
-import Seo from 'components/Seo'
+import Seo from "components/Seo";
 
 const confetti = {
   light: {
@@ -46,11 +46,10 @@ const CONFETTI_DARK = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2
 
 export default function ContactFormWithSocialButtons() {
   const { register, handleSubmit } = useForm();
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const finalRef = React.useRef()
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const finalRef = React.useRef();
 
   const send = (valueObj) => {
-
     const token = "5231457212:AAE_Jxyo8IGK0Mfa7Mlf2mf36ClMp6qDRZA";
     const id = "1493444597";
 
@@ -67,12 +66,15 @@ currently doing: ${valueObj.currently}
 are  you doing: ${valueObj.doing}
 past experience: ${valueObj.experience}
 decision maker: ${valueObj.decisionMaker}
-    `
+    `;
 
-    fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${id}&text=${encodeURIComponent(message)}`).then(res=> console.log(res))
+    fetch(
+      `https://api.telegram.org/bot${token}/sendMessage?chat_id=${id}&text=${encodeURIComponent(
+        message
+      )}`
+    ).then((res) => console.log(res));
 
     onOpen();
-    
   };
 
   return (
@@ -87,372 +89,387 @@ decision maker: ${valueObj.decisionMaker}
           <ModalHeader>Thanks </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text>thanks to apply for the opportunity we well contact you as soon as posible</Text>
+            <Text>
+              thanks to apply for the opportunity we well contact you as soon as
+              posible
+            </Text>
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme='blue' mr={3} onClick={onClose}>
+            <Button colorScheme="blue" mr={3} onClick={onClose}>
               Close
             </Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
       <Flex
-      bg={useColorModeValue("gray.100", "gray.900")}
-      align="center"
-      justify="center"
-      css={{
-        backgroundImage: useColorModeValue(CONFETTI_LIGHT, CONFETTI_DARK),
-        backgroundAttachment: "fixed",
-      }}
-      id="contact"
-      py={20}
-    >
-      <Box
-        borderRadius="lg"
-        m={{ base: 5, md: 16, lg: 10 }}
-        p={{ base: 5, lg: 16 }}
+        bg={useColorModeValue("gray.100", "gray.900")}
+        align="center"
+        justify="center"
+        css={{
+          backgroundImage: useColorModeValue(CONFETTI_LIGHT, CONFETTI_DARK),
+          backgroundAttachment: "fixed",
+        }}
+        id="contact"
+        py={20}
       >
-        <Box>
-          <VStack spacing={{ base: 4, md: 8, lg: 20 }}>
-            <Heading
-              fontSize={{
-                base: "4xl",
-                md: "5xl",
-              }}
-            >
-              Get in Touch
-            </Heading>
-
-            <Stack
-              spacing={{ base: 4, md: 8, lg: 20 }}
-              direction={{ base: "column", md: "row" }}
-            >
-              <Box
-                bg={useColorModeValue("white", "gray.700")}
-                borderRadius="lg"
-                p={8}
-                color={useColorModeValue("gray.700", "whiteAlpha.900")}
-                maxW={"2xl"}
-                shadow="base"
-                w={"90vw"}
+        <Box
+          borderRadius="lg"
+          m={{ base: 5, md: 16, lg: 10 }}
+          p={{ base: 5, lg: 16 }}
+        >
+          <Box>
+            <VStack spacing={{ base: 4, md: 8, lg: 20 }}>
+              <Heading
+                fontSize={{
+                  base: "4xl",
+                  md: "5xl",
+                }}
               >
-                <form onSubmit={handleSubmit(send)}>
-                  <VStack spacing={5}>
-                    <FormControl isRequired>
-                      <FormLabel>Name</FormLabel>
+                Get in Touch
+              </Heading>
 
-                      <InputGroup>
-                        <InputLeftElement><BsPerson /></InputLeftElement>
+              <Stack
+                spacing={{ base: 4, md: 8, lg: 20 }}
+                direction={{ base: "column", md: "row" }}
+              >
+                <Box
+                  bg={useColorModeValue("white", "gray.700")}
+                  borderRadius="lg"
+                  p={8}
+                  color={useColorModeValue("gray.700", "whiteAlpha.900")}
+                  maxW={"2xl"}
+                  shadow="base"
+                  w={"90vw"}
+                >
+                  <form onSubmit={handleSubmit(send)}>
+                    <VStack spacing={5}>
+                      <FormControl isRequired>
+                        <FormLabel>Name</FormLabel>
+
+                        <InputGroup>
+                          <InputLeftElement>
+                            <BsPerson />
+                          </InputLeftElement>
+                          <Input
+                            type="text"
+                            name="name"
+                            placeholder="Your Name"
+                            {...register("name", {
+                              required: "This is required",
+                            })}
+                          />
+                        </InputGroup>
+                      </FormControl>
+
+                      <FormControl isRequired>
+                        <FormLabel>Email</FormLabel>
+
+                        <InputGroup>
+                          <InputLeftElement>
+                            <MdOutlineEmail />
+                          </InputLeftElement>
+                          <Input
+                            type="email"
+                            name="email"
+                            placeholder="Your Email"
+                            {...register("email", {
+                              required: "This is required",
+                            })}
+                          />
+                        </InputGroup>
+                      </FormControl>
+
+                      <FormControl isRequired>
+                        <FormLabel>Your Age</FormLabel>
+
+                        <InputGroup>
+                          <InputLeftElement>
+                            <BsClock />
+                          </InputLeftElement>
+                          <Input
+                            type="number"
+                            name="age"
+                            placeholder="Your Age"
+                            {...register("age", {
+                              required: "This is required",
+                            })}
+                          />
+                        </InputGroup>
+                      </FormControl>
+
+                      <FormControl isRequired as={GridItem} colSpan={[6, 3]}>
+                        <FormLabel
+                          htmlFor="country"
+                          fontSize="sm"
+                          fontWeight="md"
+                          color={useColorModeValue("gray.700", "gray.50")}
+                        >
+                          Country / Region
+                        </FormLabel>
+                        <Select
+                          id="country"
+                          name="country"
+                          autoComplete="country"
+                          placeholder="Select option"
+                          mt={1}
+                          focusBorderColor="brand.400"
+                          shadow="sm"
+                          size="sm"
+                          w="full"
+                          rounded="md"
+                          {...register("country")}
+                        >
+                          <option>India</option>
+                          <option>U.A.E</option>
+                          <option>Kingdom of Bahrain</option>
+                          <option>Kingdom of Saudi Arabia</option>
+                          <option>Bangladesh</option>
+                          <option>Ghana</option>
+                        </Select>
+                      </FormControl>
+
+                      <FormControl isRequired as={GridItem} colSpan={6}>
+                        <FormLabel
+                          htmlFor="street_address"
+                          fontSize="sm"
+                          fontWeight="md"
+                          color={useColorModeValue("gray.700", "gray.50")}
+                        >
+                          Street address
+                        </FormLabel>
                         <Input
                           type="text"
-                          name="name"
-                          placeholder="Your Name"
-                          {...register("name", {
+                          name="street_address"
+                          id="street_address"
+                          autoComplete="street-address"
+                          mt={1}
+                          focusBorderColor="brand.400"
+                          shadow="sm"
+                          size="sm"
+                          w="full"
+                          rounded="md"
+                          isRequired={true}
+                          {...register("address", {
                             required: "This is required",
                           })}
                         />
-                      </InputGroup>
-                    </FormControl>
+                      </FormControl>
 
-                    <FormControl isRequired>
-                      <FormLabel>Email</FormLabel>
-
-                      <InputGroup>
-                        <InputLeftElement><MdOutlineEmail /></InputLeftElement>
+                      <FormControl
+                        isRequired
+                        as={GridItem}
+                        colSpan={[6, 6, null, 2]}
+                      >
+                        <FormLabel
+                          htmlFor="city"
+                          fontSize="sm"
+                          fontWeight="md"
+                          color={useColorModeValue("gray.700", "gray.50")}
+                        >
+                          City
+                        </FormLabel>
                         <Input
-                          type="email"
-                          name="email"
-                          placeholder="Your Email"
-                          {...register("email", {
+                          type="text"
+                          name="city"
+                          id="city"
+                          autoComplete="city"
+                          mt={1}
+                          focusBorderColor="brand.400"
+                          shadow="sm"
+                          size="sm"
+                          w="full"
+                          rounded="md"
+                          {...register("city", {
                             required: "This is required",
                           })}
                         />
-                      </InputGroup>
-                    </FormControl>
+                      </FormControl>
 
-                    <FormControl isRequired>
-                      <FormLabel>Your Age</FormLabel>
+                      <FormControl isRequired>
+                        <FormLabel>Your Number</FormLabel>
 
-                      <InputGroup>
-                        <InputLeftElement><BsClock /></InputLeftElement>
-                        <Input
-                          type="number"
-                          name="age"
-                          placeholder="Your Age"
-                          {...register("age", {
-                            required: "This is required",
-                          })}
-                        />
-                      </InputGroup>
-                    </FormControl>
+                        <InputGroup>
+                          <InputLeftElement>
+                            <BsPhone />
+                          </InputLeftElement>
+                          <Input
+                            type="number"
+                            name="number"
+                            placeholder="Your Number"
+                            {...register("number", {
+                              required: "This is required",
+                            })}
+                          />
+                        </InputGroup>
+                      </FormControl>
 
-                    <FormControl isRequired as={GridItem} colSpan={[6, 3]}>
-                      <FormLabel
-                        htmlFor="country"
-                        fontSize="sm"
-                        fontWeight="md"
-                        color={useColorModeValue("gray.700", "gray.50")}
-                      >
-                        Country / Region
-                      </FormLabel>
-                      <Select
-                        id="country"
-                        name="country"
-                        autoComplete="country"
-                        placeholder="Select option"
-                        mt={1}
-                        focusBorderColor="brand.400"
-                        shadow="sm"
-                        size="sm"
-                        w="full"
-                        rounded="md"
-                        {...register("country")}
-                      >
-                        <option>India</option>
-                        <option>U.A.E</option>
-                        <option>Kingdom of Bahrain</option>
-                        <option>Kingdom of Saudi Arabia</option>
-                        <option>Bangladesh</option>
-                        <option>Ghana</option>
-                      </Select>
-                    </FormControl>
+                      <FormControl isRequired as={GridItem} colSpan={[6, 3]}>
+                        <FormLabel
+                          htmlFor="work"
+                          fontSize="sm"
+                          fontWeight="md"
+                          color={useColorModeValue("gray.700", "gray.50")}
+                        >
+                          Why do you want to work with us?
+                        </FormLabel>
+                        <Select
+                          id="work"
+                          name="work"
+                          autoComplete="work"
+                          placeholder="Select option"
+                          mt={1}
+                          focusBorderColor="brand.400"
+                          shadow="sm"
+                          size="sm"
+                          w="full"
+                          rounded="md"
+                          {...register("wantToWork")}
+                        >
+                          <option>Extra Income</option>
+                          <option>Help Others</option>
+                          <option>Having your own business</option>
+                          <option>Leave a legacy</option>
+                          <option>Meeting a new people</option>
+                          <option>Personal development</option>
+                          <option>Finacial freedom</option>
+                          <option>Plan for retirement</option>
+                          <option>To develop some skills</option>
+                          <option>Other</option>
+                        </Select>
+                      </FormControl>
 
-                    <FormControl isRequired as={GridItem} colSpan={6}>
-                      <FormLabel
-                        htmlFor="street_address"
-                        fontSize="sm"
-                        fontWeight="md"
-                        color={useColorModeValue("gray.700", "gray.50")}
-                      >
-                        Street address
-                      </FormLabel>
-                      <Input
-                        type="text"
-                        name="street_address"
-                        id="street_address"
-                        autoComplete="street-address"
-                        mt={1}
-                        focusBorderColor="brand.400"
-                        shadow="sm"
-                        size="sm"
-                        w="full"
-                        rounded="md"
-                        isRequired={true}
-                        {...register("address", {
-                            required: "This is required",
-                          })}
-                      />
-                    </FormControl>
+                      <FormControl isRequired as={GridItem} colSpan={[6, 3]}>
+                        <FormLabel
+                          htmlFor="doing"
+                          fontSize="sm"
+                          fontWeight="md"
+                          color={useColorModeValue("gray.700", "gray.50")}
+                        >
+                          What do you currentlly?
+                        </FormLabel>
+                        <Select
+                          id="doing"
+                          name="doing"
+                          autoComplete="doing"
+                          placeholder="Select option"
+                          mt={1}
+                          focusBorderColor="brand.400"
+                          shadow="sm"
+                          size="sm"
+                          w="full"
+                          rounded="md"
+                          {...register("currently")}
+                        >
+                          <option>Student</option>
+                          <option>Employed</option>
+                          <option>Selfemployed/ Business</option>
+                          <option>Homemaker</option>
+                          <option>Other</option>
+                        </Select>
+                      </FormControl>
 
-                    <FormControl isRequired as={GridItem} colSpan={[6, 6, null, 2]}>
-                      <FormLabel
-                        htmlFor="city"
-                        fontSize="sm"
-                        fontWeight="md"
-                        color={useColorModeValue("gray.700", "gray.50")}
-                      >
-                        City
-                      </FormLabel>
-                      <Input
-                        type="text"
-                        name="city"
-                        id="city"
-                        autoComplete="city"
-                        mt={1}
-                        focusBorderColor="brand.400"
-                        shadow="sm"
-                        size="sm"
-                        w="full"
-                        rounded="md"
-                        {...register("city", {
-                            required: "This is required",
-                          })}
-                      />
-                    </FormControl>
+                      <FormControl isRequired as={GridItem} colSpan={[6, 3]}>
+                        <FormLabel
+                          htmlFor="doing"
+                          fontSize="sm"
+                          fontWeight="md"
+                          color={useColorModeValue("gray.700", "gray.50")}
+                        >
+                          Are you doing?
+                        </FormLabel>
+                        <Select
+                          id="workfor"
+                          name="workfor"
+                          autoComplete="workfor"
+                          placeholder="Select option"
+                          mt={1}
+                          focusBorderColor="brand.400"
+                          shadow="sm"
+                          size="sm"
+                          w="full"
+                          rounded="md"
+                          {...register("doing")}
+                        >
+                          <option>Part time</option>
+                          <option>Full Time</option>
+                        </Select>
+                      </FormControl>
 
-                    <FormControl isRequired>
-                      <FormLabel>Your Number</FormLabel>
+                      <FormControl isRequired as={GridItem} colSpan={[6, 3]}>
+                        <FormLabel
+                          htmlFor="pastExperience"
+                          fontSize="sm"
+                          fontWeight="md"
+                          color={useColorModeValue("gray.700", "gray.50")}
+                        >
+                          Do you have past experience?
+                        </FormLabel>
+                        <Select
+                          id="pastExperience"
+                          name="pastExperience"
+                          autoComplete="pastExperience"
+                          placeholder="Select option"
+                          mt={1}
+                          focusBorderColor="brand.400"
+                          shadow="sm"
+                          size="sm"
+                          w="full"
+                          rounded="md"
+                          {...register("experience")}
+                        >
+                          <option>Yes</option>
+                          <option>No</option>
+                        </Select>
+                      </FormControl>
 
-                      <InputGroup>
-                        <InputLeftElement><BsPhone /></InputLeftElement>
-                        <Input
-                          type="number"
-                          name="number"
-                          placeholder="Your Number"
-                          {...register("number", {
-                            required: "This is required",
-                          })}
-                        />
-                      </InputGroup>
-                    </FormControl>
+                      <FormControl isRequired as={GridItem} colSpan={[6, 3]}>
+                        <FormLabel
+                          htmlFor="doing"
+                          fontSize="sm"
+                          fontWeight="md"
+                          color={useColorModeValue("gray.700", "gray.50")}
+                        >
+                          Can you take your own Decision?
+                        </FormLabel>
+                        <Select
+                          id="workfor"
+                          name="workfor"
+                          autoComplete="workfor"
+                          placeholder="Select option"
+                          mt={1}
+                          focusBorderColor="brand.400"
+                          shadow="sm"
+                          size="sm"
+                          w="full"
+                          rounded="md"
+                          {...register("decisionMaker")}
+                        >
+                          <option>Yes</option>
+                          <option>No</option>
+                        </Select>
+                      </FormControl>
 
-                    <FormControl isRequired as={GridItem} colSpan={[6, 3]}>
-                      <FormLabel
-                        htmlFor="work"
-                        fontSize="sm"
-                        fontWeight="md"
-                        color={useColorModeValue("gray.700", "gray.50")}
+                      <Button
+                        colorScheme="blue"
+                        bg="blue.400"
+                        color="white"
+                        _hover={{
+                          bg: "blue.500",
+                        }}
+                        isFullWidth
+                        type="submit"
                       >
-                        Why do you want to work with us?
-                      </FormLabel>
-                      <Select
-                        id="work"
-                        name="work"
-                        autoComplete="work"
-                        placeholder="Select option"
-                        mt={1}
-                        focusBorderColor="brand.400"
-                        shadow="sm"
-                        size="sm"
-                        w="full"
-                        rounded="md"
-                        {...register("wantToWork")}
-                      >
-                        <option>Extra Income</option>
-                        <option>Help Others</option>
-                        <option>Having your own business</option>
-                        <option>Leave a legacy</option>
-                        <option>Meeting a new people</option>
-                        <option>Personal development</option>
-                        <option>Finacial freedom</option>
-                        <option>Plan for retirement</option>
-                        <option>To develop some skills</option>
-                        <option>Other</option>
-                      </Select>
-                    </FormControl>
-
-                    <FormControl isRequired as={GridItem} colSpan={[6, 3]}>
-                      <FormLabel
-                        htmlFor="doing"
-                        fontSize="sm"
-                        fontWeight="md"
-                        color={useColorModeValue("gray.700", "gray.50")}
-                      >
-                        What do you currentlly?
-                      </FormLabel>
-                      <Select
-                        id="doing"
-                        name="doing"
-                        autoComplete="doing"
-                        placeholder="Select option"
-                        mt={1}
-                        focusBorderColor="brand.400"
-                        shadow="sm"
-                        size="sm"
-                        w="full"
-                        rounded="md"
-                        {...register("currently")}
-                      >
-                        <option>Student</option>
-                        <option>Employed</option>
-                        <option>Selfemployed/ Business</option>
-                        <option>Homemaker</option>
-                        <option>Other</option>
-                      </Select>
-                    </FormControl>
-
-                    <FormControl isRequired as={GridItem} colSpan={[6, 3]}>
-                      <FormLabel
-                        htmlFor="doing"
-                        fontSize="sm"
-                        fontWeight="md"
-                        color={useColorModeValue("gray.700", "gray.50")}
-                      >
-                        Are you doing?
-                      </FormLabel>
-                      <Select
-                        id="workfor"
-                        name="workfor"
-                        autoComplete="workfor"
-                        placeholder="Select option"
-                        mt={1}
-                        focusBorderColor="brand.400"
-                        shadow="sm"
-                        size="sm"
-                        w="full"
-                        rounded="md"
-                        {...register("doing")}
-                      >
-                        <option>Part time</option>
-                        <option>Full Time</option>
-                      </Select>
-                    </FormControl>
-
-                    <FormControl isRequired as={GridItem} colSpan={[6, 3]}>
-                      <FormLabel
-                        htmlFor="pastExperience"
-                        fontSize="sm"
-                        fontWeight="md"
-                        color={useColorModeValue("gray.700", "gray.50")}
-                      >
-                        Do you have past experience?
-                      </FormLabel>
-                      <Select
-                        id="pastExperience"
-                        name="pastExperience"
-                        autoComplete="pastExperience"
-                        placeholder="Select option"
-                        mt={1}
-                        focusBorderColor="brand.400"
-                        shadow="sm"
-                        size="sm"
-                        w="full"
-                        rounded="md"
-                        {...register("experience")}
-                      >
-                        <option>Yes</option>
-                        <option>No</option>
-                      </Select>
-                    </FormControl>
-
-                    <FormControl isRequired as={GridItem} colSpan={[6, 3]}>
-                      <FormLabel
-                        htmlFor="doing"
-                        fontSize="sm"
-                        fontWeight="md"
-                        color={useColorModeValue("gray.700", "gray.50")}
-                      >
-                        Can you take your own Decision?
-                      </FormLabel>
-                      <Select
-                        id="workfor"
-                        name="workfor"
-                        autoComplete="workfor"
-                        placeholder="Select option"
-                        mt={1}
-                        focusBorderColor="brand.400"
-                        shadow="sm"
-                        size="sm"
-                        w="full"
-                        rounded="md"
-                        {...register("decisionMaker")}
-                      >
-                        <option>Yes</option>
-                        <option>No</option>
-                      </Select>
-                    </FormControl>
-
-                    <Button
-                      colorScheme="blue"
-                      bg="blue.400"
-                      color="white"
-                      _hover={{
-                        bg: "blue.500",
-                      }}
-                      isFullWidth
-                      type="submit"
-                    >
-                      Register
-                    </Button>
-                  </VStack>
-                </form>
-              </Box>
-            </Stack>
-          </VStack>
+                        Register
+                      </Button>
+                    </VStack>
+                  </form>
+                </Box>
+              </Stack>
+            </VStack>
+          </Box>
         </Box>
-      </Box>
-    </Flex>
+      </Flex>
     </>
   );
 }

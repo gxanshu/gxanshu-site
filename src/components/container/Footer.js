@@ -35,7 +35,7 @@ const SocialButton = ({ children, label, href }) => {
   );
 };
 
-export default function SmallCentered() {
+export function Footer() {
   return (
     <Box
       bg={useColorModeValue("gray.50", "gray.900")}

@@ -23,7 +23,6 @@ export async function getFilesFromSlug(category, slug) {
 
   const { data, content } = matter(source);
   const mdxSource = await serialize(content, {
-    components: MDXComponents,
     mdxOptions: {
       remarkPlugins: [],
       rehypePlugins: [

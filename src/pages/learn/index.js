@@ -1,12 +1,9 @@
 import { getAllFilesOfLearn } from "lib/mdx";
 import Seo from "components/Seo";
 import siteConfig from "configs/config";
-import Layout from "components/layout/Layout";
-import ListHead from "components/ListHead";
 import { Box, Flex, Button, SimpleGrid } from "@chakra-ui/react";
-import TutorialCard from "components/PostCard/TutorialsCard";
-import LearnCard from "components/PostCard/LearnCard";
 import Link from "next/link";
+import { LearnCard, ListHead, Layout } from "components";
 
 export default function Tutorials({ posts, total, page = 1 }) {
   const hasNextPage = Math.ceil(total / siteConfig.postPerPage) > page;

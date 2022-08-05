@@ -1,11 +1,9 @@
 import siteConfig from "configs/config";
 import { getAllFilesFrontMatter, getPostSlugs } from "lib/mdx";
-import Layout from "components/layout/Layout";
-import ListHead from "components/ListHead";
 import { Box, SimpleGrid, Flex, Button } from "@chakra-ui/react";
-import BlogCard from "components/PostCard/BlogCard";
 import Link from "next/link";
 import Seo from "components/Seo";
+import { BlogCard, ListHead, Layout } from "components";
 
 export default function BlogPagination({ posts, page, total }) {
   const hasNextPage = Math.ceil(total / siteConfig.postPerPage) > page;

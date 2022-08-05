@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 
-export default function CallToActionWithAnnotation() {
+export function Hero() {
   return (
     <>
       <Container maxW={"3xl"}>

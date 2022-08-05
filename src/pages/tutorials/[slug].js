@@ -1,12 +1,12 @@
 import { getFiles, getFilesFromSlug } from "lib/mdx";
-import TutorialPostLayout from "components/layout/TutorialsPostLayout";
+import { TutorialsPostLayout } from "components";
 
 export default function TutorialPage({ frontMatter, mdxSource }) {
   return (
-    <TutorialPostLayout
+    <TutorialsPostLayout
       frontMatter={frontMatter}
       child={mdxSource}
-    ></TutorialPostLayout>
+    ></TutorialsPostLayout>
   );
 }
 

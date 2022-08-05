@@ -8,12 +8,13 @@ import {
   useColorModeValue,
   Button,
 } from "@chakra-ui/react";
-import MDXComponents from "components/MDXComponent";
+import { MDXComponents } from "components";
 import { MDXRemote } from "next-mdx-remote";
 import Seo from "components/Seo";
-import Comment from "components/Comment";
+import dynamic from "next/dynamic";
+const Comment = dynamic(() => import("components/Comment"));
 
-export default function BlogLayout({ child, frontMatter }) {
+export function NotesLayout({ child, frontMatter }) {
   return (
     <>
       <Seo
@@ -44,7 +45,7 @@ export default function BlogLayout({ child, frontMatter }) {
               {frontMatter.readingTime.text}
             </Text>
           </Flex>
-          <MDXRemote {...child} components={MDXComponents} />
+          <MDXRemote {...child} components={MDXComponents} lazy/>
           <Comment />
         </VStack>
       </Center>

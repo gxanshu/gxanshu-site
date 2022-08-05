@@ -12,14 +12,14 @@ import {
   Center,
 } from "@chakra-ui/react";
 import { FiX, FiMenu } from "react-icons/fi";
-import MDXComponents from "components/MDXComponent";
+import { MDXComponents } from "components";
 import { MDXRemote } from "next-mdx-remote";
 import Seo from "components/Seo";
 import styles from "../../../styles/blogcard.module.css";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 
-export default function SimpleSidebar({ child, frontMatter, chapters }) {
+export function CourseLayout({ child, frontMatter, chapters }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { query } = useRouter();
 
@@ -61,7 +61,7 @@ export default function SimpleSidebar({ child, frontMatter, chapters }) {
         {/* mobilenav */}
         <MobileNav display={{ base: "flex", md: "none" }} onOpen={onOpen} />
         <Box ml={{ base: 0, md: 60 }} py={20} px={[6, 20]}>
-          <MDXRemote {...child} components={MDXComponents} />
+          <MDXRemote {...child} components={MDXComponents} lazy/>
           <Flex justifyContent={"space-between"} py={10}>
             <NextLink
               href={
