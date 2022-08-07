@@ -75,7 +75,6 @@ export default function About() {
               <ListItem>Chakra UI</ListItem>
               <ListItem>Serverless</ListItem>
               <ListItem>Git</ListItem>
-              <ListItem>Serverless</ListItem>
             </UnorderedList>
           </SimpleGrid>
         </Box>
