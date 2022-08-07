@@ -1,5 +1,5 @@
 import { Box, Heading, Text, Button } from "@chakra-ui/react";
-import Link from 'next/link'
+import Link from "next/link";
 
 export default function NotFound() {
   return (
@@ -21,14 +21,14 @@ export default function NotFound() {
       </Text>
 
       <Link href="/">
-      <Button
-        colorScheme="blue"
-        bgGradient="linear(to-r, blue.400, blue.500, blue.600)"
-        color="white"
-        variant="solid"
-      >
-        Go to Home
-      </Button>
+        <Button
+          colorScheme="blue"
+          bgGradient="linear(to-r, blue.400, blue.500, blue.600)"
+          color="white"
+          variant="solid"
+        >
+          Go to Home
+        </Button>
       </Link>
     </Box>
   );

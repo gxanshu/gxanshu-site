@@ -45,7 +45,7 @@ export function NotesLayout({ child, frontMatter }) {
               {frontMatter.readingTime.text}
             </Text>
           </Flex>
-          <MDXRemote {...child} components={MDXComponents} lazy/>
+          <MDXRemote {...child} components={MDXComponents} lazy />
           <Comment />
         </VStack>
       </Center>

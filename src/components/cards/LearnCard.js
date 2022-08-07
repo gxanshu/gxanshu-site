@@ -62,7 +62,7 @@ export const LearnCard = ({ image, title, description, link }) => {
               fontSize="xl"
               color={useColorModeValue("brand.500", "brand.300")}
             >
-              start 
+              start
             </Link>
           </NextLink>
         </Flex>

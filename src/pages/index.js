@@ -164,7 +164,11 @@ export default function Home({ blogPosts, tutorialsPost, lessionsPost }) {
               }
             </Text>
           </Flex>
-          <Link passHref href="https://github.com/aianshume/codenanshu" isExternal>
+          <Link
+            passHref
+            href="https://github.com/aianshume/codenanshu"
+            isExternal
+          >
             <Button
               h="4rem"
               px="40px"

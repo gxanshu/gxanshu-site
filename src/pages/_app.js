@@ -6,7 +6,7 @@ import { Global, css } from "@emotion/react";
 import React from "react";
 import { Navbar, Footer } from "components";
 import dynamic from "next/dynamic";
-const Loader = dynamic(() => import("components/loader"))
+const Loader = dynamic(() => import("components/loader"));
 
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode();

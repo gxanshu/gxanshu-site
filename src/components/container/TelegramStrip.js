@@ -1,7 +1,7 @@
 import { Box, Flex, Heading, Text, chakra } from "@chakra-ui/react";
 import * as React from "react";
 import { Container } from "./container";
-import {SiTelegram} from 'react-icons/si'
+import { SiTelegram } from "react-icons/si";
 
 export function TelegramStrip(props) {
   return (
