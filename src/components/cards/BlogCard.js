@@ -41,7 +41,7 @@ export function BlogCard({ image, title, description, category, link }) {
       <Box p={3} pt={2}>
         <Link href={`/${category}/${link}`} passHref>
           <RLink>
-            <Heading className={styles.pointer} as="h5" fontSize={20}>
+            <Heading className={styles.pointer} as="h3" fontSize={20}>
               {title}
             </Heading>
           </RLink>

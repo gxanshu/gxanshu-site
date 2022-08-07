@@ -233,7 +233,7 @@ function OmniSearch() {
 
   return (
     <>
-      <IconButton icon={<HiSearch />} size="sm" onClick={modal.onOpen} />
+      <IconButton aria-label="search bar" icon={<HiSearch />} size="sm" onClick={modal.onOpen} />
       <Modal
         scrollBehavior="inside"
         isOpen={modal.isOpen}

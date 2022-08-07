@@ -49,6 +49,7 @@ const MobileNav = (props) => {
           icon={props.color === "light" ? <HiMoon /> : <HiSun />}
           onClick={props.changeColor}
           size="sm"
+          aria-label="change theme"
         />
         <Search />
         <Menu>
