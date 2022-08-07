@@ -1,4 +1,5 @@
 import { Box, Heading, Text, Button } from "@chakra-ui/react";
+import Link from 'next/link'
 
 export default function NotFound() {
   return (
@@ -19,6 +20,7 @@ export default function NotFound() {
         The page you are looking for does not seem to exist
       </Text>
 
+      <Link href="/">
       <Button
         colorScheme="blue"
         bgGradient="linear(to-r, blue.400, blue.500, blue.600)"
@@ -27,6 +29,7 @@ export default function NotFound() {
       >
         Go to Home
       </Button>
+      </Link>
     </Box>
   );
 }

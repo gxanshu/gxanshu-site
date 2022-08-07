@@ -15,7 +15,7 @@ import { FaMoneyCheck, FaArrowRight } from "react-icons/fa";
 import Seo from "components/Seo";
 import {
   BlogCard,
-  DiscordStrip,
+  TelegramStrip,
   Container,
   Author,
   LearnCard,
@@ -156,15 +156,15 @@ export default function Home({ blogPosts, tutorialsPost, lessionsPost }) {
               mt="6"
               mb="6"
             >
-              {"Want to start online business with us"}
+              {"Want to contribute in this project"}
             </chakra.h2>
             <Text mb="40px" fontSize="lg" opacity={0.7}>
               {
-                "Want to start business with us? we will give you a opportunity to start online business with us."
+                "open your PR of your quality code and be a member of this open source project."
               }
             </Text>
           </Flex>
-          <Link passHref href="/register">
+          <Link passHref href="https://github.com/aianshume/codenanshu" isExternal>
             <Button
               h="4rem"
               px="40px"
@@ -174,12 +174,12 @@ export default function Home({ blogPosts, tutorialsPost, lessionsPost }) {
               colorScheme="blue"
               rightIcon={<FaArrowRight fontSize="0.8em" />}
             >
-              {"Register Now"}
+              {"contribute"}
             </Button>
           </Link>
         </Container>
       </Box>
-      <DiscordStrip />
+      <TelegramStrip />
     </>
   );
 }
