@@ -1,6 +1,5 @@
 import {
   VStack,
-  Box,
   Heading,
   Text,
   useColorModeValue,

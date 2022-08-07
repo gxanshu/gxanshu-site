@@ -6,7 +6,6 @@ import {
   Flex,
   Avatar,
   useColorModeValue,
-  Button,
 } from "@chakra-ui/react";
 import { MDXComponents } from "components";
 import { MDXRemote } from "next-mdx-remote";
