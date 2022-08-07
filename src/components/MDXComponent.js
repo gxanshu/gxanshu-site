@@ -8,7 +8,6 @@ import {
   Divider,
   useColorMode,
   useColorModeValue,
-  Button,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import Img from "next/image";

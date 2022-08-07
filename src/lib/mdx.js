@@ -1,8 +1,7 @@
-import { readFileSync, readdirSync, readdir } from "fs";
+import { readFileSync, readdirSync } from "fs";
 import { join } from "path";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
-import MDXComponents from "components/MDXComponent";
 import readingTime from "reading-time";
 import { sortByDate } from "./mdxClient";
 import rehypeSlug from "rehype-slug";

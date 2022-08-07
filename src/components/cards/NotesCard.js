@@ -6,7 +6,6 @@ import {
   useColorModeValue,
   Link as RLink,
 } from "@chakra-ui/react";
-import Img from "next/image";
 import Link from "next/link";
 import styles from "../../../styles/blogcard.module.css";
 

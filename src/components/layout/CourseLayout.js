@@ -9,7 +9,6 @@ import {
   DrawerContent,
   Text,
   useDisclosure,
-  Center,
 } from "@chakra-ui/react";
 import { FiX, FiMenu } from "react-icons/fi";
 import { MDXComponents } from "components";
