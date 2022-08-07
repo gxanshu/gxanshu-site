@@ -1,9 +1,9 @@
 import { Box, Flex, Heading, Text, chakra } from "@chakra-ui/react";
 import * as React from "react";
 import { Container } from "./container";
-import { DiscordIcon } from "./discord-logo";
+import {SiTelegram} from 'react-icons/si'
 
-export function DiscordStrip(props) {
+export function TelegramStrip(props) {
   return (
     <Box bg="#5865F2" {...props}>
       <Container py="8">
@@ -19,7 +19,7 @@ export function DiscordStrip(props) {
               fontSize="48px"
               mr="5"
             >
-              <DiscordIcon />
+              <SiTelegram />
             </Flex>
             <Box>
               <Heading size="md" lineHeight="1.2" mb="1">
@@ -40,7 +40,7 @@ export function DiscordStrip(props) {
             justifyContent="center"
             display="inline-flex"
             alignItems="center"
-            href="https://discord.gg/GKupPDsF"
+            href="https://t.me/codenanshu"
             rel="noopener"
             target="_blank"
             fontWeight="bold"

@@ -27,7 +27,7 @@ export function Hero() {
             lineHeight={"110%"}
             as="h1"
           >
-            I Am Anshu Meena try <br />
+            I Am Anshu trying <br />
             to build{" "}
             <Text
               as={"span"}
