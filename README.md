@@ -115,4 +115,4 @@ Looking for more guidance? Full documentation for Nextjs lives [on the website](
     Cloudinary
     NetlifyCMS
 
-This project is build with ❤️ and ✨
+This project is build with ❤️ and ✨'s of AC
