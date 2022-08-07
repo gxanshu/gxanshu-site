@@ -18,7 +18,7 @@ function Template() {
     </Center>
   );
 }
-export function Loader() {
+export default function Loader() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {

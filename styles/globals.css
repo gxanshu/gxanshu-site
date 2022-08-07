@@ -3,6 +3,7 @@
   src: local("GT Walsheim"), local("GT Walsheim"),
     url("/fonts/GTWalsheimPro-Regular.woff2");
   font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
@@ -10,6 +11,7 @@
   src: local("GT Walsheim"), local("GT Walsheim"),
     url("/fonts/GTWalsheimPro-Medium.woff2");
   font-weight: 500;
+  font-display: swap;
 }
 
 @font-face {
@@ -17,11 +19,7 @@
   src: local("GT Walsheim"), local("GT Walsheim"),
     url("/fonts/GTWalsheimPro-Bold.woff2");
   font-weight: 600;
-}
-
-::selection {
-  color: white;
-  background: rgb(41, 41, 216);
+  font-display: swap;
 }
 
 a {
