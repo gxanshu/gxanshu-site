@@ -8,7 +8,7 @@
   CodeNanshu content for developers
 </h1>
 
-[![DeepScan grade](https://deepscan.io/api/teams/16226/projects/19460/branches/505832/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=16226&pid=19460&bid=505832)
+[![DeepScan grade](https://deepscan.io/api/teams/16226/projects/21884/branches/638433/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=16226&pid=21884&bid=638433)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4a1e11c5-33dc-454f-83f5-2e6412f0a01f/deploy-status)](https://app.netlify.com/sites/codenanshu/deploys)
 [![CircleCI](https://circleci.com/gh/aianshume/codenanshu.svg?style=svg&circle-token=a2c13f8c4b82b81d92c79d39576027780fc67f09)](https://codenanshu.in)
 [![Discord Join](https://img.shields.io/badge/Discord-Join%20Server-%235865f2)](https://discord.gg/cfQ6Zc4V)
