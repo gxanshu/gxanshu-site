@@ -1,6 +1,5 @@
 export * from "./ListHead";
 export * from "./MDXComponent";
-export * from "./loader";
 export * from "./cards/BlogCard";
 export * from "./cards/LearnCard";
 export * from "./cards/NotesCard";

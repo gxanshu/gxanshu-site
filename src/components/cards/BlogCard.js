@@ -30,7 +30,6 @@ export function BlogCard({ image, title, description, category, link }) {
       <Box w={"100%"}>
         <Link href={`/${category}/${link}`} passHref>
           <Image
-            roundedTop="lg"
             width={640}
             height={360}
             fit="cover"
