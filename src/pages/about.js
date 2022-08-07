@@ -46,6 +46,7 @@ export default function About() {
               <ListItem>JavaScript</ListItem>
               <ListItem>ReactJS</ListItem>
               <ListItem>React Native</ListItem>
+              <ListItem>mySQL</ListItem>
               <ListItem>NextJS</ListItem>
             </UnorderedList>
             <UnorderedList>
@@ -55,6 +56,7 @@ export default function About() {
               <ListItem>GraphQL</ListItem>
               <ListItem>ExpressJS</ListItem>
               <ListItem>NodejS</ListItem>
+              <ListItem>PHP</ListItem>
             </UnorderedList>
             <UnorderedList>
               <ListItem>Firebase</ListItem>
@@ -62,6 +64,7 @@ export default function About() {
               <ListItem>Python</ListItem>
               <ListItem>Flask</ListItem>
               <ListItem>TypeScript</ListItem>
+              <ListItem>PostgreSQL</ListItem>
               <ListItem>SHscript</ListItem>
             </UnorderedList>
             <UnorderedList>
@@ -70,6 +73,8 @@ export default function About() {
               <ListItem>ElectronJS</ListItem>
               <ListItem>SASS</ListItem>
               <ListItem>Chakra UI</ListItem>
+              <ListItem>Serverless</ListItem>
+              <ListItem>Git</ListItem>
               <ListItem>Serverless</ListItem>
             </UnorderedList>
           </SimpleGrid>
