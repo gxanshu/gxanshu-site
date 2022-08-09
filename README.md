@@ -1,17 +1,13 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.codenanshu.netlify.app">
+  <a href="https://codenanshu.in">
     <img alt="CodeNanshu" src="https://i.ibb.co/L1rZWBQ/filename.png" width="60" />
   </a>
 </p>
-<h1 align="center">
-  CodeNanshu content for developers
-</h1>
 
-[![DeepScan grade](https://deepscan.io/api/teams/16226/projects/19460/branches/505832/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=16226&pid=19460&bid=505832)
+[![DeepScan grade](https://deepscan.io/api/teams/16226/projects/21884/branches/638433/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=16226&pid=21884&bid=638433)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4a1e11c5-33dc-454f-83f5-2e6412f0a01f/deploy-status)](https://app.netlify.com/sites/codenanshu/deploys)
 [![CircleCI](https://circleci.com/gh/aianshume/codenanshu.svg?style=svg&circle-token=a2c13f8c4b82b81d92c79d39576027780fc67f09)](https://codenanshu.in)
-[![Discord Join](https://img.shields.io/badge/Discord-Join%20Server-%235865f2)](https://discord.gg/cfQ6Zc4V)
+[![Discord Join](https://img.shields.io/badge/Discord-Join%20Server-%235865f2)](https://t.me/codenanshu)
 
 Kick off your programming skills with codeNanshu. This plateform help you learn things that are really helpful for your requirements.
 
@@ -21,15 +17,10 @@ _Want To Read Blog? You may want to check out our blog post [official on codeNan
 
 1.  **Create a Blog post.**
 
-    Use the Codenanshu CLI to create a new post, by filling the starter template.
+    if you want to create any blog posts, notes or tutorials then visit the [Backend CMS](https://codenanshu.in/admin). login with your GitHub account then create any post.
 
-    ```shell
-    # use [blog, tutorial, notes] after new to generate template
-    npx hygen new blog
-    ```
-
-    otherwise just open [admin pannel](https://codenanshu.in/admin) and login with GitHub, start writing your post
-
+    alternatively you can mannualy create posts with simple `mdx`  files all configration are documented here
+ 
 1.  **Start developing.**
 
     Navigate into your new site’s directory and start it up.
@@ -39,11 +30,14 @@ _Want To Read Blog? You may want to check out our blog post [official on codeNan
     cd codenanshu
     yarn
     yarn dev
-    ```
+    ``` 
+    this will install all packages that are require to build the site.
 
 1.  **Open the source code and start editing!**
 
-    Your site is now running at `http://localhost:3000`!
+    To edit home page navigate to `src/pages/index.js`
+
+    after running the `yarn dev`  command your site is now running at `http://localhost:3000`!
 
     Your admin is now running at `http://localhost:3000/admin`!
 
@@ -51,6 +45,7 @@ _Want To Read Blog? You may want to check out our blog post [official on codeNan
 
 ## 🚀 Quick Deploy (GitHub Pulls)
 
+To deloy your changes you have to make a pull request at the dev branch of the repo
 Deploy your changes with [Github Pulls](https://github.com/aianshume/codenanshu/pulls):
 
 ## 🧐 What's inside?
@@ -59,42 +54,35 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
     .
     ├── node_modules
-    ├── _templates/new
     ├── content
     ├── public
     ├── scripts
     ├── src
+    ├── stlyes
     ├── .gitignore
+    ├── .prettierignore
+    ├── .eslintrc.json
     ├── .babelrc
-    ├── .env
+    ├── .env.example
     ├── jsconfig.json
     ├── next-sitemap.js
     ├── next-config.js
+    ├── package.json
     └── README.md
 
 1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
 
-2.  **`/content`**: This directory will contain all markdown files of all the post and data in this website and read by gatsby and the nodejs for backend.
+2.  **`/content`**: This directory will contain all markdown files of all the post and data in this website and parsed by mdx funtions of site.
 
-3.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+3. **`/public`**: This directory contains the public files of the like fonts, images, robot.txt and much more.
 
-4.  **/public** This directory will contain all the static files and folders that are going to use in this project
+4. **`/scripts`**: This directory have the functions that generate searchable JSON and upload iamges to the cloud, all code is like a pre-workers which works before build the site.
 
-5.  **scripts** This directory will contain all the script files that are resonsible for some spacific tasks
+5. **`/src`**: This directory have contans all the source code of the site
 
-6.  **styles** This directory will contain some css files to provide some extra styling but major styles are writen with the help of chakra UI
+6. **`/styles`**: contains all the custom styles
 
-7.  **.gitignore** a file which is responsibe to ignore some files from git
-
-8.  **jsconfig.json** This file describe how import and other things going to behave in development
-
-9.  **next-sitemap.js** This is the configuration file for next-sitemap package which help to generate sitemaps for site.
-
-10. **next-config.js** This is the configuration file for NextJS
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
+7. **`next-sitemap.json`**: this file have the configrations for sitemap creation process.
 
 ## 🎓 Learning Nextjs
 
@@ -106,13 +94,17 @@ Looking for more guidance? Full documentation for Nextjs lives [on the website](
 
 ## Tech Stacks 👨‍🔬
 
-    React
-    NextJS
-    Chakra UI
     MDX
+    React
+    Preact
+    NextJS
     NodeJS
+    Cloudnary
+    Chackra UI
+    Netlify CMS
     Algolia Search
-    Cloudinary
-    NetlifyCMS
+    CircleCI
+    Netlify
+
 
 This project is build with ❤️,✨ of AC.
