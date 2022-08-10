@@ -60,7 +60,7 @@ export function TutorialsPostLayout({ child, frontMatter }) {
           py={16}
           alignItems="flex-start"
         >
-          <MDXRemote {...child} components={MDXComponents} lazy />
+          <MDXRemote {...child} components={MDXComponents} />
           <Comment />
         </VStack>
       </Center>
