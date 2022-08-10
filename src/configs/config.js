@@ -1,7 +1,7 @@
 const baseUrl = "https://github.com/aianshume/codenanshu";
 
 const siteConfig = {
-  copyright: `Copyright © ${new Date().getFullYear()} Ai Anshu. All Rights Reserved.`,
+  copyright: `Copyright © ${new Date().getFullYear()} Codenanshu, build with ❤️,✨ of AC.`,
   postPerPage: 9,
   author: {
     name: "Ai Anshu",
