@@ -82,7 +82,7 @@ export function Footer() {
           justify={{ base: "center", md: "space-between" }}
           align={{ base: "center", md: "center" }}
         >
-          <Text>{siteConfig.copyright}</Text>
+          <Text align={{base: "center", md: "initial"}}>{siteConfig.copyright}</Text>
           <Stack direction={"row"} spacing={6}>
             <SocialButton label={"Twitter"} href={siteConfig.author.twitter}>
               <FaTwitter />
