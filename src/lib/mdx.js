@@ -88,7 +88,7 @@ export async function getAllFilesOfLearn() {
         "utf-8"
       );
 
-      const { data, content } = matter(source);
+      const { data } = matter(source);
 
       return {
         frontMatter: {
