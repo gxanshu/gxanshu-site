@@ -25,3 +25,8 @@
 a {
   text-decoration: none !important;
 }
+
+::selection {
+  color: white;
+  background: rgb(41, 41, 216);
+}
