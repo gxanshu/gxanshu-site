@@ -90,8 +90,6 @@ Looking for more guidance? Full documentation for Nextjs lives [on the website](
 
 - **For most developers, we recommend starting with our [in-depth tutorials for creating a site with NextJS](https://nextjs.org/learn).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 
-- **To dive straight into code samples, head [to our documentation](https://www.nextjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced tutorialss_ sections in the sidebar.
-
 ## Tech Stacks 👨‍🔬
 
     MDX
