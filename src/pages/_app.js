@@ -48,11 +48,6 @@ function MyApp({ Component, pageProps }) {
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
       />
-      <Script id="Adsense-id" data-ad-client="ca-pub-6691816550079346"
-        async strategy="afterInteractive"
-        onError={(e) => { console.error('Script failed to load ads', e) }}
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-      />
       <Script
         id="gtag-init"
         strategy="afterInteractive"
@@ -66,6 +61,11 @@ function MyApp({ Component, pageProps }) {
             });
           `,
         }}
+      />
+      <Script id="Adsense-id"
+        async strategy="afterInteractive"
+        onError={(e) => { console.error('Script failed to load ads', e) }}
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6691816550079346"
       />
       <ChakraProvider theme={theme}>
         <GlobalStyle>
