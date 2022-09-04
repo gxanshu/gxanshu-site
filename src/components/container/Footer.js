@@ -55,7 +55,7 @@ export function Footer() {
           spacing={6}
           flexWrap="wrap"
         >
-          <a href="https://docs.codenanshu.in">Docs</a>
+          <a href="https://github.com/aianshume/codenanshu#readme">Docs</a>
           <a
             href={
               "https://cute-stage-771.notion.site/91c186558f9c49888f3c01dd04530581?v=2ac057e75feb46f1af00d8ffe35ceb26"
