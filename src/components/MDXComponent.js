@@ -11,8 +11,6 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import Img from "next/image";
-import { GoogleAd } from "./ads/ArticleAd";
-import { AdType } from "./ads/type";
 import styles from "../../styles/blogcard.module.css";
 
 const DocsHeading = (props) => (
@@ -253,7 +251,6 @@ const MDXComponents = {
   blockquote: Quote,
   img: (props) => <Image src={props.src} alt={props.alt} />,
   Yt: (props) => <Yt id={props.id} title={props.title} />,
-  ArticleAd: () => <GoogleAd variant={AdType.ARTICAL}/>,
 };
 
 export { CustomLink, MDXComponents };
