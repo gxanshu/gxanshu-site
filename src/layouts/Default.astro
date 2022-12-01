@@ -1,0 +1,37 @@
+---
+import Core from "./core.astro";
+export interface Props {
+  class?: string;
+  title: string;
+  description: string;
+  date?: string;
+  image?: string;
+  isArticle?: boolean;
+  layout?: string;
+}
+const {
+  title,
+  description,
+  date,
+  image,
+  class: className,
+  isArticle,
+} = Astro.props;
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Core
+  isArticle={isArticle}
+  class=""
+  date={date}
+  title={title}
+  description={description}
+  image={image}
+>
+  <Header />
+  <main class={`mx-auto ${isArticle ? "max-w-screen-md": "max-w-screen-xl"} items-center w-95 mt-20 ${className}` }>
+    <slot />
+  </main>
+  <Footer />
+</Core>

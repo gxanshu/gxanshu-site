@@ -1,0 +1,168 @@
+---
+/**
+ * Core Layout
+ * It's build to be used in other Layouts, Not in Pages
+ * It's like the base for other Layouts Handling the SEO, Kayout Shift from here,
+ * It's Headless So, there is nothing else than, body tag.
+ *
+ * Endpoint for loading common scripts, global styles and style like fonts
+ */
+
+export interface Props {
+  title: string;
+  description: string;
+  date?: string;
+  image?: string;
+  class?: string;
+  isArticle?: boolean;
+}
+
+const {
+  title,
+  description,
+  image,
+  class: className = "",
+  isArticle,
+  date: publishedDate,
+} = Astro.props;
+
+const date = new Date(
+  publishedDate
+    ? publishedDate.includes("|")
+      ? publishedDate.split("|")[0] + publishedDate.split("|")[2]
+      : publishedDate
+    : null
+).toUTCString();
+
+const canonicalURL = new URL(
+  Astro.url.pathname.replace(/([^/])$/, "$1/"),
+  Astro.site
+);
+const imageURL = new URL(image ?? "./Social.png", Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- common -->
+    <meta charset="utf-8" />
+
+    <!-- Defining the current Language -->
+    <meta property="og:locale" content="en_US" />
+    <meta http-equiv="content-language" content="en-US" />
+    <meta name="language" content="English" />
+    <!-- Favicon-Icon,Width-Height,Theme-Color, SiteMap, and Dark Mode -->
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#1A202C" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="mask-icon" href="/favicon.svg" color="#1A202C" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      href="/rss.xml"
+      title="RSS"
+    />
+    <meta name="color-scheme" content="dark" />
+
+    <!-- Preload -->
+    <slot name="preload" />
+
+    <!--  blog counts as an OG type of "article", not "website" -->
+    <meta property="og:type" content={isArticle ? "article" : "website"} />
+
+    <!-- Date Time Information about your last changes -->
+    <meta name="revised" content={date} />
+    <meta property="article:modified_time" content={date} />
+
+    <!--  -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Meta Tags Responsible for Title for the Page -->
+    <title set:html={title} />
+    <meta name="apple-mobile-web-app-title" content={title} />
+    <meta name="page-subject" content={title} />
+    <meta name="title" content={title} />
+    <meta property="og:site_name" content={title} />
+
+    <meta property="og:title" content={title} />
+    <meta property="twitter:title" content={title} />
+
+    <!-- Meta Tags Responsible for description of your site -->
+    <meta name="description" content={description} />
+    <meta property="og:description" content={description} />
+    <meta property="twitter:description" content={description} />
+    <meta name="summary" content={description} />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={imageURL} />
+    <meta
+      property="og:image:alt"
+      content="Banner for site, showing page title in a playful way"
+    />
+    <meta property="og:image:secure_url" content={imageURL} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:image" content={imageURL} />
+
+    <meta name="author" content="Anshu Meena, anshumeena1948@gmail.com" />
+    <meta property="twitter:site" content="@aianshume" />
+    <meta property="twitter:site:id" content="@aianshume" />
+    <meta property="twitter:creator" content="@aianshume" />
+    <meta property="twitter:creator:id" content="@aianshume" />
+
+    <!-- <meta name="twitter:creator" content="@monicalent">
+  <meta property="twitter:creator:id" content="13334762"> -->
+    <meta name="creator" content="@aianshume" />
+    <meta name="publisher" content="aianshume" />
+    <style>
+      @font-face {
+        font-family: "CircularStd";
+        src: local("CircularStd"), local("CircularStd"),
+          url("/fonts/CircularStd-Book.woff");
+        font-weight: 400;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "DINCondensed";
+        src: local("DINCondensed"), local("DINCondensed"),
+          url("/fonts/DINCondensed-Bold.woff");
+        font-weight: 600;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "MarkPro";
+        src: local("MarkPro"), local("MarkPro"),
+          url("/fonts/MarkPro-Heavy.woff");
+        font-weight: 400;
+        font-display: swap;
+      }
+    </style>
+  </head>
+  <body class={`${className} bg-white`}>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+    body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+</style>

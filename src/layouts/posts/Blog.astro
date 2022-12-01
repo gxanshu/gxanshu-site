@@ -1,0 +1,28 @@
+---
+const { frontmatter } = Astro.props;
+import Default from "layouts/Default.astro";
+---
+
+<Default
+title={frontmatter.title}
+description={frontmatter.description}
+image={frontmatter.image}
+isArticle
+class="py-10"
+>
+    <article class="text-gray-700">
+        <section>
+            <h1 class="font-heading sm:text-4xl text-xl mb-4 font-medium text-black">{frontmatter.title}</h1>
+            <p>Ai Anshu | {frontmatter.date}</p>
+        </section>
+        <section class="prose">
+            <slot/>
+        </section>
+    </article>
+</Default>
+
+<style>
+    h1 {
+        font-size:45px;
+    }
+</style>
