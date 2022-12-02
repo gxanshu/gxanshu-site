@@ -7,6 +7,11 @@ import alpinejs from "@astrojs/alpinejs";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://codenanshu.in",
+  site: "http://localhost:3000",
+  markdown: {
+    shikiConfig: {
+      theme: 'min-light',
+    },
+  },
   integrations: [mdx(), tailwind(), alpinejs()],
 });

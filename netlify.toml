@@ -1,0 +1,20 @@
+[[redirects]]
+  from = "/tutorials/create-keyboard-shortcut-in-javascript"
+  to = "/blog/create-keyboard-shortcut-in-javascript"
+  status = 301
+  force = false
+  query = {path = ":path"}
+
+[[redirects]]
+  from = "/tutorials/redux-tutorials-for-beginners"
+  to = "/blog/redux-tutorials-for-beginners"
+  status = 301
+  force = false
+  query = {path = ":path"}
+
+[[redirects]]
+  from = "/tutorials/how-to-configure-vim-or-neovim-like-vscode"
+  to = "/blog/how-to-configure-vim-or-neovim-like-vscode"
+  status = 301
+  force = false
+  query = {path = ":path"}

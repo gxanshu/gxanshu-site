@@ -1,6 +1,7 @@
 ---
 const { frontmatter } = Astro.props;
 import Default from "layouts/Default.astro";
+import Image from 'components/Image.astro';
 ---
 
 <Default
@@ -8,21 +9,16 @@ title={frontmatter.title}
 description={frontmatter.description}
 image={frontmatter.image}
 isArticle
-class="py-10"
+class="py-8"
 >
     <article class="text-gray-700">
         <section>
-            <h1 class="font-heading sm:text-4xl text-xl mb-4 font-medium text-black">{frontmatter.title}</h1>
-            <p>Ai Anshu | {frontmatter.date}</p>
+            <h1 class="font-heading sm:text-4xl text-xl mb-4 font-medium text-black my-8 leading-relaxed">{frontmatter.title}</h1>
+            <Image src={frontmatter.image} alt={frontmatter.title} class="my-4 w-full rounded" />
+            <p >Ai Anshu | {frontmatter.date}</p>
         </section>
-        <section class="prose">
+        <section class="my-4 py-4 prose prose-a:font-link">
             <slot/>
         </section>
     </article>
 </Default>
-
-<style>
-    h1 {
-        font-size:45px;
-    }
-</style>

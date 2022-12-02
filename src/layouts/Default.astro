@@ -30,8 +30,8 @@ import Footer from "../components/Footer.astro";
   image={image}
 >
   <Header />
-  <main class={`mx-auto ${isArticle ? "max-w-screen-md": "max-w-screen-xl"} items-center w-95 mt-20 ${className}` }>
+  <main class={`mx-auto ${isArticle ? "max-w-screen-sm": "max-w-screen-xl"} items-center w-95 mt-20 ${className}` }>
     <slot />
   </main>
-  <Footer />
+  <!-- <Footer /> -->
 </Core>

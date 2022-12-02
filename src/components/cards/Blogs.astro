@@ -1,0 +1,10 @@
+---
+const { frontmatter, url } = Astro.props;
+import Image from "components/Image.astro";
+---
+
+<div class="text-black p-4 bg-gray-100 rounded-md hover:border-2 hover:border-black transition delay-150 duration-150 ease-in-out">
+    <Image src={frontmatter.image} alt={frontmatter.title} class="py-4 rounded" />
+    <h4 class="font-heading py-4"><a href={url}>{frontmatter.title}</a></h4>
+    <p>{frontmatter.description}</p>
+</div>
