@@ -1,5 +1,6 @@
 ---
 import { Cloudinary } from '@cloudinary/url-gen';
+import { crop, fill } from '@cloudinary/url-gen/actions/resize';
 
 const cld = new Cloudinary({
   cloud: {
@@ -7,7 +8,7 @@ const cld = new Cloudinary({
   }
 });
 
-const { src, ...props } = Astro.props;
+const { src, height, width, ...props } = Astro.props;
 
 let cldSrc = cld.image(src)
                 .format('auto')
@@ -17,10 +18,16 @@ if ( src.startsWith('https://')) {
   cldSrc.setDeliveryType('fetch');
 }
 
+if (height != undefined && width != undefined){
+  cldSrc.resize(fill().width(width).height(height));
+}
+
 interface Props {
   src: string;
   alt: string;
   class: string;
+  height?: string;
+  width?: string;
 }
 ---
 
