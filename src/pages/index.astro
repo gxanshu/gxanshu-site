@@ -4,9 +4,17 @@ import Default from "layouts/Default.astro";
 import ProjectsCard from "components/cards/Projects.astro";
 import Projects from "../projects.json";
 import BlogCard from "components/cards/Blogs.astro";
+import NotesCard from 'components/cards/Notes.astro'
 
 let blogs = await Astro.glob("./blog/*.mdx");
 blogs = blogs.sort(
+  (a, b) =>
+    new Date(b.frontmatter.pubDate).valueOf() -
+    new Date(a.frontmatter.pubDate).valueOf()
+);
+
+let notes = await Astro.glob("./notes/*.mdx");
+notes = notes.sort(
   (a, b) =>
     new Date(b.frontmatter.pubDate).valueOf() -
     new Date(a.frontmatter.pubDate).valueOf()
@@ -267,6 +275,33 @@ blogs = blogs.sort(
     </div>
   </section>
 
+<!-- projects section -->
+<section class="mx-auto max-w-screen-xl items-center gap-8 mt-10">
+  <div class="flex justify-between">
+    <h3
+      class="font-heading text-md sm:text-xl mb-3 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-green-500"
+    >
+      Some Notes
+    </h3>
+    <a class="font-heading text-gray-700" href="/notes">View All</a>
+  </div>
+  <div class="relative items-center w-full py-12 mx-auto">
+    <div
+      class="grid w-full grid-cols-1 gap-6 mx-auto md:grid-cols-2 lg:grid-cols-3"
+    >
+      {
+        [0, 1, 2].map((index) => (
+          <NotesCard
+            frontmatter={notes[index].frontmatter}
+            url={notes[index].url}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+  <!-- newsletter section -->
   <div class="bg-gray-100 border-2 my-12 rounded">
     <div class="container px-4 py-16 mx-auto lg:flex lg:items-center lg:justify-between">
         <h2 class="text-3xl font-heading tracking-tight text-gray-800 xl:text-4xl dark:text-white">
