@@ -24,7 +24,7 @@
       <nav aria-label="Site Nav" class="hidden md:block">
         <ul class="flex items-center gap-6 text-sm">
           <li>
-            <a class="text-gray-800 transition hover:text-gray-800/75" href="/">
+            <a class="text-gray-800 transition hover:text-gray-800/75" href="/about">
               About
             </a>
           </li>
@@ -36,13 +36,13 @@
           </li>
 
           <li>
-            <a class="text-gray-800 transition hover:text-gray-800/75" href="/">
+            <a class="text-gray-800 transition hover:text-gray-800/75" href="/notes">
               Notes
             </a>
           </li>
 
           <li>
-            <a class="text-gray-800 transition hover:text-gray-800/75" href="/">
+            <a class="text-gray-800 transition hover:text-gray-800/75" href="/contact">
               Contact
             </a>
           </li>
@@ -92,10 +92,10 @@
   </div>
   <div x-show="open" @click.outside="open = false">
     <ul class="text-gray-800">
-      <li class="m-4"><a href="#">About</a></li>
+      <li class="m-4"><a href="/about">About</a></li>
       <li class="m-4"><a href="/blog">Blog</a></li>
-      <li class="m-4"><a href="#">Notes</a></li>
-      <li class="m-4"><a href="#">Contact</a></li>
+      <li class="m-4"><a href="/notes">Notes</a></li>
+      <li class="m-4"><a href="/contact">Contact</a></li>
     </ul>
   </div>
 </header>
