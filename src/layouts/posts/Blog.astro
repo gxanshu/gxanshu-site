@@ -2,6 +2,7 @@
 const { frontmatter } = Astro.props;
 import Default from "layouts/Default.astro";
 import Image from 'components/Image.astro';
+import Action from "components/Action.astro";
 ---
 
 <Default
@@ -21,4 +22,5 @@ class="py-8"
             <slot/>
         </section>
     </article>
+    <Action/>
 </Default>
