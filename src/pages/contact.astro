@@ -1,0 +1,130 @@
+---
+import Default from "layouts/Default.astro";
+---
+
+<Default
+    title="Contact | Ai Anshu | codenanshu"
+    description="Hello! I'm Anshu. I am a 17-year-old boy who is very intrested in computer science and entrepreneurship. I started learning web development"
+>
+    <section
+        class="bg-white"
+        x-data="{ 'showModal': false }"
+        @keydown.escape="showModal = false"
+    >
+        <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+            <h2
+                class="mb-4 text-4xl tracking-tight font-heading text-center text-gray-900"
+            >
+                Contact Us
+            </h2>
+            <p
+                class="mb-8 lg:mb-16 font-light text-center text-gray-500 sm:text-xl"
+            >
+                Got a technical issue? Want to send feedback about a beta
+                feature? Need details about our Business plan? Let us know.
+            </p>
+            <div class="space-y-8">
+                <div>
+                    <label
+                        for="email"
+                        class="block mb-2 text-sm font-medium text-gray-900"
+                        >Your email</label
+                    >
+                    <input
+                        type="email"
+                        id="email"
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        placeholder="anshu@codenanshu.in"
+                        required
+                    />
+                </div>
+                <div>
+                    <label
+                        for="subject"
+                        class="block mb-2 text-sm font-medium text-gray-900"
+                        >Subject</label
+                    >
+                    <input
+                        type="text"
+                        id="subject"
+                        class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="Let us know how we can help you"
+                        required
+                    />
+                </div>
+                <div class="sm:col-span-2">
+                    <label
+                        for="message"
+                        class="block mb-2 text-sm font-medium text-gray-900"
+                        >Your message</label
+                    >
+                    <textarea
+                        id="message"
+                        rows="6"
+                        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="Leave a comment..."></textarea>
+                </div>
+                <button
+                    @click="showModal = true"
+                    id="submit"
+                    class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-blue-600 sm:w-fit hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-primary-300"
+                    >Send message</button
+                >
+            </div>
+        </div>
+        <aside
+            class="fixed bottom-4 right-4 z-50 flex items-center justify-center rounded-lg bg-black px-5 py-3 text-white"
+            x-show="showModal"
+            @click.away="showModal = false" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90"
+        >
+            <p class="text-sm font-medium">
+                Thanks 😊, i will contact you soon 👋.
+            </p>
+
+            <button
+                class="ml-3 rounded bg-white/20 p-1 hover:bg-white/10"
+                @click="showModal = false"
+            >
+                <span class="sr-only">Close</span>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                >
+                    <path
+                        fillRule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clipRule="evenodd"></path>
+                </svg>
+            </button>
+        </aside>
+    </section>
+</Default>
+
+<script>
+    const token = "5231457212:AAE_Jxyo8IGK0Mfa7Mlf2mf36ClMp6qDRZA";
+    const id = "1493444597";
+
+    function sendMessage() {
+        const email = document.getElementById("email");
+        const subject = document.getElementById("subject");
+        const message = document.getElementById("message");
+
+        const note = `
+    email: ${email.value}
+subject: ${subject.value}
+message: ${message.value}
+    `;
+        fetch(
+            `https://api.telegram.org/bot${token}/sendMessage?chat_id=${id}&text=${encodeURIComponent(
+                note
+            )}`
+        ).then((res) => console.log(res));
+        email.value = "";
+        subject.value = "";
+        message.value = "";
+    }
+
+    document.getElementById("submit").addEventListener("click", sendMessage);
+</script>
