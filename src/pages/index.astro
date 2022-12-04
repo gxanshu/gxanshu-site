@@ -302,17 +302,17 @@ notes = notes.sort(
 </section>
 
   <!-- newsletter section -->
-    <div class="bg-gray-100 border-2 my-12 rounded" x-data="{ 'showModal': false }" @keydown.escape="showModal = false">
+    <div class="bg-gray-100 border-2 my-12 rounded" x-data="{ 'showModal': false }" @keydown.escape="showModal = false" id="revue-embed">
       <div class="container px-4 py-16 mx-auto lg:flex lg:items-center lg:justify-between">
           <h2 class="text-3xl font-heading tracking-tight text-gray-800 xl:text-4xl">
-              Join us and get the update from anywhere
+              Join us and get the update from anywhere  
           </h2>
-
+  
           <div class="mt-8 lg:mt-0">
-              <div class="flex flex-col space-y-3 sm:space-y-0 sm:flex-row sm:-mx-2">
+                <form action="https://www.getrevue.co/profile/aianshume/add_subscriber" method="post" id="revue-form" name="revue-form"  target="_blank" class="flex flex-col space-y-3 sm:space-y-0 sm:flex-row sm:-mx-2">
                   <input type="email" name="member[email]" id="member_email" class="px-4 md:px-6 py-2 text-gray-700 bg-white border border-gray-200 rounded-lg sm:mx-2 focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 revue-form-field" placeholder="tim@apple.com"/>
-                  <button class="py-1 px-4 bg-blue-500 rounded" @click="showModal = true">Subscribe</button>
-              </div>
+                  <button type="submit" class="py-1 px-4 bg-blue-500 rounded" @click="showModal = true" name="member[subscribe]" id="member_submit">Subscribe</button>
+                </form>
           </div>
       </div>
       <aside
@@ -351,3 +351,9 @@ notes = notes.sort(
     animation-duration: 20s;
   }
 </style>
+
+<script>
+  document.getElementById("member_submit").addEventListener("click", ()=> {
+    document.getElementById("member_email").value = ""
+  })
+</script>

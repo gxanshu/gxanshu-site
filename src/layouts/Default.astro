@@ -8,6 +8,7 @@ export interface Props {
   image?: string;
   isArticle?: boolean;
   layout?: string;
+  Ad?: boolean;
 }
 const {
   title,
@@ -16,6 +17,7 @@ const {
   image,
   class: className,
   isArticle,
+  Ad
 } = Astro.props;
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -28,6 +30,7 @@ import Footer from "../components/Footer.astro";
   title={title}
   description={description}
   image={image}
+  Ad={Ad}
 >
   <Header />
   <main class={`mx-auto ${isArticle ? "max-w-screen-sm": "max-w-screen-xl"} items-center w-95 mt-20 ${className}` }>

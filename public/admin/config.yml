@@ -1,0 +1,41 @@
+backend:
+  name: github
+  repo: aianshume/codenanshu
+  branch: astro
+  squash_merges: true
+  open_authoring: true
+
+publish_mode: editorial_workflow
+media_folder: public/assets
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: aianshu
+    api_key: 588917754152746
+public_folder: /assets
+site_url: "https://codenanshu.in"
+
+collections:
+  - name: blog
+    label: Blog
+    folder: src/pages/blog
+    create: true
+    extension: mdx
+    format: frontmatter
+    fields:
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: date, label: Date, widget: date }
+      - { label: "Image", name: "image", widget: "image", choose_url: true, media_library: { config: { multiple: false }}}
+      - { name: body, label: Body, widget: markdown }
+  - name: notes
+    label: Notes
+    folder: src/pages/notes
+    create: true
+    extension: mdx
+    format: frontmatter
+    fields:
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: date, label: Date, widget: date }
+      - { name: body, label: Body, widget: markdown }
