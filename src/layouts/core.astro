@@ -15,7 +15,6 @@ export interface Props {
   image?: string;
   class?: string;
   isArticle?: boolean;
-  Ad?: boolean;
 }
 
 const {
@@ -25,7 +24,6 @@ const {
   class: className = "",
   isArticle,
   date: publishedDate,
-  Ad,
 } = Astro.props;
 
 const date = new Date(
@@ -168,7 +166,8 @@ const imageURL = new URL(image ?? "./Social.png", Astro.site);
   </head>
   <body class={`${className} bg-white`}>
     <slot />
-  </body>
+adsence
+</body>
 </html>
 
 <style is:global>

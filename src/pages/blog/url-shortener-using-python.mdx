@@ -10,7 +10,8 @@ image: /assets/url-shortener.webp
 ---
 
 import Image from "components/Image.astro"
-export const components = {img: Image}
+import InArticleAd from "components/ad/InArticleAd.astro"
+export const components = {img: Image, InArticleAd: InArticleAd}
 
 Hello Techies, In this blog we will be creating a URL shortener with Python. Let's get Started.
 
@@ -68,3 +69,4 @@ In the above code, we will make use of tinyurl.short() method of the object shor
 You can find the complete updated code on GitHub
 
 Thanks for reading. Happy Learning :)
+<InArticleAd/>
