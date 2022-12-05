@@ -30,6 +30,6 @@ export default defineConfig({
       forward: ["datalayer.push"]
     }
   })],
-  output: "server",
+  output: "static",
   adapter: netlify()
 });
