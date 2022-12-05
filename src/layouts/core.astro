@@ -25,7 +25,7 @@ const {
   class: className = "",
   isArticle,
   date: publishedDate,
-  Ad
+  Ad,
 } = Astro.props;
 
 const date = new Date(
@@ -151,22 +151,34 @@ const imageURL = new URL(image ?? "./Social.png", Astro.site);
         font-display: swap;
       }
     </style>
+    <!-- Google tag (gtag.js) -->
+    <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-5D7Z6EYSZ0"
+    />
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-5D7Z6EYSZ0");
+    </script>
+    <!-- google adsence -->
+    <script type="text/partytown" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6691816550079346"/>
   </head>
   <body class={`${className} bg-white`}>
     <slot />
   </body>
-  <script type="text/partytown" async src={Ad ? "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6691816550079346" : ""}
-     crossorigin="anonymous"></script>
 </html>
 
 <style is:global>
-    body::-webkit-scrollbar {
-  display: none;
-}
+  body::-webkit-scrollbar {
+    display: none;
+  }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-body {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
+  /* Hide scrollbar for IE, Edge and Firefox */
+  body {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 </style>
