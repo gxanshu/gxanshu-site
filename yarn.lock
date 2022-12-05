@@ -105,6 +105,14 @@
     uvu "^0.5.0"
     vfile-message "^3.0.0"
 
+"@astrojs/netlify@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/netlify/-/netlify-1.2.1.tgz#4c7d74e60a8ffa9931132ee703ab5222e3aac130"
+  integrity sha512-6ISps3454K4Jgf5fUfp2IjDQ19w5rgRJcy1BxV+Ke1BE7lraRdqg+Ywp0rytJz0jNbw5vz5gvajMZtTffHeA8w==
+  dependencies:
+    "@astrojs/webapi" "^1.1.1"
+    esbuild "^0.14.43"
+
 "@astrojs/partytown@^1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@astrojs/partytown/-/partytown-1.0.2.tgz#e31f44e366b070815c68c7ede9fe567b8c75316c"
