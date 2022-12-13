@@ -14,7 +14,7 @@ import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "http://dev.codenanshu.in",
+  site: "https://codenanshu.in",
   markdown: {
     shikiConfig: {
       theme: customTheme
