@@ -9,7 +9,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write \"**/*.{astro,js,jsx,ts,tsx,md,mdx}\""
+    "format": "prettier --write \"**/*.{astro,js,jsx,ts,tsx,md,mdx}\"",
+    "deploy:prod": "netlify deploy --dir=dist --prod"
   },
   "dependencies": {
     "@astrojs/alpinejs": "^0.1.2",
