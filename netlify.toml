@@ -22,3 +22,9 @@
   status = 301
   force = false
   query = {path = ":path"}
+
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
