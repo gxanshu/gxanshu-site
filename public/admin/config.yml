@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: aianshume/codenanshu
-  branch: astro
+  branch: dev
   squash_merges: true
   open_authoring: true
 
