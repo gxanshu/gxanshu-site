@@ -34,12 +34,12 @@ const {page} = Astro.props;
     </div>
     <div class="flex justify-between mt-16">
         {page.url.prev !== undefined ? (
-          <button class="px-4 py-2 bg-gray-400 rounded-md"><a href={page.url.prev} class="text-black">Prev</a></button>
+          <button class="px-4 py-2 bg-gray-100 rounded-md border-2"><a href={page.url.prev} class="text-black">Prev</a></button>
         ) : (
           <div/>
         )}
         {page.url.next && (
-          <button class="px-4 py-2 bg-gray-400 rounded-md"><a href={page.url.next} class="text-black">Next</a></button>
+          <button class="px-4 py-2 bg-gray-100 rounded-md border-2"><a href={page.url.next} class="text-black">Next</a></button>
         )}
     </div>
 </section>

@@ -13,9 +13,6 @@ import sitemap from "@astrojs/sitemap";
 import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
-import netlify from "@astrojs/netlify/functions";
-
-// https://astro.build/config
 export default defineConfig({
   site: "http://dev.codenanshu.in",
   markdown: {
@@ -29,7 +26,6 @@ export default defineConfig({
     config: {
       forward: ["datalayer.push"]
     }
-  })],
-  output: "static",
-  adapter: netlify()
+  })]
 });
+
