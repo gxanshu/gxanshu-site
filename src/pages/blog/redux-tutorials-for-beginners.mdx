@@ -7,8 +7,7 @@ image: /assets/redux-tutorial-for-beginners.png
 ---
 
 import Image from "components/Image.astro"
-import InArticleAd from "components/ad/InArticleAd.astro"
-export const components = {img: Image, InArticleAd: InArticleAd}
+export const components = {img: Image}
 
 React is one of the most loved JavaScript library to create interactive UI. it grows much faster then the other one like angular or vue its all due the the speed and the community they have. State is one the main concept of any UI framework or library. React provide us a **context API** to handle state on the top level but this is not a good or effective way to do that. so in this tutorials we are going to take a look a Redux tutorials for beginners.
 
@@ -32,7 +31,7 @@ npm install @reduxjs/toolkit redux react-redux
 #Yarn
 yarn add @reduxjs/toolkit redux react-redux
 ```
-<InArticleAd/>
+
 
 ### Create React App
 
@@ -169,4 +168,4 @@ export function Counter() {
 ```
 
 now with the help of these hooks and much more we are able to get data from the Redux store and then store it inside the local variable and whenever the state changes the local value will automatically changes
-<InArticleAd/>
+
