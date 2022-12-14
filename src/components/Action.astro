@@ -5,7 +5,5 @@
 
 <script>
     let url = window.location.href
-    try {
-        document.getElementById("twitter_link").href = `https://mobile.twitter.com/search?q=${url}`;
-    } catch(e) { }
+    document.getElementsByTagName("a").twitter_link.href = `https://mobile.twitter.com/search?q=${url}`;
 </script>
