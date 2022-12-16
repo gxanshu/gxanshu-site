@@ -8,13 +8,11 @@ image: /assets/best-note-taking-app.jpg
 
 # This is an H1
 
-This is an H1
-===
+# This is an H1
 
 ## This is an H2
 
-This is an H2
----
+## This is an H2
 
 ### This is an H3
 
@@ -24,7 +22,7 @@ This is an H2
 
 ###### This is an H6
 
----------------------------------------
+---
 
 A paragraph is simply one or more consecutive lines of text, separated by one or more blank lines. (A blank line is any line that looks like a blank line — a line containing nothing but spaces or tabs is considered blank.) Normal paragraphs should not be indented with spaces or tabs.
 
@@ -32,21 +30,21 @@ The implication of the “one or more consecutive lines of text” rule is that 
 
 When you do want to insert a <br /> break tag using Markdown, you end a line with two or more spaces, then type return.
 
----------------------------------------
+---
 
 > This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
 > consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
 > Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
-> 
+>
 > Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
 > id sem consectetuer libero luctus adipiscing.
 
 > This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+> Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
 
 > Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-id sem consectetuer libero luctus adipiscing.
+> id sem consectetuer libero luctus adipiscing.
 
 > This is the first level of quoting.
 >
@@ -55,37 +53,37 @@ id sem consectetuer libero luctus adipiscing.
 > Back to the first level.
 
 > ## This is a header.
-> 
-> 1.   This is the first list item.
-> 2.   This is the second list item.
-> 
+>
+> 1.  This is the first list item.
+> 2.  This is the second list item.
+>
 > Here's some example code:
-> 
+>
 >     return shell_exec("echo $input | $markdown_script");
 
----------------------------------------
+---
 
-*   Red
-*   Green
-*   Blue
+- Red
+- Green
+- Blue
 
-+   Red
-+   Green
-+   Blue
+* Red
+* Green
+* Blue
 
--   Red
--   Green
--   Blue
+- Red
+- Green
+- Blue
 
 1.  Bird
 2.  McHale
 3.  Parish
 
-*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-    Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
-    viverra nec, fringilla in, laoreet vitae, risus.
-*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
-    Suspendisse id sem consectetuer libero luctus adipiscing.
+- Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+  Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+  viverra nec, fringilla in, laoreet vitae, risus.
+- Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
+  Suspendisse id sem consectetuer libero luctus adipiscing.
 
 1.  This is a list item with two paragraphs. Lorem ipsum dolor
     sit amet, consectetuer adipiscing elit. Aliquam hendrerit
@@ -97,26 +95,26 @@ id sem consectetuer libero luctus adipiscing.
 
 2.  Suspendisse id sem consectetuer libero luctus adipiscing.
 
-*   A list item with a blockquote:
+- A list item with a blockquote:
 
-    > This is a blockquote
-    > inside a list item.
+  > This is a blockquote
+  > inside a list item.
 
 ```js
-console.log(code)
+console.log(code);
 ```
 
----------------------------------------
+---
 
-* * *
+---
 
-***
+---
 
-*****
+---
 
-- - -
+---
 
----------------------------------------
+---
 
 This is [an example](http://example.com/ "Title") inline link.
 
@@ -124,19 +122,19 @@ This is [an example](http://example.com/ "Title") inline link.
 
 This is [an example][id] reference-style link.
 
-[foo]: http://example.com/  "Optional Title Here"
-[foo]: http://example.com/  'Optional Title Here'
-[foo]: http://example.com/  (Optional Title Here)
+[foo]: http://example.com/ "Optional Title Here"
+[foo]: http://example.com/ "Optional Title Here"
+[foo]: http://example.com/ "Optional Title Here"
 
----------------------------------------
+---
 
-*single asterisks*
+_single asterisks_
 
 _single underscores_
 
 **double asterisks**
 
-__double underscores__
+**double underscores**
 
 un*frigging*believable
 
@@ -144,7 +142,7 @@ un*frigging*believable
 
 Use the `printf()` function.
 
-``There is a literal backtick (`) here.``
+`` There is a literal backtick (`) here. ``
 
 A single backtick in a code span: `` ` ``
 
@@ -152,7 +150,7 @@ A backtick-delimited string in a code span: `` `foo` ``
 
 `&#8212;` is the decimal-encoded equivalent of `&mdash;`.
 
----------------------------------------
+---
 
 ![Alt text](/path/to/img.jpg)
 
@@ -160,17 +158,17 @@ A backtick-delimited string in a code span: `` `foo` ``
 
 ![Alt text][id]
 
-[id]: url/to/image  "Optional title attribute"
+[id]: url/to/image "Optional title attribute"
 
----------------------------------------
+---
 
 \*literal asterisks\*
 
----------------------------------------
+---
 
 | left | center | right |
 | :--- | :----: | ----: |
-| item | item   | item  |
-| item | item   | item  |
-| item | item   | item  |
-| item | item   | item  |
+| item |  item  |  item |
+| item |  item  |  item |
+| item |  item  |  item |
+| item |  item  |  item |

@@ -150,8 +150,10 @@ const imageURL = new URL(image ?? "./Social.png", Astro.site);
       }
     </style>
     <!-- Google tag (gtag.js) -->
-    <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-5D7Z6EYSZ0"
-    />
+    <script
+      type="text/partytown"
+      src="https://www.googletagmanager.com/gtag/js?id=G-5D7Z6EYSZ0"
+    ></script>
     <script type="text/partytown">
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -162,25 +164,28 @@ const imageURL = new URL(image ?? "./Social.png", Astro.site);
       gtag("config", "G-5D7Z6EYSZ0");
     </script>
     <!-- google adsence -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6691816550079346"
-     crossorigin="anonymous"></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6691816550079346"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body class={`${className} bg-white`}>
     <slot />
-</body>
-<script>
-  console.log(`
+  </body>
+  <script>
+    console.log(`
   _,    _   _    ,_
   .o888P     Y8o8Y     Y888o.
  d88888      88888      88888b
 d888888b_  _d88888b_  _d888888b
-8888888888888888888888888888888   it's batman, don't forget to contribute in codenanshu.
+888888888888 anshu 888888888888   it's batman's project, don't forget to contribute
 8888888888888888888888888888888
 YJGS8P"Y888P"Y888P"Y888P"Y8888P
  Y888   '8'   Y8P   '8'   888Y
   '8o          V          o8
-  `)
-</script>
+  `);
+  </script>
 </html>
 
 <style is:global>
@@ -193,4 +198,7 @@ YJGS8P"Y888P"Y888P"Y888P"Y8888P
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+  [x-cloak] { 
+      display: none !important;
+   }
 </style>

@@ -5,20 +5,24 @@ import Action from "components/Action.astro";
 ---
 
 <Default
-title={frontmatter.title}
-description={frontmatter.description}
-image={frontmatter.image}
-isArticle
-class="py-8"
+  title={frontmatter.title}
+  description={frontmatter.description}
+  image={frontmatter.image}
+  isArticle
+  class="py-8"
 >
-    <article class="text-gray-700">
-        <section>
-            <h1 class="font-heading sm:text-4xl text-xl mb-4 font-medium text-black my-8 leading-relaxed">{frontmatter.title}</h1>
-            <p >Ai Anshu | {frontmatter.date}</p>
-        </section>
-        <section class="my-4 py-4 prose prose-a:font-link">
-            <slot/>
-        </section>
-    </article>
-    <Action/>
+  <article class="text-gray-700">
+    <section>
+      <h1
+        class="font-heading sm:text-4xl text-xl mb-4 font-medium text-black my-8 leading-relaxed"
+      >
+        {frontmatter.title}
+      </h1>
+      <p>Ai Anshu | {frontmatter.date}</p>
+    </section>
+    <section class="my-4 py-4 prose prose-a:font-link">
+      <slot />
+    </section>
+  </article>
+  <Action />
 </Default>

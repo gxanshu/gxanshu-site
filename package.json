@@ -9,13 +9,11 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write \"**/*.{astro,js,jsx,ts,tsx,md,mdx}\"",
-    "deploy:prod": "netlify deploy --dir=dist --prod"
+    "format": "prettier --write \"**/*.{astro,js,jsx,ts,tsx,md,mdx}\""
   },
   "dependencies": {
     "@astrojs/alpinejs": "^0.1.2",
     "@astrojs/mdx": "^0.12.0",
-    "@astrojs/netlify": "^1.2.1",
     "@astrojs/partytown": "^1.0.2",
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^2.1.3",

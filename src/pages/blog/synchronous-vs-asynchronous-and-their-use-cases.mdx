@@ -2,14 +2,14 @@
 layout: "layouts/posts/Blog.astro"
 title: Synchronous vs asynchronous programming and their use cases
 description: Synchronous and asynchronous programming what is the diffrence between these and how these tech helps programmers to write effictive code
-date: '2021/07/09'
+date: "2021/07/09"
 slug: synchronous-vs-asynchronous-and-their-use-cases
 category: blog
 image: /assets/synchronous-vs-asynchronous-and-their-use-cases.jpeg
 ---
 
-import Image from "components/Image.astro"
-export const components = {img: Image}
+import Image from "components/Image.astro";
+export const components = { img: Image };
 
 ## Synchronous vs asynchronous programming and their use cases
 
@@ -69,7 +69,6 @@ You can think of your talking as a separate async process. After some talk, you'
 That's it! That's how asynchronous programming works. Of course, we will jump into technical details in the later portions of this article.
 
 For now, just note that all the above things happened in a **single-core processor** with a **single-threaded program**. We will get more into this later.
-
 
 ### Parallel/Synchronous restaurants
 
@@ -144,4 +143,3 @@ There are many use cases. It ultimately boils down to I/O operation. But I'm sti
 - **Performance improvements:** Using asynchronous operations might drastically improve application performance, or at least, make it look like a better performer. Separating async and sync operations is a crucial task for best performance. For example, when you move folders in Google Drive, the folders are immediately moved from the UI side, making it seem faster. But the actual folder move operation (backend) is done asynchronously which would take slightly more time.
 
 That's it for today. Feel free to leave any feedback or questions in the comments below.
-

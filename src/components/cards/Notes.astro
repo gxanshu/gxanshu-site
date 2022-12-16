@@ -2,7 +2,9 @@
 const { frontmatter, url } = Astro.props;
 ---
 
-<div class="text-neutral-900 p-4 bg-gray-100 rounded-md border-2 hover:border-2 hover:border-black transition delay-75 duration-75 ease-in-out hover:scale-105 hover:shadow-xl focus:outline-none focus:ring">
-    <h4 class="font-heading py-4"><a href={url}>{frontmatter.title}</a></h4>
-    <p>{frontmatter.description}</p>
+<div
+  class="text-neutral-900 p-4 bg-gray-100 rounded-md border-2 hover:border-2 hover:border-black transition delay-75 duration-75 ease-in-out hover:scale-105 hover:shadow-xl focus:outline-none focus:ring"
+>
+  <h4 class="font-heading py-4"><a href={url}>{frontmatter.title}</a></h4>
+  <p>{frontmatter.description}</p>
 </div>

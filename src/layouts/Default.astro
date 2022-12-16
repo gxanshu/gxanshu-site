@@ -17,7 +17,7 @@ const {
   image,
   class: className,
   isArticle,
-  Ad
+  Ad,
 } = Astro.props;
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -33,7 +33,11 @@ import Footer from "../components/Footer.astro";
   Ad={Ad}
 >
   <Header />
-  <main class={`mx-auto ${isArticle ? "max-w-screen-sm": "max-w-screen-xl"} items-center w-95 mt-20 ${className}` }>
+  <main
+    class={`mx-auto ${
+      isArticle ? "max-w-screen-sm" : "max-w-screen-xl"
+    } items-center w-95 mt-20 ${className}`}
+  >
     <slot />
   </main>
   <Footer />

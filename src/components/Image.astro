@@ -1,24 +1,22 @@
 ---
-import { Cloudinary } from '@cloudinary/url-gen';
-import { crop, fill } from '@cloudinary/url-gen/actions/resize';
+import { Cloudinary } from "@cloudinary/url-gen";
+import { crop, fill } from "@cloudinary/url-gen/actions/resize";
 
 const cld = new Cloudinary({
   cloud: {
-    cloudName: "aianshu"
-  }
+    cloudName: "aianshu",
+  },
 });
 
 const { src, height, width, ...props } = Astro.props;
 
-let cldSrc = cld.image(src)
-                .format('auto')
-                .delivery('q_auto')
+let cldSrc = cld.image(src).format("auto").delivery("q_auto");
 
-if ( src.startsWith('https://')) {
-  cldSrc.setDeliveryType('fetch');
+if (src.startsWith("https://")) {
+  cldSrc.setDeliveryType("fetch");
 }
 
-if (height != undefined && width != undefined){
+if (height != undefined && width != undefined) {
   cldSrc.resize(fill().width(width).height(height));
 }
 
