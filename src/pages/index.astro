@@ -4,7 +4,7 @@ import Default from "layouts/Default.astro";
 import ProjectsCard from "components/cards/Projects.astro";
 import Projects from "../projects.json";
 import BlogCard from "components/cards/Blogs.astro";
-import NotesCard from 'components/cards/Notes.astro'
+import NotesCard from "components/cards/Notes.astro";
 
 let blogs = await Astro.glob("./blog/*.mdx");
 blogs = blogs.sort(
@@ -50,22 +50,22 @@ notes = notes.sort(
           Github, and take shots on Dribbble. you can find me in your computer.
         </p>
         <div class="flex justify-center">
-          <a href="/about"><button
-            class="inline-flex text-white bg-blue-600 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-            >About</button
-          ></a>
-          <a href="/contact"><button
-            class="ml-4 inline-flex text-gray-300 bg-gray-900 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg"
-            >Contact</button
-          ></a>
+          <a href="/about"
+            ><button
+              class="inline-flex text-white bg-blue-600 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+              >About</button
+            >
+          </a>
+          <a href="/contact"
+            ><button
+              class="ml-4 inline-flex text-gray-300 bg-gray-900 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg"
+              >Contact</button
+            >
+          </a>
         </div>
       </div>
       <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-        <img
-          class="animation-20s"
-          alt="hero"
-          src="/programming.jpg"
-        />
+        <img class="animation-20s" alt="hero" src="/programming.jpg" />
       </div>
     </div>
   </section>
@@ -266,85 +266,120 @@ notes = notes.sort(
             </div>
           </div>
           <a
-          class="flex items-center justify-center rounded-xl border-4 text-black mt-8 md:mt-10 border-black bg-pink-100 px-8 py-4 font-bold shadow-[6px_6px_0_0_#000] transition hover:shadow-none focus:outline-none focus:ring active:bg-pink-50"
-          href="/about"
-        >
-          Read More <span aria-hidden="true" class="ml-1.5" role="img">🤔</span>
-        </a>
+            class="flex items-center justify-center rounded-xl border-4 text-black mt-8 md:mt-10 border-black bg-pink-100 px-8 py-4 font-bold shadow-[6px_6px_0_0_#000] transition hover:shadow-none focus:outline-none focus:ring active:bg-pink-50"
+            href="/about"
+          >
+            Read More <span aria-hidden="true" class="ml-1.5" role="img"
+              >🤔</span
+            >
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-<!-- projects section -->
-<section class="mx-auto max-w-screen-xl items-center gap-8 mt-10">
-  <div class="flex justify-between">
-    <h3
-      class="font-heading text-md sm:text-xl mb-3 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-green-500"
-    >
-      Some Notes
-    </h3>
-    <a class="font-heading text-gray-700" href="/notes">View All</a>
-  </div>
-  <div class="relative items-center w-full py-12 mx-auto">
-    <div
-      class="grid w-full grid-cols-1 gap-6 mx-auto md:grid-cols-2 lg:grid-cols-3"
-    >
-      {
-        [0, 1, 2].map((index) => (
-          <NotesCard
-            frontmatter={notes[index].frontmatter}
-            url={notes[index].url}
-          />
-        ))
-      }
+  <!-- projects section -->
+  <section class="mx-auto max-w-screen-xl items-center gap-8 mt-10">
+    <div class="flex justify-between">
+      <h3
+        class="font-heading text-md sm:text-xl mb-3 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-green-500"
+      >
+        Some Notes
+      </h3>
+      <a class="font-heading text-gray-700" href="/notes">View All</a>
     </div>
-  </div>
-</section>
+    <div class="relative items-center w-full py-12 mx-auto">
+      <div
+        class="grid w-full grid-cols-1 gap-6 mx-auto md:grid-cols-2 lg:grid-cols-3"
+      >
+        {
+          [0, 1, 2].map((index) => (
+            <NotesCard
+              frontmatter={notes[index].frontmatter}
+              url={notes[index].url}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
 
   <!-- newsletter section -->
-    <div class="bg-gray-100 border-2 my-12 rounded" x-data="{ 'showModal': false }" @keydown.escape="showModal = false" id="revue-embed">
-      <div class="container px-4 py-16 mx-auto lg:flex lg:items-center lg:justify-between">
-          <h2 class="text-3xl font-heading tracking-tight text-gray-800 xl:text-4xl">
-              Join us and get the update from anywhere  
-          </h2>
-  
-          <div class="mt-8 lg:mt-0">
-                <form action="https://www.getrevue.co/profile/aianshume/add_subscriber" method="post" id="revue-form" name="revue-form"  target="_blank" class="flex flex-col space-y-3 sm:space-y-0 sm:flex-row sm:-mx-2">
-                  <input type="email" name="member[email]" id="member_email" class="px-4 md:px-6 py-2 text-gray-700 bg-white border border-gray-200 rounded-lg sm:mx-2 focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 revue-form-field" placeholder="tim@apple.com"/>
-                  <button type="submit" class="py-1 px-4 bg-blue-500 rounded" @click="showModal = true" name="member[subscribe]" id="member_submit">Subscribe</button>
-                </form>
-          </div>
-      </div>
-      <aside
-            class="fixed bottom-4 right-4 z-50 flex items-center justify-center rounded-lg bg-black px-5 py-3 text-white"
-            x-show="showModal"
-            @click.away="showModal = false" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90"
+  <div
+    class="bg-gray-100 border-2 my-12 rounded"
+    x-data="{ 'showModal': false }"
+    @keydown.escape="showModal = false"
+    id="revue-embed"
+  >
+    <div
+      class="container px-4 py-16 mx-auto lg:flex lg:items-center lg:justify-between"
+    >
+      <h2
+        class="text-3xl font-heading tracking-tight text-gray-800 xl:text-4xl"
+      >
+        Join us and get the update from anywhere
+      </h2>
+
+      <div class="mt-8 lg:mt-0">
+        <form
+          action="https://www.getrevue.co/profile/aianshume/add_subscriber"
+          method="post"
+          id="revue-form"
+          name="revue-form"
+          target="_blank"
+          class="flex flex-col space-y-3 sm:space-y-0 sm:flex-row sm:-mx-2"
         >
-            <p class="text-sm font-medium">
-              hurray 🎉, please check your mail.
-            </p>
+          <input
+            type="email"
+            name="member[email]"
+            id="member_email"
+            class="px-4 md:px-6 py-2 text-gray-700 bg-white border border-gray-200 rounded-lg sm:mx-2 focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 revue-form-field"
+            placeholder="tim@apple.com"
+          />
+          <button
+            type="submit"
+            class="py-1 px-4 bg-blue-500 rounded"
+            @click="showModal = true"
+            name="member[subscribe]"
+            id="member_submit">Subscribe</button
+          >
+        </form>
+      </div>
+    </div>
+    <template x-if="true">
+      <aside
+      class="fixed bottom-4 right-4 z-50 flex items-center justify-center rounded-lg bg-black px-5 py-3 text-white"
+      x-show="showModal"
+      @click.away="showModal = false"
+      x-transition:enter="ease-out duration-300"
+      x-transition:enter-start="opacity-0 scale-90"
+      x-transition:enter-end="opacity-100 scale-100"
+      x-transition:leave="ease-in duration-300"
+      x-transition:leave-start="opacity-100 scale-100"
+      x-transition:leave-end="opacity-0 scale-90"
+    >
+      <p class="text-sm font-medium">hurray 🎉, please check your mail.</p>
 
-            <button
-                class="ml-3 rounded bg-white/20 p-1 hover:bg-white/10"
-                @click="showModal = false"
-            >
-                <span class="sr-only">Close</span>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-4 w-4"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                >
-                    <path
-                        fillRule="evenodd"
-                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                        clipRule="evenodd"></path>
-                </svg>
-            </button>
-        </aside>
+      <button
+        class="ml-3 rounded bg-white/20 p-1 hover:bg-white/10"
+        @click="showModal = false"
+      >
+        <span class="sr-only">Close</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fillRule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            clipRule="evenodd"></path>
+        </svg>
+      </button>
+    </aside>
+    </template>
   </div>
-
 </Default>
 
 <style>
@@ -354,7 +389,7 @@ notes = notes.sort(
 </style>
 
 <script>
-  document.getElementById("member_submit").addEventListener("click", ()=> {
-    document.getElementById("member_email").value = ""
-  })
+  document.getElementById("member_submit").addEventListener("click", () => {
+    document.getElementById("member_email").value = "";
+  });
 </script>
