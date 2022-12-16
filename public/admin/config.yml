@@ -23,6 +23,7 @@ collections:
     extension: mdx
     format: frontmatter
     fields:
+      - { name: layout, label: Layout, default: layouts/posts/Blog.astro}
       - { name: title, label: Title }
       - { name: description, label: Description }
       - { name: date, label: Date, widget: date }
@@ -35,6 +36,7 @@ collections:
     extension: mdx
     format: frontmatter
     fields:
+      - { name: layout, label: Layout, default: layouts/posts/Notes.astro}
       - { name: title, label: Title }
       - { name: description, label: Description }
       - { name: date, label: Date, widget: date }
