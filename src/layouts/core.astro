@@ -55,8 +55,6 @@ const imageURL = new URL(image ?? "./Social.png", Astro.site);
     <meta name="viewport" content="width=device-width" />
     <meta name="theme-color" content="#1A202C" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="mask-icon" href="/favicon.svg" color="#1A202C" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link
       rel="alternate"
@@ -179,7 +177,7 @@ const imageURL = new URL(image ?? "./Social.png", Astro.site);
   .o888P     Y8o8Y     Y888o.
  d88888      88888      88888b
 d888888b_  _d88888b_  _d888888b
-888888888888 anshu 888888888888   it's batman's project, don't forget to contribute
+888888888888 Anshu 888888888888   it's batman's project, don't forget to contribute
 8888888888888888888888888888888
 YJGS8P"Y888P"Y888P"Y888P"Y8888P
  Y888   '8'   Y8P   '8'   888Y
@@ -198,7 +196,7 @@ YJGS8P"Y888P"Y888P"Y888P"Y8888P
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
-  [x-cloak] { 
-      display: none !important;
-   }
+  ::selection {
+    background-color: #c9f3fd;
+}
 </style>
