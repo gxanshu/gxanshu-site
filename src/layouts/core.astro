@@ -15,6 +15,7 @@ export interface Props {
   image?: string;
   class?: string;
   isArticle?: boolean;
+  noAd?: boolean;
 }
 
 const {
@@ -24,6 +25,7 @@ const {
   class: className = "",
   isArticle,
   date: publishedDate,
+  noAd
 } = Astro.props;
 
 const date = new Date(
@@ -164,7 +166,7 @@ const imageURL = new URL(image ?? "./Social.png", Astro.site);
     <!-- google adsence -->
     <script
       async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6691816550079346"
+      src={noAd ? "": "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6691816550079346"}
       crossorigin="anonymous"
     ></script>
   </head>
