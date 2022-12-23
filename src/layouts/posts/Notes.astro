@@ -2,6 +2,7 @@
 const { frontmatter } = Astro.props;
 import Default from "layouts/Default.astro";
 import Action from "components/Action.astro";
+import Newsletter from "components/Newsletter.astro";
 ---
 
 <Default
@@ -14,7 +15,7 @@ import Action from "components/Action.astro";
   <article class="text-gray-700">
     <section>
       <h1
-        class="font-heading sm:text-4xl text-xl mb-4 font-medium text-black my-8 leading-relaxed"
+        class="font-heading sm:text-4xl text-xl mb-4 font-medium text-black my-8 leading-loose"
       >
         {frontmatter.title}
       </h1>
@@ -23,6 +24,7 @@ import Action from "components/Action.astro";
     <section class="my-4 py-4 prose prose-a:font-link">
       <slot />
     </section>
+    <Newsletter/>
   </article>
   <Action />
 </Default>
