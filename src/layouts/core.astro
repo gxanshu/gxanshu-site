@@ -15,7 +15,7 @@ export interface Props {
   image?: string;
   class?: string;
   isArticle?: boolean;
-  noAd?: boolean;
+  
 }
 
 const {
@@ -25,7 +25,7 @@ const {
   class: className = "",
   isArticle,
   date: publishedDate,
-  noAd
+  
 } = Astro.props;
 
 const date = new Date(
@@ -166,7 +166,7 @@ const imageURL = new URL(image ?? "./Social.png", Astro.site);
     <!-- google adsence -->
     <script
       async
-      src={noAd ? "": "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6691816550079346"}
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6691816550079346"
       crossorigin="anonymous"
     ></script>
   </head>
@@ -179,7 +179,7 @@ const imageURL = new URL(image ?? "./Social.png", Astro.site);
   .o888P     Y8o8Y     Y888o.
  d88888      88888      88888b
 d888888b_  _d88888b_  _d888888b
-888888888888 Anshu 888888888888   it's batman's project, don't forget to contribute
+888888888888 Anshu 888888888888
 8888888888888888888888888888888
 YJGS8P"Y888P"Y888P"Y888P"Y8888P
  Y888   '8'   Y8P   '8'   888Y
