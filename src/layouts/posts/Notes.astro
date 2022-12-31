@@ -2,7 +2,6 @@
 const { frontmatter } = Astro.props;
 import Default from "layouts/Default.astro";
 import Action from "components/Action.astro";
-import Newsletter from "components/Newsletter.astro";
 ---
 
 <Default
@@ -24,7 +23,6 @@ import Newsletter from "components/Newsletter.astro";
     <section class="my-4 py-4 prose prose-a:font-link">
       <slot />
     </section>
-    <Newsletter/>
   </article>
   <Action />
 </Default>
