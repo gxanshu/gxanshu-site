@@ -1,1 +1,9 @@
-actions/ fix twitter
+fix: send function in contact.astro
+add: inner ads in article
+fix: actions/twitter
+add: features images in notes
+add: book notes page
+add: tutorials section
+add: compactibity of tutroails with netlify cms
+add: search funcnality
+fix: google page insights
