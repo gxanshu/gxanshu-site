@@ -99,27 +99,31 @@ import Default from "layouts/Default.astro";
 </Default>
 
 <script>
-  const token = "5231457212:AAE_Jxyo8IGK0Mfa7Mlf2mf36ClMp6qDRZA";
-  const id = "1493444597";
-
-  function sendMessage() {
+function sendMessage() {
     const email = document.getElementById("email");
     const subject = document.getElementById("subject");
     const message = document.getElementById("message");
 
-    const note = `
+    const request = new XMLHttpRequest();
+    request.open("POST", "https://discord.com/api/webhooks/1059090087612256267/vjYnzjWpukwsji6MNS5F6O3aJuwzkTWnHBZe_LXj6IW8mxiOrxswa3iN9DSKvFSeWIlq");
+      // post on discord
+
+    request.setRequestHeader('Content-type', 'application/json');
+
+    const params = {
+    username: "site bot",
+    avatar_url: "",
+    content: `
     email: ${email.value}
-subject: ${subject.value}
-message: ${message.value}
-    `;
-    fetch(
-      `https://api.telegram.org/bot${token}/sendMessage?chat_id=${id}&text=${encodeURIComponent(
-        note
-      )}`
-    ).then((res) => console.log(res));
-    email.value = "";
-    subject.value = "";
-    message.value = "";
+    subject: ${subject.value}
+    message: ${message.value}
+    `
+    }
+
+    request.send(JSON.stringify(params));
+
+    email.value = subject.value = message.value = "";
+
   }
 
   document.getElementById("submit").addEventListener("click", sendMessage);
