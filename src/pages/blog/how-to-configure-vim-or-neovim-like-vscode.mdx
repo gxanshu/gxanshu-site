@@ -7,6 +7,9 @@ date: "2021/07/25"
 image: /assets/setup-vim-as-vscode.webp
 ---
 
+import ArticleAd from "components/ads/Article.astro";
+export const components = { ArticleAd: ArticleAd };
+
 ## What is Vim or neovim
 
 **vim** is powerfull text editor with lots of functionality and many more. vim help us to write code very fast without using the mouse, all the work is done with keyboard currently i write this artice in vim as well.
@@ -251,6 +254,8 @@ if you install vim then just open this location `~/.vimrc/init.vim` and if you i
     " Alternative way to quit
     nnoremap <C-M> :wq<CR>
 ```
+
+<ArticleAd/>
 
 after copy paste the about code in init.vim you need to just save the code and then just open any other file using vim or neovim for example you have hello.js on desktop then just run the line in terminal `nvim hello.js` and you have the nvim opend then just press : and the enter `PlugInstall` and you find that plugins are going to install. just wait for these download and the after the download is completed just exit the vim or nvim and then just simply reopen the editor and you can see the changes .
 lets take a look on the keyboard shortcuts that i created for you.

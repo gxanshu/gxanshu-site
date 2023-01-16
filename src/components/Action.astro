@@ -8,3 +8,8 @@
     class="ml-4 bg-black p-2 rounded">Suggest Changes</a
   >
 </div>
+
+<script is:inline>
+  let link = document.getElementById("twitter_link");
+  link.href = `https://mobile.twitter.com/search?q=${decodeURI(window.location)}`
+</script>
