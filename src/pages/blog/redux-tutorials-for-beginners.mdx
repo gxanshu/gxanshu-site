@@ -7,7 +7,8 @@ image: /assets/redux-tutorial-for-beginners.png
 ---
 
 import Image from "components/Image.astro";
-export const components = { img: Image };
+import Ad from "components/ads/Article.astro";
+export const components = { img: Image, Ad: Ad };
 
 React is one of the most loved JavaScript library to create interactive UI. it grows much faster then the other one like angular or vue its all due the the speed and the community they have. State is one the main concept of any UI framework or library. React provide us a **context API** to handle state on the top level but this is not a good or effective way to do that. so in this tutorials we are going to take a look a Redux tutorials for beginners.
 
@@ -31,6 +32,8 @@ npm install @reduxjs/toolkit redux react-redux
 #Yarn
 yarn add @reduxjs/toolkit redux react-redux
 ```
+
+<Ad/>
 
 ### Create React App
 
@@ -112,6 +115,7 @@ export const counterSlice = createSlice({
 export const { increment, decrement, incrementByAmount } = counterSlice.actions;
 export default counterSlice.reducer;
 ```
+<Ad/>
 
 if i want to explain the code then its look like this first we are going to import `createSlice` from something and then we are going to `export const counterSlice` with some added state and some reducers.
 

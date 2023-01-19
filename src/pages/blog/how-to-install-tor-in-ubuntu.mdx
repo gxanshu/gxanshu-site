@@ -9,7 +9,8 @@ image: /assets/how-to-install-tor-in-ubuntu.jpeg
 ---
 
 import Image from "components/Image.astro";
-export const components = { img: Image };
+import Ad from "components/ads/Article.astro";
+export const components = { img: Image, Ad: Ad };
 
 Tor Browser routes your web traffic through the Tor network, making it private and anonymous. When you use the Tor Browser, the connection to the website you are viewing is encrypted and protected from network surveillance and traffic analysis.
 
@@ -19,6 +20,8 @@ In this tutorials, we’ll explain how to install Tor web browser on Ubuntu 18.0
 Installing Tor Browser Launcher
 
 The easiest way to install the Tor Browser on Ubuntu Linux is by using the Tor Browser Launcher script. This script downloads and automatically installs the most recent version of Tor Browser and adds application launcher icon. The “torbrowser-launcher” package is included in the default Ubuntu repositories but it is pretty outdated. We’ll install the package from the project maintainer repository.
+
+<Ad/>
 
 Execute the following commands as a user with sudo permissions :
 

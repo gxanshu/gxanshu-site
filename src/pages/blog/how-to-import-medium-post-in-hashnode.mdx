@@ -9,7 +9,8 @@ image: /assets/how-to-import-medium-post-in-hashnode.jpeg
 ---
 
 import Image from "components/Image.astro";
-export const components = { img: Image };
+import Ad from "components/ads/Article.astro";
+export const components = { img: Image, Ad: Ad };
 
 Writers and bloggers love readers like fish love water. So when platforms like Medium.com and Svbtle launched, it was an easy way for them to publish articles, blog posts, and art-directed stories that had the immediate potential for thousands of reads just by being posted to one of those sites.
 
@@ -28,6 +29,8 @@ content is displayed. Their platform gains an audience instead of building your
 personal brand. Your content may gain more exposure but are people remembering
 you or “that one post on Medium about soldiers and PTSD?”
 ```
+
+<Ad/>
 
 In terms of pros, you get a built-in audience, attachment to Medium as a brand (which can elevate your own brand when you’re an up-and-comer), and some really nice publishing tools and features.
 
