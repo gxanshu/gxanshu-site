@@ -9,7 +9,8 @@ image: /assets/what-are-the-best-js-library-for-rest-api-testing.png
 ---
 
 import Image from "components/Image.astro";
-export const components = { img: Image };
+import Ad from "components/ads/Article.astro";
+export const components = { img: Image, Ad: Ad };
 
 To do API automation testing with JavaScript, we'll first need to know which libraries or frameworks we can use that'll help build our test framework.
 
@@ -60,6 +61,8 @@ describe("Array", function () {
 ```
 
 Enter fullscreen mode Exit fullscreen mode
+
+<Ad/>
 
 Now, let's take a look at how Mocha test would look like with SuperTest -
 
