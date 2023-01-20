@@ -1,5 +1,6 @@
 ---
 import { Cloudinary } from "@cloudinary/url-gen";
+import { quality } from "@cloudinary/url-gen/actions/delivery";
 import { crop, fill } from "@cloudinary/url-gen/actions/resize";
 
 const cld = new Cloudinary({
@@ -10,7 +11,7 @@ const cld = new Cloudinary({
 
 const { src, height, width, ...props } = Astro.props;
 
-let cldSrc = cld.image(src).format("auto").delivery("q_auto");
+let cldSrc = cld.image(src).format("auto").delivery(quality(50));
 
 if (src.startsWith("https://")) {
   cldSrc.setDeliveryType("fetch");
