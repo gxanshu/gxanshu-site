@@ -7,11 +7,7 @@ type GetStaticPaths = {
 }; // Overrides `GetStaticPathsOptions` types from Astro
 export async function getStaticPaths({ paginate }: GetStaticPaths) {
   const blogs = await Astro.glob("./*.mdx");
-  const sortedPosts = blogs.sort(
-    (a, b) =>
-      new Date(b.frontmatter.pubDate).valueOf() -
-      new Date(a.frontmatter.pubDate).valueOf()
-  );
+  const sortedPosts = blogs.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
   // Return a paginated collection of paths for all posts
   return paginate(sortedPosts, { pageSize: 12 });
 }
