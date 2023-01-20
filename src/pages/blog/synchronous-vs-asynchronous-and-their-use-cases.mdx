@@ -51,7 +51,8 @@ Task 1 = In Progress
 Task 2 = In Progress
 Task 3 = Waiting for execution (dependent on task 1)
 ```
-<Ad/>
+
+<Ad />
 
 When your order is complete, you go to the counter to fetch the items. Then you return to your table and enjoy the meal. Task 1 is complete and task 3 starts
 
@@ -83,7 +84,8 @@ In this scenario, you're **synchronized** with the cashier/cook. You have to wai
 After getting the food, you get back to the table to eat. As you had to wait in the queue, you didn't get any time to have a good conversation with your friends. You just eat the food and leave the restaurant.
 
 **Now, imagine you're the computer program**
-<Ad/>
+
+<Ad />
 
 The restaurant has 4 cashiers, which in the computer world would translate into 4 processor cores. For such, at least 4 threads are needed. You will be able to relate the rest of the story with the computer world easily so I'm not going to break it down further.
 
@@ -117,8 +119,7 @@ So if it was a Python web application, you would need 100 threads to handle 100 
 
 Wow! So good! Why don't we use async programming everywhere then? Unfortunately, everything good also has a significant bad side.
 
-<Ad/>
-
+<Ad />
 
 Async is only the best when you're doing I/O heavy operation (network request, database read etc). But for CPU intensive operations, asynchronous programs will be a nightmare. Because CPU operations are not the same as I/O. **During mathematical operation, the CPU (processor) will be blocked, which in turn will block the only single thread that the program has.** As a result, all the other user requests (assuming it's a web app) will be blocked till the current mathematical calculation is done, resulting in very poor performance. In such cases, you have to use something like Python or Java which is synchronous.
 

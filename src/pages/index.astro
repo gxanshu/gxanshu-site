@@ -7,10 +7,14 @@ import BlogCard from "components/cards/Blogs.astro";
 import NotesCard from "components/cards/Notes.astro";
 
 let blogs = await Astro.glob("./blog/*.mdx");
-blogs = blogs.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
+blogs = blogs.sort(
+  (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
+);
 
 let notes = await Astro.glob("./notes/*.mdx");
-notes = notes.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
+notes = notes.sort(
+  (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
+);
 // Full Astro Component Syntax:
 // https://docs.astro.build/Default-concepts/astro-components/
 ---
@@ -18,7 +22,6 @@ notes = notes.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.front
 <Default
   title="CodeNanshu - developer's coding blog"
   description="codenanshu is the coding & programming blog that write about web development, artifical intelligence and machine learning. help you to understand computers"
-  
 >
   <!-- hero section -->
   <section class="text-gray-500 body-font">
