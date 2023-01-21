@@ -8,16 +8,12 @@ import NotesCard from "components/cards/Notes.astro";
 
 let blogs = await Astro.glob("./blog/*.mdx");
 blogs = blogs.sort(
-  (a, b) =>
-    new Date(b.frontmatter.pubDate).valueOf() -
-    new Date(a.frontmatter.pubDate).valueOf()
+  (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
 );
 
 let notes = await Astro.glob("./notes/*.mdx");
 notes = notes.sort(
-  (a, b) =>
-    new Date(b.frontmatter.pubDate).valueOf() -
-    new Date(a.frontmatter.pubDate).valueOf()
+  (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
 );
 // Full Astro Component Syntax:
 // https://docs.astro.build/Default-concepts/astro-components/
@@ -26,10 +22,9 @@ notes = notes.sort(
 <Default
   title="CodeNanshu - developer's coding blog"
   description="codenanshu is the coding & programming blog that write about web development, artifical intelligence and machine learning. help you to understand computers"
-  
 >
   <!-- hero section -->
-  <section class="text-gray-400 body-font">
+  <section class="text-gray-500 body-font">
     <div
       class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center"
     >
@@ -88,7 +83,7 @@ notes = notes.sort(
         target="_blank">View All</a
       >
     </div>
-    <div class="text-gray-400 body-font">
+    <div class="text-gray-500 body-font">
       <div class="container px-5 py-12 mx-auto">
         <div class="flex flex-wrap -mx-4 -my-8">
           {
@@ -101,7 +96,7 @@ notes = notes.sort(
     </div>
   </section>
 
-  <!-- projects section -->
+  <!-- Blog section -->
   <section class="mx-auto max-w-screen-xl items-center gap-8 mt-10">
     <div class="flex justify-between">
       <h3
@@ -113,10 +108,10 @@ notes = notes.sort(
     </div>
     <div class="relative items-center w-full py-12 mx-auto">
       <div
-        class="grid w-full grid-cols-1 gap-6 mx-auto md:grid-cols-2 lg:grid-cols-3"
+        class="grid w-full grid-cols-1 gap-6 mx-auto md:grid-cols-2 lg:grid-cols-4"
       >
         {
-          [0, 1, 2].map((index) => (
+          [0, 1, 2, 3].map((index) => (
             <BlogCard
               frontmatter={blogs[index].frontmatter}
               url={blogs[index].url}
