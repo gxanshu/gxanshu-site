@@ -123,21 +123,25 @@ const imageURL = new URL(image ?? "./Social.png", Astro.site);
     <meta name="creator" content="@aianshume" />
     <meta name="publisher" content="aianshume" />
     <style>
-    @font-face {
-      font-family:'SF Pro Display';
-      font-style:normal;
-      font-weight:700;
-      src:local('☺'), url("/fonts/sf-pro-display_bold.woff2") format("woff2"), url("/fonts/sf-pro-display_bold.woff") format("woff"), url("/fonts/sf-pro-display_bold.ttf") format("truetype");
-      /* (C) 2015 Apple Inc. All rights reserved. */
-    }
-    
-    @font-face {
-      font-family:'SF Pro Text';
-      font-style:normal;
-      font-weight:400;
-      src:local('☺'), url("/fonts/sf-pro-text_regular.woff2") format("woff2"), url("/fonts/sf-pro-text_regular.woff") format("woff"), url("/fonts/sf-pro-text_regular.ttf") format("truetype");
-      /* (C) 2015 Apple Inc. All rights reserved. */
-    }
+      @font-face {
+        font-family: "SF Pro Display";
+        font-style: normal;
+        font-weight: 700;
+        src: local("☺"), url("/fonts/sf-pro-display_bold.woff2") format("woff2"),
+          url("/fonts/sf-pro-display_bold.woff") format("woff"),
+          url("/fonts/sf-pro-display_bold.ttf") format("truetype");
+        /* (C) 2015 Apple Inc. All rights reserved. */
+      }
+
+      @font-face {
+        font-family: "SF Pro Text";
+        font-style: normal;
+        font-weight: 400;
+        src: local("☺"), url("/fonts/sf-pro-text_regular.woff2") format("woff2"),
+          url("/fonts/sf-pro-text_regular.woff") format("woff"),
+          url("/fonts/sf-pro-text_regular.ttf") format("truetype");
+        /* (C) 2015 Apple Inc. All rights reserved. */
+      }
     </style>
     <!-- Google tag (gtag.js) -->
     <script

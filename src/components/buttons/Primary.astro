@@ -4,6 +4,8 @@
 const { className } = Astro.props;
 ---
 
-<button class={`text-center text-white bg-black border border-ultraDarkGray py-2 rounded-lg transition delay-50 duration-50 ease-in-out active:scale-75 ${className}`}>
-<slot/>
+<button
+  class={`text-center text-white bg-black border border-ultraDarkGray py-2 rounded-lg transition delay-50 duration-50 ease-in-out active:scale-75 ${className}`}
+>
+  <slot />
 </button>
