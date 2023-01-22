@@ -13,24 +13,21 @@ import sitemap from "@astrojs/sitemap";
 import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
+import preact from "@astrojs/preact";
+
+// https://astro.build/config
 export default defineConfig({
   site: "https://codenanshu.in",
   markdown: {
     shikiConfig: {
-      theme: customTheme,
-    },
+      theme: customTheme
+    }
   },
-  integrations: [
-    mdx(),
-    tailwind(),
-    alpinejs(),
-    sitemap({
-      filter: (page) => page !== "/admin",
-    }),
-    partytown({
-      config: {
-        forward: ["datalayer.push"],
-      },
-    }),
-  ],
+  integrations: [mdx(), tailwind(), alpinejs(), sitemap({
+    filter: page => page !== "/admin"
+  }), partytown({
+    config: {
+      forward: ["datalayer.push"]
+    }
+  }), preact({compat: true})]
 });
