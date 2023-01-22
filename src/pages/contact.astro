@@ -1,5 +1,6 @@
 ---
 import Default from "layouts/Default.astro";
+import PrimaryButton from "components/buttons/Primary.astro";
 ---
 
 <Default
@@ -61,11 +62,11 @@ import Default from "layouts/Default.astro";
             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
             placeholder="Leave a comment..."></textarea>
         </div>
-        <button
+        <PrimaryButton
           @click="showModal = true"
           id="submit"
-          class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-blue-600 sm:w-fit hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-primary-300"
-          >Send message</button
+          className="px-5"
+          >Send message</PrimaryButton
         >
       </div>
     </div>

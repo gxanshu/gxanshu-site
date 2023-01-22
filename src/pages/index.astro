@@ -5,6 +5,8 @@ import ProjectsCard from "components/cards/Projects.astro";
 import Projects from "../projects.json";
 import BlogCard from "components/cards/Blogs.astro";
 import NotesCard from "components/cards/Notes.astro";
+import PrimaryButton from "components/buttons/Primary.astro";
+import SecondaryButton from "components/buttons/Secondary.astro";
 
 let blogs = await Astro.glob("./blog/*.mdx");
 blogs = blogs.sort(
@@ -50,16 +52,14 @@ notes = notes.sort(
         </p>
         <div class="flex justify-center">
           <a href="/about"
-            ><button
-              class="inline-flex text-white bg-blue-600 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-              >About</button
-            >
+            ><PrimaryButton className="px-6">
+              About
+            </PrimaryButton>
           </a>
           <a href="/contact"
-            ><button
-              class="ml-4 inline-flex text-gray-300 bg-gray-900 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg"
-              >Contact</button
-            >
+            ><SecondaryButton className="ml-4 px-4">
+              Contact
+            </SecondaryButton>
           </a>
         </div>
       </div>
@@ -73,7 +73,7 @@ notes = notes.sort(
   <section class="mx-auto max-w-screen-xl items-center gap-8 mt-10">
     <div class="flex justify-between">
       <h3
-        class="font-heading text-md sm:text-xl mb-3 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-green-500"
+        class="font-heading text-md sm:text-xl mb-3 font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-blue-600 to-purple-600"
       >
         Some of My Projects
       </h3>
@@ -100,7 +100,7 @@ notes = notes.sort(
   <section class="mx-auto max-w-screen-xl items-center gap-8 mt-10">
     <div class="flex justify-between">
       <h3
-        class="font-heading text-md sm:text-xl mb-3 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-green-500"
+        class="font-heading text-md sm:text-xl mb-3 font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-blue-600 to-purple-600"
       >
         Latest Articles
       </h3>
@@ -108,7 +108,7 @@ notes = notes.sort(
     </div>
     <div class="relative items-center w-full py-12 mx-auto">
       <div
-        class="grid w-full grid-cols-1 gap-6 mx-auto md:grid-cols-2 lg:grid-cols-4"
+        class="grid w-full grid-cols-1 gap-6 mx-auto md:grid-cols-2 lg:grid-cols-4 px-5 sm:px-0"
       >
         {
           [0, 1, 2, 3].map((index) => (
@@ -160,7 +160,7 @@ notes = notes.sort(
             About Me
           </span>
           <h1
-            class="mb-8 text-4xl font-heading leading-none tracking-tighter text-black md:text-7xl lg:text-5xl"
+            class="mb-8 text-2xl font-heading leading-none tracking-tighter text-black md:text-4xl lg:text-4xl"
           >
             My passion is to build programs.
           </h1>
@@ -264,24 +264,24 @@ notes = notes.sort(
               </svg>
             </div>
           </div>
-          <a
-            class="flex items-center justify-center rounded-xl border-4 text-black mt-8 md:mt-10 border-black bg-pink-100 px-8 py-4 font-bold shadow-[6px_6px_0_0_#000] transition hover:shadow-none focus:outline-none focus:ring active:bg-pink-50"
+          <PrimaryButton
+            className="flex items-center justify-center rounded-xl border-4 mt-8 md:mt-10 px-4 scale-90"
             href="/about"
           >
             Read More <span aria-hidden="true" class="ml-1.5" role="img"
               >🤔</span
             >
-          </a>
+          </PrimaryButton>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- projects section -->
+  <!-- Notes section -->
   <section class="mx-auto max-w-screen-xl items-center gap-8 mt-10">
     <div class="flex justify-between">
       <h3
-        class="font-heading text-md sm:text-xl mb-3 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-green-500"
+        class="font-heading text-md sm:text-xl mb-3 font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-blue-600 to-purple-600"
       >
         Some Notes
       </h3>
@@ -289,7 +289,7 @@ notes = notes.sort(
     </div>
     <div class="relative items-center w-full py-12 mx-auto">
       <div
-        class="grid w-full grid-cols-1 gap-6 mx-auto md:grid-cols-2 lg:grid-cols-3"
+        class="grid w-full grid-cols-1 gap-6 mx-auto md:grid-cols-2 lg:grid-cols-3 px-5 sm:px-0"
       >
         {
           [0, 1, 2].map((index) => (

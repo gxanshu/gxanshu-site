@@ -6,9 +6,8 @@ module.exports = {
         95: "90%",
       },
       colors: {
-        blackBlue: "#10101a",
-        grayBlue: "#171923",
-        text: "#C4C4C4",
+        lightGray: "#F2F2F2",
+        ultraDarkGray: "#1F1F1F",
       },
       fontFamily: {
         heading: "'SF Pro Display', sans-serif",
