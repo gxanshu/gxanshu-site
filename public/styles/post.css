@@ -7,6 +7,7 @@
 
 .anchor-link {
 	margin-left: 10px;
+	color: black !important;
 }
 
 /* Float anchor links to the left of headings on larger screens. */
