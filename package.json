@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@algolia/client-search": "^4.14.3",
+    "@astrojs/rss": "^2.0.0",
     "@astrojs/sitemap": "^1.0.0",
     "@docsearch/css": "^3.3.2",
     "@docsearch/react": "^3.3.2",

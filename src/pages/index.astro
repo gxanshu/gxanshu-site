@@ -10,12 +10,12 @@ import SecondaryButton from "components/buttons/Secondary.astro";
 
 let blogs = await Astro.glob("./blog/*.mdx");
 blogs = blogs.sort(
-  (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
+  (a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate)
 );
 
 let notes = await Astro.glob("./notes/*.mdx");
 notes = notes.sort(
-  (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
+  (a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate)
 );
 // Full Astro Component Syntax:
 // https://docs.astro.build/Default-concepts/astro-components/
@@ -299,6 +299,9 @@ notes = notes.sort(
       </div>
     </div>
   </section>
+
+  <!-- newsletter section  -->
+  
 </Default>
 
 <style>
