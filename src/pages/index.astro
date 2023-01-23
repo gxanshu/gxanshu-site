@@ -7,6 +7,7 @@ import BlogCard from "components/cards/Blogs.astro";
 import NotesCard from "components/cards/Notes.astro";
 import PrimaryButton from "components/buttons/Primary.astro";
 import SecondaryButton from "components/buttons/Secondary.astro";
+import HeroAnimation from 'components/Hero.astro'
 
 let blogs = await Astro.glob("./blog/*.mdx");
 blogs = blogs.sort(
@@ -60,7 +61,7 @@ notes = notes.sort(
         </div>
       </div>
       <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-        <img class="animation-20s" alt="hero" src="/programming.jpg" />
+        <HeroAnimation/>
       </div>
     </div>
   </section>

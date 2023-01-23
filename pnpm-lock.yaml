@@ -12,6 +12,7 @@ specifiers:
   '@docsearch/css': ^3.3.2
   '@docsearch/react': ^3.3.2
   '@docusaurus/utils': 2.0.0-alpha.69
+  '@rive-app/canvas': ^1.0.98
   '@tailwindcss/typography': ^0.5.8
   algoliasearch: ^4.14.3
   astro: ^1.6.11
@@ -36,6 +37,7 @@ dependencies:
   '@astrojs/preact': 1.2.0_preact@10.11.3
   '@astrojs/tailwind': 2.1.3_tailwindcss@3.2.4
   '@cloudinary/url-gen': 1.8.7
+  '@rive-app/canvas': 1.0.98
   astro: 1.6.15
   autoprefixer: 10.4.13_postcss@8.4.20
   postcss: 8.4.20
@@ -823,6 +825,10 @@ packages:
     dependencies:
       '@proload/core': 0.3.3
       tsm: 2.3.0
+    dev: false
+
+  /@rive-app/canvas/1.0.98:
+    resolution: {integrity: sha512-dBsiM6ObIBHCUA/8RwCBDwlOSJ7+K3m4M0/OgPpgmvQ4Qw7d63ouSoOJxiwBeysu9dSqIVEXk9zR/pdqhAVCVQ==}
     dev: false
 
   /@rollup/pluginutils/4.2.1:
