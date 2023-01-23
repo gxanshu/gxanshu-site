@@ -1,40 +1,46 @@
-import { createPortal } from 'preact/compat';
-import { useCallback, useEffect, useRef, useState } from 'preact/hooks';
+import { createPortal } from "preact/compat";
+import { useCallback, useEffect, useRef, useState } from "preact/hooks";
 
 interface props {
-    listner: string,
+  listner: string;
 }
 
-export default function Menu({listner}: props) {
-    const [isOpen, setIsOpen] = useState(false);
-    const searchButtonRef = useRef(document.getElementById(listner));
+export default function Menu({ listner }: props) {
+  const [isOpen, setIsOpen] = useState(false);
+  const searchButtonRef = useRef(document.getElementById(listner));
 
-    const onOpen = useCallback(() => {
-        setIsOpen(true);
-    }, [setIsOpen]);
+  const onOpen = useCallback(() => {
+    setIsOpen(true);
+  }, [setIsOpen]);
 
-    const onClose = useCallback(() => {
-        setIsOpen(false);
-    }, [setIsOpen]);
+  const onClose = useCallback(() => {
+    setIsOpen(false);
+  }, [setIsOpen]);
 
-    useEffect(() => {
-        searchButtonRef.current?.addEventListener('click', onOpen);
-        return () => searchButtonRef.current?.removeEventListener('click', onOpen);
-    }, [searchButtonRef.current, onOpen]);
+  useEffect(() => {
+    searchButtonRef.current?.addEventListener("click", onOpen);
+    return () => searchButtonRef.current?.removeEventListener("click", onOpen);
+  }, [searchButtonRef.current, onOpen]);
 
-    if (!isOpen) return null;
+  if (!isOpen) return null;
 
-    return createPortal(
-        <div
-      class="fixed top-12 z-50 right-5 mt-2 w-40 rounded-md bg-white shadow-md"
-    >
+  return createPortal(
+    <div class="fixed top-12 z-50 right-5 mt-2 w-40 rounded-md bg-white shadow-md">
       <ul class="text-gray-800">
-        <li class="m-4"><a href="/about">About</a></li>
-        <li class="m-4"><a href="/blog">Blog</a></li>
-        <li class="m-4"><a href="/notes">Notes</a></li>
-        <li class="m-4"><a href="/contact">Contact</a></li>
+        <li class="m-4">
+          <a href="/about">About</a>
+        </li>
+        <li class="m-4">
+          <a href="/blog">Blog</a>
+        </li>
+        <li class="m-4">
+          <a href="/notes">Notes</a>
+        </li>
+        <li class="m-4">
+          <a href="/contact">Contact</a>
+        </li>
       </ul>
     </div>,
-        document.body
-    );
+    document.body
+  );
 }

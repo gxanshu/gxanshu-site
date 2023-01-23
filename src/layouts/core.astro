@@ -70,7 +70,7 @@ const imageURL = new URL(image ?? "./Social.png", Astro.site);
     <!--  blog counts as an OG type of "article", not "website" -->
     <meta property="og:type" content={isArticle ? "article" : "website"} />
 
-    <link rel="stylesheet" href={isArticle ? "/styles/post.css": ""}>
+    <link rel="stylesheet" href={isArticle ? "/styles/post.css" : ""} />
     <!-- Date Time Information about your last changes ->
     <meta name="revised" content={date} />
     <meta property="article:modified_time" content={date} />

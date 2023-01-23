@@ -8,9 +8,7 @@ import Notification from "components/modals/Notification";
   title="Contact | Ai Anshu | codenanshu"
   description="Hello! I'm Anshu. I am a 17-year-old boy who is very intrested in computer science and entrepreneurship. I started learning web development"
 >
-  <section
-    class="bg-white"
-  >
+  <section class="bg-white">
     <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
       <h2
         class="mb-4 text-4xl tracking-tight font-heading text-center text-gray-900"
@@ -99,7 +97,8 @@ import Notification from "components/modals/Notification";
 
     request.send(JSON.stringify(params));
 
-    email.value = subject.value = message.value = "";s
+    email.value = subject.value = message.value = "";
+    s;
   }
 
   document.getElementById("submit").addEventListener("click", sendMessage);
