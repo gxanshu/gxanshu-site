@@ -1,12 +1,16 @@
+---
+import PrimaryButton from "./buttons/Primary.astro";
+---
+
 <div class="flex">
-  <a id="twitter_link" href="#" target="_blank" class="bg-blue-500 p-2 rounded"
-    >discuss on Twitter</a
-  >
-  <a
-    href="https://github.com/aianshume/codenanshu/issues"
-    target="_blank"
-    class="ml-4 bg-black p-2 rounded">Suggest Changes</a
-  >
+  <PrimaryButton className="bg-blue-500 px-2">
+    <a id="twitter_link" href="#" target="_blank">discuss on Twitter</a>
+  </PrimaryButton>
+  <PrimaryButton className="ml-4 px-2">
+    <a href="https://github.com/aianshume/codenanshu/issues" target="_blank"
+      >Suggest Changes</a
+    >
+  </PrimaryButton>
 </div>
 
 <script is:inline>

@@ -13,12 +13,10 @@ const { data } = Astro.props;
       >
     </div>
     <div class="flex-grow pl-6">
-      <span
-        class="tracking-widest text-xs title-font font-medium text-indigo-400 mb-1"
-      >
+      <span class="tracking-widest text-xs font-medium text-indigo-400 mb-1">
         {data.tech}
       </span>
-      <h3 class="title-font text-xl font-medium text-neutral-900 mb-3">
+      <h3 class="font-heading text-neutral-900 mb-3">
         <a href={data.link} target="_blank" rel="nofollow">{data.name}</a>
       </h3>
       <p class="leading-relaxed mb-5">

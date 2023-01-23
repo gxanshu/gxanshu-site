@@ -15,7 +15,7 @@ import Action from "components/Action.astro";
   <article class="text-gray-700">
     <section>
       <h1
-        class="font-heading sm:text-4xl text-xl mb-4 font-medium text-black my-8 leading-relaxed"
+        class="font-heading sm:text-2xl text-xl mb-4 font-medium text-black my-8 leading-relaxed"
       >
         {frontmatter.title}
       </h1>
@@ -28,7 +28,9 @@ import Action from "components/Action.astro";
       />
       <p>Ai Anshu | {frontmatter.date}</p>
     </section>
-    <section class="my-4 py-4 prose prose-a:font-link">
+    <section
+      class="my-4 py-4 prose prose-headings:font-heading prose-headings:text-xl prose-stone prose-img:rounded"
+    >
       <slot />
     </section>
   </article>

@@ -68,28 +68,26 @@ async function getSearchMeta() {
     } catch (error) {
       console.log(error);
     }
-    console.log(json);
   }
 
-  //   json = prettier.format(JSON.stringify(json), { parser: "json" });
-  //   const client = algoliasearch(
-  //     process.env.NEXT_PUBLIC_APPLICATION_ID,
-  //     process.env.ADMIN_KEY
-  //   );
-  //   const index = client.initIndex(process.env.APPLICATION_INDEX_NAME);
+  json = prettier.format(JSON.stringify(json), { parser: "json" });
+  const client = algoliasearch(
+    process.env.PUBLIC_APPLICATION_ID,
+    process.env.ADMIN_KEY
+  );
+  const index = client.initIndex(process.env.APPLICATION_INDEX_NAME);
 
-  //   console.log(process.env.APPLICATION_INDEX_NAME);
+  console.log(process.env.APPLICATION_INDEX_NAME);
 
-  //   index.clearObjects().then(() => {
-  //     console.log("cleard database");
-  //   });
-  //   await index
-  //     .saveObjects(JSON.parse(json), { autoGenerateObjectIDIfNotExist: true })
-  //     .then((res) => console.log(res))
-  //     .catch((e) => console.log(e));
+  index.clearObjects().then(() => {
+    console.log("cleard database");
+  });
+  await index
+    .saveObjects(JSON.parse(json), { autoGenerateObjectIDIfNotExist: true })
+    .then((res) => console.log(res))
+    .catch((e) => console.log(e));
 
-  //   console.log("Search meta is ready ✅");
+  console.log("Search meta is ready ✅");
 }
 
 getSearchMeta();
-// module.exports = getSearchMeta;

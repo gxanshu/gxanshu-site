@@ -70,7 +70,8 @@ const imageURL = new URL(image ?? "./Social.png", Astro.site);
     <!--  blog counts as an OG type of "article", not "website" -->
     <meta property="og:type" content={isArticle ? "article" : "website"} />
 
-    <!-- Date Time Information about your last changes -->
+    <link rel="stylesheet" href={isArticle ? "/styles/post.css": ""}>
+    <!-- Date Time Information about your last changes ->
     <meta name="revised" content={date} />
     <meta property="article:modified_time" content={date} />
 
@@ -122,31 +123,29 @@ const imageURL = new URL(image ?? "./Social.png", Astro.site);
   <meta property="twitter:creator:id" content="13334762"> -->
     <meta name="creator" content="@aianshume" />
     <meta name="publisher" content="aianshume" />
-    <style>
+
+    <style is:global>
       @font-face {
-        font-family: "CircularStd";
-        src: local("CircularStd"), local("CircularStd"),
-          url("/fonts/CircularStd-Book.woff");
-        font-weight: 400;
-        font-display: swap;
+        font-family: "SF Pro Display";
+        font-style: normal;
+        font-weight: 700;
+        src: local("☺"), url("/fonts/sf-pro-display_bold.woff2") format("woff2"),
+          url("/fonts/sf-pro-display_bold.woff") format("woff"),
+          url("/fonts/sf-pro-display_bold.ttf") format("truetype");
+        /* (C) 2015 Apple Inc. All rights reserved. */
       }
 
       @font-face {
-        font-family: "DINCondensed";
-        src: local("DINCondensed"), local("DINCondensed"),
-          url("/fonts/DINCondensed-Bold.woff");
-        font-weight: 600;
-        font-display: swap;
-      }
-
-      @font-face {
-        font-family: "MarkPro";
-        src: local("MarkPro"), local("MarkPro"),
-          url("/fonts/MarkPro-Heavy.woff");
+        font-family: "SF Pro Text";
+        font-style: normal;
         font-weight: 400;
-        font-display: swap;
+        src: local("☺"), url("/fonts/sf-pro-text_regular.woff2") format("woff2"),
+          url("/fonts/sf-pro-text_regular.woff") format("woff"),
+          url("/fonts/sf-pro-text_regular.ttf") format("truetype");
+        /* (C) 2015 Apple Inc. All rights reserved. */
       }
     </style>
+
     <!-- Google tag (gtag.js) -->
     <script
       type="text/partytown"
@@ -161,6 +160,7 @@ const imageURL = new URL(image ?? "./Social.png", Astro.site);
 
       gtag("config", "G-5D7Z6EYSZ0");
     </script>
+
     <!-- google adsence -->
     <script
       async
@@ -171,19 +171,6 @@ const imageURL = new URL(image ?? "./Social.png", Astro.site);
   <body class={`${className} bg-white`}>
     <slot />
   </body>
-  <script>
-    console.log(`
-  _,    _   _    ,_
-  .o888P     Y8o8Y     Y888o.
- d88888      88888      88888b
-d888888b_  _d88888b_  _d888888b
-888888888888 Anshu 888888888888
-8888888888888888888888888888888
-YJGS8P"Y888P"Y888P"Y888P"Y8888P
- Y888   '8'   Y8P   '8'   888Y
-  '8o          V          o8
-  `);
-  </script>
 </html>
 
 <style is:global>
