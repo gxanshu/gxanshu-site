@@ -7,6 +7,8 @@ const prettier = require("prettier");
 const shell = require("shelljs");
 const uuid = require("uuid");
 const algoliasearch = require("algoliasearch");
+const fs = require("fs");
+
 require("dotenv").config();
 
 const websiteRoot = "src/pages";
@@ -45,6 +47,7 @@ async function getMDXMeta(file) {
         lvl1: frontMatter.title,
         lvl2: item.lvl === 2 ? item.content : json[index - 1]?.content ?? null,
         lvl3: item.lvl === 3 ? item.content : null,
+        lvl4: item.lvl === 4 ? item.content : null,
       },
     });
   });
@@ -71,6 +74,8 @@ async function getSearchMeta() {
   }
 
   json = prettier.format(JSON.stringify(json), { parser: "json" });
+  fs.writeFileSync("./users.json", json);
+
   const client = algoliasearch(
     process.env.PUBLIC_APPLICATION_ID,
     process.env.ADMIN_KEY
