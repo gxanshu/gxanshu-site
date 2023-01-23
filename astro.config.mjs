@@ -1,12 +1,9 @@
-import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
+import { defineConfig } from "astro/config";
 import customTheme from "./src/utils/theme.json";
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { autolinkConfig } from './scripts/rehype-autolink-config';
-
-// https://astro.build/config
-import alpinejs from "@astrojs/alpinejs";
 
 // https://astro.build/config
 import sitemap from "@astrojs/sitemap";
@@ -20,7 +17,7 @@ import preact from "@astrojs/preact";
 // https://astro.build/config
 export default defineConfig({
   site: "https://codenanshu.in",
-  integrations: [mdx(), tailwind(), alpinejs(), sitemap({
+  integrations: [mdx(), tailwind(), sitemap({
     filter: page => page !== "/admin"
   }), partytown({
     config: {

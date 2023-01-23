@@ -1,7 +1,4 @@
-add [] design system
-update UI
 replace: alpine with preact
-add: search funcnality
 add newletters
 twitter commenting system
 github page edit with netlifyCMS
