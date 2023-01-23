@@ -1,25 +1,21 @@
 @font-face {
-  font-family: "CircularStd";
-  src: local("CircularStd"), local("CircularStd"),
-    url("../fonts/CircularStd-Book.woff");
-  font-weight: 400;
-  font-display: swap;
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 700;
+  src: local("☺"), url("/fonts/sf-pro-display_bold.woff2") format("woff2"),
+    url("/fonts/sf-pro-display_bold.woff") format("woff"),
+    url("/fonts/sf-pro-display_bold.ttf") format("truetype");
+  /* (C) 2015 Apple Inc. All rights reserved. */
 }
 
 @font-face {
-  font-family: "DINCondensed";
-  src: local("DINCondensed"), local("DINCondensed"),
-    url("../fonts/DINCondensed-Bold.woff");
-  font-weight: 600;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "MarkPro";
-  src: local("MarkPro"), local("MarkPro"),
-    url("../fonts/MarkPro-Heavy.woff");
+  font-family: "SF Pro Text";
+  font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  src: local("☺"), url("/fonts/sf-pro-text_regular.woff2") format("woff2"),
+    url("/fonts/sf-pro-text_regular.woff") format("woff"),
+    url("/fonts/sf-pro-text_regular.ttf") format("truetype");
+  /* (C) 2015 Apple Inc. All rights reserved. */
 }
 
 img {
@@ -30,14 +26,16 @@ img {
 body {
     color: var(--tw-prose-body);
     max-width: 65ch;
-    font-family: 'CircularStd', Courier, monospace;
+    font-family: 'SF Pro Text', Courier, monospace;
   }
 
- h1 {
-  font-family: 'MarkPro', Courier, monospace;
+ h1,h2,h3,h4,h5,h6 {
+  font-family: 'SF Pro Display', Courier, monospace;
 }
+
 a {
-  font-family: 'DINCondensed', Courier, monospace;
+  color: #06c;
+  text-decoration: none;;
 }
 
   body :where([class~="lead"]):not(:where([class~="not-prose"] *)) {

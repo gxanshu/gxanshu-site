@@ -2,12 +2,18 @@
 import PrimaryButton from "./buttons/Primary.astro";
 ---
 
+<!-- Action buttons for articles  -->
 <div class="flex">
-  <PrimaryButton className="bg-blue-500 px-2">
-    <a id="twitter_link" href="#" target="_blank">discuss on Twitter</a>
+  <PrimaryButton className="px-2 text-sm mr-4">
+    <a href="https://codenanshu.substack.com/" target="_blank"
+      >Subscribe for more</a
+    >
   </PrimaryButton>
-  <PrimaryButton className="ml-4 px-2">
-    <a href="https://github.com/aianshume/codenanshu/issues" target="_blank"
+  <PrimaryButton className="px-2 text-sm">
+    <a id="twitter_link" href="#" target="_blank">Discuss on Twitter</a>
+  </PrimaryButton>
+  <PrimaryButton className="ml-4 px-2 text-sm">
+    <a href="https://codenanshu.in/admin" target="_blank"
       >Suggest Changes</a
     >
   </PrimaryButton>

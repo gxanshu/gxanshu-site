@@ -1,32 +1,11 @@
 ---
-import Search from 'components/search/Search.astro'
+import Search from "components/search/Search.astro";
+import Menu from "./modals/Menu";
 ---
 
 <header
   aria-label="Site Header"
   class="bg-gray-50 fixed z-50 w-full top-0 left-0 bg-opacity-70 backdrop-filter backdrop-blur-xl border-b-gray-900 border-gray-100"
-  x-data="{
-    open: false,
-    toggle() {
-        if (this.open) {
-            return this.close()
-        }
-
-        this.$refs.button.focus()
-
-        this.open = true
-    },
-    close(focusAfter) {
-        if (! this.open) return
-
-        this.open = false
-
-        focusAfter && focusAfter.focus()
-    }
-}"
-  x-on:keydown.escape.prevent.stop="close($refs.button)"
-  x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
-  x-id="['dropdown-button']"
   class="relative"
 >
   <div
@@ -77,48 +56,27 @@ import Search from 'components/search/Search.astro'
           </li>
         </ul>
       </nav>
-      <Search/>
-        <button
-          class="block rounded bg-gray-800 p-2 text-white md:hidden"
-          x-ref="button"
-          x-on:click="toggle()"
-          :aria-expanded="open"
-          :aria-controls="$id('dropdown-button')"
+      <Search />
+      <button
+        class="block rounded bg-gray-800 p-2 ml-4 text-white md:hidden"
+        id="toggleMenu"
+      >
+        <span class="sr-only">Toggle menu</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
         >
-          <span class="sr-only">Toggle menu</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-4 w-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-      </div>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
     </div>
   </div>
-  <template x-if="true">
-    <div
-      x-ref="panel"
-      x-show="open"
-      x-transition.origin.top.left
-      x-on:click.outside="close($refs.button)"
-      :id="$id('dropdown-button')"
-      style="display: none;"
-      class="absolute right-5 mt-2 w-40 rounded-md bg-white shadow-md"
-    >
-      <ul class="text-gray-800">
-        <li class="m-4"><a href="/about">About</a></li>
-        <li class="m-4"><a href="/blog">Blog</a></li>
-        <li class="m-4"><a href="/notes">Notes</a></li>
-        <li class="m-4"><a href="/contact">Contact</a></li>
-      </ul>
-    </div>
-  </template>
 </header>
+<Menu listner="toggleMenu" client:only="preact" />
