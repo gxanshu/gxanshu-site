@@ -9,9 +9,7 @@
 </p>
 
 <p align="center">
-  <a aria-label="Vercel logo" href="https://twitter.com/aianshume">
-    <img src="https://img.shields.io/twitter/follow/aianshume?style=for-the-badge">
-  </a>
+  [![Netlify Status](https://api.netlify.com/api/v1/badges/3757b925-f130-41bf-8dd4-572d2f3cec2f/deploy-status)](https://app.netlify.com/sites/codenanshu/deploys)
   <a aria-label="NPM version" href="https://www.npmjs.com/package/next">
     <img alt="" src="https://img.shields.io/npm/v/next.svg?style=for-the-badge&labelColor=000000">
   </a>
