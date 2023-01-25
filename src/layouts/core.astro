@@ -165,27 +165,28 @@ const imageURL = new URL(image ?? "./Social.png", Astro.site);
   </head>
   <body class={`${className} bg-white`}>
     <slot />
-    
+
     <!-- optimizing google adsence code for lazy loading  -->
     <script is:inline>
       function downloadJSAtOnload() {
-      var element = document.createElement("script");
-      element.crossOrigin = "anonymous"
-      element.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6691816550079346";
-      document.body.appendChild(element);
+        var element = document.createElement("script");
+        element.crossOrigin = "anonymous";
+        element.src =
+          "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6691816550079346";
+        document.body.appendChild(element);
       }
-      ['click', 'scroll', 'mousemove', 'touchstart'].forEach(function(e) {
-          window.addEventListener(e, firstInteraction, {
-              once: true
-          });
+      ["click", "scroll", "mousemove", "touchstart"].forEach(function (e) {
+        window.addEventListener(e, firstInteraction, {
+          once: true,
+        });
       });
       var userInteracted = false;
 
       function firstInteraction() {
-          if (!userInteracted) {
-              userInteracted = true;
-              downloadJSAtOnload();
-          }
+        if (!userInteracted) {
+          userInteracted = true;
+          downloadJSAtOnload();
+        }
       }
     </script>
   </body>
