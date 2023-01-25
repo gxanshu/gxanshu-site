@@ -22,3 +22,13 @@
   for = "/*"
     [headers.values]
     Access-Control-Allow-Origin = "*"
+  
+[[plugins]]
+  package = "netlify-plugin-cloudinary"
+
+  [plugins.inputs]
+  cloudName = "aianshume"
+  deliveryType = "upload"
+  uploadPreset = "assets"
+  imagesPath = "/public/assets"
+  loadingStrategy = "lazy"
