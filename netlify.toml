@@ -31,4 +31,3 @@
   deliveryType = "upload"
   uploadPreset = "assets"
   imagesPath = "/public/assets"
-  loadingStrategy = "lazy"
