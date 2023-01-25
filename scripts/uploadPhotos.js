@@ -14,15 +14,17 @@ async function uploadAssets() {
   });
   const files = fs.readdirSync(path.join(process.cwd(), "public/assets"));
   files.forEach(async (img) => {
-    await cloudinary.uploader.upload(
-      `./public/assets/${img}`,
-      { use_filename: true, unique_filename: false, folder: "assets" },
-      function (error, result) {
-        console.log(error);
-      }
-    ).catch(e => {
-      console.log(e);
-    })
+    await cloudinary.uploader
+      .upload(
+        `./public/assets/${img}`,
+        { use_filename: true, unique_filename: false, folder: "assets" },
+        function (error, result) {
+          console.log(error);
+        }
+      )
+      .catch((e) => {
+        console.log(e);
+      });
   });
 }
 

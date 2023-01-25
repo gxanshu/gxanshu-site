@@ -12,24 +12,32 @@ import { autolinkConfig } from "./scripts/rehype-autolink-config";
 // https://astro.build/config
 export default defineConfig({
   site: "https://codenanshu.in",
-  integrations: [mdx(), tailwind(), sitemap({
-    filter: page => page !== "/admin"
-  }), partytown({
-    config: {
-      forward: ["datalayer.push"]
-    }
-  }), preact({
-    compat: true
-  }), prefetch({
-    selector: "a[href^='/']"
-  })],
+  integrations: [
+    mdx(),
+    tailwind(),
+    sitemap({
+      filter: (page) => page !== "/admin",
+    }),
+    partytown({
+      config: {
+        forward: ["datalayer.push"],
+      },
+    }),
+    preact({
+      compat: true,
+    }),
+    prefetch({
+      selector: "a[href^='/']",
+    }),
+  ],
   markdown: {
     gfm: true,
     shikiConfig: {
-      theme: customTheme
+      theme: customTheme,
     },
     rehypePlugins: [
-    // This adds links to headings
-    [rehypeAutolinkHeadings, autolinkConfig]]
-  }
+      // This adds links to headings
+      [rehypeAutolinkHeadings, autolinkConfig],
+    ],
+  },
 });
