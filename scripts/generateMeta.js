@@ -78,7 +78,7 @@ async function getSearchMeta() {
 
   const client = algoliasearch(
     process.env.PUBLIC_APPLICATION_ID,
-    process.env.ADMIN_KEY
+    process.env.APPLICATION_ADMIN_KEY
   );
   const index = client.initIndex(process.env.APPLICATION_INDEX_NAME);
 
@@ -96,3 +96,5 @@ async function getSearchMeta() {
 }
 
 getSearchMeta();
+
+module.exports = getSearchMeta;
