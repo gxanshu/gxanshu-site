@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 import Default from "layouts/Default.astro";
 import NotesCard from "components/cards/Notes.astro";
 
@@ -6,10 +7,10 @@ type GetStaticPaths = {
   paginate: any;
 }; // Overrides `GetStaticPathsOptions` types from Astro
 export async function getStaticPaths({ paginate }: GetStaticPaths) {
-  const blogs = await Astro.glob("./*.mdx");
+  const blogs = await getCollection("notes");
   const sortedPosts = blogs.sort(
     (a, b) =>
-      Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate)
+      Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate)
   );
   // Return a paginated collection of paths for all posts
   return paginate(sortedPosts, { pageSize: 12 });
@@ -33,7 +34,7 @@ const { page } = Astro.props;
       <div class="grid w-full grid-cols-1 gap-6 mx-auto lg:grid-cols-3">
         {
           page.data.map((blog) => (
-            <NotesCard frontmatter={blog.frontmatter} url={blog.url} />
+            <NotesCard data={blog.data} url={blog.slug} />
           ))
         }
       </div>

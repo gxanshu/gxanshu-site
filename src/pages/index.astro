@@ -1,4 +1,6 @@
 ---
+import {getCollection} from "astro:content"
+
 // Component Imports
 import Default from "layouts/Default.astro";
 import ProjectsCard from "components/cards/Projects.astro";
@@ -8,17 +10,18 @@ import NotesCard from "components/cards/Notes.astro";
 import PrimaryButton from "components/buttons/Primary.astro";
 import SecondaryButton from "components/buttons/Secondary.astro";
 import HeroAnimation from "components/Hero.astro";
+import { get } from "./rss.xml";
 
-let blogs = await Astro.glob("./blog/*.mdx");
+let blogs = await getCollection("blog");
 blogs = blogs.sort(
   (a, b) =>
-    Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate)
+    Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate)
 );
 
-let notes = await Astro.glob("./notes/*.mdx");
+let notes = await getCollection("notes");
 notes = notes.sort(
   (a, b) =>
-    Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate)
+    Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate)
 );
 // Full Astro Component Syntax:
 // https://docs.astro.build/Default-concepts/astro-components/
@@ -112,8 +115,8 @@ notes = notes.sort(
         {
           [0, 1, 2, 3].map((index) => (
             <BlogCard
-              frontmatter={blogs[index].frontmatter}
-              url={blogs[index].url}
+              data={blogs[index].data}
+              url={blogs[index].slug}
             />
           ))
         }
@@ -294,8 +297,8 @@ notes = notes.sort(
         {
           [0, 1, 2].map((index) => (
             <NotesCard
-              frontmatter={notes[index].frontmatter}
-              url={notes[index].url}
+              data={notes[index].data}
+              url={notes[index].slug}
             />
           ))
         }
