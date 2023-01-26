@@ -18,9 +18,9 @@ export default function Menu({ listner }: props) {
   }, [setIsOpen]);
 
   useEffect(() => {
-    searchButtonRef.current?.addEventListener("click", onOpen);
-    return () => searchButtonRef.current?.removeEventListener("click", onOpen);
-  }, [searchButtonRef.current, onOpen]);
+    searchButtonRef.current?.addEventListener("click", isOpen ? onClose : onOpen);
+    return () => searchButtonRef.current?.removeEventListener("click", isOpen ? onClose : onOpen);
+  }, [searchButtonRef.current, isOpen]);
 
   if (!isOpen) return null;
 
