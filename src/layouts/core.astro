@@ -11,7 +11,7 @@
 export interface Props {
   title: string;
   description: string;
-  date?: string;
+  date?: any;
   image?: string;
   class?: string;
   isArticle?: boolean;
@@ -71,11 +71,10 @@ const imageURL = new URL(image ?? "./Social.png", Astro.site);
     <meta property="og:type" content={isArticle ? "article" : "website"} />
 
     <link rel="stylesheet" href={isArticle ? "/styles/post.css" : ""} />
-    <!-- Date Time Information about your last changes ->
+
+    <!-- Date Time Information about your last changes -->
     <meta name="revised" content={date} />
     <meta property="article:modified_time" content={date} />
-
-    <!--  -->
     <link rel="canonical" href={canonicalURL} />
 
     <meta name="viewport" content="width=device-width" />
@@ -204,5 +203,9 @@ const imageURL = new URL(image ?? "./Social.png", Astro.site);
   }
   ::selection {
     background-color: #c9f3fd;
+  }
+
+  .bg-clip-text {
+    -webkit-background-clip: text;
   }
 </style>
