@@ -12,14 +12,14 @@
     "format": "prettier --write \"**/*.{astro,js,jsx,ts,tsx,md,mdx}\" --plugin-search-dir=. ."
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.15.0",
+    "@astrojs/mdx": "^0.15.1",
     "@astrojs/partytown": "^1.0.3",
     "@astrojs/preact": "^2.0.0",
     "@astrojs/prefetch": "^0.1.1",
     "@astrojs/tailwind": "^3.0.0",
     "@cloudinary/url-gen": "^1.8.7",
     "@rive-app/canvas": "^1.0.98",
-    "astro": "^2.0.1",
+    "astro": "^2.0.2",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
     "preact": "^10.11.3",
@@ -43,6 +43,7 @@
     "prettier": "^2.8.3",
     "prettier-plugin-astro": "^0.7.2",
     "rehype-autolink-headings": "^6.1.1",
+    "rehype-slug": "^5.1.0",
     "shelljs": "^0.8.5",
     "uuid": "^9.0.0"
   }
