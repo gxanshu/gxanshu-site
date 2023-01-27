@@ -18,10 +18,9 @@ collections:
     extension: mdx
     format: frontmatter
     fields:
-      - { name: layout, label: Layout, default: layouts/posts/Blog.astro}
       - { name: title, label: Title }
       - { name: description, label: Description }
-      - { name: pubDate, label: pubDate, widget: date }
+      - { name: pubDate, label: pubDate, widget: date, format: 'MMM Do YY' }
       - { label: "Image", name: "image", widget: "image", choose_url: true, media_library: { config: { multiple: false }}}
       - { name: body, label: Body, widget: markdown }
   - name: notes
@@ -31,8 +30,7 @@ collections:
     extension: mdx
     format: frontmatter
     fields:
-      - { name: layout, label: Layout, default: layouts/posts/Notes.astro}
       - { name: title, label: Title }
       - { name: description, label: Description }
-      - { name: pubDate, label: pubDate, widget: date }
+      - { name: pubDate, label: pubDate, widget: date, format: 'MMM Do YY'}
       - { name: body, label: Body, widget: markdown }
