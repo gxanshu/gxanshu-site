@@ -1,13 +1,14 @@
 import mdx from "@astrojs/mdx";
+import preact from "@astrojs/preact";
+import sitemap from "@astrojs/sitemap";
+import prefetch from "@astrojs/prefetch";
 import tailwind from "@astrojs/tailwind";
+import partytown from "@astrojs/partytown";
 import { defineConfig } from "astro/config";
 import customTheme from "./src/utils/theme.json";
-import sitemap from "@astrojs/sitemap";
-import partytown from "@astrojs/partytown";
-import preact from "@astrojs/preact";
-import prefetch from "@astrojs/prefetch";
+import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import { autolinkConfig } from "./scripts/rehype-autolink-config";
+import {autolinkConfig} from "./scripts/rehype-autolink-config"
 
 // https://astro.build/config
 export default defineConfig({
@@ -36,8 +37,8 @@ export default defineConfig({
       theme: customTheme,
     },
     rehypePlugins: [
-      // This adds links to headings
-      [rehypeAutolinkHeadings, autolinkConfig],
-    ],
+      rehypeSlug,
+     [rehypeAutolinkHeadings, autolinkConfig]
+    ]
   },
 });

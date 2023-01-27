@@ -13,7 +13,7 @@ const { data } = Astro.props;
       >
     </div>
     <div class="flex-grow pl-6">
-      <span class="tracking-widest text-xs font-medium text-indigo-400 mb-1">
+      <span class="tracking-widest text-xs font-medium text-black mb-1">
         {data.tech}
       </span>
       <h3 class="font-heading text-neutral-900 mb-3">
@@ -22,7 +22,7 @@ const { data } = Astro.props;
       <p class="leading-relaxed mb-5">
         {data.discription}
       </p>
-      <a class="inline-flex items-center">
+      <span class="inline-flex items-center">
         <img
           alt="blog"
           src={data.avatar}
@@ -33,7 +33,7 @@ const { data } = Astro.props;
             >{data.developer}</span
           >
         </span>
-      </a>
+      </span>
     </div>
   </div>
 </div>
