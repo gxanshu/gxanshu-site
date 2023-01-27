@@ -13,7 +13,7 @@ site_url: "https://codenanshu.in"
 collections:
   - name: blog
     label: Blog
-    folder: src/pages/blog
+    folder: src/content/blog
     create: true
     extension: mdx
     format: frontmatter
@@ -26,7 +26,7 @@ collections:
       - { name: body, label: Body, widget: markdown }
   - name: notes
     label: Notes
-    folder: src/pages/notes
+    folder: src/content/notes
     create: true
     extension: mdx
     format: frontmatter
