@@ -1,0 +1,80 @@
+---
+title: Learn Complete Rust Programming Language
+description: complete Rust programming language course. The course covers the
+  full spectrum of Rust, from basic syntax to advanced topics like generics and
+  error handling.
+pubDate: 01-28-2023
+image: /assets/rust_programming_language.jpg
+---
+This is a complete Rust programming language course. The course covers the full spectrum of Rust, from basic syntax to advanced topics like generics and error handling.
+
+The goal of the course is to teach you Rust. We assume you don’t know anything about Rust and hope to:
+
+* Give you a comprehensive understanding of the Rust syntax and language.
+* Enable you to modify existing programs and write new programs in Rust.
+* Show you common Rust idioms.
+
+## Assumptions
+
+The course assumes that you already know how to program. Rust is a statically typed language and we will sometimes make comparisons with C and C++ to better explain or contrast the Rust approach.
+
+If you know how to program in a dynamically typed language such as Python or JavaScript, then you will be able to follow along just fine too.
+
+## Using Cargo
+
+When you start reading about Rust, you will soon meet [Cargo](https://doc.rust-lang.org/cargo/), the standard tool used in the Rust ecosystem to build and run Rust applications. Here we want to give a brief overview of what Cargo is and how it fits into the wider ecosystem and how it fits into this training.
+
+### Installation Rustup
+
+You can follow the instructions to install cargo and rust compiler, among other standard ecosystem tools with the [rustup](https://rustup.rs/) tool, which is maintained by the Rust Foundation.
+
+Along with cargo and rustc, Rustup will install itself as a command line utility that you can use to install/switch toolchains, setup cross compilation, etc.
+
+### Cargo run
+
+If you want to experiment with the code on your own system, then you will need to first install Rust. Do this by following the [instructions in the Rust Book](#installation-rustup). This should give you a working `rustc` and `cargo`. At the time of writing, the latest stable Rust release has these version numbers:
+
+```shell
+% rustc --version
+rustc 1.67.0 (fc594f156 2023-01-24)
+% cargo --version
+cargo 1.67.0 (8ecd4f20a 2023-01-10)
+```
+
+* Use `cargo new exercise` to create a new `exercise/` directory for your code:
+
+  ```shell
+  $ cargo new exercise
+       Created binary (application) `exercise` package
+  ```
+* Navigate into `exercise/` and use `cargo run` to build and run your binary:
+
+  ```shell
+  $ cd exercise
+  $ cargo run
+     Compiling exercise v0.1.0 (/home/mgeisler/tmp/exercise)
+      Finished dev [unoptimized + debuginfo] target(s) in 0.75s
+       Running `target/debug/exercise`
+  Hello, world!
+  ```
+
+## What is Rust?
+
+
+
+Rust is a new programming language which had its 1.0 release in 2015:
+
+* Rust is a statically compiled language in a similar role as C++
+
+  * `rustc` uses LLVM as its backend.
+* Rust supports many [platforms and architectures](https://doc.rust-lang.org/nightly/rustc/platform-support.html):
+
+  * x86, ARM, WebAssembly, …
+  * Linux, Mac, Windows, …
+* Rust is used for a wide range of devices:
+
+  * firmware and boot loaders,
+  * smart displays,
+  * mobile phones,
+  * desktops,
+  * servers.
