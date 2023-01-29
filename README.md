@@ -35,14 +35,13 @@ another way is just to folk the repo write your post in markdown formet inside `
 
 ```
 Astro
-Tailwind CSS
-Alpine JS
-MDX
+TailwindCSS
+Preact
+MDXjs
 Partytown
-@astro/sitemap
-Clodinary
+Cloudinary
+rive
+Algolia
 Netlify
-Netify CMS
-Adsence
-Anylitics
+Netlify CMS
 ```
