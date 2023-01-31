@@ -53,7 +53,7 @@ export default function Search() {
           query
         )}%22`
       }
-      placeholder="Search docs"
+      placeholder="Search Satellite 🛰️"
     />,
     document.body
   );

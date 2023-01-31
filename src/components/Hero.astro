@@ -2,9 +2,10 @@
 
 <script>
   import { Rive } from "@rive-app/canvas";
+  let Canvas = document.getElementById("canvas");
   new Rive({
     src: "/coder.riv",
-    canvas: document.getElementById("canvas"),
+    canvas: Canvas as HTMLCanvasElement,
     autoplay: true,
   });
 </script>

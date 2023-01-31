@@ -1,5 +1,5 @@
 ---
-import { getCollection, CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 import Default from "layouts/Default.astro";
 import Action from "components/Action.astro";
 
@@ -9,10 +9,6 @@ export async function getStaticPaths() {
   return notesEntries.map(post => ({
     params: { slug: post.slug }, props: { post },
   }));
-}
-
-interface props {
-    post: CollectionEntry<"notes">
 }
 
 // 2. When its time to render, you can get the entry directly from the prop

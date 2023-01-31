@@ -10,7 +10,6 @@ import NotesCard from "components/cards/Notes.astro";
 import PrimaryButton from "components/buttons/Primary.astro";
 import SecondaryButton from "components/buttons/Secondary.astro";
 import HeroAnimation from "components/Hero.astro";
-import { get } from "./rss.xml";
 
 let blogs = await getCollection("blog");
 blogs = blogs.sort(

@@ -12,10 +12,6 @@ export async function getStaticPaths() {
   }));
 }
 
-interface props {
-    post: CollectionEntry<"blog">
-}
-
 // 2. When its time to render, you can get the entry directly from the prop
 const { post } = Astro.props;
 const { Content } = await post.render();
