@@ -8,7 +8,7 @@ import { defineConfig } from "astro/config";
 import customTheme from "./src/utils/theme.json";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import {autolinkConfig} from "./scripts/rehype-autolink-config"
+import { autolinkConfig } from "./scripts/rehype-autolink-config";
 
 // https://astro.build/config
 export default defineConfig({
@@ -36,9 +36,6 @@ export default defineConfig({
     shikiConfig: {
       theme: customTheme,
     },
-    rehypePlugins: [
-      rehypeSlug,
-     [rehypeAutolinkHeadings, autolinkConfig]
-    ]
+    rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, autolinkConfig]],
   },
 });

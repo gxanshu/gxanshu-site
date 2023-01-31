@@ -7,7 +7,6 @@ const prettier = require("prettier");
 const shell = require("shelljs");
 const uuid = require("uuid");
 const algoliasearch = require("algoliasearch");
-const fs = require("fs");
 
 require("dotenv").config();
 
@@ -55,7 +54,7 @@ async function getMDXMeta(file) {
   return result;
 }
 
-async function getSearchMeta() {
+async function main() {
   let json = [];
 
   const files = shell
@@ -74,8 +73,8 @@ async function getSearchMeta() {
   }
 
   json = prettier.format(JSON.stringify(json), { parser: "json" });
-  fs.writeFileSync("./users.json", json);
 
+  // algoia client object
   const client = algoliasearch(
     process.env.PUBLIC_APPLICATION_ID,
     process.env.APPLICATION_ADMIN_KEY
@@ -95,6 +94,6 @@ async function getSearchMeta() {
   console.log("Search meta is ready ✅");
 }
 
-getSearchMeta();
+main();
 
-module.exports = getSearchMeta;
+module.exports = main;

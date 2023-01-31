@@ -1,6 +1,6 @@
 ---
-import Search from "components/search/Search.astro";
-import Menu from "./modals/Menu";
+import SearchButton from "components/search/Search.astro";
+import MenuModal from "./modals/Menu";
 ---
 
 <header
@@ -56,7 +56,7 @@ import Menu from "./modals/Menu";
           </li>
         </ul>
       </nav>
-      <Search />
+      <SearchButton />
       <button
         class="block rounded bg-gray-800 p-2 ml-4 text-white md:hidden"
         id="toggleMenu"
@@ -79,4 +79,4 @@ import Menu from "./modals/Menu";
     </div>
   </div>
 </header>
-<Menu listner="toggleMenu" client:only="preact" />
+<MenuModal listner="toggleMenu" client:only="preact" />

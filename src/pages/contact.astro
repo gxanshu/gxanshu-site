@@ -1,7 +1,7 @@
 ---
 import Default from "layouts/Default.astro";
 import PrimaryButton from "components/buttons/Primary.astro";
-import Notification from "components/modals/Notification";
+import NotificationModal from "components/modals/Notification";
 ---
 
 <Default
@@ -37,7 +37,8 @@ import Notification from "components/modals/Notification";
         <div>
           <label
             for="subject"
-            class="block mb-2 text-sm font-medium text-gray-900">Subject 📑</label
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Subject 📑</label
           >
           <input
             type="text"
@@ -51,7 +52,7 @@ import Notification from "components/modals/Notification";
           <label
             for="message"
             class="block mb-2 text-sm font-medium text-gray-900"
-            >Your message  📡</label
+            >Your message 📡</label
           >
           <textarea
             id="message"
@@ -62,7 +63,7 @@ import Notification from "components/modals/Notification";
         <PrimaryButton id="submit" className="px-5">Send message</PrimaryButton>
       </div>
     </div>
-    <Notification
+    <NotificationModal
       listner="submit"
       message="Thanks 😊, i will contact you soon 👋."
       client:only="preact"
@@ -77,10 +78,7 @@ import Notification from "components/modals/Notification";
     const message = document.getElementById("message") as HTMLInputElement;
 
     const request = new XMLHttpRequest();
-    request.open(
-      "POST",
-      "https://discord.com/api/webhooks/1059090087612256267/vjYnzjWpukwsji6MNS5F6O3aJuwzkTWnHBZe_LXj6IW8mxiOrxswa3iN9DSKvFSeWIlq"
-    );
+    request.open("POST", import.meta.env.PUBLIC_DISCORD_WEBHOOK);
     // post on discord
 
     request.setRequestHeader("Content-type", "application/json");

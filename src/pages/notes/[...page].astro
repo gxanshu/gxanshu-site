@@ -7,10 +7,9 @@ type GetStaticPaths = {
   paginate: any;
 }; // Overrides `GetStaticPathsOptions` types from Astro
 export async function getStaticPaths({ paginate }: GetStaticPaths) {
-  const blogs = await getCollection("notes");
-  const sortedPosts = blogs.sort(
-    (a, b) =>
-      Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate)
+  const notesEntries = await getCollection("notes");
+  const sortedPosts = notesEntries.sort(
+    (a, b) => Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate)
   );
   // Return a paginated collection of paths for all posts
   return paginate(sortedPosts, { pageSize: 12 });
@@ -33,8 +32,8 @@ const { page } = Astro.props;
     >
       <div class="grid w-full grid-cols-1 gap-6 mx-auto lg:grid-cols-3">
         {
-          page.data.map((blog) => (
-            <NotesCard data={blog.data} url={blog.slug} />
+          page.data.map((note) => (
+            <NotesCard data={note.data} url={note.slug} />
           ))
         }
       </div>

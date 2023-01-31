@@ -1,8 +1,13 @@
 ---
+/**
+ * customized image component with cloudinary integration
+ */
+
 import { Cloudinary } from "@cloudinary/url-gen";
 import { quality } from "@cloudinary/url-gen/actions/delivery";
 import { fill } from "@cloudinary/url-gen/actions/resize";
 
+// cloudinary cloud object
 const cld = new Cloudinary({
   cloud: {
     cloudName: "aianshu",
