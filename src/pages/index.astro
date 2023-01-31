@@ -4,21 +4,21 @@ import {getCollection} from "astro:content"
 // Component Imports
 import Default from "layouts/Default.astro";
 import ProjectsCard from "components/cards/Projects.astro";
-import Projects from "../projects.json";
+import ProjectsData from "../projects.json";
 import BlogCard from "components/cards/Blogs.astro";
 import NotesCard from "components/cards/Notes.astro";
 import PrimaryButton from "components/buttons/Primary.astro";
 import SecondaryButton from "components/buttons/Secondary.astro";
 import HeroAnimation from "components/Hero.astro";
 
-let blogs = await getCollection("blog");
-blogs = blogs.sort(
+let blogEntries = await getCollection("blog");
+blogEntries = blogEntries.sort(
   (a, b) =>
     Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate)
 );
 
-let notes = await getCollection("notes");
-notes = notes.sort(
+let noteEntries = await getCollection("notes");
+noteEntries = noteEntries.sort(
   (a, b) =>
     Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate)
 );
@@ -88,7 +88,7 @@ notes = notes.sort(
       <div class="container px-5 py-12 mx-auto">
         <div class="flex flex-wrap -mx-4 -my-8">
           {
-            Projects.data.map((project) => {
+            ProjectsData.data.map((project) => {
               return <ProjectsCard data={project} />;
             })
           }
@@ -114,8 +114,8 @@ notes = notes.sort(
         {
           [0, 1, 2, 3].map((index) => (
             <BlogCard
-              data={blogs[index].data}
-              url={blogs[index].slug}
+              data={blogEntries[index].data}
+              url={blogEntries[index].slug}
             />
           ))
         }
@@ -296,8 +296,8 @@ notes = notes.sort(
         {
           [0, 1, 2].map((index) => (
             <NotesCard
-              data={notes[index].data}
-              url={notes[index].slug}
+              data={noteEntries[index].data}
+              url={noteEntries[index].slug}
             />
           ))
         }
@@ -307,9 +307,3 @@ notes = notes.sort(
 
   <!-- newsletter section  -->
 </Default>
-
-<style>
-  .animation-20s {
-    animation-duration: 20s;
-  }
-</style>

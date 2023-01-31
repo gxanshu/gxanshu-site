@@ -1,4 +1,11 @@
 ---
+/**
+ * buttons in the end of a article
+ * subscribe on substack
+ * disscuss on twitter
+ * issue on github
+ */
+
 import PrimaryButton from "./buttons/Primary.astro";
 ---
 
@@ -18,8 +25,8 @@ import PrimaryButton from "./buttons/Primary.astro";
 </div>
 
 <script is:inline>
-  let link = document.getElementById("twitter_link");
-  link.href = `https://mobile.twitter.com/search?q=${decodeURI(
+  let twitterLinkElement = document.getElementById("twitter_link");
+  twitterLinkElement.href = `https://mobile.twitter.com/search?q=${decodeURI(
     window.location
   )}`;
 </script>

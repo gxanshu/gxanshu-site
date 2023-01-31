@@ -6,8 +6,8 @@ import SecondaryButton from "components/buttons/Secondary.astro";
 
 
 export async function getStaticPaths({ paginate }) {
-  let blogs = await getCollection("blog");
-  const sortedPosts = blogs.sort(
+  let blogEntries = await getCollection("blog");
+  const sortedPosts = blogEntries.sort(
     (a, b) =>
       Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate)
   );

@@ -1,7 +1,7 @@
 ---
 import Default from "layouts/Default.astro";
 import PrimaryButton from "components/buttons/Primary.astro";
-import Notification from "components/modals/Notification";
+import NotificationModal from "components/modals/Notification";
 ---
 
 <Default
@@ -62,7 +62,7 @@ import Notification from "components/modals/Notification";
         <PrimaryButton id="submit" className="px-5">Send message</PrimaryButton>
       </div>
     </div>
-    <Notification
+    <NotificationModal
       listner="submit"
       message="Thanks 😊, i will contact you soon 👋."
       client:only="preact"
