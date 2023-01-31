@@ -1,5 +1,5 @@
 ---
-import {getCollection} from "astro:content"
+import { getCollection } from "astro:content";
 
 // Component Imports
 import Default from "layouts/Default.astro";
@@ -13,14 +13,12 @@ import HeroAnimation from "components/Hero.astro";
 
 let blogEntries = await getCollection("blog");
 blogEntries = blogEntries.sort(
-  (a, b) =>
-    Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate)
+  (a, b) => Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate)
 );
 
 let noteEntries = await getCollection("notes");
 noteEntries = noteEntries.sort(
-  (a, b) =>
-    Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate)
+  (a, b) => Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate)
 );
 // Full Astro Component Syntax:
 // https://docs.astro.build/Default-concepts/astro-components/

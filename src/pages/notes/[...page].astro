@@ -9,8 +9,7 @@ type GetStaticPaths = {
 export async function getStaticPaths({ paginate }: GetStaticPaths) {
   const notesEntries = await getCollection("notes");
   const sortedPosts = notesEntries.sort(
-    (a, b) =>
-      Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate)
+    (a, b) => Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate)
   );
   // Return a paginated collection of paths for all posts
   return paginate(sortedPosts, { pageSize: 12 });

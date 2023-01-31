@@ -37,7 +37,8 @@ import NotificationModal from "components/modals/Notification";
         <div>
           <label
             for="subject"
-            class="block mb-2 text-sm font-medium text-gray-900">Subject 📑</label
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Subject 📑</label
           >
           <input
             type="text"
@@ -51,7 +52,7 @@ import NotificationModal from "components/modals/Notification";
           <label
             for="message"
             class="block mb-2 text-sm font-medium text-gray-900"
-            >Your message  📡</label
+            >Your message 📡</label
           >
           <textarea
             id="message"
@@ -77,10 +78,7 @@ import NotificationModal from "components/modals/Notification";
     const message = document.getElementById("message") as HTMLInputElement;
 
     const request = new XMLHttpRequest();
-    request.open(
-      "POST",
-      import.meta.env.PUBLIC_DISCORD_WEBHOOK
-    );
+    request.open("POST", import.meta.env.PUBLIC_DISCORD_WEBHOOK);
     // post on discord
 
     request.setRequestHeader("Content-type", "application/json");

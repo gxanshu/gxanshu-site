@@ -46,7 +46,7 @@ export default function Search() {
       initialScrollY={window.scrollY}
       onClose={onClose}
       indexName={import.meta.env.APPLICATION_INDEX_NAME}
-    appId={import.meta.env.PUBLIC_APPLICATION_ID}
+      appId={import.meta.env.PUBLIC_APPLICATION_ID}
       apiKey={import.meta.env.PUBLIC_APPLICATION_SEARCH_KEY}
       getMissingResultsUrl={({ query }) =>
         `https://github.com/aianshume/codenanshu/issues/new?title=Missing+results+for+query+%22${encodeURIComponent(

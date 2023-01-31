@@ -54,7 +54,6 @@ async function getMDXMeta(file) {
   return result;
 }
 
-
 async function main() {
   let json = [];
 
