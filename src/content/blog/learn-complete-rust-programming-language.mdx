@@ -60,8 +60,6 @@ cargo 1.67.0 (8ecd4f20a 2023-01-10)
 
 ## What is Rust?
 
-
-
 Rust is a new programming language which had its 1.0 release in 2015:
 
 * Rust is a statically compiled language in a similar role as C++
@@ -78,3 +76,41 @@ Rust is a new programming language which had its 1.0 release in 2015:
   * mobile phones,
   * desktops,
   * servers.
+
+## H﻿ello World!
+
+Let us jump into the simplest possible Rust program, a classic Hello World program:
+
+```rust
+fn main() {
+    println!("Hello 🌍!");
+}
+```
+
+What you see:
+
+* Functions are introduced with `fn`.
+* Blocks are delimited by curly braces like in C and C++.
+* The `main` function is the entry point of the program.
+* Rust has hygienic macros, `println!` is an example of this.
+* Rust strings are UTF-8 encoded and can contain any Unicode character.
+
+Here is a small example program in Rust:
+
+```rust
+fn main() {              // Program entry point
+    let mut x: i32 = 6;  // Mutable variable binding
+    print!("{x}");       // Macro for printing, like printf
+    while x != 1 {       // No parenthesis around expression
+        if x % 2 == 0 {  // Math like in other languages
+            x = x / 2;
+        } else {
+            x = 3 * x + 1;
+        }
+        print!(" -> {x}");
+    }
+    println!();
+}
+```
+
+d﻿on't worry i will explain everything letter.
