@@ -10,7 +10,7 @@ const algoliasearch = require("algoliasearch");
 
 require("dotenv").config();
 
-const websiteRoot = "src/pages";
+const websiteRoot = "src/content";
 
 async function getMDXMeta(file) {
   const { content, frontMatter: _frontMatter } = await doc.parseMarkdownFile(
@@ -74,6 +74,7 @@ async function main() {
 
   json = prettier.format(JSON.stringify(json), { parser: "json" });
 
+
   // algoia client object
   const client = algoliasearch(
     process.env.PUBLIC_APPLICATION_ID,
@@ -88,8 +89,8 @@ async function main() {
   });
   await index
     .saveObjects(JSON.parse(json), { autoGenerateObjectIDIfNotExist: true })
-    .then((res) => console.log(res))
-    .catch((e) => console.log(e));
+    .then((res) => console.log(`response ${res}`))
+    .catch((e) => console.log(`error ${e}`));
 
   console.log("Search meta is ready ✅");
 }
