@@ -33,7 +33,7 @@ const { page } = Astro.props;
       <div class="grid w-full grid-cols-1 gap-6 mx-auto lg:grid-cols-3">
         {
           page.data.map((note) => (
-            <NotesCard data={note.data} url={note.slug} />
+            <NotesCard data={note.data} url={`${note.slug}/`} />
           ))
         }
       </div>
