@@ -1,4 +1,6 @@
-import rss from "@astrojs/rss";
+import rss, {
+  pagesGlobToRssItems
+} from '@astrojs/rss';
 
 export async function get() {
   return rss({
@@ -6,7 +8,9 @@ export async function get() {
     description:
       "codenanshu is the coding & programming blog that write about web development, artifical intelligence and machine learning. help you to understand computers",
     site: "https://codenanshu.in/",
-    items: import.meta.glob("./**/*.mdx"),
+    items: await pagesGlobToRssItems(
+      import.meta.glob("./**/*.mdx"),
+    ),
     customData: `<language>en-us</language>`,
   });
 }
