@@ -5,11 +5,12 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "node ./scripts/task.js && astro build",
+    "build": "node ./scripts/task.js && astro build && jampack ./dist",
     "build:dev": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write \"**/*.{astro,js,jsx,ts,tsx,md,mdx}\" --plugin-search-dir=. ."
+    "format": "prettier --write \"**/*.{astro,js,jsx,ts,tsx,md,mdx}\" --plugin-search-dir=. .",
+    "jampack": "jampack ./dist"
   },
   "dependencies": {
     "@astrojs/mdx": "^0.15.2",
@@ -29,6 +30,7 @@
     "@algolia/client-search": "^4.16.0",
     "@astrojs/rss": "^2.3.1",
     "@astrojs/sitemap": "^1.2.1",
+    "@divriots/jampack": "^0.9.4",
     "@docsearch/css": "^3.3.3",
     "@docsearch/react": "^3.3.3",
     "@docusaurus/utils": "2.0.0-alpha.69",
