@@ -13,7 +13,7 @@
       "name": "Windows Activator",
       "discription": "this is the application which run on windows only and i want to say that this is the application which help to activate you windows for free",
       "date": ["Jul", 23],
-      "avatar": "https://avatars.githubusercontent.com/u/68537640?v=4s=32",
+      "avatar": "https://avatars.githubusercontent.com/u/68537640?v=4&s=32",
       "developer": "Ai Anshu",
       "tech": "sh/py",
       "link": "https://github.com/aianshume/windowsactivator"
@@ -22,7 +22,7 @@
       "name": "RTL8188FU",
       "discription": "RTL8188FU driver for linux 4.15.x ~ 5.9.x capatable with any dabian linux distro with dkms and apt package managar",
       "date": ["Jan", 8],
-      "avatar": "https://avatars.githubusercontent.com/u/1300133?v=4s=32",
+      "avatar": "https://avatars.githubusercontent.com/u/1300133?v=4&s=32",
       "developer": "kelebek333",
       "tech": "c/cpp",
       "link": "https://github.com/aianshume/rtl8188fu"
