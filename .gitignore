@@ -23,3 +23,6 @@ pnpm-debug.log*
 
 # astro@2.x config folder
 .astro
+
+#jampack
+.jampack
