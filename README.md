@@ -10,16 +10,13 @@
 
 <p align="center">
   <a aria-label="Vercel logo" href="https://twitter.com/aianshume">
-    <img src="https://img.shields.io/twitter/follow/aianshume?style=for-the-badge">
+    <img src="https://img.shields.io/twitter/follow/aianshume?color=%2300000000&logo=twitter&style=for-the-badge">
   </a>
-  <a aria-label="NPM version" href="https://www.npmjs.com/package/next">
-    <img alt="" src="https://img.shields.io/npm/v/next.svg?style=for-the-badge&labelColor=000000">
-  </a>
-  <a aria-label="License" href="https://github.com/vercel/next.js/blob/canary/license.md">
+  <a aria-label="License" href="https://github.com/aianshume/codenanshu/blob/main/license.md">
     <img alt="" src="https://img.shields.io/npm/l/next.svg?style=for-the-badge&labelColor=000000">
   </a>
-  <a aria-label="Join the community on GitHub" href="https://discord.gg/RDbSAr6t">
-    <img alt="" src="https://img.shields.io/badge/Join%20the%20community-blueviolet.svg?style=for-the-badge&logo=discord&labelColor=000000&logoWidth=20">
+<a aria-label="Join the community on GitHub" href="https://github.com/aianshume/codenanshu/discussions">
+    <img alt="" src="https://img.shields.io/badge/Join the community-blueviolet.svg?style=for-the-badge&logo=javascript&labelColor=000000&logoWidth=20">
   </a>
 </p>
 
@@ -31,7 +28,7 @@ if want to write a post then its really so easy. there are two ways to write pos
 
 another way is just to folk the repo write your post in markdown formet inside `src/pages/blog/[post].md` and the post a pull request.
 
-## Techonology I used in CodeNanshu
+##  Techonology I used
 
 ```
 Astro
@@ -44,4 +41,5 @@ rive
 Algolia
 Netlify
 Netlify CMS
+Jampack
 ```
