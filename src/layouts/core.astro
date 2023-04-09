@@ -39,6 +39,8 @@ const canonicalURL = new URL(
   Astro.site
 );
 const imageURL = new URL(image ?? "./Social.png", Astro.site);
+import ArticleSchema from "components/jsonld/articleSchema.astro";
+import WebsiteSchema from "components/jsonld/websiteSchema.astro"
 ---
 
 <!DOCTYPE html>
@@ -62,8 +64,6 @@ const imageURL = new URL(image ?? "./Social.png", Astro.site);
       href="/rss.xml"
       title="RSS"
     />
-    <meta name="color-scheme" content="dark" />
-
     <!-- Preload -->
     <slot name="preload" />
 
@@ -71,6 +71,14 @@ const imageURL = new URL(image ?? "./Social.png", Astro.site);
     <meta property="og:type" content={isArticle ? "article" : "website"} />
 
     <link rel="stylesheet" href={isArticle ? "/styles/post.css" : ""} />
+
+    {isArticle ? <ArticleSchema
+    date={date}
+    image={imageURL}
+    title={title}
+    description={description}
+    url={canonicalURL}
+    /> : <WebsiteSchema/>}
 
     <!-- Date Time Information about your last changes -->
     <meta name="revised" content={date} />
