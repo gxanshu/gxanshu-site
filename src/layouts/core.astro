@@ -40,7 +40,7 @@ const canonicalURL = new URL(
 );
 const imageURL = new URL(image ?? "./Social.png", Astro.site);
 import ArticleSchema from "components/jsonld/articleSchema.astro";
-import WebsiteSchema from "components/jsonld/websiteSchema.astro"
+import WebsiteSchema from "components/jsonld/websiteSchema.astro";
 ---
 
 <!DOCTYPE html>
@@ -72,13 +72,19 @@ import WebsiteSchema from "components/jsonld/websiteSchema.astro"
 
     <link rel="stylesheet" href={isArticle ? "/styles/post.css" : ""} />
 
-    {isArticle ? <ArticleSchema
-    date={date}
-    image={imageURL}
-    title={title}
-    description={description}
-    url={canonicalURL}
-    /> : <WebsiteSchema/>}
+    {
+      isArticle ? (
+        <ArticleSchema
+          date={date}
+          image={imageURL}
+          title={title}
+          description={description}
+          url={canonicalURL}
+        />
+      ) : (
+        <WebsiteSchema />
+      )
+    }
 
     <!-- Date Time Information about your last changes -->
     <meta name="revised" content={date} />

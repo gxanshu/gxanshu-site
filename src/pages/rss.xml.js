@@ -1,8 +1,8 @@
-import rss from '@astrojs/rss';
-import { getCollection } from 'astro:content';
+import rss from "@astrojs/rss";
+import { getCollection } from "astro:content";
 
 export async function get() {
-  const blog = await getCollection('blog');
+  const blog = await getCollection("blog");
   return rss({
     title: "CodeNanshu - developer's coding blog",
     description:

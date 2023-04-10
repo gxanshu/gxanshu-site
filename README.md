@@ -28,7 +28,7 @@ if want to write a post then its really so easy. there are two ways to write pos
 
 another way is just to folk the repo write your post in markdown formet inside `src/pages/blog/[post].md` and the post a pull request.
 
-##  Techonology I used
+## Techonology I used
 
 ```
 Astro
