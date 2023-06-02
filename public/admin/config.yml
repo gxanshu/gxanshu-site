@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: aianshume/codenanshu
+  repo: gxanshu/codenanshu
   branch: dev
   squash_merges: true
   open_authoring: true
