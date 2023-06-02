@@ -3,16 +3,28 @@ const { data, url } = Astro.props;
 import Image from "components/Image.astro";
 ---
 
-<div
-  class="text-neutral-900 p-4 bg-lightGray rounded-md border-2 hover:border-2 hover:border-black transition delay-75 duration-75 ease-in-out hover:scale-105 hover:shadow-xl focus:outline-none focus:ring"
->
+<article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
   <Image
     src={data.image}
     alt={data.title}
     height="250"
     width="450"
-    class="rounded-t my-4"
+    class="w-full object-cover"
   />
-  <h4 class="font-heading py-4"><a href={`/blog/${url}`}>{data.title}</a></h4>
-  <p>{data.description}</p>
-</div>
+
+  <div class="bg-white p-4 sm:p-6">
+    <time datetime={data.pubDate} class="block text-xs text-gray-500">
+      {data.pubDate}
+    </time>
+
+    <a href={`/blog/${url}`}>
+      <h3 class="mt-0.5 font-heading text-lg text-gray-900">
+        {data.title}
+      </h3>
+    </a>
+
+    <p class="mt-2 line-clamp-3 font-text text-sm/relaxed text-gray-500">
+      {data.description}
+    </p>
+  </div>
+</article>
