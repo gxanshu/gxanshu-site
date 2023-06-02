@@ -20,7 +20,7 @@
     "@astrojs/tailwind": "^3.1.1",
     "@cloudinary/url-gen": "^1.9.2",
     "@rive-app/canvas": "^1.0.103",
-    "astro": "^2.1.8",
+    "astro": "^2.5.7",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
     "preact": "^10.13.2",
