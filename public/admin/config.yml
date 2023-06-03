@@ -9,6 +9,7 @@ publish_mode: editorial_workflow
 media_folder: public/assets
 public_folder: /assets
 site_url: "https://codenanshu.in"
+logo_url: https://codenanshu.in/logo.png
 
 collections:
   - name: blog
