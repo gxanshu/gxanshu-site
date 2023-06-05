@@ -68,6 +68,6 @@ members of the project's leadership.
 ## Attribution
 
 This Code of Conduct is adapted from the [Ai Anshu][https://codenanshu.in], version 3.1,
-available at https://github.com/aianshume/codenanshu
+available at https://github.com/gxanshu/codenanshu
 
-contact me at [mailat://aianshume.yahoo.com]
+contact me at [mailat://gxanshu.yahoo.com]
