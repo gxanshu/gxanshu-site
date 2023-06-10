@@ -5,6 +5,6 @@ const { data, url } = Astro.props;
 <div
   class="text-neutral-900 p-4 rounded-md border-2 hover:border-2 hover:border-black transition delay-75 duration-75 ease-in-out hover:shadow-xl focus:outline-none focus:ring"
 >
-  <h4 class="font-heading py-4"><a href={`/notes/${url}`}>{data.title}</a></h4>
+  <h4 class="font-heading font-bold py-4"><a href={`/notes/${url}`}>{data.title}</a></h4>
   <p>{data.description}</p>
 </div>

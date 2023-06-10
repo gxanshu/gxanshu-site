@@ -21,6 +21,7 @@
     "@cloudinary/url-gen": "^1.9.2",
     "@rive-app/canvas": "^1.0.103",
     "astro": "^2.5.7",
+    "astro-google-fonts-optimizer": "^0.2.2",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
     "preact": "^10.13.2",

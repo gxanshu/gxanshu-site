@@ -41,6 +41,7 @@ const canonicalURL = new URL(
 const imageURL = new URL(image ?? "./Social.png", Astro.site);
 import ArticleSchema from "components/jsonld/articleSchema.astro";
 import WebsiteSchema from "components/jsonld/websiteSchema.astro";
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 ---
 
 <!DOCTYPE html>
@@ -126,7 +127,7 @@ import WebsiteSchema from "components/jsonld/websiteSchema.astro";
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:image" content={imageURL} />
 
-    <meta name="author" content="Anshu Meena, anshumeena1948@gmail.com" />
+    <meta name="author" content="Anshu Meena, aianshume@gmail.com" />
     <meta property="twitter:site" content="@gxanshu" />
     <meta property="twitter:site:id" content="@gxanshu" />
     <meta property="twitter:creator" content="@gxanshu" />
@@ -137,30 +138,8 @@ import WebsiteSchema from "components/jsonld/websiteSchema.astro";
     <meta name="creator" content="@gxanshu" />
     <meta name="publisher" content="gxanshu" />
 
-    <style is:global>
-      @font-face {
-        font-family: "SF Pro Display";
-        font-style: normal;
-        font-weight: 700;
-        font-display: swap;
-        src: local("☺"), url("/fonts/sf-pro-display_bold.woff2") format("woff2"),
-          url("/fonts/sf-pro-display_bold.woff") format("woff"),
-          url("/fonts/sf-pro-display_bold.ttf") format("truetype");
-        /* (C) 2015 Apple Inc. All rights reserved. */
-      }
-
-      @font-face {
-        font-family: "SF Pro Text";
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: local("☺"), url("/fonts/sf-pro-text_regular.woff2") format("woff2"),
-          url("/fonts/sf-pro-text_regular.woff") format("woff"),
-          url("/fonts/sf-pro-text_regular.ttf") format("truetype");
-        /* (C) 2015 Apple Inc. All rights reserved. */
-      }
-    </style>
-
+    <GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap">
+    </GoogleFontsOptimizer>
     <!-- Google tag (gtag.js) -->
     <script
       type="text/partytown"
