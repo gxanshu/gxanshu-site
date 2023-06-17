@@ -10,6 +10,7 @@ import NotesCard from "components/cards/Notes.astro";
 import PrimaryButton from "components/buttons/Primary.astro";
 import SecondaryButton from "components/buttons/Secondary.astro";
 import HeroAnimation from "components/Hero.astro";
+import NotificationModal from "components/modals/Notification";
 
 let blogEntries = await getCollection("blog");
 blogEntries = blogEntries.sort(
@@ -36,9 +37,7 @@ noteEntries = noteEntries.sort(
       <div
         class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center"
       >
-        <h1
-          class="font-heading sm:text-4xl text-3xl mb-4 font-bold text-black"
-        >
+        <h1 class="font-heading sm:text-4xl text-3xl mb-4 font-bold text-black">
           I am <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600"
             >Anshu</span
@@ -303,5 +302,116 @@ noteEntries = noteEntries.sort(
     </div>
   </section>
 
+  <!-- newsletter section -->
+  <section id="newletter">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+      <div class="mx-auto max-w-screen-md sm:text-center">
+        <h2
+          class="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl"
+        >
+          Sign up for our newsletter
+        </h2>
+        <p
+          class="mx-auto mb-8 max-w-2xl font-light text-gray-500 md:mb-12 sm:text-xl"
+        >
+          Stay up to date with the roadmap progress, announcements and exclusive
+          content feel free to sign up with your email.
+        </p>
+        <div
+          class="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0"
+        >
+          <div class="relative w-full">
+            <label
+              for="email"
+              class="hidden mb-2 text-sm font-medium text-gray-900"
+              >Email address</label
+            >
+            <div
+              class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
+            >
+              <svg
+                class="w-5 h-5 text-gray-500"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+                ><path
+                  d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                ></path><path
+                  d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                ></path></svg
+              >
+            </div>
+            <input
+              class="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500"
+              placeholder="Enter your email"
+              type="email"
+              id="email"
+              required=""
+            />
+          </div>
+          <div>
+            <button
+              id="submit"
+              class="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-black border-gray-900 sm:rounded-none sm:rounded-r-lg focus:ring-4 focus:ring-gray-300"
+              >Subscribe</button
+            >
+            <button id="reallySend" style="display: none;">
+          </div>
+        </div>
+        <div
+          class="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer"
+        >
+          We care about the protection of your data. <a
+            href="#"
+            class="font-medium text-primary-600 hover:underline"
+            >Read our Privacy Policy</a
+          >.
+        </div>
+      </div>
+    </div>
+    <NotificationModal
+      listner="submit"
+      message="Thank you for subscribing! 😊."
+      client:only="preact"
+    />
+  </section>
+
   <!-- newsletter section  -->
+  <script is:inline>
+    console.log("ok")
+    function onSubmit(token) {
+      document.getElementById("reallySend").click();
+      console.log("ok");
+    }
+
+    var onloadCallback = function() {
+      grecaptcha.render("submit", {
+        sitekey: "6LerT6UmAAAAAELYv8q9Egnd3q_zMbsS2f7H5bjc",
+        callback: onSubmit,
+      });
+    }
+  </script>
 </Default>
+<script>
+
+  document.getElementById("reallySend")?.addEventListener("click", function() {
+    const email = document.getElementById("email") as HTMLInputElement;
+      var scriptUrl = import.meta.env.PUBLIC_SHEET_URL;
+      var url = scriptUrl + "?email=" + encodeURIComponent(email.value);
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', url);
+      xhr.send();
+      email.value = "";
+  })
+
+  document.getElementById("email")?.addEventListener(
+    "focus",
+    function () {
+      var element = document.createElement("script");
+      element.src =
+        "https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit";
+      document.body.appendChild(element);
+    },
+    { once: true }
+  );
+</script>
