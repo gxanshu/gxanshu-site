@@ -16,8 +16,8 @@ import NotificationModal from "components/modals/Notification";
         Contact Us
       </h1>
       <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 sm:text-xl">
-        Got a technical issue? Want to send feedback about website? Need
-        any help? Let us know.
+        Got a technical issue? Want to send feedback about website? Need any
+        help? Let us know.
       </p>
       <div class="space-y-8">
         <div>
@@ -60,7 +60,9 @@ import NotificationModal from "components/modals/Notification";
             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
             placeholder="Leave a comment..."></textarea>
         </div>
-        <PrimaryButton id="submit" className="px-5 w-full sm:w-auto">Send message</PrimaryButton>
+        <PrimaryButton id="submit" className="px-5 w-full sm:w-auto">
+          Send message
+        </PrimaryButton>
       </div>
     </div>
     <NotificationModal
@@ -77,8 +79,8 @@ import NotificationModal from "components/modals/Notification";
     const subject = document.getElementById("subject") as HTMLInputElement;
     const message = document.getElementById("message") as HTMLInputElement;
 
-    const token = import.meta.env.PUBLIC_TELEGRAM_BOT_API
-    const id = "1493444597"
+    const token = import.meta.env.PUBLIC_TELEGRAM_BOT_API;
+    const id = "1493444597";
 
     const msg = `
 email: ${email.value}

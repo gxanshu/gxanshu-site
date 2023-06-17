@@ -355,63 +355,64 @@ noteEntries = noteEntries.sort(
               class="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-black border-gray-900 sm:rounded-none sm:rounded-r-lg focus:ring-4 focus:ring-gray-300"
               >Subscribe</button
             >
-            <button id="reallySend" style="display: none;">
+            <button id="reallySend" style="display: none;"> </button>
+          </div>
+          <div
+            class="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer"
+          >
+            We care about the protection of your data. <a
+              href="#"
+              class="font-medium text-primary-600 hover:underline"
+              >Read our Privacy Policy</a
+            >.
           </div>
         </div>
-        <div
-          class="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer"
-        >
-          We care about the protection of your data. <a
-            href="#"
-            class="font-medium text-primary-600 hover:underline"
-            >Read our Privacy Policy</a
-          >.
-        </div>
       </div>
+      <NotificationModal
+        listner="submit"
+        message="Thank you for subscribing! 😊."
+        client:only="preact"
+      />
     </div>
-    <NotificationModal
-      listner="submit"
-      message="Thank you for subscribing! 😊."
-      client:only="preact"
-    />
-  </section>
 
-  <!-- newsletter section  -->
-  <script is:inline>
-    console.log("ok")
-    function onSubmit(token) {
-      document.getElementById("reallySend").click();
+    <!-- newsletter section  -->
+    <script is:inline>
       console.log("ok");
-    }
+      function onSubmit(token) {
+        document.getElementById("reallySend").click();
+        console.log("ok");
+      }
 
-    var onloadCallback = function() {
-      grecaptcha.render("submit", {
-        sitekey: "6LerT6UmAAAAAELYv8q9Egnd3q_zMbsS2f7H5bjc",
-        callback: onSubmit,
+      var onloadCallback = function () {
+        grecaptcha.render("submit", {
+          sitekey: "6LerT6UmAAAAAELYv8q9Egnd3q_zMbsS2f7H5bjc",
+          callback: onSubmit,
+        });
+      };
+    </script>
+  </section>
+  <script>
+    document
+      .getElementById("reallySend")
+      ?.addEventListener("click", function () {
+        const email = document.getElementById("email") as HTMLInputElement;
+        var scriptUrl = import.meta.env.PUBLIC_SHEET_URL;
+        var url = scriptUrl + "?email=" + encodeURIComponent(email.value);
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url);
+        xhr.send();
+        email.value = "";
       });
-    }
+
+    document.getElementById("email")?.addEventListener(
+      "focus",
+      function () {
+        var element = document.createElement("script");
+        element.src =
+          "https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit";
+        document.body.appendChild(element);
+      },
+      { once: true }
+    );
   </script>
 </Default>
-<script>
-
-  document.getElementById("reallySend")?.addEventListener("click", function() {
-    const email = document.getElementById("email") as HTMLInputElement;
-      var scriptUrl = import.meta.env.PUBLIC_SHEET_URL;
-      var url = scriptUrl + "?email=" + encodeURIComponent(email.value);
-      var xhr = new XMLHttpRequest();
-      xhr.open('GET', url);
-      xhr.send();
-      email.value = "";
-  })
-
-  document.getElementById("email")?.addEventListener(
-    "focus",
-    function () {
-      var element = document.createElement("script");
-      element.src =
-        "https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit";
-      document.body.appendChild(element);
-    },
-    { once: true }
-  );
-</script>

@@ -25,7 +25,9 @@ const { page } = Astro.props;
 >
   <section class="my-10 py-5">
     <div class="text-center text-black">
-      <h1 class="font-heading font-bold text-2xl md:text-3xl lg:text-4xl">Notes</h1>
+      <h1 class="font-heading font-bold text-2xl md:text-3xl lg:text-4xl">
+        Notes
+      </h1>
       <p class="my-4">My latest thoughts, updates, stories and invantions</p>
     </div>
     <div
@@ -37,7 +39,7 @@ const { page } = Astro.props;
             <NotesCard data={note.data} url={`${note.slug}/`} />
           ))
         }
-        <NotesGridAd/>
+        <NotesGridAd />
       </div>
     </div>
     <div class="flex justify-between mt-16">

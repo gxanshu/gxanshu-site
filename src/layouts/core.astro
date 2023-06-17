@@ -138,8 +138,9 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
     <meta name="creator" content="@gxanshu" />
     <meta name="publisher" content="gxanshu" />
 
-    <GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap">
-    </GoogleFontsOptimizer>
+    <GoogleFontsOptimizer
+      url="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    />
     <!-- Google tag (gtag.js) -->
     <script
       type="text/partytown"
@@ -181,24 +182,22 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
         }
       }
     </script>
-  </body>
+  </body><style is:global>
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    body {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+    ::selection {
+      background-color: #c9f3fd;
+    }
+
+    .bg-clip-text {
+      -webkit-background-clip: text;
+    }
+  </style>
 </html>
-
-<style is:global>
-  body::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Hide scrollbar for IE, Edge and Firefox */
-  body {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-  ::selection {
-    background-color: #c9f3fd;
-  }
-
-  .bg-clip-text {
-    -webkit-background-clip: text;
-  }
-</style>
