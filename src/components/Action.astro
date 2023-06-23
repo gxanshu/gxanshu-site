@@ -15,13 +15,13 @@ import PrimaryButton from "./buttons/Primary.astro";
     <a id="twitter_link" href="#" target="_blank">Discuss on Twitter</a>
   </PrimaryButton>
   <PrimaryButton className="ml-4 px-2 text-sm">
-    <a href="https://codenanshu.in/#newletter" target="_blank"
+    <a href="https://codenanshu.in/#newsletter"
       >Subscribe Newsletter</a
     >
   </PrimaryButton>
   <PrimaryButton className="ml-4 px-2 text-sm">
     <a
-      href={`https://pr.new/github.com/gxanshu/codenanshu/edit/dev/src/content/${Astro.url.pathname}.mdx?initialPath=${Astro.url.pathname.slice(0, -1)}`}
+      href={`https://pr.new/github.com/gxanshu/codenanshu/edit/dev/src/content/${Astro.url.pathname.slice(0, -1)}.mdx?initialPath=${Astro.url.pathname}`}
       target="_blank">Suggest Changes</a
     >
   </PrimaryButton>
