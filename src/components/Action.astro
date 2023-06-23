@@ -21,7 +21,7 @@ import PrimaryButton from "./buttons/Primary.astro";
   </PrimaryButton>
   <PrimaryButton className="ml-4 px-2 text-sm">
     <a
-      href={`https://pr.new/github.com/gxanshu/codenanshu/edit/dev/src/content/${Astro.url.pathname}.mdx?initialPath=${Astro.url.pathname}`}
+      href={`https://pr.new/github.com/gxanshu/codenanshu/edit/dev/src/content/${Astro.url.pathname}.mdx?initialPath=${Astro.url.pathname.slice(0, -1)}`}
       target="_blank">Suggest Changes</a
     >
   </PrimaryButton>
