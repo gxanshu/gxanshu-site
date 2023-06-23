@@ -6,7 +6,6 @@ const blogCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    // Transform string to Date object
     pubDate: z.string(),
     image: z.string(),
   }),
@@ -17,12 +16,28 @@ const notesCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    // Transform string to Date object
     pubDate: z.string(),
+  }),
+});
+
+const projectCollection = defineCollection({
+   // Type-check data using a schema
+   schema: z.object({
+    title: z.string(),
+    heading: z.string(),
+    description: z.string(),
+    pubDate: z.string(),
+    logo: z.string(),
+    status: z.string(),
+    author: z.string(),
+    techStack: z.array(z.string()),
+    sourceCode: z.string().optional(),
+    download: z.string().optional()
   }),
 });
 
 export const collections = {
   blog: blogCollection,
   notes: notesCollection,
+  projects: projectCollection
 };

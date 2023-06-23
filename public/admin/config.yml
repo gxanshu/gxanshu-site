@@ -9,7 +9,6 @@ publish_mode: editorial_workflow
 media_folder: public/assets
 public_folder: /assets
 site_url: "https://codenanshu.in"
-logo_url: https://codenanshu.in/logo.png
 
 collections:
   - name: blog
@@ -35,3 +34,21 @@ collections:
       - { name: description, label: Description }
       - { name: pubDate, label: pubDate, widget: date, format: 'MM-DD-YYYY'}
       - { name: body, label: Body, widget: markdown }
+  - name: projects
+    label: Projects
+    folder: src/content/projects
+    create: true
+    extension: mdx
+    format: frontmatter
+    fields:
+      - { name: heading, label: Heading }
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: pubDate, label: pubDate, widget: date, format: 'MM-DD-YYYY' }
+      - { label: "logo", name: "logo", widget: "image", choose_url: true, media_library: { config: { multiple: false }}}
+      - { name: author, label: Author }
+      - {label: "Tech Stacks", name: "techStack", widget: "list", allow_add: true, default: ["javascript", "typescript"]}
+      - {label: "status", name: "Status", widget: "select", options: ["active", inactive]}
+      - { name: source code, label: sourceCode }
+      - { name: download, label: download, require: false }
+      - { name: body, label: Body, widget: markdown, require: false }

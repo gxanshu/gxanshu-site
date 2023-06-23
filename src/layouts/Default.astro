@@ -14,6 +14,7 @@ export interface Props {
   date?: string;
   image?: string;
   isArticle?: boolean;
+  isProject?: boolean;
   layout?: string;
 }
 const {
@@ -23,6 +24,7 @@ const {
   image,
   class: className,
   isArticle,
+  isProject
 } = Astro.props;
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -30,6 +32,7 @@ import Footer from "../components/Footer.astro";
 
 <Core
   isArticle={isArticle}
+  isProject={isProject}
   class=""
   date={date}
   title={title}

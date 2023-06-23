@@ -15,6 +15,7 @@ export interface Props {
   image?: string;
   class?: string;
   isArticle?: boolean;
+  isProject?: boolean;
 }
 
 const {
@@ -23,6 +24,7 @@ const {
   image,
   class: className = "",
   isArticle,
+  isProject,
   date: publishedDate,
 } = Astro.props;
 
@@ -137,6 +139,9 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
   <meta property="twitter:creator:id" content="13334762"> -->
     <meta name="creator" content="@gxanshu" />
     <meta name="publisher" content="gxanshu" />
+    {isProject ? (
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    ): (null)}
 
     <GoogleFontsOptimizer
       url="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
