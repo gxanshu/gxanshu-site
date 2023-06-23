@@ -44,11 +44,11 @@ collections:
       - { name: heading, label: Heading }
       - { name: title, label: Title }
       - { name: description, label: Description }
-      - { name: pubDate, label: pubDate, widget: date, format: 'MM-DD-YYYY' }
+      - { name: pubDate, label: pubDate, widget: date, format: 'YYYY-DD-MM' }
       - { label: "logo", name: "logo", widget: "image", choose_url: true, media_library: { config: { multiple: false }}}
       - { name: author, label: Author }
       - {label: "Tech Stacks", name: "techStack", widget: "list", allow_add: true, default: ["javascript", "typescript"]}
-      - {label: "status", name: "Status", widget: "select", options: ["active", inactive]}
-      - { name: source code, label: sourceCode }
+      - {label: "status", name: "status", widget: "select", options: ["active", inactive]}
+      - { name: sourceCode, label: Source Code }
       - { name: download, label: download, require: false }
       - { name: body, label: Body, widget: markdown, require: false }
