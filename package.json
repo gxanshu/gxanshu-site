@@ -37,7 +37,6 @@
     "@docusaurus/utils": "2.0.0-alpha.69",
     "@tailwindcss/typography": "^0.5.9",
     "algoliasearch": "^4.16.0",
-    "astro-selfie": "^1.0.2",
     "cloudinary": "^1.35.0",
     "dotenv": "^16.0.3",
     "hast-util-to-string": "^2.0.0",
