@@ -44,6 +44,8 @@ const imageURL = new URL(image ?? "./Social.png", Astro.site);
 import ArticleSchema from "components/jsonld/articleSchema.astro";
 import WebsiteSchema from "components/jsonld/websiteSchema.astro";
 import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+import {selfieUrl} from 'astro-selfie';
+const screenshotUrl = selfieUrl(Astro);
 ---
 
 <!DOCTYPE html>
@@ -79,7 +81,7 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
       isArticle ? (
         <ArticleSchema
           date={date}
-          image={imageURL}
+          image={screenshotUrl.href}
           title={title}
           description={description}
           url={canonicalURL}
@@ -117,19 +119,19 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
     <meta name="summary" content={description} />
     <!-- Open Graph / Facebook -->
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:image" content={imageURL} />
+    <meta property="og:image" content={screenshotUrl.href} />
     <meta
       property="og:image:alt"
       content="Banner for site, showing page title in a playful way"
     />
-    <meta property="og:image:secure_url" content={imageURL} />
+    <meta property="og:image:secure_url" content={screenshotUrl.href} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:image" content={imageURL} />
+    <meta property="twitter:image" content={screenshotUrl.href} />
 
-    <meta name="author" content="Anshu Meena, aianshume@gmail.com" />
+    <meta name="author" content="Anshu Meena, gxanshu@yahoo.com" />
     <meta property="twitter:site" content="@gxanshu" />
     <meta property="twitter:site:id" content="@gxanshu" />
     <meta property="twitter:creator" content="@gxanshu" />

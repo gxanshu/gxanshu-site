@@ -9,6 +9,7 @@ import customTheme from "./src/utils/theme.json";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { autolinkConfig } from "./scripts/rehype-autolink-config";
+import selfie from 'astro-selfie';
 
 // https://astro.build/config
 export default defineConfig({
@@ -30,7 +31,9 @@ export default defineConfig({
     prefetch({
       selector: "a[href^='/']",
     }),
-  ],
+    // Make sure `astro-selfie` only runs locally
+    !process.env['CI'] && !process.env['VERCEL'] && selfie()
+  ].filter(Boolean),
   markdown: {
     gfm: true,
     shikiConfig: {
