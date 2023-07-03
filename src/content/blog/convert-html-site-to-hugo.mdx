@@ -1,0 +1,81 @@
+---
+title: Convert HTML site to Hugo
+description: " Convert your static HTML site to a dynamic Hugo website
+  effortlessly. Learn the step-by-step process, optimize load times, and unleash
+  the power of static site generation."
+pubDate: 2023-07-03
+image: /assets/html_to_hugo.png
+---
+import Ad from "components/ads/Article.astro";
+export const components = { Ad: Ad };
+## Introduction
+
+In this blog post, we will explore the process of converting a static HTML theme, template, or site into a fully functional Hugo website. Hugo is a powerful static site generator that allows you to build fast and efficient websites. By following the steps outlined below, you'll be able to seamlessly migrate your HTML site to Hugo and take advantage of its numerous benefits.
+
+## Folder Structure
+
+Let's start with the initial folder structure of the HTML site template. Assume we have the following files and directories:
+
+* assets
+* index.html
+* contact.html
+* about.html
+
+## Creating the Hugo Site
+
+To begin the conversion process, you need to generate a new Hugo site. Open your command line interface and run the following command:
+
+```
+hugo new site siteName
+
+```
+
+This command will create the necessary folder structure for your Hugo site.
+
+## Copying Assets
+
+Before we proceed with creating the index page and templates, it's important to copy all the static files, such as CSS, JavaScript, and images, from the HTML template's `assets` folder. Simply copy the entire contents of the `assets` folder in the HTML template and paste them into the `static` folder of your Hugo site. This ensures that all the necessary assets are available for your Hugo site to function correctly.
+
+<Ad/>
+
+## Creating the Index Page
+
+The `index.html` file in the HTML template serves as the main page. To replicate this in Hugo, you need to create an `_index.md` file inside the `content` folder. Follow the folder structure given below:
+
+```
+- content
+  - _index.md
+  - about
+    - _index.md
+  - contact
+    - _index.md
+
+```
+
+## Template Creation
+
+Next, you'll need to create templates for the `_index.md` files. Navigate to the `layouts` folder in your Hugo site. Inside the `layouts` folder, you'll find the `index.html` file, which will automatically render the content of the `_index.md` file located in the main content folder.
+
+To render the HTML pages for the about and contact sections, you need to create corresponding folders. Inside the `layouts` folder, create `about` and `contact` folders. Within each of these folders, paste the respective HTML files from the HTML template. For example, place `about.html` in the `layouts/about` folder and `contact.html` in the `layouts/contact` folder. Rename these HTML files to `list.html`.
+
+## Final Folder Structure
+
+After completing the template creation step, your folder structure should look like this:
+
+```
+- layouts
+  - index.html (automatically renders _index.md from the main content folder)
+  - about
+    - list.html
+  - contact
+    - list.html
+
+```
+
+## Conclusion
+
+By following the steps outlined in this blog post, you can successfully convert an HTML template into a fully functional Hugo website. This process allows you to leverage the power and efficiency of Hugo's static site generation while retaining the design and structure of your original HTML site.
+
+Migrating your HTML site to Hugo offers numerous benefits, including faster load times, easy content management with Markdown, and the ability to take advantage of Hugo's extensive ecosystem of themes and plugins. Start converting your HTML site to Hugo today and unlock the full potential of static site generation.
+
+Remember to optimize your Hugo site further by optimizing images, implementing responsive design, and utilizing Hugo's built-in SEO features. Happy converting!
