@@ -6,6 +6,8 @@ description: " Convert your static HTML site to a dynamic Hugo website
 pubDate: 2023-07-03
 image: /assets/html_to_hugo.png
 ---
+import Ad from "components/ads/Article.astro";
+export const components = { Ad: Ad };
 ## Introduction
 
 In this blog post, we will explore the process of converting a static HTML theme, template, or site into a fully functional Hugo website. Hugo is a powerful static site generator that allows you to build fast and efficient websites. By following the steps outlined below, you'll be able to seamlessly migrate your HTML site to Hugo and take advantage of its numerous benefits.
@@ -33,6 +35,8 @@ This command will create the necessary folder structure for your Hugo site.
 ## Copying Assets
 
 Before we proceed with creating the index page and templates, it's important to copy all the static files, such as CSS, JavaScript, and images, from the HTML template's `assets` folder. Simply copy the entire contents of the `assets` folder in the HTML template and paste them into the `static` folder of your Hugo site. This ensures that all the necessary assets are available for your Hugo site to function correctly.
+
+<Ad/>
 
 ## Creating the Index Page
 
