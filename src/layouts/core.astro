@@ -144,7 +144,7 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
     ): (null)}
 
     <GoogleFontsOptimizer
-      url="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      url="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
     />
     <!-- Google tag (gtag.js) -->
     <script
@@ -160,6 +160,11 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 
       gtag("config", "G-5D7Z6EYSZ0");
     </script>
+    <style is:global>
+      * {
+        transition: all 0.2s;
+      }
+    </style>
   </head>
   <body class={`${className} bg-white`}>
     <slot />
