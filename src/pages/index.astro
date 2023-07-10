@@ -53,10 +53,10 @@ noteEntries = noteEntries.sort(
           Github, and take shots on Dribbble. you can find me in your computer.
         </p>
         <div class="flex justify-center">
-          <a href="/about"
+          <a href="/about/"
             ><PrimaryButton className="px-6">About</PrimaryButton>
           </a>
-          <a href="/contact"
+          <a href="/contact/"
             ><SecondaryButton className="ml-4 px-4">Contact</SecondaryButton>
           </a>
         </div>
@@ -77,7 +77,7 @@ noteEntries = noteEntries.sort(
       </h2>
       <a
         class="font-heading text-gray-700"
-        href="/projects">View All</a
+        href="/projects/">View All</a
       >
     </div>
     <div class="text-gray-500 body-font">
@@ -101,7 +101,7 @@ noteEntries = noteEntries.sort(
       >
         Latest Articles
       </h3>
-      <a class="font-heading text-gray-700" href="/blog">View All</a>
+      <a class="font-heading text-gray-700" href="/blog/">View All</a>
     </div>
     <div class="relative items-center w-full py-12 mx-auto">
       <div
@@ -111,7 +111,7 @@ noteEntries = noteEntries.sort(
           [0, 1, 2, 3].map((index) => (
             <BlogCard
               data={blogEntries[index].data}
-              url={blogEntries[index].slug}
+              url={`${blogEntries[index].slug}/`}
             />
           ))
         }
@@ -283,7 +283,7 @@ noteEntries = noteEntries.sort(
       >
         Some Notes
       </h3>
-      <a class="font-heading text-gray-700" href="/notes">View All</a>
+      <a class="font-heading text-gray-700" href="/notes/">View All</a>
     </div>
     <div class="relative items-center w-full py-12 mx-auto">
       <div
@@ -293,7 +293,7 @@ noteEntries = noteEntries.sort(
           [0, 1, 2].map((index) => (
             <NotesCard
               data={noteEntries[index].data}
-              url={noteEntries[index].slug}
+              url={`${noteEntries[index].slug}/`}
             />
           ))
         }
