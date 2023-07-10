@@ -1,5 +1,3 @@
-User-agent: *
-Disallow: 
-Disallow: /admin
 
-# Algolia-Crawler-Verif: 36DE9075738E4943
+User-Agent: *
+Allow: /
