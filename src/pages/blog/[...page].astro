@@ -44,7 +44,7 @@ const { page } = Astro.props;
       {
         page.url.prev !== undefined ? (
           <SecondaryButton className="px-4">
-            <a href={page.url.prev} class="text-black">
+            <a href={`${page.url.prev}/`} class="text-black">
               👈🏻 Prev
             </a>
           </SecondaryButton>
@@ -55,7 +55,7 @@ const { page } = Astro.props;
       {
         page.url.next && (
           <SecondaryButton className="px-4">
-            <a href={page.url.next} class="text-black">
+            <a href={`${page.url.next}/`} class="text-black">
               Next 👉🏻
             </a>
           </SecondaryButton>
