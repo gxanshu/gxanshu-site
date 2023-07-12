@@ -1,3 +1,5 @@
 
 User-Agent: *
 Allow: /
+
+Sitemap: https://codenanshu.in/sitemap-index.xml
