@@ -1,13 +1,11 @@
 ---
-import { getCollection } from "astro:content";
+import { CollectionEntry, getCollection } from "astro:content";
+import type { Page, GetStaticPathsOptions } from "astro";
 import Default from "layouts/Default.astro";
 import NotesCard from "components/cards/Notes.astro";
 import NotesGridAd from "components/ads/NotesGrid.astro";
 
-type GetStaticPaths = {
-  paginate: any;
-}; // Overrides `GetStaticPathsOptions` types from Astro
-export async function getStaticPaths({ paginate }: GetStaticPaths) {
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const notesEntries = await getCollection("notes");
   const sortedPosts = notesEntries.sort(
     (a, b) => Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate)
@@ -16,7 +14,9 @@ export async function getStaticPaths({ paginate }: GetStaticPaths) {
   return paginate(sortedPosts, { pageSize: 11 });
 }
 
-const { page } = Astro.props;
+const { page } = Astro.props as {
+	page: Page<CollectionEntry<"notes">>
+}
 ---
 
 <Default
