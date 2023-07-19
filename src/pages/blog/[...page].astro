@@ -1,11 +1,12 @@
 ---
-import { getCollection } from "astro:content";
+import { CollectionEntry, getCollection } from "astro:content";
+import type { Page, PaginateFunction } from "astro";
 import Default from "layouts/Default.astro";
 import BlogCard from "components/cards/Blogs.astro";
 import SecondaryButton from "components/buttons/Secondary.astro";
 import BlogGridAd from "components/ads/BlogGrid.astro";
 
-export async function getStaticPaths({ paginate }) {
+export async function getStaticPaths({ paginate }:{paginate:PaginateFunction}) {
   let blogEntries = await getCollection("blog");
   const sortedPosts = blogEntries.sort(
     (a, b) => Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate)
@@ -14,7 +15,9 @@ export async function getStaticPaths({ paginate }) {
   return paginate(sortedPosts, { pageSize: 11 });
 }
 
-const { page } = Astro.props;
+const { page } = Astro.props as {
+	page: Page<CollectionEntry<"blog">>
+}
 ---
 
 <Default
