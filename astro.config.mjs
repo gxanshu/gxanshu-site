@@ -1,7 +1,6 @@
 import mdx from "@astrojs/mdx";
 import preact from "@astrojs/preact";
 import sitemap from "@astrojs/sitemap";
-import prefetch from "@astrojs/prefetch";
 import tailwind from "@astrojs/tailwind";
 import partytown from "@astrojs/partytown";
 import { defineConfig } from "astro/config";
@@ -14,11 +13,15 @@ import { autolinkConfig } from "./scripts/rehype-autolink-config";
 export default defineConfig({
   site: "https://codenanshu.in/",
   integrations: [
-    mdx(),
-    tailwind(),
-    sitemap({
-      filter: (page) => page !== "/admin",
+    mdx({
+      optimize: true,
+      syntaxHighlight: 'shiki',
+      shikiConfig: { theme: customTheme },
+      rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, autolinkConfig]],
+      gfm: true,
     }),
+    tailwind(),
+    sitemap(),
     partytown({
       config: {
         forward: ["datalayer.push"],
@@ -26,16 +29,13 @@ export default defineConfig({
     }),
     preact({
       compat: true,
-    }),
-    prefetch({
-      selector: "a[href^='/']",
-    }),
+    })
   ],
-  markdown: {
-    gfm: true,
-    shikiConfig: {
-      theme: customTheme,
-    },
-    rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, autolinkConfig]],
-  },
+  // markdown: {
+  //   gfm: true,
+  //   shikiConfig: {
+  //     theme: customTheme,
+  //   },
+  //   rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, autolinkConfig]],
+  // },
 });
