@@ -1,6 +1,7 @@
 ---
 import Default from "layouts/Default.astro";
 import DevCard from "components/DevCard.astro";
+import ContributionCard from "components/ContributionCard.astro"
 ---
 
 <style>
@@ -227,12 +228,17 @@ import DevCard from "components/DevCard.astro";
       <DevCard />
     </div>
 
+    <div class="py-4">
+      <p class="mb-4">I am always eager to learn and improve my coding skills. I enjoy creating software that solves problems in society. If there is an existing open source solution to a problem, I am excited to contribute to it. I like to fix bugs and improve the overall software. Here is a list of some open source projects that I have contributed to:</p>
+      <ContributionCard/>
+    </div>
+
     <p class="my-4">
-      want to work with me <a
-        class="font-link text-blue-600 no-underline"
-        href="/contact/"
-        title="contact me">lets connect 👋</a
-      >
+      I also develop tools, programs, and software or web apps that help users complete their tasks. As a freelancer, I also develop wonderful applications for my clients. You can find my work in the <a href="/projects/" class="text-blue-600">project</a> sections. If you are interested in working with me, you can contact me through the <a href="/contact/" class="text-blue-600">contact form</a> on my website or social media.
+    </p>
+
+    <p class="py-4">
+      Thank you very much 🙏
     </p>
   </section>
 </Default>
