@@ -7,7 +7,7 @@ const allContributionFromGithub = await fetch('https://api.github.com/graphql', 
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
-    'Authorization': `Bearer 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`
+    'Authorization': `Bearer ${import.meta.env.GITHUB_KEY}`
   },
   body: JSON.stringify({
     query: `
@@ -19,29 +19,31 @@ const allContributionFromGithub = await fetch('https://api.github.com/graphql', 
         name
         owner {
           avatarUrl(size: 32)
+          login
         }
       }
-    } 
+    }
   }
 }
       `
   }),
 }).then((res) => res.json())
   .then((result) => {return result.data.user.starredRepositories.nodes});
-
-console.log(allContributionFromGithub)
 ---
 <div class="flex flex-wrap gap-2">
     {
       allContributionFromGithub.map((repo) => {
         return (
-          <Dev className="flex gap-6 py-1 hover:scale-102 my-1"><img 
+          <a href={`https://github.com/gxanshu?tab=overview&org=${repo.owner.login}`}
+          target="_blank">
+            <Dev className="flex gap-2 py-1 hover:scale-102 my-1"><img 
               src={repo.owner.avatarUrl}
               width="28px"
               style="border-radius: 5px;"
             />
             <p><b>{repo.name}</b></p>
           </Dev>
+        </a>
         );
       })
     }
