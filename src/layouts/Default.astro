@@ -43,7 +43,7 @@ import Footer from "../components/Footer.astro";
   <main
     class={`mx-auto ${
       isArticle ? "max-w-screen-sm" : "max-w-screen-xl"
-    } items-center w-95 mt-20 ${className}`}
+    } items-center min-h-[calc(100vh-56px)] w-95 mt-20 ${className}`}
   >
     <slot />
   </main>
