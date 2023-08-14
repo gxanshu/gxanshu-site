@@ -24,20 +24,20 @@
 
 🚀 "Codenanshu" is not only my personal project but also a captivating blog where I eagerly share intriguing facts and knowledge with the world. Through this platform, I strive to offer the key insights I gather on a daily basis. 🌍 This website acts as a treasure trove of knowledge that I'm enthusiastic about sharing—essentially serving as a dynamic note-keeping platform where I pour out my thoughts. 💡
 
-📝 For those who wish to contribute a post, the process is refreshingly simple. There are two methods to craft a post on the site. The first approach involves forking the repository from [this link](https://github.com/gxanshu/codenanshu/fork) and then accessing the 🖋️ [admin CMS](https://codenanshu.in/admin/index.html). From there, you can effortlessly log in using your GitHub account.
+📝 For those who wish to contribute a post, the process is refreshingly simple. There are two methods to craft a post on the site. The first approach involves forking the repository from [this link](https://github.com/gxanshu/codenanshu/fork).
 
-📚 Alternatively, you can fork the repository, and in the `src/pages/blog/[post].md` file, unleash your creativity using the captivating Markdown format. Once your post is polished and ready, you can initiate a pull request—an invitation to have your creation reviewed and seamlessly integrated into the platform. 🎉
+📚 In the `src/pages/blog/[post].md` file, unleash your creativity using the captivating Markdown format. Once your post is polished and ready, you can initiate a pull request—an invitation to have your creation reviewed and seamlessly integrated into the platform. 🎉
 
 ## Technology I Used 📜:
 
-- [Astro](https://astro.build/) - Build the web you want.
-- [TailwindCSS](https://astro.build/) - Rapidly build modern websites without ever leaving your HTML.
-- [MDXjs](https://astro.build/) - Markdown for the component era.
-- [Partytown](https://astro.build/) - Run Third-Party Scripts From A Web Worker.
-- [Cloudinary](https://astro.build/) - Deliver Engaging Visual Experiences at Scale.
-- [Rive](https://rive.app/) - Build interactive animations that run anywhere.
-- [Algolia](https://www.algolia.com/) - Powering Discovery for your world.
-- [Netlify](https://www.netlify.com/) - Connect everything. Build anything.
+- [Astro](https://astro.build/) - Site generator
+- [TailwindCSS](https://astro.build/) - Styling framework
+- [MDXjs](https://astro.build/) - Content management
+- [Partytown](https://astro.build/) - Reduce third-party scripts
+- [Cloudinary](https://astro.build/) - Image optimization
+- [Rive](https://rive.app/) - For interactive animations
+- [Algolia](https://www.algolia.com/) - Search engine
+- [Cloudflare](https://pages.cloudflare.com/) - Website hosting.
 - [Jampack](https://jampack.divriots.com/) - Optimizes websites for user experience and Core Web Vitals scores.
 
 **I'm going to add more in the future!**
