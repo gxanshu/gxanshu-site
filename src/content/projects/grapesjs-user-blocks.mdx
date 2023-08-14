@@ -18,9 +18,16 @@ GrapesJS User Blocks is a plugin that allows users to create and save their own 
 [DEMO](https://codesandbox.io/s/elated-sammet-wnps7g?file=/src/index.js)
 
 ### HTML
+
 ```html
-<link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
-<link href="https://unpkg.com/grapesjs-user-blocks/dist/grapesjs-user-blocks.min.css" rel="stylesheet">
+<link
+  href="https://unpkg.com/grapesjs/dist/css/grapes.min.css"
+  rel="stylesheet"
+/>
+<link
+  href="https://unpkg.com/grapesjs-user-blocks/dist/grapesjs-user-blocks.min.css"
+  rel="stylesheet"
+/>
 <script src="https://unpkg.com/grapesjs"></script>
 <script src="https://unpkg.com/grapesjs-user-blocks"></script>
 
@@ -28,46 +35,53 @@ GrapesJS User Blocks is a plugin that allows users to create and save their own 
 ```
 
 ### JS
+
 ```js
 const editor = grapesjs.init({
-	container: '#gjs',
-  height: '100%',
+  container: "#gjs",
+  height: "100%",
   fromElement: true,
   storageManager: false,
-  plugins: ['grapesjs-user-blocks'],
+  plugins: ["grapesjs-user-blocks"],
 });
 ```
 
 ### CSS
+
 ```css
-body, html {
+body,
+html {
   margin: 0;
   height: 100%;
 }
 ```
 
-
 ## Summary
 
-* Plugin name: `grapesjs-user-blocks` super simple user block generator for grapesjs. it allow developers to store there components in localStorage and also in blockManager to use letter.
+- Plugin name: `grapesjs-user-blocks` super simple user block generator for grapesjs. it allow developers to store there components in localStorage and also in blockManager to use letter.
 
 ## Download
 
-* CDN
-  * `https://unpkg.com/grapesjs-user-blocks`
-* NPM
-  * `npm i grapesjs-user-blocks`
-* GIT
-  * `git clone https://github.com/gxnanshu/grapesjs-user-blocks.git`
-
-
+- CDN
+  - `https://unpkg.com/grapesjs-user-blocks`
+- NPM
+  - `npm i grapesjs-user-blocks`
+- GIT
+  - `git clone https://github.com/gxnanshu/grapesjs-user-blocks.git`
 
 ## Usage
 
 Directly in the browser
+
 ```html
-<link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet"/>
-<link href="https://unpkg.com/grapesjs-user-blocks/dist/grapesjs-user-blocks.min.css" rel="stylesheet">
+<link
+  href="https://unpkg.com/grapesjs/dist/css/grapes.min.css"
+  rel="stylesheet"
+/>
+<link
+  href="https://unpkg.com/grapesjs-user-blocks/dist/grapesjs-user-blocks.min.css"
+  rel="stylesheet"
+/>
 <script src="https://unpkg.com/grapesjs"></script>
 <script src="path/to/grapesjs-user-blocks.min.js"></script>
 
@@ -75,21 +89,22 @@ Directly in the browser
 
 <script type="text/javascript">
   var editor = grapesjs.init({
-      container: '#gjs',
-      // ...
-      plugins: ['grapesjs-user-blocks']
+    container: "#gjs",
+    // ...
+    plugins: ["grapesjs-user-blocks"],
   });
 </script>
 ```
 
 Modern javascript
+
 ```js
-import grapesjs from 'grapesjs';
-import plugin from 'grapesjs-user-blocks';
-import 'grapesjs/dist/css/grapes.min.css';
+import grapesjs from "grapesjs";
+import plugin from "grapesjs-user-blocks";
+import "grapesjs/dist/css/grapes.min.css";
 
 const editor = grapesjs.init({
-  container : '#gjs',
+  container: "#gjs",
   // ...
   plugins: [plugin],
   // pluginsOpts: {
@@ -101,8 +116,6 @@ const editor = grapesjs.init({
   // ],
 });
 ```
-
-
 
 ## Development
 

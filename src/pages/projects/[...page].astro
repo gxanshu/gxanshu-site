@@ -2,8 +2,7 @@
 import { CollectionEntry, getCollection } from "astro:content";
 import type { Page, GetStaticPathsOptions } from "astro";
 import Default from "layouts/Default.astro";
-import ProjectCard from "components/cards/MainProjects.astro"
-
+import ProjectCard from "components/cards/MainProjects.astro";
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const notesEntries = await getCollection("projects");
@@ -15,8 +14,8 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 }
 
 const { page } = Astro.props as {
-	page: Page<CollectionEntry<"projects">>
-}
+  page: Page<CollectionEntry<"projects">>;
+};
 ---
 
 <Default

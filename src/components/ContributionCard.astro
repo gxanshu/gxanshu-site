@@ -3,14 +3,16 @@
  * gird layout of all the contributions projects in about page
  */
 import Dev from "components/cards/Dev.astro";
-const allContributionFromGithub = await fetch('https://api.github.com/graphql', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${import.meta.env.GITHUB_KEY}`
-  },
-  body: JSON.stringify({
-    query: `
+const allContributionFromGithub = await fetch(
+  "https://api.github.com/graphql",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${import.meta.env.GITHUB_KEY}`,
+    },
+    body: JSON.stringify({
+      query: `
         query MyQuery {
   user(login: "gxanshu") {
     starredRepositories(first: 50, orderBy: {field: STARRED_AT, direction: ASC}) {
@@ -25,26 +27,37 @@ const allContributionFromGithub = await fetch('https://api.github.com/graphql', 
     }
   }
 }
-      `
-  }),
-}).then((res) => res.json())
-  .then((result) => {return result.data.user.starredRepositories.nodes});
+      `,
+    }),
+  }
+)
+  .then((res) => res.json())
+  .then((result) => {
+    return result.data.user.starredRepositories.nodes;
+  });
 ---
+
 <div class="flex flex-wrap gap-2">
-    {
-      allContributionFromGithub.map((repo) => {
-        return (
-          <a href={`https://github.com/gxanshu?tab=overview&org=${repo.owner.login}`}
-          target="_blank">
-            <Dev className="flex gap-2 py-1 hover:scale-102 my-1"><img 
+  {
+    allContributionFromGithub.map((repo) => {
+      return (
+        <a
+          href={`https://github.com/gxanshu?tab=overview&org=${repo.owner.login}`}
+          target="_blank"
+        >
+          <Dev className="flex gap-2 py-1 hover:scale-102 my-1">
+            <img
               src={repo.owner.avatarUrl}
               width="28px"
               style="border-radius: 5px;"
+              alt={repo.name}
             />
-            <p><b>{repo.name}</b></p>
+            <p>
+              <b>{repo.name}</b>
+            </p>
           </Dev>
         </a>
-        );
-      })
-    }
+      );
+    })
+  }
 </div>

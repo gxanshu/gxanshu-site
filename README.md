@@ -45,28 +45,27 @@
 ---
 
 ## Want to Contribute? ✌️
+
 #### Follow These Commands:
 
 1. First, clone the repository:
    ```sh
    git clone https://github.com/gxanshu/codenanshu.git
+   ```
 
 ## Command Action
-   
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `cd codenanshu/`          | Navigate to the Codenanshu directory             |
-| `npm install`             | Install dependencies                             |
-| `npm run dev`             | Start the local development server at `localhost:3000` |
-| `npm run build`           | Build your production site to `./dist/`         |
+
+| Command          | Action                                                 |
+| :--------------- | :----------------------------------------------------- |
+| `cd codenanshu/` | Navigate to the Codenanshu directory                   |
+| `npm install`    | Install dependencies                                   |
+| `npm run dev`    | Start the local development server at `localhost:3000` |
+| `npm run build`  | Build your production site to `./dist/`                |
 
 All set 🤔?  
-Now you can make your changes ✍️ and push the code to your account.   
+Now you can make your changes ✍️ and push the code to your account.  
 After that, simply create a pull request!
 
 ---
 
 Made with ❤️ & ✨ by - [@gxanshu](https://github.com/gxanshu)
-
-
-

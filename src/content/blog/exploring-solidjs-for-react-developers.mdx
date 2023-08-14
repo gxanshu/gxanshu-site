@@ -20,19 +20,19 @@ In React, components re-render when their state or props change. SolidJS takes a
 
 ### 2. **Component Creation** 🧩
 
-Creating components in SolidJS is quite similar to React. You use the `createSignal` function to define state variables, and the `createEffect` function to handle side effects. This ensures that your components are easy to reason about and follow a functional programming paradigm. but here `createEffect` have different approch then  `useEffect` in React. 
+Creating components in SolidJS is quite similar to React. You use the `createSignal` function to define state variables, and the `createEffect` function to handle side effects. This ensures that your components are easy to reason about and follow a functional programming paradigm. but here `createEffect` have different approch then `useEffect` in React.
 
 Example of creating a simple component:
 
 ```jsx
-import { createSignal } from 'solid-js';
+import { createSignal } from "solid-js";
 
 function Counter() {
   const [count, setCount] = createSignal(0);
 
   return (
     <div>
-    	{/*here count is a function so you have to call it*/}
+      {/*here count is a function so you have to call it*/}
       <p>Count: {count()}</p>
       <button onClick={() => setCount(count() + 1)}>Increment</button>
     </div>
@@ -47,7 +47,7 @@ While React developers are informed to libraries like Redux or context API for s
 Example of using `createStore`:
 
 ```jsx
-import { createStore, createSignal } from 'solid-js';
+import { createStore, createSignal } from "solid-js";
 
 const store = createStore({
   count: 0,
@@ -59,7 +59,9 @@ function App() {
   return (
     <div>
       <p>Count: {state.count}</p>
-      <button onClick={() => setState('count', state.count + 1)}>Increment</button>
+      <button onClick={() => setState("count", state.count + 1)}>
+        Increment
+      </button>
     </div>
   );
 }

@@ -139,9 +139,14 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
   <meta property="twitter:creator:id" content="13334762"> -->
     <meta name="creator" content="@gxanshu" />
     <meta name="publisher" content="gxanshu" />
-    {isProject ? (
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-    ): (null)}
+    {
+      isProject ? (
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+        />
+      ) : null
+    }
 
     <GoogleFontsOptimizer
       url="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
@@ -192,22 +197,23 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
         }
       }
     </script>
-  </body><style is:global>
-    body::-webkit-scrollbar {
-      display: none;
-    }
+    <style is:global>
+      body::-webkit-scrollbar {
+        display: none;
+      }
 
-    /* Hide scrollbar for IE, Edge and Firefox */
-    body {
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none; /* Firefox */
-    }
-    ::selection {
-      background-color: #c9f3fd;
-    }
+      /* Hide scrollbar for IE, Edge and Firefox */
+      body {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+      ::selection {
+        background-color: #c9f3fd;
+      }
 
-    .bg-clip-text {
-      -webkit-background-clip: text;
-    }
-  </style>
+      .bg-clip-text {
+        -webkit-background-clip: text;
+      }
+    </style>
+  </body>
 </html>

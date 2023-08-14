@@ -5,12 +5,12 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "node ./scripts/task.js && astro build && jampack ./dist",
+    "build": "node ./scripts/task.js && astro build && jampack ./dist --onlyoptim",
     "build:dev": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write \"**/*.{astro,js,jsx,ts,tsx,md,mdx}\" --plugin-search-dir=. .",
-    "jampack": "jampack ./dist"
+    "jampack": "jampack ./dist --onlyoptim"
   },
   "dependencies": {
     "@astrojs/mdx": "^0.19.7",

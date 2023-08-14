@@ -15,7 +15,7 @@ export default defineConfig({
   integrations: [
     mdx({
       optimize: true,
-      syntaxHighlight: 'shiki',
+      syntaxHighlight: "shiki",
       shikiConfig: { theme: customTheme },
       rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, autolinkConfig]],
       gfm: true,
@@ -29,7 +29,7 @@ export default defineConfig({
     }),
     preact({
       compat: true,
-    })
+    }),
   ],
   // markdown: {
   //   gfm: true,

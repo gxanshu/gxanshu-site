@@ -6,7 +6,7 @@ import BlogCard from "components/cards/Blogs.astro";
 import SecondaryButton from "components/buttons/Secondary.astro";
 import BlogGridAd from "components/ads/BlogGrid.astro";
 
-export async function getStaticPaths({ paginate }:GetStaticPathsOptions) {
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   let blogEntries = await getCollection("blog");
   const sortedPosts = blogEntries.sort(
     (a, b) => Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate)
@@ -16,8 +16,8 @@ export async function getStaticPaths({ paginate }:GetStaticPathsOptions) {
 }
 
 const { page } = Astro.props as {
-	page: Page<CollectionEntry<"blog">>
-}
+  page: Page<CollectionEntry<"blog">>;
+};
 ---
 
 <Default
