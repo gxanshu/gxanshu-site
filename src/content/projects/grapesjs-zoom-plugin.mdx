@@ -13,18 +13,22 @@ download: "npmjs.com/package/grapesjs-zoom-plugin"
 
 GrapesJS is an incredible no-code editor, widely renowned for its amazing features and the fact that it's open source.
 
-While GrapesJS offers a wide range of APIs to customize the editor, there are times when modifying certain functionalities can be a bit challenging. One such challenge arises when trying to add zoom in and zoom out functionality to the editor. 
+While GrapesJS offers a wide range of APIs to customize the editor, there are times when modifying certain functionalities can be a bit challenging. One such challenge arises when trying to add zoom in and zoom out functionality to the editor.
 To address this issue, I created the Zoom controller Plugin as a simple and effective solution.
 
-All you need to do is install the plugin, and voila! You'll have access to two handy buttons in the editor panel, as well as a convenient keyboard shortcut `(Shift + and Shift -)` to effortlessly zoom in and out of the canvas. 
+All you need to do is install the plugin, and voila! You'll have access to two handy buttons in the editor panel, as well as a convenient keyboard shortcut `(Shift + and Shift -)` to effortlessly zoom in and out of the canvas.
 
 With this plugin, zooming becomes a breeze, enhancing your editing experience and streamlining your workflow.
 
 [DEMO](https://codesandbox.io/s/sharp-haslett-dwcpvt?file=/src/index.js)
 
 ### HTML
+
 ```html
-<link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
+<link
+  href="https://unpkg.com/grapesjs/dist/css/grapes.min.css"
+  rel="stylesheet"
+/>
 <script src="https://unpkg.com/grapesjs"></script>
 <script src="https://unpkg.com/grapesjs-zoom-plugin"></script>
 
@@ -32,19 +36,22 @@ With this plugin, zooming becomes a breeze, enhancing your editing experience an
 ```
 
 ### JS
+
 ```js
 const editor = grapesjs.init({
-	container: '#gjs',
-  height: '100%',
+  container: "#gjs",
+  height: "100%",
   fromElement: true,
   storageManager: false,
-  plugins: ['grapesjs-zoom-plugin'],
+  plugins: ["grapesjs-zoom-plugin"],
 });
 ```
 
 ### CSS
+
 ```css
-body, html {
+body,
+html {
   margin: 0;
   height: 100%;
 }
@@ -52,18 +59,23 @@ body, html {
 
 ## Download
 
-* CDN
-  * `https://unpkg.com/grapesjs-zoom-plugin`
-* NPM
-  * `npm i grapesjs-zoom-plugin`
-* GIT
-  * `git clone https://github.com/gxnanshu/grapesjs-zoom-plugin.git`
+- CDN
+  - `https://unpkg.com/grapesjs-zoom-plugin`
+- NPM
+  - `npm i grapesjs-zoom-plugin`
+- GIT
+
+  - `git clone https://github.com/gxnanshu/grapesjs-zoom-plugin.git`
 
   ## Usage
 
 Directly in the browser
+
 ```html
-<link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet"/>
+<link
+  href="https://unpkg.com/grapesjs/dist/css/grapes.min.css"
+  rel="stylesheet"
+/>
 <script src="https://unpkg.com/grapesjs"></script>
 <script src="path/to/grapesjs-zoom-plugin.min.js"></script>
 
@@ -71,17 +83,20 @@ Directly in the browser
 
 <script type="text/javascript">
   var editor = grapesjs.init({
-      container: '#gjs',
-      // ...
-      plugins: ['grapesjs-zoom-plugin'],
-      pluginsOpts: {
-        'grapesjs-zoom-plugin': { /* options */ }
-      }
+    container: "#gjs",
+    // ...
+    plugins: ["grapesjs-zoom-plugin"],
+    pluginsOpts: {
+      "grapesjs-zoom-plugin": {
+        /* options */
+      },
+    },
   });
 </script>
 ```
 
 Modern javascript
+
 ```js
 import grapesjs from 'grapesjs';
 import plugin from 'grapesjs-zoom-plugin';

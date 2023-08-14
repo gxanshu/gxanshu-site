@@ -17,6 +17,7 @@ Before we dive into the development process, let's get familiar with Tauri's Fil
 ### Accessing Directories
 
 Tauri provides access to various directories where you can store your application's data. These include:
+
 - `appData`: Stores user-specific data that persists across sessions.
 - `userData`: For user-specific data that should be backed up and synchronized.
 - `cache`: Ideal for temporary and non-critical data.
@@ -27,7 +28,7 @@ Tauri provides access to various directories where you can store your applicatio
 Let's get hands-on! Here's how you can use Tauri's APIs to store data in a JSON file within the `appData` directory.
 
 ```typescript
-import { Tauri } from 'tauri/api';
+import { Tauri } from "tauri/api";
 
 interface UserData {
   name: string;
@@ -39,16 +40,16 @@ interface UserData {
 async function storeData(data: UserData): Promise<void> {
   try {
     const jsonData = JSON.stringify(data);
-    const filePath = Tauri.path.join(Tauri.path.appData, 'userdata.json');
+    const filePath = Tauri.path.join(Tauri.path.appData, "userdata.json");
     await Tauri.fs.writeTextFile({ path: filePath, contents: jsonData });
-    console.log('Data saved successfully!');
+    console.log("Data saved successfully!");
   } catch (error) {
-    console.error('Error saving data:', error);
+    console.error("Error saving data:", error);
   }
 }
 ```
 
-<Ad/>
+<Ad />
 
 In the above example, we first convert our data object into a JSON string. Then, we define the file path using Tauri's Path API by joining the `appData` directory and a filename. Finally, we use the File API's `writeTextFile` method to save our data to the JSON file.
 
@@ -60,11 +61,11 @@ Retrieving stored data is just as simple:
 // Retrieve and parse stored data
 async function retrieveData(): Promise<UserData | null> {
   try {
-    const filePath = Tauri.path.join(Tauri.path.appData, 'userdata.json');
+    const filePath = Tauri.path.join(Tauri.path.appData, "userdata.json");
     const jsonData = await Tauri.fs.readTextFile({ path: filePath });
     return JSON.parse(jsonData) as UserData;
   } catch (error) {
-    console.error('Error reading data:', error);
+    console.error("Error reading data:", error);
     return null;
   }
 }

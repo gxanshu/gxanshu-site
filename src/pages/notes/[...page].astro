@@ -15,8 +15,8 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 }
 
 const { page } = Astro.props as {
-	page: Page<CollectionEntry<"notes">>
-}
+  page: Page<CollectionEntry<"notes">>;
+};
 ---
 
 <Default

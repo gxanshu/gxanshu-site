@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Default from "layouts/Default.astro";
-import ProjectActions from "components/projectActions.astro"
+import ProjectActions from "components/projectActions.astro";
 import Image from "components/Image.astro";
 
 // 1. Generate a new path for every collection entry
@@ -42,11 +42,16 @@ const { Content } = await post.render();
       >
         {post.data.title}
       </h1>
-      <p>by {post.data.author} | {new Date(post.data.pubDate).toDateString()}</p>
-      <p class="mt-4">Tech Stack {post.data.techStack.map(stack => (
-        <i class={`devicon-${stack} colored mx-1 h-12 w-12`}></i>
-      ))}</p>
-  
+      <p>
+        by {post.data.author} | {new Date(post.data.pubDate).toDateString()}
+      </p>
+      <p class="mt-4">
+        Tech Stack {
+          post.data.techStack.map((stack) => (
+            <i class={`devicon-${stack} colored mx-1 h-12 w-12`} />
+          ))
+        }
+      </p>
     </section>
     <section
       class="my-4 py-4 prose prose-headings:font-heading prose-headings:text-xl prose-stone prose-img:rounded prose-a:text-blue-600 prose-a:no-underline"
@@ -54,5 +59,8 @@ const { Content } = await post.render();
       <Content />
     </section>
   </article>
-  <ProjectActions sourceCode={post.data.sourceCode} download={post.data.download}/>
+  <ProjectActions
+    sourceCode={post.data.sourceCode}
+    download={post.data.download}
+  />
 </Default>
