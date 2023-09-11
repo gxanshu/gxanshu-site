@@ -79,21 +79,27 @@ import NotificationModal from "components/modals/Notification";
     const subject = document.getElementById("subject") as HTMLInputElement;
     const message = document.getElementById("message") as HTMLInputElement;
 
-    const token = import.meta.env.PUBLIC_TELEGRAM_BOT_API;
-    const id = "1493444597";
+    const webhookUrl = import.meta.env.PUBLIC_DISCORD_WEBHOOK;
 
-    const msg = `
-email: ${email.value}
----
-subject: ${subject.value}
----
-${message.value}
-`;
-    fetch(
-      `https://api.telegram.org/bot${token}/sendMessage?chat_id=${id}&text=${encodeURIComponent(
-        msg
-      )}`
-    );
+    const webhookBody = {
+      embeds: [
+        {
+          title: subject.value,
+          fields: [
+            { name: "Sender", value: email.value },
+            { name: "Message", value: message.value },
+          ],
+        },
+      ],
+    };
+
+    const response = fetch(webhookUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(webhookBody),
+    });
 
     email.value = subject.value = message.value = "";
   }
