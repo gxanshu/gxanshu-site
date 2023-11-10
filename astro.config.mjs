@@ -31,6 +31,9 @@ export default defineConfig({
       compat: true,
     }),
   ],
+  experimental: {
+    viewTransitions: true
+  }
   // markdown: {
   //   gfm: true,
   //   shikiConfig: {
