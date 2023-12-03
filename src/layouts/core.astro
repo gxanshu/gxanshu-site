@@ -44,7 +44,6 @@ const imageURL = new URL(image ?? "./Social.png", Astro.site);
 import ArticleSchema from "components/jsonld/articleSchema.astro";
 import WebsiteSchema from "components/jsonld/websiteSchema.astro";
 import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
-import { ViewTransitions } from 'astro:transitions';
 ---
 
 <!DOCTYPE html>
@@ -171,7 +170,6 @@ import { ViewTransitions } from 'astro:transitions';
         transition: all 0.2s;
       }
     </style>
-    <ViewTransitions />
   </head>
   <body class={`${className} bg-white`}>
     <slot />
