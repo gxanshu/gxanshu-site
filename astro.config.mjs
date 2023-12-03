@@ -11,7 +11,7 @@ import { autolinkConfig } from "./scripts/rehype-autolink-config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://codenanshu.in/",
+  site: "https://gxanshu.in/",
   integrations: [
     mdx({
       optimize: true,

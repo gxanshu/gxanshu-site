@@ -1,20 +1,20 @@
 {
   "data": [
     {
-      "name": "Codenanshu",
-      "discription": "Kick off your programming skills with codeNanshu. This plateform help you learn things that are really helpful for your requirements.",
+      "name": "gxanshu",
+      "discription": "Kick off your programming skills with gxanshu. This plateform help you learn things that are really helpful for your requirements.",
       "date": ["Mar", 12],
       "avatar": "https://avatars.githubusercontent.com/u/68537640?v=4&s=32",
-      "developer": "Ai Anshu",
+      "developer": "GX Anshu",
       "tech": "js/astro",
-      "link": "https://github.com/gxanshu/codenanshu"
+      "link": "https://github.com/gxanshu/gxanshu"
     },
     {
       "name": "Windows Activator",
       "discription": "this is the application which run on windows only and i want to say that this is the application which help to activate you windows for free",
       "date": ["Jul", 23],
       "avatar": "https://avatars.githubusercontent.com/u/68537640?v=4&s=32",
-      "developer": "Ai Anshu",
+      "developer": "GX Anshu",
       "tech": "sh/py",
       "link": "https://github.com/gxanshu/windowsactivator"
     },

@@ -4,10 +4,10 @@ import { getCollection } from "astro:content";
 export async function get() {
   const blog = await getCollection("blog");
   return rss({
-    title: "CodeNanshu - developer's coding blog",
+    title: "gxanshu - developer's coding blog",
     description:
-      "codenanshu is the coding & programming blog that write about web development, artifical intelligence and machine learning. help you to understand computers",
-    site: "https://codenanshu.in/",
+      "gxanshu is the coding & programming blog that write about web development, artifical intelligence and machine learning. help you to understand computers",
+    site: "https://gxanshu.in/",
     items: blog.map((post) => ({
       title: post.data.title,
       pubDate: post.data.pubDate,
