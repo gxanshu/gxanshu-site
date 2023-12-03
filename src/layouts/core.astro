@@ -158,7 +158,7 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
       src="https://www.googletagmanager.com/gtag/js?id=G-5D7Z6EYSZ0"
     ></script>
 
-    <script defer onload="AOS.init()" src="/cdn/aos.js"></script>
+    <script onload="window.addEventListener('DOMContentLoaded', ()=>{AOS.init()})" src="/cdn/aos.js"></script>
 
     <script type="text/partytown">
       window.dataLayer = window.dataLayer || [];
