@@ -149,7 +149,7 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
     }
 
     <GoogleFontsOptimizer
-      url="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
+      url="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
     />
     <!-- Google tag (gtag.js) -->
     <script
@@ -168,6 +168,14 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
     <style is:global>
       * {
         transition: all 0.2s;
+      }
+      .astro-code {
+        background-color: #F5F5F5 !important;
+      }
+      .astro-code::-webkit-scrollbar {
+        background-color: transparent;
+        width: 0px;
+        display: none;
       }
     </style>
   </head>
