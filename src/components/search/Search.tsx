@@ -45,11 +45,11 @@ export default function Search() {
       initialQuery={initialQuery}
       initialScrollY={window.scrollY}
       onClose={onClose}
-      indexName={"gxanshu"}
+      indexName={"codenanshu"}
       appId={"VISHEC26TM"}
       apiKey={"86fa377ab35d29f18d4f9765dfd46623"}
       getMissingResultsUrl={({ query }) =>
-        `https://github.com/gxanshu/gxanshu/issues/new?title=Missing+results+for+query+%22${encodeURIComponent(
+        `https://github.com/gxanshu/gxanshu-site/issues/new?title=Missing+results+for+query+%22${encodeURIComponent(
           query
         )}%22`
       }
