@@ -187,7 +187,7 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
     <slot />
 
     <!-- optimizing google adsence code for lazy loading  -->
-    <script is:inline>
+    <!-- <script is:inline>
       function downloadJSAtOnload() {
         var element = document.createElement("script");
         element.crossOrigin = "anonymous";
@@ -208,7 +208,7 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
           downloadJSAtOnload();
         }
       }
-    </script>
+    </script> -->
     <style is:global>
       body::-webkit-scrollbar {
         display: none;
