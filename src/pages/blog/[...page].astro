@@ -36,8 +36,8 @@ const { page } = Astro.props as {
     >
       <div class="grid w-full grid-cols-1 gap-8 mx-auto lg:grid-cols-3">
         {
-          page.data.map((blog) => (
-            <BlogCard data={blog.data} url={`${blog.slug}/`} />
+          page.data.map((blog, index) => (
+            <BlogCard data={blog.data} index={index} url={`${blog.slug}/`} />
           ))
         }
         <BlogGridAd />

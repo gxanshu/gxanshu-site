@@ -97,6 +97,7 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
     <meta name="viewport" content="width=device-width" />
 
     <link rel="icon" href="/favicon.ico" />
+    <link href="/cdn/aos.css" rel="stylesheet">
 
     <meta name="generator" content={Astro.generator} />
 
@@ -156,6 +157,9 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
       type="text/partytown"
       src="https://www.googletagmanager.com/gtag/js?id=G-5D7Z6EYSZ0"
     ></script>
+
+    <script defer onload="AOS.init()" src="/cdn/aos.js"></script>
+
     <script type="text/partytown">
       window.dataLayer = window.dataLayer || [];
       function gtag() {

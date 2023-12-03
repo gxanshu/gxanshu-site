@@ -39,9 +39,11 @@ const allContributionFromGithub = await fetch(
 
 <div class="flex flex-wrap gap-2">
   {
-    allContributionFromGithub.map((repo) => {
+    allContributionFromGithub.map((repo, index) => {
       return (
         <a
+          data-aos="fade-up"
+          data-aos-delay={`${index}0`}
           href={`https://github.com/gxanshu?tab=overview&org=${repo.owner.login}`}
           target="_blank"
         >

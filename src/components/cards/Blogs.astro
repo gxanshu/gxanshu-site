@@ -1,9 +1,11 @@
 ---
-const { data, url } = Astro.props;
+const { data, url, index } = Astro.props;
 import Image from "components/Image.astro";
 ---
 
 <article
+  data-aos="fade-up"
+  data-aos-delay={`${index}00`}
   class="overflow-hidden rounded-lg shadow-sm border-white transition hover:shadow-lg border-2 hover:border-2 hover:border-black transition delay-75 duration-75 ease-in-out hover:shadow-xl focus:outline-none focus:ring"
 >
   <Image

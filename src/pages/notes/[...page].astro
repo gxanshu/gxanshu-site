@@ -35,8 +35,8 @@ const { page } = Astro.props as {
     >
       <div class="grid w-full grid-cols-1 gap-6 mx-auto lg:grid-cols-3">
         {
-          page.data.map((note) => (
-            <NotesCard data={note.data} url={`${note.slug}/`} />
+          page.data.map((note, index) => (
+            <NotesCard data={note.data} index={index} url={`${note.slug}/`} />
           ))
         }
         <NotesGridAd />

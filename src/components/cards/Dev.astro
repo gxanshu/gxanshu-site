@@ -1,8 +1,10 @@
 ---
-const { className } = Astro.props;
+const { className, index } = Astro.props;
 ---
 
 <div
+  data-aos="fade-up"
+  data-aos-delay={`${index}0`}
   class={`p-3 flex justify-center items-center bg-gray-100 rounded-md border-2 hover:border-2 hover:border-black transition delay-75 duration-75 ease-in-out hover:scale-105 hover:shadow-xl focus:outline-none focus:ring ${className}`}
 >
   <slot />
