@@ -47,6 +47,9 @@ export default function Menu({ listner }: props) {
           <a href="/projects">Projects</a>
         </li>
         <li class="m-4">
+          <a href="/timeline">Timeline</a>
+        </li>
+        <li class="m-4">
           <a href="/contact">Contact</a>
         </li>
       </ul>
