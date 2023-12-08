@@ -2,16 +2,15 @@ backend:
   name: github
   repo: gxanshu/gxanshu-site
   branch: main
+  auth_endpoint: /api/auth
   squash_merges: true
-  auth_scope: repo # this is needed to fork the private repo
-  open_authoring: true
+  # open_authoring: true
 
 publish_mode: editorial_workflow
 media_folder: public/assets
 public_folder: /assets
 site_url: "https://gxanshu.in"
-default_theme: false
-logo_url: https://gxanshu.in/favicon.ico
+logo_url: https://your-site.com/images/logo.svg
 
 collections:
   - name: blog
