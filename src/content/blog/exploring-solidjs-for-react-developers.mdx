@@ -1,13 +1,10 @@
 ---
-title: "Exploring SolidJS for React Developers"
-pubDate: "2023-08-14"
-description: "Discover SolidJS: Unique features like createStore, createSignal. Smooth migration from React. Build high-performance apps! 🚀🔥"
+title: Exploring SolidJS for React Developers
+description: "Discover SolidJS: Unique features like createStore, createSignal.
+  Smooth migration from React. Build high-performance apps! 🚀🔥"
+pubDate: 2023-08-14
 image: /assets/solidjs-for-reactjs-developers.jpg
 ---
-
-import Ad from "components/ads/Article.astro";
-export const components = { Ad: Ad };
-
 If you're a React developer curious about trying out new technologies, you've likely heard of SolidJS. 🎉 It's an exciting alternative to React, offering some unique features and performance benefits. In this blog post, we'll walk you through the main differences between SolidJS and React, along with a migration guide to help you make the switch. Let's dive in! 💡
 
 ## Understanding the Differences
@@ -82,15 +79,10 @@ Migrating from React to SolidJS can be a smooth process, thanks to their similar
    ```sh
    npm install solid-js solid-js/web
    ```
-
 2. **Rewrite Components**: Rewrite your React components using SolidJS syntax, replacing `useState` with `createSignal`, and `useEffect` with `createEffect`.
-
 3. **Update State Management**: If you were using Redux or other state management solutions, consider using SolidJS's `createStore` for a more integrated approach.
-
 4. **Refactor Rerender Logic**: Since SolidJS reactivity works differently, review your component's re-rendering logic. SolidJS will handle most optimizations, but you might need to adjust certain parts of your code.
-
 5. **Run Tests**: Thoroughly test your application after migration to ensure everything is functioning as expected.
-
 6. **Performance Profiling**: Utilize SolidJS's performance analysis tools to identify any potential bottlenecks and optimize your application further.
 
 Remember, transitioning to SolidJS might take some time, but the potential performance gains and cleaner reactivity model can greatly benefit your application in the long run.
