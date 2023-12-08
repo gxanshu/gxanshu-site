@@ -23,12 +23,14 @@ collections:
     fields:
       - { name: title, label: Title }
       - { name: description, label: Description }
-      - name: 'pubDate'
-        label: 'Date'
-        widget: 'datetime'
-        date_format: 'yyyy.MM.dd' # e.g. 24.12.2022
+      - label: "Date"
+        name: "pubDate"
+        widget: "datetime"
+        default: ""
+        date_format: "YYYY.MM.DD" # e.g. 24.12.2021
         time_format: false
-        format: 'yyyy-MM-dd' # e.g. 2022-12-24
+        format: "LLL"
+        picker_utc: false
       - { label: "Image", name: "image", widget: "image", choose_url: true, media_library: { config: { multiple: false }}}
       - { name: body, label: Body, widget: markdown }
   - name: notes
@@ -41,12 +43,14 @@ collections:
     fields:
       - { name: title, label: Title }
       - { name: description, label: Description }
-      - name: 'date'
-        label: 'Date'
-        widget: 'datetime'
-        date_format: 'yyyy.MM.dd' # e.g. 24.12.2022
+      - label: "Date"
+        name: "pubDate"
+        widget: "datetime"
+        default: ""
+        date_format: "YYYY.MM.DD" # e.g. 24.12.2021
         time_format: false
-        format: 'yyyy-MM-dd' # e.g. 2022-12-24
+        format: "LLL"
+        picker_utc: false
       - { name: body, label: Body, widget: markdown }
   - name: projects
     label: Projects
@@ -59,12 +63,14 @@ collections:
       - { name: heading, label: heading }
       - { name: title, label: Title }
       - { name: description, label: Description }
-      - name: 'date'
-        label: 'Date'
-        widget: 'datetime'
-        date_format: 'yyyy.MM.dd' # e.g. 24.12.2022
+      - label: "Date"
+        name: "pubDate"
+        widget: "datetime"
+        default: ""
+        date_format: "YYYY.MM.DD" # e.g. 24.12.2021
         time_format: false
-        format: 'yyyy-MM-dd' # e.g. 2022-12-24
+        format: "LLL"
+        picker_utc: false
       - { label: "Status", name: "status", widget: "select", options: ["active", "inactive"], default: "active" }
       - { label: "Logo", name: "logo", widget: "image", choose_url: true, media_library: { config: { multiple: false }}}
       - { name: author, label: Author }
