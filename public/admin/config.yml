@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: github
   repo: gxanshu/gxanshu-site
   branch: main
   squash_merges: true
