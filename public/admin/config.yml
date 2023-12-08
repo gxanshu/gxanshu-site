@@ -2,6 +2,7 @@ backend:
   name: github
   repo: gxanshu/gxanshu-site
   branch: main
+  base_url: https://gxanshu.in
   auth_endpoint: /api/auth
   squash_merges: true
   # open_authoring: true
