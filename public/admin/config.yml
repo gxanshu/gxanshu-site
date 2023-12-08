@@ -9,6 +9,7 @@ publish_mode: editorial_workflow
 media_folder: public/assets
 public_folder: /assets
 site_url: "https://gxanshu.in"
+include_built_in_themes: false
 
 collections:
   - name: blog
@@ -21,14 +22,12 @@ collections:
     fields:
       - { name: title, label: Title }
       - { name: description, label: Description }
-      - label: "Date"
-        name: "pubDate"
-        widget: "datetime"
-        default: ""
-        date_format: "YYYY.MM.DD" # e.g. 24.12.2021
+      - name: 'pubDate'
+        label: 'Date'
+        widget: 'datetime'
+        date_format: 'yyyy.MM.dd' # e.g. 24.12.2022
         time_format: false
-        format: "LLL"
-        picker_utc: false
+        format: 'yyyy-MM-dd' # e.g. 2022-12-24
       - { label: "Image", name: "image", widget: "image", choose_url: true, media_library: { config: { multiple: false }}}
       - { name: body, label: Body, widget: markdown }
   - name: notes
@@ -41,14 +40,12 @@ collections:
     fields:
       - { name: title, label: Title }
       - { name: description, label: Description }
-      - label: "Date"
-        name: "pubDate"
-        widget: "datetime"
-        default: ""
-        date_format: "YYYY.MM.DD" # e.g. 24.12.2021
+      - name: 'date'
+        label: 'Date'
+        widget: 'datetime'
+        date_format: 'yyyy.MM.dd' # e.g. 24.12.2022
         time_format: false
-        format: "LLL"
-        picker_utc: false
+        format: 'yyyy-MM-dd' # e.g. 2022-12-24
       - { name: body, label: Body, widget: markdown }
   - name: projects
     label: Projects
@@ -61,14 +58,12 @@ collections:
       - { name: heading, label: heading }
       - { name: title, label: Title }
       - { name: description, label: Description }
-      - label: "Date"
-        name: "pubDate"
-        widget: "datetime"
-        default: ""
-        date_format: "YYYY.MM.DD" # e.g. 24.12.2021
+      - name: 'date'
+        label: 'Date'
+        widget: 'datetime'
+        date_format: 'yyyy.MM.dd' # e.g. 24.12.2022
         time_format: false
-        format: "LLL"
-        picker_utc: false
+        format: 'yyyy-MM-dd' # e.g. 2022-12-24
       - { label: "Status", name: "status", widget: "select", options: ["active", "inactive"], default: "active" }
       - { label: "Logo", name: "logo", widget: "image", choose_url: true, media_library: { config: { multiple: false }}}
       - { name: author, label: Author }
