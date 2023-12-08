@@ -10,14 +10,14 @@ import PrimaryButton from "./buttons/Primary.astro";
 ---
 
 <!-- Action buttons for articles  -->
-<div class="flex">
+<div class="flex gap-4">
   <PrimaryButton className="px-2 text-sm">
     <a id="edit_link" href="#" target="_blank">Edit this page</a>
   </PrimaryButton>
   <PrimaryButton className="px-2 text-sm">
     <a id="twitter_link" href="#" target="_blank">Discuss on Twitter</a>
   </PrimaryButton>
-  <PrimaryButton className="ml-4 px-2 text-sm">
+  <PrimaryButton className="px-2 text-sm">
     <a href="https://gxanshu.in/#newsletter">Subscribe Newsletter</a>
   </PrimaryButton>
 </div>
@@ -28,5 +28,5 @@ import PrimaryButton from "./buttons/Primary.astro";
     window.location
   )}`;
   let editLinkElement = document.getElementById('edit_link');
-  editLinkElement.href = `/admin/#${location.pathname}`
+  editLinkElement.href = `/admin/#/edit${location.pathname}`
 </script>
