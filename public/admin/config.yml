@@ -1,0 +1,79 @@
+backend:
+  name: git-gateway
+  repo: gxanshu/gxanshu-site
+  branch: main
+  squash_merges: true
+  # open_authoring: true
+
+publish_mode: editorial_workflow
+media_folder: public/assets
+public_folder: /assets
+site_url: "https://gxanshu.in"
+
+collections:
+  - name: blog
+    label: Blog
+    folder: src/content/blog
+    create: true
+    extension: mdx
+    format: frontmatter
+    preview_path: blog/{{slug}}
+    fields:
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - label: "Date"
+        name: "pubDate"
+        widget: "datetime"
+        default: ""
+        date_format: "YYYY.MM.DD" # e.g. 24.12.2021
+        time_format: false
+        format: "LLL"
+        picker_utc: false
+      - { label: "Image", name: "image", widget: "image", choose_url: true, media_library: { config: { multiple: false }}}
+      - { name: body, label: Body, widget: markdown }
+  - name: notes
+    label: Notes
+    folder: src/content/notes
+    create: true
+    extension: mdx
+    format: frontmatter
+    preview_path: notes/{{slug}}
+    fields:
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - label: "Date"
+        name: "pubDate"
+        widget: "datetime"
+        default: ""
+        date_format: "YYYY.MM.DD" # e.g. 24.12.2021
+        time_format: false
+        format: "LLL"
+        picker_utc: false
+      - { name: body, label: Body, widget: markdown }
+  - name: projects
+    label: Projects
+    folder: src/content/projects
+    create: true
+    extension: mdx
+    format: frontmatter
+    preview_path: projects/{{slug}}
+    fields:
+      - { name: heading, label: heading }
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - label: "Date"
+        name: "pubDate"
+        widget: "datetime"
+        default: ""
+        date_format: "YYYY.MM.DD" # e.g. 24.12.2021
+        time_format: false
+        format: "LLL"
+        picker_utc: false
+      - { label: "Status", name: "status", widget: "select", options: ["active", "inactive"], default: "active" }
+      - { label: "Logo", name: "logo", widget: "image", choose_url: true, media_library: { config: { multiple: false }}}
+      - { name: author, label: Author }
+      - label: "Tech Stacks"
+        name: "techStack"
+        widget: "list"
+        default: ["typescript-plain"]
+      - { name: body, label: Body, widget: markdown }
