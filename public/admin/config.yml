@@ -11,7 +11,6 @@ publish_mode: editorial_workflow
 media_folder: public/assets
 public_folder: /assets
 site_url: "https://gxanshu.in"
-logo_url: https://your-site.com/images/logo.svg
 
 collections:
   - name: blog
