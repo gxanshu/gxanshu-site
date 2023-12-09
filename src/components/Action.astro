@@ -10,23 +10,57 @@ import PrimaryButton from "./buttons/Primary.astro";
 ---
 
 <!-- Action buttons for articles  -->
-<div class="flex gap-4">
-  <PrimaryButton className="px-2 text-sm">
+<div class="flex gap-4 w-full">
+  <PrimaryButton className="px-2 text-sm w-full">
     <a id="edit_link" href="#" target="_blank">Edit this page</a>
   </PrimaryButton>
-  <PrimaryButton className="px-2 text-sm">
-    <a id="twitter_link" href="#" target="_blank">Discuss on Twitter</a>
-  </PrimaryButton>
-  <PrimaryButton className="px-2 text-sm">
+  <PrimaryButton className="px-2 text-sm w-full">
     <a href="https://gxanshu.in/#newsletter">Subscribe Newsletter</a>
   </PrimaryButton>
 </div>
 
+<div class="giscus mt-12"></div>
+
 <script is:inline>
-  let twitterLinkElement = document.getElementById("twitter_link");
-  twitterLinkElement.href = `https://mobile.twitter.com/search?q=${decodeURI(
-    window.location
-  )}`;
   let editLinkElement = document.getElementById('edit_link');
   editLinkElement.href = `/admin/#/edit${location.pathname}`
 </script>
+
+<script is:inline>
+      function downloadGiscusAtOnload() {
+          var element = document.createElement("script");
+          element.src = "https://giscus.app/client.js";
+          element.setAttribute("data-repo", "gxanshu/gxanshu-site");
+          element.setAttribute("data-repo-id", "R_kgDOHBgQ6Q");
+          element.setAttribute("data-category", "Q&A");
+          element.setAttribute("data-category-id", "DIC_kwDOHBgQ6c4COKjd");
+          element.setAttribute("data-mapping", "title");
+          element.setAttribute("data-strict", "0");
+          element.setAttribute("data-reactions-enabled", "1");
+          element.setAttribute("data-emit-metadata", "0");
+          element.setAttribute("data-input-position", "bottom");
+          element.setAttribute("data-theme", "light_protanopia");
+          element.setAttribute("data-lang", "en");
+          element.setAttribute("data-loading", "lazy");
+          element.setAttribute("crossorigin", "anonymous");
+          element.async = true;
+
+          document.body.appendChild(element);
+      }
+
+      ["click", "scroll", "mousemove", "touchstart"].forEach(function (e) {
+          window.addEventListener(e, firstInteraction, {
+              once: true,
+          });
+      });
+
+      var userInteracted = false;
+
+      function firstInteraction() {
+        console.log('first instaraction')
+          if (!userInteracted) {
+              userInteracted = true;
+              downloadGiscusAtOnload();
+          }
+      }
+    </script>
