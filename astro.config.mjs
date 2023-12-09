@@ -2,7 +2,6 @@ import mdx from "@astrojs/mdx";
 import preact from "@astrojs/preact";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-import partytown from "@astrojs/partytown";
 import { defineConfig } from "astro/config";
 import customTheme from "./src/utils/theme.json";
 import rehypeSlug from "rehype-slug";
@@ -22,11 +21,6 @@ export default defineConfig({
     }),
     tailwind(),
     sitemap(),
-    partytown({
-      config: {
-        forward: ["datalayer.push"],
-      },
-    }),
     preact({
       compat: true,
     }),

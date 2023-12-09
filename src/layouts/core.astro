@@ -97,7 +97,7 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
     <meta name="viewport" content="width=device-width" />
 
     <link rel="icon" href="/favicon.ico" />
-    <link href="/cdn/aos.css" rel="stylesheet">
+    <link rel="preload" href="/cdn/aos.css" as="style">
 
     <meta name="generator" content={Astro.generator} />
 
@@ -130,7 +130,7 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:image" content={imageURL} />
 
-    <meta name="author" content="Anshu Meena, gxanshu@yahoo.com" />
+    <meta name="author" content="Anshu Meena, me@gxanshu.in" />
     <meta property="twitter:site" content="@gxanshu" />
     <meta property="twitter:site:id" content="@gxanshu" />
     <meta property="twitter:creator" content="@gxanshu" />
@@ -152,23 +152,8 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
     <GoogleFontsOptimizer
       url="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
     />
-    <!-- Google tag (gtag.js) -->
-    <script
-      type="text/partytown"
-      src="https://www.googletagmanager.com/gtag/js?id=G-5D7Z6EYSZ0"
-    ></script>
 
     <script onload="window.addEventListener('DOMContentLoaded', ()=>{AOS.init()})" src="/cdn/aos.js"></script>
-
-    <script type="text/partytown">
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-5D7Z6EYSZ0");
-    </script>
     <style is:global>
       * {
         transition: all 0.2s;
