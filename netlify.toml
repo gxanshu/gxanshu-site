@@ -6,7 +6,10 @@
   from = "/"
   to = "https://gxanshu.in"
   status = 301
+  force = true
 
 [[redirects]]
-from = "/*"
-to = "https://gxanshu.in/:splat"
+  from = "https://codenanshu.in/*"
+  to = "https://gxanshu.in/:splat"
+  status = 301
+  force = true
