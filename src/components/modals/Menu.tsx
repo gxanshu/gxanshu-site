@@ -7,7 +7,8 @@ interface props {
 
 export default function Menu({ listner }: props) {
   const [isOpen, setIsOpen] = useState(false);
-  const searchButtonRef = useRef(document.getElementById(listner));
+  const menuButtonRef = useRef(document.getElementById(listner));
+  const modalRef = useRef<HTMLDivElement>(null);
 
   const onOpen = useCallback(() => {
     setIsOpen(true);
@@ -17,22 +18,33 @@ export default function Menu({ listner }: props) {
     setIsOpen(false);
   }, [setIsOpen]);
 
+  const handleClickOutside = useCallback(
+    (event: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        onClose();
+      }
+    },
+    [onClose]
+  );
+
   useEffect(() => {
-    searchButtonRef.current?.addEventListener(
-      "click",
-      isOpen ? onClose : onOpen
-    );
-    return () =>
-      searchButtonRef.current?.removeEventListener(
-        "click",
-        isOpen ? onClose : onOpen
-      );
-  }, [searchButtonRef.current, isOpen]);
+    const handleDocumentClick = (event: MouseEvent) => {
+      handleClickOutside(event);
+    };
+
+    menuButtonRef.current?.addEventListener("click", isOpen ? onClose : onOpen);
+    document.addEventListener("mousedown", handleDocumentClick);
+
+    return () => {
+      menuButtonRef.current?.removeEventListener("click", isOpen ? onClose : onOpen);
+      document.removeEventListener("mousedown", handleDocumentClick);
+    };
+  }, [menuButtonRef.current, isOpen, onClose, onOpen, handleClickOutside]);
 
   if (!isOpen) return null;
 
   return createPortal(
-    <div class="fixed top-12 z-50 right-5 mt-2 w-40 rounded-md bg-white shadow-md">
+    <div class="fixed top-12 z-50 right-5 mt-2 w-40 rounded-md bg-white shadow-md" ref={modalRef}>
       <ul class="text-gray-800">
         <li class="m-4">
           <a href="/about">About</a>
