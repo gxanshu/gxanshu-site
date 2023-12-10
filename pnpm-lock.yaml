@@ -23,9 +23,6 @@ dependencies:
   astro:
     specifier: ^4.0.2
     version: 4.0.2
-  astro-google-fonts-optimizer:
-    specifier: ^0.2.2
-    version: 0.2.2
   autoprefixer:
     specifier: ^10.4.16
     version: 10.4.16(postcss@8.4.31)
@@ -1619,10 +1616,6 @@ packages:
   /astring@1.8.6:
     resolution: {integrity: sha512-ISvCdHdlTDlH5IpxQJIex7BWBywFWgjJSVdwst+/iQCoEYnyOaQ95+X1JGshuBjGp6nxKUy1jMgE3zPqN7fQdg==}
     hasBin: true
-    dev: false
-
-  /astro-google-fonts-optimizer@0.2.2:
-    resolution: {integrity: sha512-YQxp/ExF3NzUomAGuu1VKecO7/ETRnhnE50gqwAqfpbGPZFj4MYa4XxK1ukBg3R63QmKuE5uurOiKmXiLzttuw==}
     dev: false
 
   /astro@4.0.2:

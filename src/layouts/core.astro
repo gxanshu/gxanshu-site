@@ -43,7 +43,6 @@ const canonicalURL = new URL(
 const imageURL = new URL(image ?? "./Social.png", Astro.site);
 import ArticleSchema from "components/jsonld/articleSchema.astro";
 import WebsiteSchema from "components/jsonld/websiteSchema.astro";
-import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 ---
 
 <!DOCTYPE html>
@@ -149,10 +148,6 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
       ) : null
     }
 
-    <GoogleFontsOptimizer
-      url="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    />
-
     <script onload="window.addEventListener('DOMContentLoaded', ()=>{AOS.init()})" src="/cdn/aos.js"></script>
     <style is:global>
       * {
@@ -165,6 +160,42 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
         background-color: transparent;
         width: 0px;
         display: none;
+      }
+
+      @font-face {
+          font-family: 'inter';
+          src: url('/cdn/inter/inter-regular-webfont.woff2') format('woff2'),
+               url('/cdn/inter/inter-regular-webfont.woff') format('woff');
+          font-weight: 400;
+          font-style: normal;
+          display: swap;
+      }
+
+      @font-face {
+          font-family: 'inter';
+          src: url('/cdn/inter/inter-medium-webfont.woff2') format('woff2'),
+               url('/cdn/inter/inter-medium-webfont.woff') format('woff');
+          font-weight: 500;
+          font-style: normal;
+          display: swap;
+      }
+
+      @font-face {
+          font-family: 'inter';
+          src: url('/cdn/inter/inter-semibold-webfont.woff2') format('woff2'),
+               url('/cdn/inter/inter-semibold-webfont.woff') format('woff');
+          font-weight: 600;
+          font-style: normal;
+          display: swap;
+      }
+
+      @font-face {
+          font-family: 'inter';
+          src: url('/cdn/inter/inter-bold-webfont.woff2') format('woff2'),
+               url('/cdn/inter/inter-bold-webfont.woff') format('woff');
+          font-weight: 700;
+          font-style: normal;
+          display: swap;
       }
     </style>
   </head>

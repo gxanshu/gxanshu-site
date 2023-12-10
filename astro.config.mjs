@@ -3,7 +3,6 @@ import preact from "@astrojs/preact";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
-import customTheme from "./src/utils/theme.json";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { autolinkConfig } from "./scripts/rehype-autolink-config";
@@ -24,12 +23,5 @@ export default defineConfig({
     preact({
       compat: true,
     }),
-  ],
-  // markdown: {
-  //   gfm: true,
-  //   shikiConfig: {
-  //     theme: customTheme,
-  //   },
-  //   rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, autolinkConfig]],
-  // },
+  ]
 });
