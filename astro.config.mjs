@@ -15,7 +15,7 @@ export default defineConfig({
     mdx({
       optimize: true,
       syntaxHighlight: "shiki",
-      shikiConfig: { theme: customTheme },
+      shikiConfig: { theme: "github-light" },
       rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, autolinkConfig]],
       gfm: true,
     }),
