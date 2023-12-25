@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: 
 Disallow: /admin/
+Disallow: /notes/online-study-resources/
 Sitemap: https://gxanshu.in/sitemap-index.xml
