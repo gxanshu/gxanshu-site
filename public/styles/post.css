@@ -1,0 +1,23 @@
+.heading-wrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+	margin-bottom: -1.2rem;
+}
+
+.anchor-link {
+	margin-left: 10px;
+	color: black !important;
+}
+
+/* Float anchor links to the left of headings on larger screens. */
+@media (min-width: 50em) {
+
+	.heading-wrapper > .anchor-link {
+		display: none;
+	}
+	
+	.heading-wrapper:hover > .anchor-link {
+		display: block;
+	}
+}

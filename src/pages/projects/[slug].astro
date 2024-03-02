@@ -1,0 +1,67 @@
+---
+import { getCollection } from "astro:content";
+import Default from "layouts/Default.astro";
+import ProjectActions from "components/projectActions.astro";
+import Image from "components/Image.astro";
+
+// 1. Generate a new path for every collection entry
+export async function getStaticPaths() {
+  const notesEntries = await getCollection("projects");
+  return notesEntries.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+// 2. When its time to render, you can get the entry directly from the prop
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Default
+  title={post.data.title}
+  description={post.data.description}
+  image={post.data.image}
+  date={post.data.pubDate}
+  isArticle
+  isProject
+  class="py-8"
+>
+  <article class="text-gray-700">
+    <section>
+      <div class="sm:shrink-0">
+        <Image
+          src={post.data.logo}
+          alt={post.data.title}
+          height="72"
+          width="72"
+          class="h-16 w-16 rounded-lg object-cover shadow-sm"
+        />
+      </div>
+      <h1
+        class="font-heading font-bold sm:text-2xl text-xl mb-4 text-black my-8 leading-relaxed"
+      >
+        {post.data.title}
+      </h1>
+      <p>
+        by {post.data.author} | {new Date(post.data.pubDate).toDateString()}
+      </p>
+      <p class="mt-4">
+        Tech Stack {
+          post.data.techStack.map((stack) => (
+            <i class={`devicon-${stack} colored mx-1 h-12 w-12`} />
+          ))
+        }
+      </p>
+    </section>
+    <section
+      class="my-4 py-4 prose prose-headings:font-heading prose-headings:text-xl prose-headings:font-semibold prose-stone prose-img:rounded prose-a:text-blue-600 prose-a:no-underline prose-p:leading-[200%]"
+    >
+      <Content />
+    </section>
+  </article>
+  <ProjectActions
+    sourceCode={post.data.sourceCode}
+    download={post.data.download}
+  />
+</Default>

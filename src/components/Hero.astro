@@ -1,0 +1,22 @@
+<canvas id="canvas" width="500" height="300"></canvas>
+
+<script>
+  import { Rive } from "@rive-app/canvas";
+  let CanvasElement = document.getElementById("canvas");
+  new Rive({
+    src: "/coder.riv",
+    canvas: CanvasElement as HTMLCanvasElement,
+    autoplay: true,
+  });
+</script>
+
+<style>
+  @media screen and (max-width: 480px) {
+    canvas {
+      width: 100%;
+      height: 100%;
+      transform: scale(1.3);
+      margin-top: 40px;
+    }
+  }
+</style>
