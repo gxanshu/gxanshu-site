@@ -78,10 +78,10 @@ import WebsiteSchema from "components/jsonld/websiteSchema.astro";
       isArticle ? (
         <ArticleSchema
           date={date}
-          image={imageURL}
+          image={imageURL.href}
           title={title}
           description={description}
-          url={canonicalURL}
+          url={canonicalURL.href}
         />
       ) : (
         <WebsiteSchema />
@@ -96,7 +96,7 @@ import WebsiteSchema from "components/jsonld/websiteSchema.astro";
     <meta name="viewport" content="width=device-width" />
 
     <link rel="icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="/cdn/aos.css">
+    <link rel="stylesheet" href="/cdn/aos.css" />
 
     <meta name="generator" content={Astro.generator} />
 
@@ -135,8 +135,8 @@ import WebsiteSchema from "components/jsonld/websiteSchema.astro";
     <meta property="twitter:creator" content="@gxanshu" />
     <meta property="twitter:creator:id" content="@gxanshu" />
 
-    <!-- <meta name="twitter:creator" content="@monicalent">
-  <meta property="twitter:creator:id" content="13334762"> -->
+    <meta name="twitter:creator" content="@gxanshu" />
+    <!-- <meta property="twitter:creator:id" content="13334762"> -->
     <meta name="creator" content="@gxanshu" />
     <meta name="publisher" content="gxanshu" />
     {
@@ -148,11 +148,12 @@ import WebsiteSchema from "components/jsonld/websiteSchema.astro";
       ) : null
     }
 
-    <script onload="window.addEventListener('DOMContentLoaded', ()=>{AOS.init()})" src="/cdn/aos.js"></script>
+    <script
+      is:inline
+      onload="window.addEventListener('DOMContentLoaded', ()=>{AOS.init()})"
+      src="/cdn/aos.js"
+    ></script>
     <style is:global>
-      * {
-        transition: all 0.2s;
-      }
       .astro-code {
         border: 1px solid #d0d7de;
       }
@@ -163,39 +164,39 @@ import WebsiteSchema from "components/jsonld/websiteSchema.astro";
       }
 
       @font-face {
-          font-family: 'inter';
-          src: url('/cdn/inter/inter-regular-webfont.woff2') format('woff2'),
-               url('/cdn/inter/inter-regular-webfont.woff') format('woff');
-          font-weight: 400;
-          font-style: normal;
-          font-display: optional;
+        font-family: "inter";
+        src: url("/cdn/inter/inter-regular-webfont.woff2") format("woff2"),
+          url("/cdn/inter/inter-regular-webfont.woff") format("woff");
+        font-weight: 400;
+        font-style: normal;
+        font-display: optional;
       }
 
       @font-face {
-          font-family: 'inter';
-          src: url('/cdn/inter/inter-medium-webfont.woff2') format('woff2'),
-               url('/cdn/inter/inter-medium-webfont.woff') format('woff');
-          font-weight: 500;
-          font-style: normal;
-          font-display: optional;
+        font-family: "inter";
+        src: url("/cdn/inter/inter-medium-webfont.woff2") format("woff2"),
+          url("/cdn/inter/inter-medium-webfont.woff") format("woff");
+        font-weight: 500;
+        font-style: normal;
+        font-display: optional;
       }
 
       @font-face {
-          font-family: 'inter';
-          src: url('/cdn/inter/inter-semibold-webfont.woff2') format('woff2'),
-               url('/cdn/inter/inter-semibold-webfont.woff') format('woff');
-          font-weight: 600;
-          font-style: normal;
-          font-display: optional;
+        font-family: "inter";
+        src: url("/cdn/inter/inter-semibold-webfont.woff2") format("woff2"),
+          url("/cdn/inter/inter-semibold-webfont.woff") format("woff");
+        font-weight: 600;
+        font-style: normal;
+        font-display: optional;
       }
 
       @font-face {
-          font-family: 'inter';
-          src: url('/cdn/inter/inter-bold-webfont.woff2') format('woff2'),
-               url('/cdn/inter/inter-bold-webfont.woff') format('woff');
-          font-weight: 700;
-          font-style: normal;
-          font-display: optional;
+        font-family: "inter";
+        src: url("/cdn/inter/inter-bold-webfont.woff2") format("woff2"),
+          url("/cdn/inter/inter-bold-webfont.woff") format("woff");
+        font-weight: 700;
+        font-style: normal;
+        font-display: optional;
       }
     </style>
   </head>

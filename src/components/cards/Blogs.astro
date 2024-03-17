@@ -6,7 +6,7 @@ import Image from "components/Image.astro";
 <article
   data-aos="fade-up"
   data-aos-delay={`${index}00`}
-  class="overflow-hidden rounded-lg shadow-sm border-white transition hover:shadow-lg border-2 hover:border-2 hover:border-black transition delay-75 duration-75 ease-in-out hover:shadow-xl focus:outline-none focus:ring"
+  class="overflow-hidden rounded-lg shadow-sm border-white transition hover:shadow-lg border-2 hover:border-2 hover:border-black transition delay-75 duration-75 ease-in-out hover:shadow-xl focus:outline-none focus:ring bg-[#F6F6F6]"
 >
   <Image
     src={data.image}
@@ -16,7 +16,7 @@ import Image from "components/Image.astro";
     class="w-full object-cover"
   />
 
-  <div class="bg-white p-4 sm:p-6">
+  <div class="p-4 sm:p-6">
     <time datetime={data.pubDate} class="block text-xs text-gray-500">
       {data.pubDate}
     </time>

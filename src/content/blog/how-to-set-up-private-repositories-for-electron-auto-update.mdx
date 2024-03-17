@@ -5,9 +5,6 @@ description: "Learn how to easily enable private repository updates for Electron
 image: /assets/electorn-auto-update-with-private-repo.jpeg
 ---
 
-import Ad from "components/ads/Article.astro";
-export const components = { Ad: Ad };
-
 Are you facing challenges updating your Electron application from private repositories? Discover a straightforward solution using electron-updater. In this guide, we'll walk you through the process of setting up private repository updates for your Electron applications, ensuring smooth and secure auto-updates.
 
 if you are you using electron [auto-updater](https://www.npmjs.com/package/electron-updater) module from the API documentation, I figure out that they don't support.
@@ -37,8 +34,6 @@ Open your `electron-builder.json` file and add the following code to the `publis
   }
 ],
 ```
-
-<Ad />
 
 Replace `<github_owner>`, `<repo_name>`, and `<your_github_token>` with your GitHub information and access token. you can get the access token from the settings of your GitHub account.
 

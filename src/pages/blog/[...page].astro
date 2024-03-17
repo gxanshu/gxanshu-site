@@ -1,5 +1,5 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 import type { Page, GetStaticPathsOptions } from "astro";
 import Default from "layouts/Default.astro";
 import BlogCard from "components/cards/Blogs.astro";
@@ -12,7 +12,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     (a, b) => Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate)
   );
   // Return a paginated collection of paths for all posts
-  return paginate(sortedPosts, { pageSize: 11 });
+  return paginate(sortedPosts, { pageSize: 12 });
 }
 
 const { page } = Astro.props as {
@@ -29,7 +29,7 @@ const { page } = Astro.props as {
       <h1 class="font-heading font-bold text-2xl md:text-3xl lg:text-4xl">
         Blog
       </h1>
-      <p class="my-4">Our latest tips, tricks, and tutorails for developers</p>
+      <p class="my-4">My latest tips, tricks, and tutorials for developers</p>
     </div>
     <div
       class="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-24 max-w-7xl"
@@ -40,7 +40,6 @@ const { page } = Astro.props as {
             <BlogCard data={blog.data} index={index} url={`${blog.slug}/`} />
           ))
         }
-        <BlogGridAd />
       </div>
     </div>
     <div class="flex justify-between mt-16">

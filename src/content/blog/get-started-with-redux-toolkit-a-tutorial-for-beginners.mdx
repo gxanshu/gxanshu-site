@@ -8,14 +8,9 @@ pubDate: 03-31-2023
 image: /assets/reduxtoolkit.png
 ---
 
-import Ad from "components/ads/Article.astro";
-export const components = { Ad: Ad };
-
 You must be familiar with Redux, the well-known state management toolkit for JavaScript apps, if you work as a web developer. Redux Toolkit is a streamlined abstraction on top of Redux that makes writing Redux code simpler and quicker. Everything you need to know about Redux Toolkit, including its main features, advantages, and how to utilize it to create scalable and effective apps, will be covered in this lesson. What does Redux Toolkit mean?
 
 [Redux Toolkit](https://redux-toolkit.js.org/) is a set of tools and abstractions that make it easier and quicker to develop Redux code. Redux's typical use cases are intended to be made simpler by this, allowing developers to concentrate on creating apps rather than setting up Redux. The Redux Toolkit's primary features include some of the following: Streamlined store setup: The `createSlice` method offered by Redux Toolkit enables you to declare your reducers, actions, and starting state all in one location.
-
-<Ad />
 
 Redux Toolkit leverages Immer behind the scenes to offer a quick and effective approach to change the state of your application. This is known as immutable update logic. Middleware configuration: Redux Toolkit includes pre-configured middleware that is often used in Redux applications, such as Redux Thunk and Redux Saga. Integration of DevTools: To make it simple to debug your Redux code, the Redux Toolkit comes with a pre-configured DevTools configuration.
 
@@ -83,8 +78,6 @@ In the code above, we pass an object with the following properties to `createSli
 
 `reducers`: An object that defines the reducer functions for the slice.
 
-<Ad />
-
 ### Using the generated reducer and actions
 
 Once you have defined a slice using `createSlice`, you can use the generated reducer and actions in your application. In the previous example, we defined a `counterSlice` with two reducer functions, `increment` and `decrement`. We can now use these functions to update the state of our counter in response to user actions.
@@ -141,8 +134,6 @@ const store = configureStore({
 ```
 
 In the code above, we use the `getDefaultMiddleware` function to get the default middleware provided by Redux Toolkit and add `redux-thunk` middleware to handle asynchronous actions. We then pass the middleware array to the `configureStore` function to create our Redux store.
-
-<Ad />
 
 ## Conclusion
 

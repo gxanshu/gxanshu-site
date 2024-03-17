@@ -1,5 +1,5 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 import type { Page, GetStaticPathsOptions } from "astro";
 import Default from "layouts/Default.astro";
 import NotesCard from "components/cards/Notes.astro";
@@ -11,7 +11,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     (a, b) => Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate)
   );
   // Return a paginated collection of paths for all posts
-  return paginate(sortedPosts, { pageSize: 11 });
+  return paginate(sortedPosts, { pageSize: 12 });
 }
 
 const { page } = Astro.props as {
@@ -39,7 +39,6 @@ const { page } = Astro.props as {
             <NotesCard data={note.data} index={index} url={`${note.slug}/`} />
           ))
         }
-        <NotesGridAd />
       </div>
     </div>
     <div class="flex justify-between mt-16">

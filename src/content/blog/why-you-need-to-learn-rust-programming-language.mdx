@@ -7,8 +7,7 @@ image: /assets/rust_programming_language.jpg
 ---
 
 import Image from "components/Image.astro";
-import Ad from "components/ads/Article.astro";
-export const components = { img: Image, Ad: Ad };
+export const components = { img: Image };
 
 According to 2020 [StackOverflow surveys,](https://insights.stackoverflow.com/survey/2020#era-maximum-cherished-dreaded-and-wanted-languages-cherished) Rust is the maximum cherished programming language of 2020, with extra than 86 percentage of human beings who've used it inclined to apply it again.
 
@@ -31,8 +30,6 @@ Now let’s communicate approximately why Rust is as famous because it is.
 Rust is already a mature era this is utilized in production. As a structures programming language, it lets in you to preserve manipulate over low-stage details. You can select whether or not to shop information at the stack (used for static reminiscence allocation) or at the heap (used for dynamic reminiscence allocation). Here it's miles crucial to say RAII (Resource Acquisition Is Initialization), a code idiom this is in particular related to C++, however is likewise found in Rust: whenever an item is going out of scope, its destructor is referred to as and its owned assets are freed. You do now no longer ought to do that manually and you're covered from aid leakage bugs.
 
 This in the end lets in reminiscence for use extra efficiently. Tilde used Rust of their Skylight product, mainly to rewrite sure Java HTTP endpoints. This enabled them to lessen their reminiscence utilization from 5GiB to 50MiB.
-
-<Ad />
 
 Since Rust does now no longer have a rubbish collector constantly running, its tasks may be used as libraries via way of means of different programming languages through foreign-characteristic interfaces. This is an excellent state of affairs for the prevailing tasks wherein it's miles essential to make sure excessive overall performance whilst retaining reminiscence protection. In such tasks, Rust code can update a few components of software, wherein overall performance performs a critical role, with out the want to rewrite the complete product.
 

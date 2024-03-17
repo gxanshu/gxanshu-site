@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import Default from "layouts/Default.astro";
-import Action from "components/Action.astro";
 
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -20,7 +19,7 @@ const { Content } = await post.render();
 <Default
   title={post.data.title}
   description={post.data.description}
-  image={post.data.image}
+  image={""}
   date={post.data.pubDate}
   isArticle
   class="py-8"
@@ -40,5 +39,4 @@ const { Content } = await post.render();
       <Content />
     </section>
   </article>
-  <Action />
 </Default>

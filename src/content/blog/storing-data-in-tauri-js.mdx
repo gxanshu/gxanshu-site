@@ -5,9 +5,6 @@ description: "Learn how to store and manage data in Tauri JS using its File and 
 image: /assets/storing-data-in-taurijs.jpeg
 ---
 
-import Ad from "components/ads/Article.astro";
-export const components = { Ad: Ad };
-
 Are you looking to use the power of Tauri JS to effortlessly store and manage your data? Look no further! In this guide, we'll walk you through the process of using Tauri's File and Path APIs to store data in JSON files within the `appData` directory. Whether you're a intermidate developer or just starting your journey, this tutorial will have you storing data like a pro in no time! 🚀
 
 ## Understanding Tauri's File and Path APIs
@@ -48,8 +45,6 @@ async function storeData(data: UserData): Promise<void> {
   }
 }
 ```
-
-<Ad />
 
 In the above example, we first convert our data object into a JSON string. Then, we define the file path using Tauri's Path API by joining the `appData` directory and a filename. Finally, we use the File API's `writeTextFile` method to save our data to the JSON file.
 
