@@ -244,5 +244,21 @@ import WebsiteSchema from "components/jsonld/websiteSchema.astro";
         -webkit-background-clip: text;
       }
     </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      type="text/partytown"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5D7Z6EYSZ0"
+    ></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-5D7Z6EYSZ0");
+    </script>
   </body>
 </html>

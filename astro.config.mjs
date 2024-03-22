@@ -7,6 +7,8 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { autolinkConfig } from "./scripts/rehype-autolink-config";
 
+import partytown from "@astrojs/partytown";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://gxanshu.in/",
@@ -14,7 +16,9 @@ export default defineConfig({
     mdx({
       optimize: true,
       syntaxHighlight: "shiki",
-      shikiConfig: { theme: "github-light" },
+      shikiConfig: {
+        theme: "github-light",
+      },
       rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, autolinkConfig]],
       gfm: true,
     }),
@@ -23,5 +27,10 @@ export default defineConfig({
     preact({
       compat: true,
     }),
-  ]
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
+  ],
 });
