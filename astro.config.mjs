@@ -27,10 +27,5 @@ export default defineConfig({
     preact({
       compat: true,
     }),
-    partytown({
-      config: {
-        forward: ["dataLayer.push"],
-      },
-    }),
   ],
 });
