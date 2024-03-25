@@ -5,9 +5,6 @@ pubDate: "2021-08-04"
 image: /assets/youtube-add-javascript.webp
 ---
 
-import Image from "components/Image.astro";
-export const components = { img: Image };
-
 is it's posible ? Yes, its posilbe to create a javascript program to get view on youtube. its all posible by adding our javascript to the youtube video page so lets do this.
 
 well its not a good idea to increase view by using this solution, but we are able to do that by using the inspact tools of the web browser like chrome or mozila firefox and in other's as well.

@@ -7,9 +7,6 @@ category: blog
 image: /assets/url-shortener.webp
 ---
 
-import Image from "components/Image.astro";
-export const components = { img: Image };
-
 Hello Techies, In this blog we will be creating a URL shortener with Python. Let's get Started.
 
 ## What is a URL Shortener?

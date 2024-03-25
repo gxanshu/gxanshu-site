@@ -6,9 +6,6 @@ category: blog
 image: /assets/jamstack.webp
 ---
 
-import Image from "components/Image.astro";
-export const components = { img: Image };
-
 meaning of jamstack is stand for JavaScript, APIs and markups first coined by Mathias Biilmann, CEO of Netlify in 2015. In Jamstack websites, the application logic typically resides on the client side, without being tightly coupled to the back end server.
 
 The core principles of this technology is pre-rendering, and decoupling, enable sites and applications to be delivered with greater confidence and resilience than ever before.

@@ -5,9 +5,6 @@ pubDate: "2021-12-18"
 image: /assets/redux-tutorial-for-beginners.png
 ---
 
-import Image from "components/Image.astro";
-export const components = { img: Image };
-
 React is one of the most loved JavaScript library to create interactive UI. it grows much faster then the other one like angular or vue its all due the the speed and the community they have. State is one the main concept of any UI framework or library. React provide us a **context API** to handle state on the top level but this is not a good or effective way to do that. so in this tutorials we are going to take a look a Redux tutorials for beginners.
 
 ## What is Redux

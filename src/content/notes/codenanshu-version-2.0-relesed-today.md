@@ -4,9 +4,6 @@ description: "gxanshu 2.0 is here! Check out the updated portfolio website showc
 pubDate: "2021-12-10"
 ---
 
-import Image from "components/Image.astro";
-export const components = { img: Image };
-
 hi everyone,
 
 Today I have a good news for myself now finally I completed my project codeanshu after 1 month of code but this time the site get so many big changes that are new reflect on website. let me talk out why i created this website ?

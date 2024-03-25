@@ -6,9 +6,6 @@ category: blog
 image: /assets/will-ai-replace-programmers.jpg
 ---
 
-import Image from "components/Image.astro";
-export const components = { img: Image };
-
 The question seems somewhat ironic if you think about it. Are the creations—intelligent systems—set to replace or displace their creators—programmers—in the future? It sounds like the plot of a sci-fi movie, doesn’t it? The more important question, though, is: Can it be true?
 
 In a survey conducted by Evans Data Corp, 550 software developers were asked about the most worrying aspects in their career. “I and my development efforts are replaced by artificial intelligence,” said 29%.

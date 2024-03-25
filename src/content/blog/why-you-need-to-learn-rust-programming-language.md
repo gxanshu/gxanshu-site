@@ -6,9 +6,6 @@ category: blog
 image: /assets/rust_programming_language.jpg
 ---
 
-import Image from "components/Image.astro";
-export const components = { img: Image };
-
 According to 2020 [StackOverflow surveys,](https://insights.stackoverflow.com/survey/2020#era-maximum-cherished-dreaded-and-wanted-languages-cherished) Rust is the maximum cherished programming language of 2020, with extra than 86 percentage of human beings who've used it inclined to apply it again.
 
 Rust become created with an eye fixed to making sure excessive performance, corresponding to that provided via way of means of C and C++, at the same time as emphasizing the code’s safety, the achilles heel of the opposite languages. It has labored so properly that Rust programming language is now utilized by famous software program heavyweights which includes Firefox, Dropbox and Cloudflare, and plenty of companies, from startups to big corporations, are the use of this era in production. In this weblog publish I will give an explanation for Rust’s essential characteristics, what it's far used for and why you ought to do not forget adopting it on your software program projects.

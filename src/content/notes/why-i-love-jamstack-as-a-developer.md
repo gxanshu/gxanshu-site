@@ -4,9 +4,6 @@ description: Discover why Jamstack has become the go-to choice for developers lo
 pubDate: "202-02-11"
 ---
 
-import Image from "components/Image.astro";
-export const components = { img: Image };
-
 jamstack is one of the technologies that attract more attention of every developer the reason for the amazingness of this stack is the architecture. jamstack is growing so fast in the field of static site and server-side rendering.
 
 ## Why I love Jamstack as a developer

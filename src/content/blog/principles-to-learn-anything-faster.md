@@ -7,9 +7,6 @@ category: blog
 image: /assets/eficient-learning.jpg
 ---
 
-import Image from "components/Image.astro";
-export const components = { img: Image };
-
 **This Efficient Learning post will teach you productivity strategies, learning strategies, and memory technique skills that you will use for the rest of your life.**
 
 Become an efficient learner, improve your memory and productivity, and become the best version of yourself. You'll learn to outperform others (and your current self!) by using strategies, techniques, and skills that are proven by the latest scientific research and are being used by many of the world's top performers!

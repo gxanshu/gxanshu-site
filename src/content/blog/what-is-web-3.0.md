@@ -6,9 +6,6 @@ category: blog
 image: /assets/what-is-we-3.0.jpg
 ---
 
-import Image from "components/Image.astro";
-export const components = { img: Image };
-
 Internet is the revolutionary thing ever happens in the human history. it help user to get information and knowledge about various things from one mouse click
 
 World Wide Web or WWW or the internet have three version the first one is web 1.0 and the another one is web 2.0 and now in 2022 we got a new thing name as web 3.0 so lets take a look at what's the thing actually they are ?
