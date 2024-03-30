@@ -15,7 +15,7 @@ export default defineConfig({
       optimize: true,
       syntaxHighlight: "shiki",
       shikiConfig: {
-        theme: "github-light",
+        theme: "min-light",
       },
       rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, autolinkConfig]],
       gfm: true,
