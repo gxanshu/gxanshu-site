@@ -17,6 +17,7 @@ collections:
   - name: blog
     label: Blog
     folder: src/content/blog
+    icon: rss_feed
     create: true
     format: frontmatter
     preview_path: blog/{{slug}}
@@ -42,6 +43,7 @@ collections:
   - name: notes
     label: Notes
     folder: src/content/notes
+    icon: description
     create: true
     format: frontmatter
     preview_path: notes/{{slug}}
@@ -60,6 +62,7 @@ collections:
   - name: projects
     label: Projects
     folder: src/content/projects
+    icon: tactic
     create: true
     format: frontmatter
     preview_path: projects/{{slug}}
