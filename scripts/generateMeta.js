@@ -9,7 +9,7 @@ const algoliasearch = require("algoliasearch");
 require("dotenv").config();
 
 // Setting the root directory of the website
-const websiteRoot = "src/content";
+const websiteRoot = "content";
 
 /**
     A function to get the metadata for a markdown file
@@ -75,7 +75,7 @@ async function main() {
   const files = shell
     .ls("-R", websiteRoot)
     .map((file) => path.join(process.cwd(), websiteRoot, file))
-    .filter((file) => file.endsWith(".mdx"));
+    .filter((file) => !file.startsWith("_") && file.endsWith(".md"));
 
   // Generating metadata for all the markdown files
   for (const file of files) {
@@ -99,8 +99,6 @@ async function main() {
   // Initializing the search index
   const index = client.initIndex(process.env.APPLICATION_INDEX_NAME);
 
-  console.log(process.env.APPLICATION_INDEX_NAME);
-
   // Clearing the existing objects from the search index
   index.clearObjects().then(() => {
     console.log("cleared database");
@@ -116,5 +114,3 @@ async function main() {
 }
 
 main();
-
-module.exports = main;
