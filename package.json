@@ -1,0 +1,31 @@
+{
+  "name": "gxanshu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "pnpm tailwindcss -i ./tailwind.css -o ./assets/style.css",
+    "build": "node scripts/generateMeta.js && jampack ./public",
+    "watch": "pnpm tailwindcss -i ./tailwind.css -o ./assets/style.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@9.0.6+sha512.f6d863130973207cb7a336d6b439a242a26ac8068077df530d6a86069419853dc1ffe64029ec594a9c505a3a410d19643c870aba6776330f5cfddcf10a9c1617",
+  "devDependencies": {
+    "@divriots/jampack": "^0.24.4",
+    "@docusaurus/utils": "2.0.0-alpha.69",
+    "@tailwindcss/typography": "^0.5.13",
+    "algoliasearch": "^4.22.1",
+    "dotenv": "^16.4.5",
+    "html-escaper": "^3.0.3",
+    "markdown-toc": "^1.2.0",
+    "prettier": "^2.8.8",
+    "shelljs": "^0.8.5",
+    "tailwindcss": "^3.4.3",
+    "uuid": "^9.0.1"
+  },
+  "dependencies": {
+    "hugo-bin": "^0.123.2"
+  }
+}

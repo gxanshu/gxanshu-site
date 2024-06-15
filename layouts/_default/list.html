@@ -1,0 +1,68 @@
+{{ define "main" }}
+<section class="my-10 py-5">
+  <div class="text-center text-black">
+    <h1 class="font-heading font-bold text-2xl md:text-3xl lg:text-4xl">
+      {{ .Params.category }}
+    </h1>
+    <p class="my-4">{{ .Description }}</p>
+  </div>
+  <div class="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-24 max-w-7xl">
+    <div class="grid w-full grid-cols-1 gap-8 mx-auto lg:grid-cols-3">
+      {{$category := .Params.category }}
+      {{ range .Paginator.Pages }}
+      {{ if eq $category "blog" }}
+      {{ partial "cards/blog" . }}
+      {{ else }}
+      {{ partial "cards/notes" . }}
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+  {{ $pag := $.Paginator }}
+  {{ if gt $pag.TotalPages 1 }}
+  <ol class="flex justify-center gap-1 text-xs font-medium">
+    {{ if $pag.HasPrev }}
+    <li>
+      <a href="{{ $pag.Prev.URL }}"
+        class="inline-flex size-8 items-center justify-center rounded border border-gray-100 bg-white text-gray-900 rtl:rotate-180">
+        <span class="sr-only">Prev Page</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd"
+            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+            clip-rule="evenodd" />
+        </svg>
+      </a>
+    </li>
+    {{ end }}
+    {{ range $pag.Pagers }}
+    {{ if eq . $pag }}
+    <li class="block size-8 rounded border-blue-600 bg-blue-600 text-center leading-8 text-white">
+      {{ .PageNumber }}
+    </li>
+    {{ else }}
+    <li>
+      <a href="{{ .URL }}"
+        class="block size-8 rounded border border-gray-100 bg-white text-center leading-8 text-gray-900">
+        {{ .PageNumber }}
+      </a>
+    </li>
+    {{ end }}
+    {{ end }}
+
+    {{ if $pag.HasNext }}
+    <li>
+      <a href="{{ $pag.Next.URL }}"
+        class="inline-flex size-8 items-center justify-center rounded border border-gray-100 bg-white text-gray-900 rtl:rotate-180">
+        <span class="sr-only">Next Page</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd"
+            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+            clip-rule="evenodd" />
+        </svg>
+      </a>
+    </li>
+    {{ end }}
+  </ol>
+  {{ end }}
+</section>
+{{ end }}
