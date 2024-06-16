@@ -15,29 +15,29 @@
   <meta property="og:type" content="{{ $pageType }}" />
 
   <!-- Date Time Information about your last changes -->
-  <meta name="revised" content={{ .Date }} />
-  <meta property="article:modified_time" content={{ .Params.lastmod }} />
+  <meta name="revised" content="{{ .Date }} "/>
+  <meta property="article:modified_time" content="{{ .Params.lastmod }}" />
   <meta name="viewport" content="width=device-width" />
   <meta name="generator" content="gxanshu" />
-  <meta name="apple-mobile-web-app-title" content={{ .Title }} />
-  <meta name="page-subject" content={{ .Title }} />
-  <meta name="title" content={{ .Title }} />
+  <meta name="apple-mobile-web-app-title" content="{{ .Title }}" />
+  <meta name="page-subject" content="{{ .Title }}" />
+  <meta name="title" content="{{ .Title }}" />
   <meta property="og:site_name" content="gxanshu" />
-  <meta property="og:title" content={{ .Title }} />
-  <meta property="twitter:title" content={{ .Title }} />
+  <meta property="og:title" content="{{ .Title }}" />
+  <meta property="twitter:title" content="{{ .Title }}" />
 
   <!-- Meta Tags Responsible for description of your site -->
-  <meta name="description" content={{ .Description }} />
-  <meta property="og:description" content={{ .Description }} />
-  <meta property="twitter:description" content={{ .Description }} />
-  <meta name="summary" content={{ .Description }} />
+  <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+  <meta property="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+  <meta name="summary" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
   <!-- Open Graph / Facebook -->
-  <meta property="og:url" content={{ .Permalink }} />
-  <meta property="og:image:alt" content={{ .Title }} />
+  <meta property="og:url" content="{{ .Permalink }}" />
+  <meta property="og:image:alt" content="{{ .Title }}" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content={{ .Permalink }} />
+  <meta property="twitter:url" content="{{ .Permalink }}" />
 
   <meta name="author" content="Anshu Meena, me@gxanshu.in" />
   <meta property="twitter:site" content="@gxanshu" />
@@ -51,14 +51,14 @@
 
   {{ $image := .Resources.GetMatch .Params.image }}
   {{ with $image }}
-  <meta property="og:image" content={{ .RelPermalink }} />
-  <meta property="twitter:image" content={{ .RelPermalink }} />
-  <meta property="og:image:secure_url" content={{ .RelPermalink }} />
+  <meta property="og:image" content="{{ .RelPermalink }}" />
+  <meta property="twitter:image" content="{{ .RelPermalink }}" />
+  <meta property="og:image:secure_url" content="{{ .RelPermalink }}" />
   {{ end }}
 
-  <title>{{ .Title }}</title>
+  <title>"{{ .Title }}"</title>
   <link rel="icon" href="/favicon.ico" />
-  <link rel="canonical" href={{ .Permalink }} />
+  <link rel="canonical" href="{{ .Permalink }}" />
   <link rel="icon" href="/favicon.ico" />
   <link rel="sitemap" href="/sitemap.xml" />
   <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="RSS" />

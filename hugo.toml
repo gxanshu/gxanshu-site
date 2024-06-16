@@ -1,10 +1,48 @@
 baseURL = 'https://gxanshu.in'
 languageCode = 'en-us'
 title = "Gx Anshu: A Showcase of Impressive JavaScript Dev"
-Description="gxanshu is a portfolio website showcasing impressive web development projects created by GX Anshu with his expertise in software development and web design."
+[params]
+  description = "gxanshu is a portfolio website showcasing impressive web development projects created by GX Anshu with his expertise in software development and web design."
 paginate = 12
 [sitemap]
   changeFreq = ''
   disable = false
   filename = 'sitemap.xml'
-  priority = -1
+  priority = -1 
+enableRobotsTXT = true
+[caches]
+  [caches.assets]
+    dir = ':resourceDir/_gen'
+    maxAge = -1
+  [caches.getjson]
+    dir = ':cacheDir/:project'
+    maxAge = -1
+  [caches.getresource]
+    dir = ':cacheDir/:project'
+    maxAge = -1
+  [caches.images]
+    dir = ':resourceDir/_gen'
+    maxAge = -1
+[imaging]
+  bgColor = '#f5f5f5'
+  hint = 'photo'
+  quality = 75
+  resampleFilter = 'box'
+[minify]
+  disableCSS = false
+  disableHTML = false
+  disableJS = false
+  disableJSON = false
+  disableSVG = false
+  disableXML = false
+  minifyOutput = true
+[HTTPCache]
+  [HTTPCache.cache]
+    [HTTPCache.cache.for]
+      include = ['**']
+  [[HTTPCache.polls]]
+    disable = false
+    high = '0s'
+    low = '0s'
+    [HTTPCache.polls.for]
+      includes = ['**']

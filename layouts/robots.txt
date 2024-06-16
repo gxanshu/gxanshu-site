@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+Disallow: /notes/online-study-resources/
+Sitemap: https://gxanshu.in/sitemap.xml
