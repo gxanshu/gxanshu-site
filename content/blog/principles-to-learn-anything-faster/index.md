@@ -1,5 +1,5 @@
 ---
-title: 'Learn Faster: Essential Principles for Rapid Skill Acquisition'
+title: "Learn Faster: Essential Principles for Rapid Skill Acquisition"
 image: "eficient-learning.jpg"
 description: "Ready to learn faster? Discover the essential principles for rapid skill acquisition and start accelerating your learning journey. Unlock your potential and achieve success in record time."
 date: 2022-05-26T09:59:53+05:30
