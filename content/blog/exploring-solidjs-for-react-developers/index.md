@@ -1,6 +1,6 @@
 ---
-title: 'Exploring SolidJS for React Developers'
-image: "solidjs-for-reactjs-developers.jpg"
+title: Exploring SolidJS for React Developers
+image: solidjs-for-reactjs-developers.jpg
 description: "Discover SolidJS: Unique features like createStore, createSignal. Smooth migration from React. Build high-performance apps! 🚀🔥"
 date: 2023-08-14T10:11:19+05:30
 lastmod: 2023-08-14T10:11:19+05:30
