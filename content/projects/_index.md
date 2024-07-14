@@ -1,5 +1,5 @@
 ---
 title: "gxanshu's Blog: Tips, Tricks, and Tutorials"
-description: "Enhance your software development skills with gxanshu's blog. Discover tips, tricks, and tutorials to help you advance your coding abilities"
+description: "Discover the extraordinary projects by gxanshu, where innovation and creativity converge. Explore captivating software endeavors, insightful coding techniques, and cutting-edge technologies that push the boundaries of development."
 category: "projects"
 ---
