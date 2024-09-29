@@ -118,25 +118,28 @@
   </main>
   {{ partial "footer" . }}
   <style>
+    /* Hide scrollbar for IE, Edge, and Firefox */
+    html, body {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none;    /* Firefox */
+    }
+
+    /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
     body::-webkit-scrollbar {
       display: none;
     }
 
-    /* Hide scrollbar for IE, Edge and Firefox */
-    body {
-      -ms-overflow-style: none;
-      /* IE and Edge */
-      scrollbar-width: none;
-      /* Firefox */
-    }
-
+    /* Text selection color */
     ::selection {
       background-color: #c9f3fd;
+      color: #000; /* Make selected text readable */
     }
 
+    /* Background clip for text */
     .bg-clip-text {
-      -webkit-background-clip: text;
-      background-clip: text;
+      -webkit-background-clip: text; /* Chrome, Safari */
+      background-clip: text;         /* Firefox */
+      color: transparent;            /* Ensures background clip works in Firefox */
     }
   </style>
 </body>

@@ -4,6 +4,9 @@ title = "Gx Anshu: A Showcase of Impressive JavaScript Dev"
 [params]
   description = "gxanshu is a portfolio website showcasing impressive web development projects created by GX Anshu with his expertise in software development and web design."
 paginate = 12
+
+disableKinds = ['taxonomy', 'term']
+
 [sitemap]
   changeFreq = ''
   disable = false
