@@ -1,7 +1,7 @@
 {{ define "main" }}
-<article class="text-gray-700 py-8">
+<article class="text-gray-700 py-8 w-full">
   <section>
-    <h1 class="font-heading font-bold sm:text-2xl text-xl mb-4 text-black my-8 leading-relaxed">
+    <h1 class="font-heading font-bold sm:text-3xl text-xl mb-4 text-black my-10 leading-relaxed">
       {{ .Title }}
     </h1>
     {{ $image := .Resources.GetMatch .Params.image }}
@@ -12,10 +12,10 @@
       class="my-4 w-full rounded" />
     {{ end }}
     {{ end }}
-    <p>GX Anshu | {{ .Date | time.Format ":date_medium" }}</p>
+    <time datetime="{{ .Date }}">{{ .Date | time.Format "January 2, 2006" }}</time>
   </section>
   <section
-    class="my-4 py-4 prose prose-headings:font-heading prose-headings:text-xl prose-stone prose-img:rounded prose-a:text-blue-600 prose-a:no-underline prose-p:leading-[200%] prose-headings:font-semibold">
+    class="my-4 py-4 prose max-w-full prose-headings:font-heading prose-headings:text-xl prose-neutral prose-img:rounded prose-a:text-blue-600 prose-a:no-underline prose-p:leading-[200%] prose-headings:font-semibold">
     {{ .Content }}
   </section>
 </article>

@@ -9,14 +9,14 @@
         {{ .tech }}
       </span>
       <h3 class="font-heading font-bold text-neutral-900 mb-3">
-        <a href={data.link} target="_blank" rel="nofollow">{{ .name }}</a>
+        <a href="{{ .link }}" target="_blank" rel="nofollow">{{ .name }}</a>
       </h3>
       <p class="leading-relaxed mb-5">
         {{ .description }}
       </p>
       <span class="inline-flex items-center">
-        {{ $image := resources.GetRemote .avatar }}
-        <img alt="blog" src={{ $image.RelPermalink }}
+        <!-- Directly use the avatar URL without GetRemote -->
+        <img alt="blog" src="{{ .avatar }}"
           class="w-8 h-8 rounded-full flex-shrink-0 object-cover object-center" />
         <span class="flex-grow flex flex-col pl-3">
           <span class="title-font font-medium text-gray-800">{{ .developer }}</span>
