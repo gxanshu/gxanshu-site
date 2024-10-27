@@ -1,147 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta property="og:locale" content="en_US" />
-  <meta http-equiv="content-language" content="en-US" />
-  <meta name="language" content="English" />
-  <meta name="viewport" content="width=device-width" />
-  <meta name="theme-color" content="#1A202C" />
-  {{ $pageType := "website" }}>
-  {{ if .IsPage }}
-  {{ $pageType = "article" }}
-  {{ end }}
-  <meta property="og:type" content="{{ $pageType }}" />
-
-  <!-- Date Time Information about your last changes -->
-  <meta name="revised" content="{{ .Date }} "/>
-  <meta property="article:modified_time" content="{{ .Params.lastmod }}" />
-  <meta name="viewport" content="width=device-width" />
-  <meta name="generator" content="gxanshu" />
-  <meta name="apple-mobile-web-app-title" content={{ .Title }} />
-  <meta name="page-subject" content={{ .Title }} />
-  <meta name="title" content={{ .Title }} />
-  <meta property="og:site_name" content="gxanshu" />
-  <meta property="og:title" content={{ .Title }} />
-  <meta property="twitter:title" content={{ .Title }} />
-
-  <!-- Meta Tags Responsible for description of your site -->
-  <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-  <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
-  <meta property="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
-  <meta name="summary" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
-  <!-- Open Graph / Facebook -->
-  <meta property="og:url" content="{{ .Permalink }}" />
-  <meta property="og:image:alt" content={{ .Title }} />
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="{{ .Permalink }}" />
-
-  <meta name="author" content="Anshu Meena, aianshume@yahoo.com" />
-  <meta property="twitter:site" content="@gxanshu" />
-  <meta property="twitter:site:id" content="@gxanshu" />
-  <meta property="twitter:creator" content="@gxanshu" />
-  <meta property="twitter:creator:id" content="@gxanshu" />
-
-  <meta name="twitter:creator" content="@gxanshu" />
-  <meta name="creator" content="@gxanshu" />
-  <meta name="publisher" content="gxanshu" />
-
-  {{ $image := .Resources.GetMatch .Params.image }}
-  {{ with $image }}
-  <meta property="og:image" content="{{ .RelPermalink }}" />
-  <meta property="twitter:image" content="{{ .RelPermalink }}" />
-  <meta property="og:image:secure_url" content="{{ .RelPermalink }}" />
-  {{ end }}
-
-  <title>{{ .Title }}</title>
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="canonical" href="{{ .Permalink }}" />
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="sitemap" href="/sitemap.xml" />
-  <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="RSS" />
-  {{ $styles := resources.Get "style.css" }}
-  <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
-
-  <style>
-    @font-face {
-      font-family: "inter";
-      src: url("/cdn/inter/inter-regular-webfont.woff2") format("woff2"),
-        url("/cdn/inter/inter-regular-webfont.woff") format("woff");
-      font-weight: 400;
-      font-style: normal;
-      font-display: optional;
-    }
-
-    @font-face {
-      font-family: "inter";
-      src: url("/cdn/inter/inter-medium-webfont.woff2") format("woff2"),
-        url("/cdn/inter/inter-medium-webfont.woff") format("woff");
-      font-weight: 500;
-      font-style: normal;
-      font-display: optional;
-    }
-
-    @font-face {
-      font-family: "inter";
-      src: url("/cdn/inter/inter-semibold-webfont.woff2") format("woff2"),
-        url("/cdn/inter/inter-semibold-webfont.woff") format("woff");
-      font-weight: 600;
-      font-style: normal;
-      font-display: optional;
-    }
-
-    @font-face {
-      font-family: "inter";
-      src: url("/cdn/inter/inter-bold-webfont.woff2") format("woff2"),
-        url("/cdn/inter/inter-bold-webfont.woff") format("woff");
-      font-weight: 700;
-      font-style: normal;
-      font-display: optional;
-    }
-  </style>
-</head>
-{{ $cssClass := "max-w-screen-xl" }} <!-- Default CSS class -->
-{{ if .IsPage }}
-{{ $cssClass = "max-w-screen-md" }} <!-- Override if it's a single page -->
-{{ end }}
-
-
-<body>
-  {{ partial "header" . }}
-  <main class="mx-auto items-center min-h-[calc(100vh-56px)] w-95 mt-20 {{ $cssClass }}">
-    {{ block "main" . }}
-
+  <head>
+    <meta charset="utf-8" />
+    <meta property="og:locale" content="en_US" />
+    <meta http-equiv="content-language" content="en-US" />
+    <meta name="language" content="English" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#1A202C" />
+    {{ $pageType := "website" }}> {{ if .IsPage }} {{ $pageType = "article" }}
     {{ end }}
-  </main>
-  {{ partial "footer" . }}
-  <style>
-    /* Hide scrollbar for IE, Edge, and Firefox */
-    html, body {
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none;    /* Firefox */
-    }
+    <meta property="og:type" content="{{ $pageType }}" />
 
-    /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
-    body::-webkit-scrollbar {
-      display: none;
-    }
+    <!-- Date Time Information about your last changes -->
+    <meta name="revised" content="{{ .Date }} " />
+    <meta property="article:modified_time" content="{{ .Params.lastmod }}" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content="gxanshu" />
+    <meta name="apple-mobile-web-app-title" content="{{ .Title }}" />
+    <meta name="page-subject" content="{{ .Title }}" />
+    <meta name="title" content="{{ .Title }}" />
+    <meta property="og:site_name" content="gxanshu" />
+    <meta property="og:title" content="{{ .Title }}" />
+    <meta property="twitter:title" content="{{ .Title }}" />
 
-    /* Text selection color */
-    ::selection {
-      background-color: #c9f3fd;
-      color: #000; /* Make selected text readable */
-    }
+    <!-- Meta Tags Responsible for description of your site -->
+    <meta
+      name="description"
+      content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}"
+    />
+    <meta
+      property="og:description"
+      content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}"
+    />
+    <meta
+      property="twitter:description"
+      content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}"
+    />
+    <meta
+      name="summary"
+      content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}"
+    />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:image:alt" content="{{ .Title }}" />
 
-    /* Background clip for text */
-    .bg-clip-text {
-      -webkit-background-clip: text; /* Chrome, Safari */
-      background-clip: text;         /* Firefox */
-      color: transparent;            /* Ensures background clip works in Firefox */
-    }
-  </style>
-</body>
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{ .Permalink }}" />
 
+    <meta name="author" content="Anshu Meena, aianshume@yahoo.com" />
+    <meta property="twitter:site" content="@gxanshu" />
+    <meta property="twitter:site:id" content="@gxanshu" />
+    <meta property="twitter:creator" content="@gxanshu" />
+    <meta property="twitter:creator:id" content="@gxanshu" />
+
+    <meta name="twitter:creator" content="@gxanshu" />
+    <meta name="creator" content="@gxanshu" />
+    <meta name="publisher" content="gxanshu" />
+
+    {{ $image := .Resources.GetMatch .Params.image }} {{ with $image }}
+    <meta property="og:image" content="{{ .RelPermalink }}" />
+    <meta property="twitter:image" content="{{ .RelPermalink }}" />
+    <meta property="og:image:secure_url" content="{{ .RelPermalink }}" />
+    {{ end }}
+
+    <title>{{ .Title }}</title>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="canonical" href="{{ .Permalink }}" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="sitemap" href="/sitemap.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      href="/rss.xml"
+      title="RSS"
+    />
+    {{ $styles := resources.Get "style.css" }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
+
+    <style>
+      @font-face {
+        font-family: "inter";
+        src: url("/cdn/inter/inter-regular-webfont.woff2") format("woff2"),
+          url("/cdn/inter/inter-regular-webfont.woff") format("woff");
+        font-weight: 400;
+        font-style: normal;
+        font-display: optional;
+      }
+
+      @font-face {
+        font-family: "inter";
+        src: url("/cdn/inter/inter-medium-webfont.woff2") format("woff2"),
+          url("/cdn/inter/inter-medium-webfont.woff") format("woff");
+        font-weight: 500;
+        font-style: normal;
+        font-display: optional;
+      }
+
+      @font-face {
+        font-family: "inter";
+        src: url("/cdn/inter/inter-semibold-webfont.woff2") format("woff2"),
+          url("/cdn/inter/inter-semibold-webfont.woff") format("woff");
+        font-weight: 600;
+        font-style: normal;
+        font-display: optional;
+      }
+
+      @font-face {
+        font-family: "inter";
+        src: url("/cdn/inter/inter-bold-webfont.woff2") format("woff2"),
+          url("/cdn/inter/inter-bold-webfont.woff") format("woff");
+        font-weight: 700;
+        font-style: normal;
+        font-display: optional;
+      }
+    </style>
+  </head>
+  {{ $cssClass := "max-w-screen-xl" }}
+  <!-- Default CSS class -->
+  {{ if .IsPage }} {{ $cssClass = "max-w-screen-md" }}
+  <!-- Override if it's a single page -->
+  {{ end }}
+
+  <body>
+    {{ partial "header" . }}
+    <main
+      class="mx-auto items-center min-h-[calc(100vh-56px)] w-95 mt-20 {{ $cssClass }}"
+    >
+      {{ block "main" . }} {{ end }}
+    </main>
+    {{ partial "footer" . }}
+    <style>
+      /* Hide scrollbar for IE, Edge, and Firefox */
+      html,
+      body {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+      body::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Text selection color */
+      ::selection {
+        background-color: #c9f3fd;
+        color: #000; /* Make selected text readable */
+      }
+
+      /* Background clip for text */
+      .bg-clip-text {
+        -webkit-background-clip: text; /* Chrome, Safari */
+        background-clip: text; /* Firefox */
+        color: transparent; /* Ensures background clip works in Firefox */
+      }
+    </style>
+  </body>
 </html>
