@@ -1,33 +1,45 @@
-<article data-aos="fade-up" class="relative block overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8">
-  <span class="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"></span>
+<article
+  data-aos="fade-up"
+  class="relative block overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8 my-4 sm:my-0"
+>
+  <span
+    class="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
+  ></span>
 
   <div class="flex justify-between gap-4">
     <div>
       <h3 class="text-lg font-bold text-gray-900 sm:text-xl">
-        <a href={{ .Permalink }}>{{ .Params.heading }}</a>
+        <a href="{{ .Permalink }}">{{ .Params.heading }}</a>
       </h3>
 
       <p class="mt-1 text-xs font-medium text-gray-600">By Gx Anshu</p>
     </div>
 
-    {{ $image := .Resources.GetMatch .Params.logo }}
-    {{ $image = $image.Resize "82x82" }}
+    {{ $image := .Resources.GetMatch .Params.logo }} {{ $image = $image.Resize
+    "82x82" }}
     <div class="sm:shrink-0">
-      <Image src="{{ $image.RelPermalink  }}" alt={{ .Params.title }} height="72" width="72"
-        class="h-16 w-16 rounded-lg object-cover shadow-sm" />
+      <image
+        src="{{ $image.RelPermalink  }}"
+        alt="{{
+        .Params.title
+        }}"
+        height="72"
+        width="72"
+        class="h-16 w-16 rounded-lg object-cover shadow-sm"
+      />
     </div>
   </div>
 
   <div class="mt-4">
-    <p class="max-w-[40ch] text-sm text-gray-500">
-      {{ .Description }}
-    </p>
+    <p class="max-w-[40ch] text-sm text-gray-500">{{ .Description }}</p>
   </div>
 
   <dl class="mt-6 flex gap-4 sm:gap-6">
     <div class="flex flex-col-reverse">
       <dt class="text-sm font-medium text-gray-600">Published</dt>
-      <time datetime="{{ .Date }}" class="text-xs text-gray-500">{{ .Date | time.Format ":date_medium" }}</time>
+      <time datetime="{{ .Date }}" class="text-xs text-gray-500"
+        >{{ .Date | time.Format ":date_medium" }}</time
+      >
     </div>
 
     <div class="flex flex-col-reverse">
