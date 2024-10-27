@@ -7,11 +7,19 @@ paginate = 12
 
 disableKinds = ['taxonomy', 'term']
 
+
+
+[outputs]
+  home = ['html', 'rss']
+  section = ['html', 'rss']
+  taxonomy = ['html']
+  term = ['html']
+
 [sitemap]
   changeFreq = ''
   disable = false
   filename = 'sitemap.xml'
-  priority = -1 
+  priority = -1
 enableRobotsTXT = true
 [caches]
   [caches.assets]
