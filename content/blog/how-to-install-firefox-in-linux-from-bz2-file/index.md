@@ -59,3 +59,50 @@ NoDisplay=false
 ```
 
 Save the file and exit the editor. Now, you can easily start Firefox from your application menu or app finder.
+
+## How to update to latest version
+
+When it comes to updating firefox from tar file its a bit tricky, but don't worry i have created an script file that will help you to easily update your Firefox. just copy paste the script and update as your needs.
+
+```sh
+#!/bin/bash
+
+# Set temporary directory and the destination directory
+TEMP_DIR="/tmp"
+INSTALL_DIR="/opt/firefox"
+
+# Download the latest version of Firefox
+echo "Downloading the latest version of Mozilla Firefox..."
+LATEST_FIREFOX_URL="https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US"
+wget -O "$TEMP_DIR/firefox-latest.tar.bz2" "$LATEST_FIREFOX_URL"
+
+# Check if the download was successful
+if [ $? -ne 0 ]; then
+    echo "Failed to download Firefox. Exiting..."
+    exit 1
+fi
+
+# Remove the old Firefox installation if it exists
+echo "Removing old Firefox installation from $INSTALL_DIR..."
+sudo rm -rf "$INSTALL_DIR"
+
+# Extract the downloaded tar.bz2 file to /opt/firefox
+echo "Extracting Firefox to $INSTALL_DIR..."
+sudo tar -xjf "$TEMP_DIR/firefox-latest.tar.bz2" -C /opt
+
+# Check if the extraction was successful
+if [ $? -eq 0 ]; then
+    echo "Firefox has been successfully installed in $INSTALL_DIR."
+else
+    echo "Failed to extract Firefox. Exiting..."
+    exit 1
+fi
+
+# Clean up the temporary downloaded file
+echo "Cleaning up temporary files..."
+rm -f "$TEMP_DIR/firefox-latest.tar.bz2"
+
+echo "Installation complete."
+```
+
+
