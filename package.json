@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prebuild": "pnpm tailwindcss -i ./tailwind.css -o ./assets/style.css",
-    "build": "node scripts/generateMeta.js && jampack ./public",
+    "build": "jampack ./public",
     "watch": "pnpm tailwindcss -i ./tailwind.css -o ./assets/style.css --watch"
   },
   "keywords": [],
