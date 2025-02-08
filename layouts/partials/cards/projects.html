@@ -34,15 +34,17 @@
     <p class="max-w-[40ch] text-sm text-gray-600">{{ .Description }}</p>
   </div>
 
-  <dl class="mt-6 flex gap-4 sm:gap-6">
-    <dt class="text-sm font-medium text-gray-600">Published</dt>
-    <dd>
+  <div class="mt-6 flex gap-4 sm:gap-6">
+    <div class="flex flex-col-reverse">
+      <p class="text-sm font-medium text-gray-600">Published</p>
       <time datetime="{{ .Date }}" class="text-xs text-gray-600"
         >{{ .Date | time.Format ":date_medium" }}</time
       >
-    </dd>
+    </div>
 
-    <dt class="text-sm font-medium text-gray-600">Status</dt>
-    <dd class="text-xs text-gray-600">{{ .Params.status }}</dd>
-  </dl>
+    <div class="flex flex-col-reverse">
+      <p class="text-sm font-medium text-gray-600">Status</p>
+      <p class="text-xs text-gray-600">{{ .Params.status }}</p>
+    </div>
+  </div>
 </article>
