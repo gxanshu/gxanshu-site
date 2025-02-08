@@ -1,5 +1,5 @@
 <article
-  class="overflow-hidden rounded-lg shadow-sm border-white transition hover:shadow-lg border-2 hover:border-2 hover:border-black transition delay-75 duration-75 ease-in-out hover:shadow-xl focus:outline-none focus:ring bg-[#F6F6F6]">
+  class="overflow-hidden rounded-lg shadow-sm border-white border-2 hover:border-2 hover:border-black transition delay-75 duration-75 ease-in-out hover:shadow-xl focus:outline-none focus:ring bg-[#F6F6F6]">
   {{ $image := .Resources.GetMatch .Params.image }}
   {{ $image = $image.Resize "450x250" }}
   <img src={{ $image.RelPermalink }} alt={data.title} height="250" width="450" class="w-full object-cover" />
