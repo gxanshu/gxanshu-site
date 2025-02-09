@@ -7,6 +7,7 @@ lastmod: 2023-08-15T10:03:24+05:30
 keywords:
   - tutorials
 draft: false
+postURL: "anshuvolg/38"
 ---
 
 Are you facing challenges updating your Electron application from private repositories? Discover a straightforward solution using electron-updater. In this guide, we'll walk you through the process of setting up private repository updates for your Electron applications, ensuring smooth and secure auto-updates.

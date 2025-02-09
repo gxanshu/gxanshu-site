@@ -7,6 +7,7 @@ lastmod: 2023-05-25T09:53:58+05:30
 keywords:
   - projects
 draft: false
+postURL: "anshuvolg/44"
 ---
 
 I recently created a package that can install Apple fonts in Arch Linux. The package is called **ttf-apple-fonts**, and it is available on the AUR.

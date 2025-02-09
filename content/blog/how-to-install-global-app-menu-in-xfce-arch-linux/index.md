@@ -7,6 +7,7 @@ lastmod: 2023-05-28T10:05:03+05:30
 keywords:
   - tutorials
 draft: false
+postURL: "anshuvolg/43"
 ---
 
 Global app menus are a convenient way to access the menus of applications without having to switch to a separate window. They are especially useful on laptops, where screen space is limited.

@@ -7,6 +7,7 @@ lastmod: 2023-08-14T10:11:19+05:30
 keywords:
   - experiments
 draft: false
+postURL: "anshuvolg/39"
 ---
 
 If you're a React developer curious about trying out new technologies, you've likely heard of SolidJS. 🎉 It's an exciting alternative to React, offering some unique features and performance benefits. In this blog post, we'll walk you through the main differences between SolidJS and React, along with a migration guide to help you make the switch. Let's dive in! 💡

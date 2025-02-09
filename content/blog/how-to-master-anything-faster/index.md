@@ -7,6 +7,7 @@ lastmod: 2022-05-26T09:59:53+05:30
 keywords:
   - learnings
 draft: false
+postURL: "anshuvolg/46"
 ---
 
 mastering anything faster is just a way to use your time effectively. in last article we study about [principles](https://gxanshu.in/blog/principles-to-learn-anything-faster/) and now in this post i am going to share my notes of all the remaining topics related to efficient learning. keep in mind that these are just notes of my learning i am not going to prove anything if you want any prove the please copy the heading and simply search it on google you will get the answer.

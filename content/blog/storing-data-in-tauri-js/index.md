@@ -7,6 +7,7 @@ lastmod: 2023-08-14T09:57:37+05:30
 keywords:
   - tutorial
 draft: false
+postURL: "anshuvolg/40"
 ---
 
 Are you looking to use the power of Tauri JS to effortlessly store and manage your data? Look no further! In this guide, we'll walk you through the process of using Tauri's File and Path APIs to store data in JSON files within the `appData` directory. Whether you're a intermidate developer or just starting your journey, this tutorial will have you storing data like a pro in no time! 🚀

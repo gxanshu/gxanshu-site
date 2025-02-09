@@ -156,5 +156,30 @@
         color: transparent; /* Ensures background clip works in Firefox */
       }
     </style>
+    {{ if and (eq $pageType "article") (.Params.postURL) }}
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            let interactionOccurred = false;
+
+            const loadTelegramComments = () => {
+              if(!interactionOccurred) {
+                interactionOccurred = true;
+                const script = document.createElement('script');
+                script.src = 'https://telegram.org/js/telegram-widget.js?22';
+                script.async = true;
+                script.setAttribute('data-telegram-discussion', '{{ .Params.postURL }}');
+                script.setAttribute('data-comments-limit', '5');
+                script.setAttribute('data-colorful', '1');
+                script.setAttribute('data-color', '2762EB');
+                document.getElementById('widget_container').appendChild(script);
+              }
+            };
+
+            ['click', 'scroll', 'keypress'].forEach(event => {
+              document.addEventListener(event, loadTelegramComments, {once: true});
+            });
+          });
+        </script>
+    {{ end }}
   </body>
 </html>

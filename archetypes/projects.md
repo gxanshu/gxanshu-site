@@ -9,4 +9,5 @@ lastmod: {{ .Date }}
 draft: true
 techStack: []
 sourceCode: ""
+postURL: ""
 ---

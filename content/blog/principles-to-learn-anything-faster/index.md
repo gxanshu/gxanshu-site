@@ -7,6 +7,7 @@ lastmod: 2022-05-26T09:59:53+05:30
 keywords:
   - learnings
 draft: false
+postURL: "anshuvolg/45"
 ---
 
 **This Efficient Learning post will teach you productivity strategies, learning strategies, and memory technique skills that you will use for the rest of your life.**

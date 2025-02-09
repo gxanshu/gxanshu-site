@@ -7,6 +7,7 @@ lastmod: 2024-01-26T09:55:54+05:30
 keywords:
   - life lessions
 draft: false
+postURL: "anshuvolg/37"
 ---
 I recently watched a movie called "**The Imitation Game**," which told the story of **Alan Turing**, a brilliant mind who invented the first computer. His passion for his work got me thinking about why math is so important when it comes to understanding machines.
 

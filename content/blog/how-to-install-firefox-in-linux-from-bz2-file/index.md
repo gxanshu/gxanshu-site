@@ -7,6 +7,7 @@ lastmod: 2024-10-18T13:04:16.30
 keywords:
   - tutorials
 draft: false
+postURL: "anshuvolg/35"
 ---
 
 I've been using Firefox for a long time, and I love it. However, sometimes it doesn’t update to the latest version quickly through package managers like APT or DNF, or through the software center. I wanted to install Firefox from a `.tar.bz2` file on Linux, but it doesn’t come with a desktop file for the icon, which can be time-consuming to set up. So, here’s a solution.
@@ -104,5 +105,3 @@ rm -f "$TEMP_DIR/firefox-latest.tar.bz2"
 
 echo "Installation complete."
 ```
-
-

@@ -7,6 +7,7 @@ lastmod: 2023-07-12T10:09:42+05:30
 keywords:
   - tutorials
 draft: false
+postURL: "anshuvolg/41"
 ---
 
 First, we need to install the `framer-motion` and `react-router-dom` libraries. We can do this with the following commands:

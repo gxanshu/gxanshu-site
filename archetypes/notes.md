@@ -6,4 +6,5 @@ lastmod: {{ .Date }}
 keywords:
   - any
 draft: true
+postURL: ""
 ---

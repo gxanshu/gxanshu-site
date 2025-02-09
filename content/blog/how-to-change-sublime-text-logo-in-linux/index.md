@@ -8,6 +8,7 @@ keywords:
   - tutorials
   - sublime text
 draft: false
+postURL: "anshuvolg/36"
 ---
 
 Honestly i love sublime text. It's the fastest code editor in the market, I'm working with sublime text from years now and customize it in many ways to make it feel more awesome. In today's article we gonna change icon of sublime text in Linux machines.
