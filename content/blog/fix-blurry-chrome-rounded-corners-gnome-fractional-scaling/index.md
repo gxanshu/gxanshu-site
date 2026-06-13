@@ -74,6 +74,18 @@ For the record, I ran into this and tested the fix on:
 
 It should work the same on regular Chrome, Chromium, Brave, Edge, Vivaldi and other Chromium based browsers, since they all share the same Wayland code underneath.
 
+## Side effects and things to know
+
+This flag is safe to use, but it's fair to know what it actually changes. When you disable `WaylandFractionalScaleV1`, the browser stops asking the compositor for a true fractional buffer. Instead it renders at the next whole number scale (2x) and lets GNOME shrink that down to your 125%. A few things follow from that:
+
+- **A little more GPU and power usage.** The browser is now drawing a bigger frame and scaling it down, so it pushes more pixels than it strictly needs to. On a desktop you won't feel it. On a laptop you might notice slightly worse battery or the fan spinning up a touch sooner under heavy use.
+- **Sharpness stays good.** In our case it actually looks sharper because the native path was broken by the extension. In general the render-at-2x-then-downscale method is still crisp, so this isn't really a downside.
+- **It only affects that one browser.** Other apps and the rest of your system are untouched, and the change is fully reversible. Remove the flag and you're back to default with no harm done.
+- **It might stop working after a future update.** This is a Chromium feature flag, and flags sometimes get removed once a feature is considered stable. If your blur ever comes back after a browser update, this is the first thing to check.
+- **Watch multi-monitor setups.** If you use two screens with different scaling values, test moving the window between them, since the integer-scale fallback can behave a little differently there.
+
+For a single laptop screen at a fractional scale, the only real cost is a small bump in resource use that most people never notice. Sharp rounded corners are well worth it.
+
 ## Wrapping up
 
 Rounded corners on GNOME are a small thing, but a blurry browser is the kind of thing you can't unsee once you notice it. One flag fixes both problems at once, and you don't have to give up fractional scaling to get there.
